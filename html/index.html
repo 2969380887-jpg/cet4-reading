@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2023年12月四级真题(第2套) — 阅读 Section C 全两篇 | 中浩</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f8f5f0;--card:#fff;--text:#2c2416;--text-light:#5c5344;
+  --accent:#b8753e;--accent-light:#f0e6d8;--border:#e0d5c4;
+  --shadow:0 2px 12px rgba(0,0,0,.06);--radius:12px;
+  --font-body:'Georgia','Noto Serif SC','Songti SC','SimSun',serif;
+  --font-ui:'PingFang SC','Microsoft YaHei','Hiragino Sans',sans-serif;
+  --panel-bg:#1e1b18;--panel-text:#f0e8dc;
+}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.85;min-height:100vh;padding-bottom:5rem}
+.container{max-width:860px;margin:0 auto;padding:0 18px}
+
+/* ---- header ---- */
+.header{text-align:center;padding:2.4rem 0 1.6rem;border-bottom:2px solid var(--border);margin-bottom:2rem}
+.header h1{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700;color:var(--text);letter-spacing:.02em}
+.header .sub{font-size:.95rem;color:var(--text-light);margin-top:.35rem;font-family:var(--font-ui)}
+.header .badge{display:inline-block;margin-top:.6rem;padding:.2em .9em;background:var(--accent-light);color:var(--accent);border-radius:99px;font-size:.8rem;font-weight:600;font-family:var(--font-ui)}
+
+/* ---- tabs ---- */
+.tabs{display:flex;gap:0;margin-bottom:2rem;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.tab-btn{flex:1;padding:.8rem 1rem;border:none;background:var(--card);color:var(--text-light);font-size:.95rem;font-weight:600;font-family:var(--font-ui);cursor:pointer;transition:all .2s;border-bottom:3px solid transparent;-webkit-tap-highlight-color:transparent;text-align:center}
+.tab-btn:hover{color:var(--accent);background:#fdfaf6}
+.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);background:#fdfaf6}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+/* ---- card ---- */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(1.2rem,3vw,2rem);margin-bottom:2rem}
+.card h2{font-size:1.15rem;color:var(--accent);margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);font-family:var(--font-ui);letter-spacing:.04em}
+
+/* ---- word ---- */
+.word{display:inline;cursor:pointer;padding:1px 1px;border-radius:3px;transition:background .15s,color .15s;position:relative}
+.word:hover{background:#fce8c8;color:#8b5e2a}
+.word:active{background:#f5d090}
+.word.highlight{background:#f5d090;color:#7a4e1c;outline:2px solid var(--accent);outline-offset:1px;z-index:2}
+
+/* ---- para ---- */
+.para{margin-bottom:1.15rem;text-align:justify;font-size:clamp(.95rem,2vw,1.05rem);word-break:break-word}
+
+/* ---- trans toggle ---- */
+.trans-toggle{display:inline-flex;align-items:center;gap:.35em;background:none;border:1.5px solid var(--border);color:var(--text-light);padding:.35em .85em;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:var(--font-ui);margin-top:.3rem;margin-bottom:.6rem;transition:all .2s;user-select:none;-webkit-tap-highlight-color:transparent}
+.trans-toggle:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+.trans-toggle .arrow{display:inline-block;transition:transform .25s;font-size:.7rem}
+.trans-toggle.open .arrow{transform:rotate(90deg)}
+.trans-text{display:none;color:#6b5e4a;font-size:.9rem;line-height:1.75;padding:.7rem 1rem;margin-top:.3rem;margin-bottom:.8rem;background:#fdfaf4;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;animation:fadeIn .3s ease}
+.trans-text.show{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+
+/* ---- questions ---- */
+.question-block{margin-bottom:1.8rem;padding-bottom:1.2rem;border-bottom:1px dashed var(--border)}
+.question-block:last-child{border-bottom:none;margin-bottom:0}
+.question-text{font-weight:600;margin-bottom:.6rem;font-size:clamp(.9rem,2vw,1rem)}
+.options-grid{display:grid;grid-template-columns:1fr;gap:.4rem;margin-bottom:.3rem}
+@media(min-width:640px){.options-grid{grid-template-columns:1fr 1fr}}
+.option{padding:.45em .75em;border-radius:6px;background:#fafaf7;border:1px solid transparent;font-size:.92rem;line-height:1.65}
+.option:hover{border-color:var(--border)}
+
+/* ---- word panel ---- */
+.word-panel{position:fixed;bottom:0;left:0;right:0;background:var(--panel-bg);color:var(--panel-text);padding:1rem 1.2rem;z-index:999;border-radius:16px 16px 0 0;box-shadow:0 -4px 24px rgba(0,0,0,.3);transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);font-family:var(--font-ui);max-height:42vh;overflow-y:auto}
+.word-panel.open{transform:translateY(0)}
+.word-panel-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem}
+.word-panel-word{font-size:1.3rem;font-weight:700;color:#fff}
+.word-panel-phonetic{font-size:.85rem;color:#b0a592;margin-left:.5em}
+.word-panel-close{background:none;border:none;color:#8a8070;font-size:1.3rem;cursor:pointer;padding:.2em .4em;border-radius:4px;line-height:1;-webkit-tap-highlight-color:transparent}
+.word-panel-close:hover{color:#fff}
+.word-panel-body{font-size:.9rem;line-height:1.65}
+.word-panel-body .def{padding:.25em 0}
+.word-panel-body .def strong{color:#d4a96a}
+.word-panel-debug{margin-top:.5rem;padding-top:.45rem;border-top:1px solid #3a3530;font-size:.75rem;color:#6a6258}
+.word-panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:998;display:none}
+.word-panel-overlay.show{display:block}
+
+/* ---- footer ---- */
+.footer-hint{text-align:center;font-size:.78rem;color:#b0a590;margin-top:2.5rem;padding:1rem;font-family:var(--font-ui);line-height:1.7}
+
+@media(max-width:480px){
+  .container{padding:0 10px}
+  .card{padding:1rem .85rem;border-radius:10px}
+  .word{padding:2px 1px}
+  .word-panel{padding:.85rem 1rem;max-height:45vh}
+  .tab-btn{font-size:.82rem;padding:.65rem .5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="header">
+  <h1>2023年12月 · 四级真题（第2套）</h1>
+  <div class="sub">Reading Comprehension — Section C</div>
+  <div class="badge">Passage One (Q46–50) &amp; Passage Two (Q51–55)</div>
+</div>
+
+<!-- ===== TABS ===== -->
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('p1')">Passage One<br><small>Q46–50 · 竞争与创业</small></button>
+  <button class="tab-btn" onclick="switchTab('p2')">Passage Two<br><small>Q51–55 · 多任务处理</small></button>
+</div>
+
+<!-- ==================== PASSAGE ONE ==================== -->
+<div class="tab-panel active" id="tab-p1">
+
+<div class="card">
+  <h2>Passage One</h2>
+
+  <div class="para" id="a1"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-a1',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-a1">拥有竞争对手可以让你保持对实现目标的投入，并提升你的整体表现。但在你出门找一个企业家来超越之前，重要的是要理解并避免竞争关系中常伴随的陷阱。毕竟，竞争性对抗也会阻碍有效决策，增加你承担风险的意愿，这些行为最终可能损害你企业的成功。</div>
+
+  <div class="para" id="a2"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-a2',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-a2">找到某个你决心要超越的人，可以是保持专注于目标并将企业推向新高度的好方法。但当你一心专注于超越对手时，你可能会开始形成一种"不惜一切代价取胜"的心态，导致你忽视如何取得成功。例如，一组研究人员考察了竞争与不道德行为之间的联系。他们发现，当人们与对手竞争时，他们更愿意采取不道德的手段来取胜。但这类行为可能会玷污你的声誉，损害对你成功至关重要的关系。避免这一陷阱的一个方法是停下来反思什么是重要的。虽然超越对手可能带来短期利益，但失去诚信将带来长期的后果。</div>
+
+  <div class="para" id="a3"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-a3',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-a3">拥有竞争对手能提升企业表现的一个原因是，它创造了一种兴奋感，驱使你更加努力工作。但这种渴望胜利也可能损害企业的成功，尤其是当它导致你做出冲动、不明智的决策时。但是，通过养成批判性思维的习惯，比如考虑相反的观点和进行成本收益分析——尤其是对于那些复杂且能决定企业未来的决策，是可以避免这类代价高昂的错误的。</div>
+
+  <div class="para" id="a4"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-a4',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-a4">伴随竞争而来的渴望感不仅会让你做出更糟糕的决策，还会导致你冒更大的风险，将企业置于危险之中。克服那些危及企业成功的风险诱导效应的方法之一是保持对自己情绪状态的关注，并积极监控这些情绪如何影响你的决策。</div>
+</div>
+
+<div class="card">
+  <h2>Questions 46–50</h2>
+
+  <div class="question-block">
+    <div class="question-text" id="q46"></div>
+    <div class="options-grid" id="opts46"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q46',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q46"><strong>题目：</strong>根据文章，竞争性对抗如何使创业者受益？<br><strong>选项：</strong>A) 使他们能够超越其他创业者。&ensp;B) 使他们能将自己的企业做成功。&ensp;C) 帮助他们实现长期目标。&ensp;D) 帮助他们保持以目标为导向。</div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-text" id="q47"></div>
+    <div class="options-grid" id="opts47"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q47',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q47"><strong>题目：</strong>创业者与对手竞争时常落入的陷阱之一是什么？<br><strong>选项：</strong>A) 他们可能采取注定会毁掉企业的策略。&ensp;B) 他们可能采取不道德的手段超越对手。&ensp;C) 他们可能过于渴望成功而忽视巨大的人力成本。&ensp;D) 他们可能专注于在当前市场层面取胜。</div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-text" id="q48"></div>
+    <div class="options-grid" id="opts48"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q48',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q48"><strong>题目：</strong>创业者被建议如何避免常伴随竞争的陷阱？<br><strong>选项：</strong>A) 深思什么才是真正重要的。&ensp;B) 优先获取眼前利益。&ensp;C) 估计长期后果。&ensp;D) 反思哪些成功是可实现的。</div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-text" id="q49"></div>
+    <div class="options-grid" id="opts49"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q49',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q49"><strong>题目：</strong>创业者如何避免做出冲动和不明智的决策？<br><strong>选项：</strong>A) 通过进行批判性推理。&ensp;B) 通过养成保持诚信的习惯。&ensp;C) 通过为之前的不良表现批评自己。&ensp;D) 通过克制对成功的过度兴奋。</div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-text" id="q50"></div>
+    <div class="options-grid" id="opts50"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q50',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q50"><strong>题目：</strong>创业者如何克服竞争的风险诱导效应？<br><strong>选项：</strong>A) 密切关注当前表现。&ensp;B) 采取危及对手成功的措施。&ensp;C) 监控决策如何影响心态。&ensp;D) 控制情绪以避免做出糟糕决策。</div>
+  </div>
+</div>
+
+</div><!-- /tab-p1 -->
+
+<!-- ==================== PASSAGE TWO ==================== -->
+<div class="tab-panel" id="tab-p2">
+
+<div class="card">
+  <h2>Passage Two</h2>
+
+  <div class="para" id="b1"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-b1',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-b1">多任务处理者是指能够同时有效执行两项或多项任务的人——除了一些明显的差异外——这与计算机的功能相似。这个概念确实源自技术领域，指能够同时执行多个任务的操作系统。然而，问题是：人真的能成为多任务处理者吗？</div>
+
+  <div class="para" id="b2"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-b2',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-b2">对大多数科学家来说，答案是否定的。以至于，据神经科学专家称，我们的大脑并不能很好地处理多任务情境。一旦两个任务需要我们的注意力，效率就会下降。因此，我们所谓的多任务处理，实际上是在不同任务之间或快或慢地切换的能力。这需要两个基本条件：其中一个任务必须是自动化的，比如走路或吃饭；同时，两个任务需要不同的心智过程。例如，一边接电话一边写字。</div>
+
+  <div class="para" id="b3"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-b3',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-b3">然而，事情的另一面是，有些人坚持认为多任务处理是可能的，或者至少看起来是可能的。最近的一项研究得出结论：无论人们是否真的在处理多项任务，仅仅是将该活动视为多任务处理这一事实，就能对他们的表现产生积极影响。</div>
+
+  <div class="para" id="b4"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-b4',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-b4">商业视角则提供了不同的观点：多任务处理被理解为在公司内部适应各种环境并在规定时间范围内有效承担不同活动的能力。事实上，许多公司都在寻找擅长多任务处理的人才来提高生产力。从这个不同的角度看，你不仅可以进行多任务处理，而且这种能力还可以被教授——这在提倡灵活工作方式的流动型组织中更容易实现。</div>
+
+  <div class="para" id="b5"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-b5',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-b5">多任务处理的好处是显而易见的。更快、更高效能提高我们的表现和完成任务的数量。但是，必须同时关注多件事情意味着注意力的集中程度会降低，从而导致更多的错误。</div>
+</div>
+
+<div class="card">
+  <h2>Questions 51–55</h2>
+
+  <div class="question-block">
+    <div class="question-text" id="q51"></div>
+    <div class="options-grid" id="opts51"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q51',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q51"><strong>题目：</strong>"multitasker"一词最初指的是什么？<br><strong>选项：</strong>A) 能够同时执行多项任务的操作系统。&ensp;B) 能同时执行多项任务的熟练工作者。&ensp;C) 能同时有效完成多项任务的复杂技术。&ensp;D) 能同时执行多项任务的高效人士。</div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-text" id="q52"></div>
+    <div class="options-grid" id="opts52"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q52',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q52"><strong>题目：</strong>根据神经科学家的观点，为什么人们不能真正地进行多任务处理？<br><strong>选项：</strong>A) 他们没有足够多地接触多任务情境。&ensp;B) 他们无法与机械操作系统相比。&ensp;C) 他们的大脑不允许他们进行多任务处理。&ensp;D) 他们的注意力广度无法扩展。</div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-text" id="q53"></div>
+    <div class="options-grid" id="opts53"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q53',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q53"><strong>题目：</strong>从最近一项关于多任务处理的研究结论中，我们能了解到什么？<br><strong>选项：</strong>A) 人们通过坚持认为自己在进行多任务处理来取得更大的成就。&ensp;B) 人们的表现受益于将其所做之事视为多任务处理的认知。&ensp;C) 人们活跃的心智过程对其多任务处理产生积极影响。&ensp;D) 人们可以通过处理多任务情境来提高自身能力。</div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-text" id="q54"></div>
+    <div class="options-grid" id="opts54"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q54',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q54"><strong>题目：</strong>商业界如何看待多任务处理？<br><strong>选项：</strong>A) 它是一种常在流动型组织中发现的罕见技能。&ensp;B) 它是所有工作者都需要的适应能力。&ensp;C) 它是许多员工缺乏的基本素质。&ensp;D) 它是一种可以培养的理想能力。</div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-text" id="q55"></div>
+    <div class="options-grid" id="opts55"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q55',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q55"><strong>题目：</strong>作者暗示，如果我们必须专注于某项任务并把它做好，我们应该怎么做？<br><strong>选项：</strong>A) 以灵活的方式工作。&ensp;B) 从错误中学习。&ensp;C) 避免多任务处理。&ensp;D) 提高效率。</div>
+  </div>
+</div>
+
+</div><!-- /tab-p2 -->
+
+<div class="footer-hint">
+  点击文中任意英文单词，即可查看音标、考研核心释义及 Debug 提醒。<br>
+  中浩 · 考研英语阅读 · 2023.12 CET-4 第2套 Section C 全两篇
+</div>
+
+</div><!-- /container -->
+
+<!-- ===== WORD PANEL ===== -->
+<div class="word-panel-overlay" id="overlay" onclick="closePanel()"></div>
+<div class="word-panel" id="panel">
+  <div class="word-panel-header">
+    <div>
+      <span class="word-panel-word" id="pWord">—</span>
+      <span class="word-panel-phonetic" id="pPhonetic"></span>
+    </div>
+    <button class="word-panel-close" onclick="closePanel()">&times;</button>
+  </div>
+  <div class="word-panel-body" id="pBody"></div>
+  <div class="word-panel-debug" id="pDebug"></div>
+</div>
+
+<script>
+// ==================== DICTIONARY ====================
+const D = {
+  // -- Passage Two --
+  "multitasker":{p:"/ˈmʌltiˌtæskər/",d:"n. 多任务处理者；能同时处理多项事务的人"},
+  "multitasking":{p:"/ˈmʌltiˌtæskɪŋ/",d:"n. 多任务处理；同时执行多项任务"},
+  "perform":{p:"/pərˈfɔːrm/",d:"v. 执行；履行；表演；表现"},
+  "tasks":{p:"/tæsks/",d:"n. 任务；工作 (task 的复数)"},
+  "task":{p:"/tæsk/",d:"n. 任务；工作 v. 派给……任务"},
+  "effectively":{p:"/ɪˈfektɪvli/",d:"adv. 有效地；实际上"},
+  "apart":{p:"/əˈpɑːrt/",d:"adv. 分离地；相隔地；除……之外"},
+  "obvious":{p:"/ˈɑːbviəs/",d:"adj. 明显的；显而易见的"},
+  "differences":{p:"/ˈdɪfrənsɪz/",d:"n. 差异；不同之处"},
+  "similar":{p:"/ˈsɪmələr/",d:"adj. 相似的；类似的"},
+  "computer":{p:"/kəmˈpjuːtər/",d:"n. 计算机；电脑"},
+  "concept":{p:"/ˈkɑːnsept/",d:"n. 概念；观念；思想"},
+  "indeed":{p:"/ɪnˈdiːd/",d:"adv. 确实；实际上；真正地"},
+  "realms":{p:"/relmz/",d:"n. 领域；范围 (realm 的复数)"},
+  "technology":{p:"/tekˈnɑːlədʒi/",d:"n. 技术；科技；工艺"},
+  "refer":{p:"/rɪˈfɜːr/",d:"v. 参考；指称；提到；涉及"},
+  "operating":{p:"/ˈɑːpəreɪtɪŋ/",d:"adj. 操作的；运行的"},
+  "system":{p:"/ˈsɪstəm/",d:"n. 系统；制度；体制"},
+  "execute":{p:"/ˈeksɪkjuːt/",d:"v. 执行；实施；处决"},
+  "multiple":{p:"/ˈmʌltɪpl/",d:"adj. 多个的；多种的 n. 倍数"},
+  "however":{p:"/haʊˈevər/",d:"adv. 然而；可是；无论如何"},
+  "question":{p:"/ˈkwestʃən/",d:"n. 问题；疑问 v. 质疑；询问"},
+  "really":{p:"/ˈriːəli/",d:"adv. 真正地；实际上；确实"},
+  "scientists":{p:"/ˈsaɪəntɪsts/",d:"n. 科学家"},
+  "answer":{p:"/ˈænsər/",d:"n. 答案；回答 v. 回答；答复"},
+  "according":{p:"/əˈkɔːrdɪŋ/",d:"adv. 根据；按照"},
+  "experts":{p:"/ˈekspɜːrts/",d:"n. 专家"},
+  "neuroscience":{p:"/ˌnʊroʊˈsaɪəns/",d:"n. 神经科学"},
+  "brains":{p:"/breɪnz/",d:"n. 大脑；智力"},
+  "handle":{p:"/ˈhændl/",d:"v. 处理；应对；操纵 n. 把手"},
+  "situations":{p:"/ˌsɪtʃuˈeɪʃənz/",d:"n. 情况；情境"},
+  "soon":{p:"/suːn/",d:"adv. 很快；不久；早"},
+  "require":{p:"/rɪˈkwaɪər/",d:"v. 需要；要求；命令"},
+  "attention":{p:"/əˈtenʃn/",d:"n. 注意力；关注；照料"},
+  "productivity":{p:"/ˌprɑːdʌkˈtɪvəti/",d:"n. 生产力；生产率；工作效率"},
+  "suffers":{p:"/ˈsʌfərz/",d:"v. 遭受；忍受；受损害"},
+  "therefore":{p:"/ˈðerfɔːr/",d:"adv. 因此；所以"},
+  "reality":{p:"/riˈæləti/",d:"n. 现实；实际；真实"},
+  "ability":{p:"/əˈbɪləti/",d:"n. 能力；才能"},
+  "quickly":{p:"/ˈkwɪkli/",d:"adv. 快速地；迅速地"},
+  "essential":{p:"/ɪˈsenʃl/",d:"adj. 必要的；本质的；基本的"},
+  "conditions":{p:"/kənˈdɪʃənz/",d:"n. 条件；状况"},
+  "automatic":{p:"/ˌɔːtəˈmætɪk/",d:"adj. 自动的；无意识的；必然的"},
+  "walking":{p:"/ˈwɔːkɪŋ/",d:"n. 步行；散步"},
+  "eating":{p:"/ˈiːtɪŋ/",d:"n. 吃；进食"},
+  "mental":{p:"/ˈmentl/",d:"adj. 精神的；心理的；智力的"},
+  "processes":{p:"/ˈprɑːsesɪz/",d:"n. 过程；进程"},
+  "answering":{p:"/ˈænsərɪŋ/",d:"n./v. 回答；应答"},
+  "phone":{p:"/foʊn/",d:"n. 电话；手机 v. 打电话"},
+  "writing":{p:"/ˈraɪtɪŋ/",d:"n. 书写；写作；文字"},
+  "coin":{p:"/kɔɪn/",d:"n. 硬币；事情的另一面"},
+  "maintain":{p:"/meɪnˈteɪn/",d:"v. 维持；坚持认为；保养"},
+  "possible":{p:"/ˈpɑːsəbl/",d:"adj. 可能的；合理的"},
+  "seem":{p:"/siːm/",d:"v. 似乎；好像；显得"},
+  "recent":{p:"/ˈriːsnt/",d:"adj. 最近的；近来的"},
+  "study":{p:"/ˈstʌdi/",d:"n. 研究；学习 v. 研究；学习"},
+  "concluded":{p:"/kənˈkluːdɪd/",d:"v. 得出结论；断定"},
+  "regardless":{p:"/rɪˈɡɑːrdləs/",d:"adv. 不管怎样；无论如何"},
+  "whether":{p:"/ˈweðər/",d:"conj. 是否；不管……还是……"},
+  "actually":{p:"/ˈæktʃuəli/",d:"adv. 实际上；事实上"},
+  "handling":{p:"/ˈhændlɪŋ/",d:"n./v. 处理；操作"},
+  "several":{p:"/ˈsevrəl/",d:"adj. 几个的；数个的 pron. 几个"},
+  "mere":{p:"/mɪr/",d:"adj. 仅仅的；只不过的"},
+  "fact":{p:"/fækt/",d:"n. 事实；实际；真相"},
+  "perceive":{p:"/pərˈsiːv/",d:"v. 感知；察觉；理解；认为"},
+  "activity":{p:"/ækˈtɪvəti/",d:"n. 活动；行动；活跃"},
+  "positive":{p:"/ˈpɑːzətɪv/",d:"adj. 积极的；正面的；肯定的；阳性的"},
+  "effect":{p:"/ɪˈfekt/",d:"n. 效果；影响；效应 v. 实现；引起"},
+  "performance":{p:"/pərˈfɔːrməns/",d:"n. 表现；性能；表演；业绩"},
+  "business":{p:"/ˈbɪznəs/",d:"n. 商业；生意；企业；事务"},
+  "perspective":{p:"/pərˈspektɪv/",d:"n. 观点；视角；透视法；前景"},
+  "offers":{p:"/ˈɔːfərz/",d:"v. 提供；主动提出"},
+  "view":{p:"/vjuː/",d:"n. 观点；视野；景色 v. 看待；观看"},
+  "understood":{p:"/ˌʌndərˈstʊd/",d:"v. 理解；明白"},
+  "adapt":{p:"/əˈdæpt/",d:"v. 适应；改编；调整"},
+  "types":{p:"/taɪps/",d:"n. 类型；种类"},
+  "environment":{p:"/ɪnˈvaɪrənmənt/",d:"n. 环境；周围状况"},
+  "company":{p:"/ˈkʌmpəni/",d:"n. 公司；陪伴；同伴"},
+  "undertake":{p:"/ˌʌndərˈteɪk/",d:"v. 承担；从事；承诺"},
+  "activities":{p:"/ækˈtɪvətiz/",d:"n. 活动"},
+  "within":{p:"/wɪˈðɪn/",d:"prep. 在……之内；不超过"},
+  "frame":{p:"/freɪm/",d:"n. 框架；结构；时间范围 v. 制定；设计"},
+  "skilled":{p:"/skɪld/",d:"adj. 熟练的；有技能的"},
+  "improve":{p:"/ɪmˈpruːv/",d:"v. 改善；提高；改进"},
+  "taught":{p:"/tɔːt/",d:"v. 教授；教导 (teach 的过去分词)"},
+  "easier":{p:"/ˈiːziər/",d:"adj. 更容易的"},
+  "fluid":{p:"/ˈfluːɪd/",d:"adj. 流动的；不固定的；流畅的 n. 液体"},
+  "organisations":{p:"/ˌɔːrɡənaɪˈzeɪʃənz/",d:"n. 组织；机构"},
+  "favour":{p:"/ˈfeɪvər/",d:"v. 有利于；偏爱；支持 n. 恩惠；赞同"},
+  "flexibility":{p:"/ˌfleksəˈbɪləti/",d:"n. 灵活性；弹性；适应性"},
+  "practices":{p:"/ˈpræktɪsɪz/",d:"n. 做法；惯例；实践"},
+  "benefits":{p:"/ˈbenɪfɪts/",d:"n. 好处；益处；福利"},
+  "clear":{p:"/klɪr/",d:"adj. 清楚的；清晰的；明显的"},
+  "quicker":{p:"/ˈkwɪkər/",d:"adj. 更快的"},
+  "efficient":{p:"/ɪˈfɪʃnt/",d:"adj. 高效的；有效率的"},
+  "increases":{p:"/ɪnˈkriːsɪz/",d:"v. 增加；增长"},
+  "completed":{p:"/kəmˈpliːtɪd/",d:"v. 完成"},
+  "concentration":{p:"/ˌkɑːnsnˈtreɪʃn/",d:"n. 集中；专注；浓度"},
+  "reduced":{p:"/rɪˈduːst/",d:"adj. 减少的；降低的"},
+  "mistakes":{p:"/mɪˈsteɪks/",d:"n. 错误；过失"},
+  "originally":{p:"/əˈrɪdʒənəli/",d:"adv. 最初；起初；本来"},
+  "neuroscientists":{p:"/ˌnʊroʊˈsaɪəntɪsts/",d:"n. 神经科学家"},
+  "sufficiently":{p:"/səˈfɪʃntli/",d:"adv. 充分地；足够地"},
+  "exposed":{p:"/ɪkˈspoʊzd/",d:"adj. 暴露的；接触的"},
+  "comparable":{p:"/ˈkɑːmpərəbl/",d:"adj. 可比较的；比得上的"},
+  "mechanical":{p:"/məˈkænɪkl/",d:"adj. 机械的；力学的；呆板的"},
+  "span":{p:"/spæn/",d:"n. 跨度；范围；持续时间 v. 跨越"},
+  "expanded":{p:"/ɪkˈspændɪd/",d:"v. 扩展；扩大"},
+  "achievements":{p:"/əˈtʃiːvmənts/",d:"n. 成就；成绩"},
+  "perception":{p:"/pərˈsepʃn/",d:"n. 感知；认知；看法；洞察力"},
+  "active":{p:"/ˈæktɪv/",d:"adj. 活跃的；积极的；主动的"},
+  "exert":{p:"/ɪɡˈzɜːrt/",d:"v. 施加；运用；努力"},
+  "capabilities":{p:"/ˌkeɪpəˈbɪlətiz/",d:"n. 能力；才能"},
+  "rare":{p:"/rer/",d:"adj. 稀有的；罕见的；珍贵的"},
+  "adaptable":{p:"/əˈdæptəbl/",d:"adj. 可适应的；有适应能力的"},
+  "capability":{p:"/ˌkeɪpəˈbɪləti/",d:"n. 能力；才能；性能"},
+  "required":{p:"/rɪˈkwaɪərd/",d:"adj. 必需的；要求的"},
+  "desirable":{p:"/dɪˈzaɪərəbl/",d:"adj. 理想的；值得拥有的；可取的"},
+  "developed":{p:"/dɪˈveləpt/",d:"adj. 发达的；成熟的"},
+  "implies":{p:"/ɪmˈplaɪz/",d:"v. 暗示；暗指；意味着"},
+  "avoid":{p:"/əˈvɔɪd/",d:"v. 避免；回避；避开"},
+  "flexible":{p:"/ˈfleksəbl/",d:"adj. 灵活的；柔韧的；易弯曲的"},
+  "efficiency":{p:"/ɪˈfɪʃnsi/",d:"n. 效率；效能"},
+  "sophisticated":{p:"/səˈfɪstɪkeɪtɪd/",d:"adj. 复杂的；精密的；老练的"},
+  "employee":{p:"/ɪmˈplɔɪiː/",d:"n. 雇员；员工"},
+  "employees":{p:"/ɪmˈplɔɪiːz/",d:"n. 雇员；员工 (复数)"},
+  "lack":{p:"/læk/",d:"v./n. 缺乏；不足；缺少"},
+  "quality":{p:"/ˈkwɑːləti/",d:"n. 质量；品质；素质 adj. 优质的"},
+
+  // -- Passage One --
+  "rival":{p:"/ˈraɪvl/",d:"n. 竞争对手；敌手 v. 与……匹敌"},
+  "rivals":{p:"/ˈraɪvlz/",d:"n. 竞争对手 (复数)"},
+  "rivalry":{p:"/ˈraɪvəlri/",d:"n. 竞争；对抗；较量"},
+  "committed":{p:"/kəˈmɪtɪd/",d:"adj. 投入的；坚定的；尽心尽力的"},
+  "achieving":{p:"/əˈtʃiːvɪŋ/",d:"v. 实现；达到；取得"},
+  "goals":{p:"/ɡoʊlz/",d:"n. 目标；目的 (goal 的复数)"},
+  "enhance":{p:"/ɪnˈhæns/",d:"v. 提高；增强；增进"},
+  "overall":{p:"/ˌoʊvərˈɔːl/",d:"adj. 整体的；全面的；总体的"},
+  "entrepreneur":{p:"/ˌɑːntrəprəˈnɜːr/",d:"n. 企业家；创业者"},
+  "outcompete":{p:"/ˌaʊtkəmˈpiːt/",d:"v. 在竞争中胜过；超越"},
+  "outcompeting":{p:"/ˌaʊtkəmˈpiːtɪŋ/",d:"v. 在竞争中胜过 (现在分词)"},
+  "outperforming":{p:"/ˌaʊtpərˈfɔːrmɪŋ/",d:"v. 超越；胜过 (outperform 的现在分词)"},
+  "traps":{p:"/træps/",d:"n. 陷阱；圈套 (trap 的复数)"},
+  "competitive":{p:"/kəmˈpetətɪv/",d:"adj. 竞争的；有竞争力的"},
+  "hinder":{p:"/ˈhɪndər/",d:"v. 阻碍；妨碍；阻挡"},
+  "decision-making":{p:"/dɪˈsɪʒn ˌmeɪkɪŋ/",d:"n. 决策；做决定"},
+  "willingness":{p:"/ˈwɪlɪŋnəs/",d:"n. 意愿；乐意"},
+  "risks":{p:"/rɪsks/",d:"n. 风险；危险 (risk 的复数)"},
+  "behaviors":{p:"/bɪˈheɪvjərz/",d:"n. 行为；举止"},
+  "ultimately":{p:"/ˈʌltɪmətli/",d:"adv. 最终；根本上；归根结底"},
+  "venture":{p:"/ˈventʃər/",d:"n. 企业；冒险；风险项目 v. 敢于；冒险"},
+  "venture's":{p:"/ˈventʃərz/",d:"n. 企业的 (所有格)"},
+  "focused":{p:"/ˈfoʊkəst/",d:"adj. 专注的；集中的"},
+  "push":{p:"/pʊʃ/",d:"v. 推动；推进；促使 n. 推力"},
+  "intently":{p:"/ɪnˈtentli/",d:"adv. 专注地；一心一意地"},
+  "develop":{p:"/dɪˈveləp/",d:"v. 发展；开发；形成；养成"},
+  "mentality":{p:"/menˈtæləti/",d:"n. 心态；思维方式；心理状态"},
+  "causes":{p:"/ˈkɔːzɪz/",d:"v. 导致；引起 n. 原因；事业"},
+  "ignore":{p:"/ɪɡˈnɔːr/",d:"v. 忽视；忽略；无视"},
+  "achieve":{p:"/əˈtʃiːv/",d:"v. 实现；达到；取得"},
+  "examined":{p:"/ɪɡˈzæmɪnd/",d:"v. 检查；考察；研究"},
+  "link":{p:"/lɪŋk/",d:"n. 联系；关联 v. 连接；联系"},
+  "unethical":{p:"/ʌnˈeθɪkl/",d:"adj. 不道德的；缺乏职业道德的"},
+  "behavior":{p:"/bɪˈheɪvjər/",d:"n. 行为；举止；表现"},
+  "compete":{p:"/kəmˈpiːt/",d:"v. 竞争；比赛；对抗"},
+  "unethically":{p:"/ʌnˈeθɪkli/",d:"adv. 不道德地"},
+  "stain":{p:"/steɪn/",d:"v. 玷污；染色；留下污渍 n. 污点；污渍"},
+  "reputation":{p:"/ˌrepjuˈteɪʃn/",d:"n. 声誉；名声；信誉"},
+  "strain":{p:"/streɪn/",d:"v. 损害；拉紧；使紧张 n. 压力；负担"},
+  "relationships":{p:"/rɪˈleɪʃnʃɪps/",d:"n. 关系；人际关系"},
+  "reflect":{p:"/rɪˈflekt/",d:"v. 反思；反映；反射；思考"},
+  "short-term":{p:"/ˌʃɔːrt ˈtɜːrm/",d:"adj. 短期的；近期的"},
+  "loss":{p:"/lɔːs/",d:"n. 损失；丧失；失去"},
+  "integrity":{p:"/ɪnˈteɡrəti/",d:"n. 诚信；正直；完整"},
+  "consequences":{p:"/ˈkɑːnsɪkwensɪz/",d:"n. 后果；结果；影响"},
+  "creates":{p:"/kriˈeɪts/",d:"v. 创造；创建；引起"},
+  "excitement":{p:"/ɪkˈsaɪtmənt/",d:"n. 兴奋；激动；刺激"},
+  "drives":{p:"/draɪvz/",d:"v. 驱使；驱动；驾驶"},
+  "eagerness":{p:"/ˈiːɡərnəs/",d:"n. 渴望；热切；热心"},
+  "particularly":{p:"/pərˈtɪkjələrli/",d:"adv. 尤其；特别；格外"},
+  "impulsive":{p:"/ɪmˈpʌlsɪv/",d:"adj. 冲动的；凭冲动行事的"},
+  "insensible":{p:"/ɪnˈsensəbl/",d:"adj. 不明智的；无感觉的；麻木的"},
+  "costly":{p:"/ˈkɔːstli/",d:"adj. 昂贵的；代价高昂的"},
+  "habit":{p:"/ˈhæbɪt/",d:"n. 习惯；习性"},
+  "engaging":{p:"/ɪnˈɡeɪdʒɪŋ/",d:"adj. 吸引人的 v. 参与；从事"},
+  "critical":{p:"/ˈkrɪtɪkl/",d:"adj. 批判的；关键的；批评的"},
+  "thinking":{p:"/ˈθɪŋkɪŋ/",d:"n. 思考；思维；想法"},
+  "considering":{p:"/kənˈsɪdərɪŋ/",d:"prep. 考虑到 v. 考虑；认为"},
+  "opposing":{p:"/əˈpoʊzɪŋ/",d:"adj. 相反的；对立的 v. 反对"},
+  "viewpoints":{p:"/ˈvjuːpɔɪnts/",d:"n. 观点；看法；视角"},
+  "conducting":{p:"/kənˈdʌktɪŋ/",d:"v. 进行；实施；指挥"},
+  "cost-benefit":{p:"/ˌkɔːst ˈbenɪfɪt/",d:"adj. 成本收益的；利弊的"},
+  "analyses":{p:"/əˈnæləsiːz/",d:"n. 分析 (analysis 的复数)"},
+  "complex":{p:"/kəmˈpleks/",d:"adj. 复杂的；难懂的 n. 综合体"},
+  "determine":{p:"/dɪˈtɜːrmɪn/",d:"v. 决定；确定；判定"},
+  "poorer":{p:"/ˈpʊrər/",d:"adj. 更差的；更贫穷的"},
+  "greater":{p:"/ˈɡreɪtər/",d:"adj. 更大的；更伟大的"},
+  "peril":{p:"/ˈperəl/",d:"n. 危险；冒险；危难"},
+  "overcome":{p:"/ˌoʊvərˈkʌm/",d:"v. 克服；战胜；解决"},
+  "inducing":{p:"/ɪnˈduːsɪŋ/",d:"adj. 诱导的；引起的"},
+  "endanger":{p:"/ɪnˈdeɪndʒər/",d:"v. 危及；危害；使遭危险"},
+  "remain":{p:"/rɪˈmeɪn/",d:"v. 保持；仍然；留下；剩余"},
+  "attentive":{p:"/əˈtentɪv/",d:"adj. 专心的；留意的；关注的"},
+  "emotional":{p:"/ɪˈmoʊʃənl/",d:"adj. 情绪的；情感的；感性的"},
+  "monitor":{p:"/ˈmɑːnɪtər/",d:"v. 监控；监测；监视 n. 显示器"},
+  "feelings":{p:"/ˈfiːlɪŋz/",d:"n. 感觉；情感；情绪"},
+  "affecting":{p:"/əˈfektɪŋ/",d:"v. 影响；感动；作用"},
+  "adopt":{p:"/əˈdɑːpt/",d:"v. 采用；采纳；收养"},
+  "strategies":{p:"/ˈstrætədʒiz/",d:"n. 策略；战略"},
+  "ruin":{p:"/ˈruːɪn/",d:"v. 毁灭；毁坏 n. 废墟；毁灭"},
+  "resort":{p:"/rɪˈzɔːrt/",d:"v. 采取；诉诸；求助 n. 度假胜地"},
+  "eager":{p:"/ˈiːɡər/",d:"adj. 渴望的；热切的"},
+  "labor":{p:"/ˈleɪbər/",d:"n. 劳动；劳力；劳工"},
+  "deliberate":{p:"/dɪˈlɪbərət/",d:"v. 深思熟虑；仔细考虑 adj. 故意的"},
+  "matters":{p:"/ˈmætərz/",d:"v. 重要；要紧 n. 事情；问题"},
+  "prioritize":{p:"/praɪˈɔːrətaɪz/",d:"v. 优先考虑；优先处理"},
+  "reaping":{p:"/ˈriːpɪŋ/",d:"v. 收获；获得 (reap 的现在分词)"},
+  "immediate":{p:"/ɪˈmiːdiət/",d:"adj. 立即的；即刻的；直接的"},
+  "estimate":{p:"/ˈestɪmeɪt/",d:"v. 估计；估算；评估 n. 估计值"},
+  "achievable":{p:"/əˈtʃiːvəbl/",d:"adj. 可实现的；可达到的"},
+  "reasoning":{p:"/ˈriːzənɪŋ/",d:"n. 推理；论证；逻辑思维"},
+  "criticizing":{p:"/ˈkrɪtɪsaɪzɪŋ/",d:"v. 批评；批判；指责"},
+  "previous":{p:"/ˈpriːviəs/",d:"adj. 以前的；先前的；上一个的"},
+  "performances":{p:"/pərˈfɔːrmənsɪz/",d:"n. 表现；表演 (复数)"},
+  "refraining":{p:"/rɪˈfreɪnɪŋ/",d:"v. 克制；避免；忍住"},
+  "monitoring":{p:"/ˈmɑːnɪtərɪŋ/",d:"n./v. 监控；监测；监视"},
+  "impacts":{p:"/ˈɪmpækts/",d:"v. 影响；冲击 n. 影响；效果"},
+  "mentality":{p:"/menˈtæləti/",d:"n. 心态；思维方式"},
+  "emotions":{p:"/ɪˈmoʊʃnz/",d:"n. 情绪；情感；感情"},
+
+  // -- Common words --
+  "doing":{p:"/ˈduːɪŋ/",d:"n./v. 做；干"},
+  "ones":{p:"/wʌnz/",d:"pron. 某些人/物"},
+  "time":{p:"/taɪm/",d:"n. 时间；时代；次 v. 计时"},
+  "which":{p:"/wɪtʃ/",d:"pron. 哪一个；……的那个"},
+  "what":{p:"/wʌt/",d:"pron. 什么；……的事物"},
+  "does":{p:"/dʌz/",d:"v. 做 (do 的第三人称单数)"},
+  "come":{p:"/kʌm/",d:"v. 来；来到；达到"},
+  "from":{p:"/frʌm/",d:"prep. 来自；从……起；由于"},
+  "where":{p:"/wer/",d:"adv. 在哪里；在……的地方"},
+  "used":{p:"/juːzd/",d:"v. 使用；习惯于"},
+  "can":{p:"/kæn/",d:"aux. 能；可以；可能"},
+  "person":{p:"/ˈpɜːrsn/",d:"n. 人；个人；人称"},
+  "most":{p:"/moʊst/",d:"adj. 最多的；大多数的 adv. 最"},
+  "much":{p:"/mʌtʃ/",d:"adj. 许多的 adv. 非常；很"},
+  "well":{p:"/wel/",d:"adv. 好地；充分地 adj. 健康的"},
+  "both":{p:"/boʊθ/",d:"adj./pron. 两者；双方"},
+  "needs":{p:"/niːdz/",d:"n. 需要 v. 需要"},
+  "like":{p:"/laɪk/",d:"prep. 像；比如 v. 喜欢"},
+  "same":{p:"/seɪm/",d:"adj. 相同的 pron. 同样的事物"},
+  "other":{p:"/ˈʌðər/",d:"adj. 其他的 pron. 另一个"},
+  "side":{p:"/saɪd/",d:"n. 面；边；方面；一方"},
+  "there":{p:"/ðer/",d:"adv. 在那里；存在"},
+  "people":{p:"/ˈpiːpl/",d:"n. 人；人们；民族"},
+  "who":{p:"/huː/",d:"pron. 谁；……的人"},
+  "least":{p:"/liːst/",d:"adj./adv. 最小的；最少的"},
+  "all":{p:"/ɔːl/",d:"adj. 所有的 pron. 一切"},
+  "their":{p:"/ðer/",d:"pron. 他们的；她们的；它们的"},
+  "different":{p:"/ˈdɪfrənt/",d:"adj. 不同的；各种的"},
+  "something":{p:"/ˈsʌmθɪŋ/",d:"pron. 某事；某物"},
+  "being":{p:"/ˈbiːɪŋ/",d:"n. 存在；生物 v. 是 (be 的现在分词)"},
+  "means":{p:"/miːnz/",d:"n. 方法；手段 v. 意味着"},
+  "lead":{p:"/liːd/",d:"v. 导致；领导；带领 n. 领先"},
+  "more":{p:"/mɔːr/",d:"adj. 更多的 adv. 更；更多"},
+  "number":{p:"/ˈnʌmbər/",d:"n. 数字；数量；号码"},
+  "find":{p:"/faɪnd/",d:"v. 找到；发现；认为"},
+  "look":{p:"/lʊk/",d:"v. 看；寻找；看起来"},
+  "worker":{p:"/ˈwɜːrkər/",d:"n. 工人；工作者；员工"},
+  "workers":{p:"/ˈwɜːrkərz/",d:"n. 工人；工作者；员工 (复数)"},
+  "or":{p:"/ɔːr/",d:"conj. 或；否则"},
+  "not":{p:"/nɑːt/",d:"adv. 不；不是"},
+  "no":{p:"/noʊ/",d:"adv. 不 adj. 没有"},
+  "new":{p:"/nuː/",d:"adj. 新的；新鲜的"},
+  "old":{p:"/oʊld/",d:"adj. 旧的；老的"},
+  "high":{p:"/haɪ/",d:"adj. 高的；高级的"},
+  "low":{p:"/loʊ/",d:"adj. 低的；低级的"},
+  "right":{p:"/raɪt/",d:"adj. 正确的；右边的 n. 权利"},
+  "wrong":{p:"/rɔːŋ/",d:"adj. 错误的；不正常的"},
+  "first":{p:"/fɜːrst/",d:"adj./adv. 第一；首先"},
+  "second":{p:"/ˈsekənd/",d:"adj./adv. 第二 n. 秒"},
+  "after":{p:"/ˈæftər/",d:"prep. 在……之后"},
+  "before":{p:"/bɪˈfɔːr/",d:"prep. 在……之前"},
+  "between":{p:"/bɪˈtwiːn/",d:"prep. 在……之间"},
+  "among":{p:"/əˈmʌŋ/",d:"prep. 在……之中"},
+  "during":{p:"/ˈdʊrɪŋ/",d:"prep. 在……期间"},
+  "without":{p:"/wɪˈðaʊt/",d:"prep. 没有；无"},
+  "about":{p:"/əˈbaʊt/",d:"prep. 关于；大约"},
+  "every":{p:"/ˈevri/",d:"adj. 每个的"},
+  "each":{p:"/iːtʃ/",d:"adj./pron. 每个；各自"},
+  "very":{p:"/ˈveri/",d:"adv. 非常 adj. 正是的"},
+  "too":{p:"/tuː/",d:"adv. 太；也；非常"},
+  "just":{p:"/dʒʌst/",d:"adv. 只是；刚刚；正好"},
+  "only":{p:"/ˈoʊnli/",d:"adv. 只；仅仅 adj. 唯一的"},
+  "still":{p:"/stɪl/",d:"adv. 仍然；还 adj. 静止的"},
+  "already":{p:"/ɔːlˈredi/",d:"adv. 已经"},
+  "always":{p:"/ˈɔːlweɪz/",d:"adv. 总是；一直"},
+  "never":{p:"/ˈnevər/",d:"adv. 从不；绝不"},
+  "often":{p:"/ˈɔːfn/",d:"adv. 经常；常常"},
+  "usually":{p:"/ˈjuːʒuəli/",d:"adv. 通常；一般"},
+  "sometimes":{p:"/ˈsʌmtaɪmz/",d:"adv. 有时；偶尔"},
+  "also":{p:"/ˈɔːlsoʊ/",d:"adv. 也；同样；而且"},
+  "even":{p:"/ˈiːvn/",d:"adv. 甚至；即使 adj. 平均的"},
+  "has":{p:"/hæz/",d:"v. 有 (have 的第三人称单数)"},
+  "have":{p:"/hæv/",d:"v. 有；拥有；必须"},
+  "had":{p:"/hæd/",d:"v. 有 (have 的过去式)"},
+  "been":{p:"/bɪn/",d:"v. 是；在 (be 的过去分词)"},
+  "was":{p:"/wʌz/",d:"v. 是；在 (is/am 的过去式)"},
+  "were":{p:"/wɜːr/",d:"v. 是；在 (are 的过去式)"},
+  "are":{p:"/ɑːr/",d:"v. 是；在"},
+  "should":{p:"/ʃʊd/",d:"aux. 应该；应当"},
+  "would":{p:"/wʊd/",d:"aux. 会；将会；愿意"},
+  "could":{p:"/kʊd/",d:"aux. 能；可以；可能"},
+  "might":{p:"/maɪt/",d:"aux. 可能；也许；可以"},
+  "will":{p:"/wɪl/",d:"aux. 将；会；愿意"},
+  "may":{p:"/meɪ/",d:"aux. 可能；可以；也许"},
+  "must":{p:"/mʌst/",d:"aux. 必须；一定"},
+  "need":{p:"/niːd/",d:"v./n. 需要；必须"},
+  "make":{p:"/meɪk/",d:"v. 做；制造；使；让"},
+  "made":{p:"/meɪd/",d:"v. 做；制造 (make 的过去式)"},
+  "take":{p:"/teɪk/",d:"v. 拿；取；采取；花费"},
+  "took":{p:"/tʊk/",d:"v. 拿；取 (take 的过去式)"},
+  "say":{p:"/seɪ/",d:"v. 说；讲；表明"},
+  "said":{p:"/sed/",d:"v. 说 (say 的过去式)"},
+  "know":{p:"/noʊ/",d:"v. 知道；了解；认识"},
+  "think":{p:"/θɪŋk/",d:"v. 认为；想；思考"},
+  "want":{p:"/wɑːnt/",d:"v. 想要；希望"},
+  "going":{p:"/ˈɡoʊɪŋ/",d:"v. 去；进行 (go 的现在分词)"},
+  "keep":{p:"/kiːp/",d:"v. 保持；保留；继续"},
+  "help":{p:"/help/",d:"v. 帮助；有助于 n. 帮助"},
+  "show":{p:"/ʃoʊ/",d:"v. 显示；展示；表明"},
+  "give":{p:"/ɡɪv/",d:"v. 给；给予；提供"},
+  "put":{p:"/pʊt/",d:"v. 放；置；使处于"},
+  "done":{p:"/dʌn/",d:"adj. 完成的 v. 做 (do 的过去分词)"},
+  "own":{p:"/oʊn/",d:"adj. 自己的 v. 拥有"},
+  "great":{p:"/ɡreɪt/",d:"adj. 伟大的；好的；极大的"},
+  "next":{p:"/nekst/",d:"adj. 下一个的；其次的"},
+  "long":{p:"/lɔːŋ/",d:"adj. 长的；长期的 adv. 长久地"},
+  "large":{p:"/lɑːrdʒ/",d:"adj. 大的；大量的"},
+  "small":{p:"/smɔːl/",d:"adj. 小的；少的"},
+  "good":{p:"/ɡʊd/",d:"adj. 好的；优秀的"},
+  "best":{p:"/best/",d:"adj. 最好的 adv. 最好地"},
+  "better":{p:"/ˈbetər/",d:"adj. 更好的 adv. 更好地"},
+  "important":{p:"/ɪmˈpɔːrtnt/",d:"adj. 重要的；有重大影响的"},
+  "success":{p:"/səkˈses/",d:"n. 成功；成就；胜利"},
+  "successes":{p:"/səkˈsesɪz/",d:"n. 成功；成就 (复数)"},
+};
+
+// ==================== LOOKUP ====================
+function lookupWord(raw){
+  let clean=raw.replace(/[.,;:!?—\-–'"()\[\]{}""''/\\]+$/g,'').replace(/^[.,;:!?—\-–'"()\[\]{}""''/\\]+/g,'');
+  if(!clean)return null;
+  let key=clean.toLowerCase();
+  if(D[key])return D[key];
+  if(key.endsWith('s')&&key.length>3){let s=key.slice(0,-1);if(D[s])return D[s]}
+  if(key.endsWith('ing')&&key.length>5){let b=key.slice(0,-3);if(D[b])return D[b];let b2=b+'e';if(D[b2])return D[b2]}
+  if(key.endsWith('ed')&&key.length>4){let b=key.slice(0,-2);if(D[b])return D[b];if(key.endsWith('ied')&&key.length>5){let b2=key.slice(0,-3)+'y';if(D[b2])return D[b2]}}
+  if(key.endsWith('ly')&&key.length>4){let b=key.slice(0,-2);if(D[b])return D[b]}
+  return null;
+}
+
+// ==================== WORDIZE ====================
+function wordize(text){
+  const tokens=text.split(/(\s+)/g);
+  let html='';
+  for(const tok of tokens){
+    if(/^\s+$/.test(tok)){html+=tok;continue}
+    const m=tok.match(/^([^a-zA-Z0-9]*)([a-zA-Z0-9'-]+?)([^a-zA-Z0-9]*)$/);
+    if(m){
+      html+=escHTML(m[1]);
+      const w=m[2],pct=m[3];
+      const e=lookupWord(w);
+      if(e&&/[a-zA-Z]/.test(w)&&w.length>=2){
+        html+=`<span class="word" data-word="${escHTML(w)}" data-phonetic="${escHTML(e.p)}" data-def="${escHTML(e.d)}">${escHTML(w)}</span>`;
+      }else{html+=escHTML(w)}
+      html+=escHTML(pct);
+    }else{html+=escHTML(tok)}
+  }
+  return html;
+}
+function escHTML(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+// ==================== PANEL ====================
+let curEl=null;
+function openPanel(el){
+  if(curEl)curEl.classList.remove('highlight');
+  el.classList.add('highlight');curEl=el;
+  document.getElementById('pWord').textContent=el.dataset.word;
+  document.getElementById('pPhonetic').textContent=el.dataset.phonetic||'';
+  document.getElementById('pBody').innerHTML=`<div class="def"><strong>考研释义：</strong>${el.dataset.def||'（暂无释义，可后续补充）'}</div>`;
+  document.getElementById('pDebug').textContent=`🔍 Debug | 命中词条: ${el.dataset.word} | 音标: ${el.dataset.phonetic||'N/A'} | 释义已渲染 — Made for 中浩`;
+  document.getElementById('panel').classList.add('open');
+  document.getElementById('overlay').classList.add('show');
+}
+function closePanel(){
+  document.getElementById('panel').classList.remove('open');
+  document.getElementById('overlay').classList.remove('show');
+  if(curEl){curEl.classList.remove('highlight');curEl=null}
+}
+document.addEventListener('click',function(e){const w=e.target.closest('.word');if(!w)return;openPanel(w)});
+
+// ==================== TRANSLATION TOGGLE ====================
+function toggleTrans(id,btn){
+  const el=document.getElementById(id);if(!el)return;
+  if(el.classList.contains('show')){
+    el.classList.remove('show');btn.classList.remove('open');
+    btn.querySelector('.arrow').textContent='▶';
+    btn.innerHTML=btn.innerHTML.replace('收起翻译','查看翻译');
+  }else{
+    el.classList.add('show');btn.classList.add('open');
+    btn.querySelector('.arrow').textContent='▼';
+    btn.innerHTML=btn.innerHTML.replace('查看翻译','收起翻译');
+  }
+}
+
+// ==================== TAB SWITCH ====================
+function switchTab(name){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  event.target.closest('.tab-btn').classList.add('active');
+}
+
+// ==================== RENDER CONTENT ====================
+// Passage One paragraphs
+const P1=[
+  "Having a rival can keep you committed to achieving your goals and enhance your overall performance. But before you go out and find an entrepreneur to outcompete, it's important to understand and avoid the traps that often come with rivalry. After all, competitive rivalry can also hinder effective decision-making and increase your willingness to take risks, behaviors that can ultimately hurt your venture's success.",
+  "Finding someone you're committed to outcompeting can be a great way to stay focused on your goals and push your venture to the next level. But when you're intently focused on outperforming your rivals, you may begin to develop a \"win-at-all-costs\" mentality that causes you to ignore how you achieve success. One group of researchers, for example, examined the link between rivalry and unethical behavior. They found that when people compete against their rivals, they are more willing to behave unethically to win. But such behavior may stain your reputation and strain relationships important to your success. One way to avoid this trap is to stop and reflect on what's important. While outperforming your rivals may provide short-term benefits, the loss of your integrity will have long-term consequences.",
+  "One reason having a rival can enhance your venture's performance is that it creates a level of excitement that drives you to work harder. But this eagerness to win may also hurt your venture's success, particularly when it causes you to make impulsive, insensible decisions. But it's possible to avoid such costly mistakes by making a habit of engaging in critical thinking, such as considering opposing viewpoints and conducting cost-benefit analyses, especially for those decisions that are complex and can determine the future of your venture.",
+  "The sense of eagerness that comes with having a rival can not only cause you to make poorer decisions, but it can also lead you to take greater risks that put your venture in peril. One way you can overcome the risk-inducing effects of rivalry that stand to endanger your venture's success is to remain attentive to your emotional state and actively monitor how such feelings are affecting your decision-making."
+];
+for(let i=0;i<P1.length;i++)document.getElementById('a'+(i+1)).innerHTML=wordize(P1[i]);
+
+// Passage Two paragraphs
+const P2=[
+  "A multitasker is one who can perform two or more tasks effectively at the same time, which—apart from the obvious differences—is similar to what a computer does. The concept does indeed come from the realms of technology, where it is used to refer to an operating system that can execute multiple tasks at the same time. However, the question is: can a person really be a multitasker?",
+  "For most scientists, the answer is no. So much so that, according to experts in neuroscience, our brains do not handle multitasking situations well. As soon as two tasks require our attention, productivity suffers. What we call multitasking, therefore, is in reality the ability to move more or less quickly from one task to another. This requires two essential conditions: that one of the tasks needs to be automatic, like walking or eating, and that they both need different mental processes. Answering the phone and writing at the same time, for example.",
+  "However, on the other side of the coin there are people who maintain that it is possible to be, or at least seem to be, multitasking. A recent study concluded that regardless of whether people are actually handling several tasks or not, the mere fact that they perceive this activity as multitasking has a positive effect on their performance.",
+  "The business perspective offers a different view: multitasking is understood as the ability to adapt to all types of environment within a company and effectively undertake different activities within a set time frame. Indeed, many companies look for people who are skilled in multitasking to improve their productivity. From this different perspective, you can not only be multitasking but this ability can also be taught: something that is easier in fluid organisations, which favour flexibility in their working practices.",
+  "The benefits of multitasking are clear. Being quicker and more efficient increases our performance and the number of tasks completed. But having to pay attention to several things at once means that the powers of concentration are reduced and that can lead to more mistakes."
+];
+for(let i=0;i<P2.length;i++)document.getElementById('b'+(i+1)).innerHTML=wordize(P2[i]);
+
+// Passage One questions
+const Q1=[
+  {id:46,text:'46. How can competitive rivalry benefit entrepreneurs according to the passage?',opts:['A) By enabling them to outcompete other entrepreneurs.','B) By enabling them to make their venture a success.','C) By helping them to reach long-term goals.','D) By helping them to stay goal-oriented.']},
+  {id:47,text:'47. What is one of the traps entrepreneurs may often fall into when competing with rivals?',opts:['A) They may adopt strategies that are bound to ruin their venture.','B) They may resort to unethical means to outperform their rivals.','C) They may be too eager to succeed while ignoring the huge labor cost.','D) They may be intently focused on winning at the current market level.']},
+  {id:48,text:'48. What are entrepreneurs advised to do to avoid traps that often accompany rivalry?',opts:['A) Deliberate on what really matters.','B) Prioritize reaping immediate benefits.','C) Estimate the long-term consequences.','D) Reflect on what successes are achievable.']},
+  {id:49,text:'49. How can entrepreneurs avoid making impulsive and insensible decisions?',opts:['A) By engaging themselves in critical reasoning.','B) By developing a habit of keeping their integrity.','C) By criticizing themselves for previous poor performances.','D) By refraining from being too excited about their successes.']},
+  {id:50,text:'50. How can entrepreneurs overcome the risk-inducing effects of rivalry?',opts:['A) By paying close attention to their current performance.','B) By taking steps that stand to endanger their rivals\' success.','C) By monitoring how their decision-making impacts their mentality.','D) By keeping their emotions in check to avoid making poor decisions.']}
+];
+for(const q of Q1){
+  document.getElementById('q'+q.id).innerHTML=wordize(q.text);
+  document.getElementById('opts'+q.id).innerHTML=q.opts.map(o=>`<div class="option">${wordize(o)}</div>`).join('');
+}
+
+// Passage Two questions
+const Q2=[
+  {id:51,text:'51. What does a "multitasker" originally refer to?',opts:['A) An operating system capable of doing several tasks at once.','B) A skilled worker executing more than one task at the same time.','C) A sophisticated technology doing several tasks effectively at once.','D) An efficient person able to perform multiple tasks at the same time.']},
+  {id:52,text:"52. Why can't people really be multitaskers according to neuroscientists?",opts:['A) They are not sufficiently exposed to multitasking situations.','B) They are not comparable to mechanical operating systems.','C) Their brains do not allow them to multitask.','D) Their attention span cannot be expanded.']},
+  {id:53,text:'53. What do we learn from the conclusion of a recent study on multitasking?',opts:['A) People make greater achievements by maintaining whatever they are doing is multitasking.',"B) People's performance benefits from the perception of what they are doing as multitasking.","C) People's active mental processes exert a positive effect on their multitasking.",'D) People can improve their capabilities by handling multitasking situations.']},
+  {id:54,text:'54. How does the business world view multitasking?',opts:['A) It is a rare skill often found in fluid organisations.','B) It is an adaptable capability required of all workers.','C) It is an essential quality many employees lack.','D) It is a desirable ability that can be developed.']},
+  {id:55,text:'55. What does the author imply we should do if we have to focus on some task and do it well?',opts:['A) Work in a flexible way.','B) Learn from mistakes.','C) Avoid multitasking.','D) Increase efficiency.']}
+];
+for(const q of Q2){
+  document.getElementById('q'+q.id).innerHTML=wordize(q.text);
+  document.getElementById('opts'+q.id).innerHTML=q.opts.map(o=>`<div class="option">${wordize(o)}</div>`).join('');
+}
+
+console.log('%c📖 2023.12 CET-4 Section C 全两篇 | Made for 中浩 %c| %c点击单词查词','font-size:1.1em;color:#b8753e;','','color:#888;');
+console.log('%c✅ 词典已加载 '+Object.keys(D).length+' 条词条','color:#4a8;');
+</script>
+</body>
+</html>
