@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2023年12月四级真题(第1套) — 阅读 Section C | 中浩</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f8f5f0;--card:#fff;--text:#2c2416;--text-light:#5c5344;--accent:#b8753e;--accent-light:#f0e6d8;--border:#e0d5c4;--shadow:0 2px 12px rgba(0,0,0,.06);--radius:12px;--font-body:'Georgia','Noto Serif SC','Songti SC','SimSun',serif;--font-ui:'PingFang SC','Microsoft YaHei','Hiragino Sans',sans-serif;--panel-bg:#1e1b18;--panel-text:#f0e8dc}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.85;min-height:100vh;padding-bottom:5rem}
+.container{max-width:860px;margin:0 auto;padding:0 18px}
+.header{text-align:center;padding:2.4rem 0 1.6rem;border-bottom:2px solid var(--border);margin-bottom:2rem}
+.header h1{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700;color:var(--text);letter-spacing:.02em}
+.header .sub{font-size:.95rem;color:var(--text-light);margin-top:.35rem;font-family:var(--font-ui)}
+.header .badge{display:inline-block;margin-top:.6rem;padding:.2em .9em;background:var(--accent-light);color:var(--accent);border-radius:99px;font-size:.8rem;font-weight:600;font-family:var(--font-ui)}
+.tabs{display:flex;gap:0;margin-bottom:2rem;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.tab-btn{flex:1;padding:.8rem 1rem;border:none;background:var(--card);color:var(--text-light);font-size:.95rem;font-weight:600;font-family:var(--font-ui);cursor:pointer;transition:all .2s;border-bottom:3px solid transparent;-webkit-tap-highlight-color:transparent;text-align:center}
+.tab-btn:hover{color:var(--accent);background:#fdfaf6}
+.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);background:#fdfaf6}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(1.2rem,3vw,2rem);margin-bottom:2rem}
+.card h2{font-size:1.15rem;color:var(--accent);margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);font-family:var(--font-ui);letter-spacing:.04em}
+.word{display:inline;cursor:pointer;padding:1px 1px;border-radius:3px;transition:background .15s,color .15s;position:relative}
+.word:hover{background:#fce8c8;color:#8b5e2a}
+.word:active{background:#f5d090}
+.word.highlight{background:#f5d090;color:#7a4e1c;outline:2px solid var(--accent);outline-offset:1px;z-index:2}
+.para{margin-bottom:1.15rem;text-align:justify;font-size:clamp(.95rem,2vw,1.05rem);word-break:break-word}
+.trans-toggle{display:inline-flex;align-items:center;gap:.35em;background:none;border:1.5px solid var(--border);color:var(--text-light);padding:.35em .85em;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:var(--font-ui);margin-top:.3rem;margin-bottom:.6rem;transition:all .2s;user-select:none;-webkit-tap-highlight-color:transparent}
+.trans-toggle:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+.trans-toggle .arrow{display:inline-block;transition:transform .25s;font-size:.7rem}
+.trans-toggle.open .arrow{transform:rotate(90deg)}
+.trans-text{display:none;color:#6b5e4a;font-size:.9rem;line-height:1.75;padding:.7rem 1rem;margin-top:.3rem;margin-bottom:.8rem;background:#fdfaf4;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;animation:fadeIn .3s ease}
+.trans-text.show{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.question-block{margin-bottom:1.8rem;padding-bottom:1.2rem;border-bottom:1px dashed var(--border)}
+.question-block:last-child{border-bottom:none;margin-bottom:0}
+.question-text{font-weight:600;margin-bottom:.6rem;font-size:clamp(.9rem,2vw,1rem)}
+.options-grid{display:grid;grid-template-columns:1fr;gap:.4rem;margin-bottom:.3rem}
+@media(min-width:640px){.options-grid{grid-template-columns:1fr 1fr}}
+.option{padding:.45em .75em;border-radius:6px;background:#fafaf7;border:1px solid transparent;font-size:.92rem;line-height:1.65}
+.option:hover{border-color:var(--border)}
+.word-panel{position:fixed;bottom:0;left:0;right:0;background:var(--panel-bg);color:var(--panel-text);padding:1rem 1.2rem;z-index:999;border-radius:16px 16px 0 0;box-shadow:0 -4px 24px rgba(0,0,0,.3);transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);font-family:var(--font-ui);max-height:42vh;overflow-y:auto}
+.word-panel.open{transform:translateY(0)}
+.word-panel-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem}
+.word-panel-word{font-size:1.3rem;font-weight:700;color:#fff}
+.word-panel-phonetic{font-size:.85rem;color:#b0a592;margin-left:.5em}
+.word-panel-close{background:none;border:none;color:#8a8070;font-size:1.3rem;cursor:pointer;padding:.2em .4em;border-radius:4px;line-height:1;-webkit-tap-highlight-color:transparent}
+.word-panel-close:hover{color:#fff}
+.word-panel-body{font-size:.9rem;line-height:1.65}
+.word-panel-body .def{padding:.25em 0}
+.word-panel-body .def strong{color:#d4a96a}
+.word-panel-debug{margin-top:.5rem;padding-top:.45rem;border-top:1px solid #3a3530;font-size:.75rem;color:#6a6258}
+.word-panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:998;display:none}
+.word-panel-overlay.show{display:block}
+.footer-hint{text-align:center;font-size:.78rem;color:#b0a590;margin-top:2.5rem;padding:1rem;font-family:var(--font-ui);line-height:1.7}
+@media(max-width:480px){.container{padding:0 10px}.card{padding:1rem .85rem;border-radius:10px}.word{padding:2px 1px}.word-panel{padding:.85rem 1rem;max-height:45vh}.tab-btn{font-size:.82rem;padding:.65rem .5rem}}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="header">
+  <h1>2023年12月 · 四级真题（第1套）</h1>
+  <div class="sub">Reading Comprehension — Section C</div>
+  <div class="badge">Passage One (Q46–50) &amp; Passage Two (Q51–55)</div>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('p1')">Passage One<br><small>Q46–50 · 忙碌文化</small></button>
+  <button class="tab-btn" onclick="switchTab('p2')">Passage Two<br><small>Q51–55 · 机票性别差异</small></button>
+</div>
+
+<!-- ====== PASSAGE ONE ====== -->
+<div class="tab-panel active" id="tab-p1">
+<div class="card">
+  <h2>Passage One</h2>
+  <div class="para" id="a1"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-a1',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-a1">我的一个坏习惯是，当别人问我近况时，我会说"很忙"。有时候是因为我确实很忙，但也有时候是因为我觉得我应该这么说。重要人物都这么说，升职的人都这么说。但长时间工作并不会带来更好的结果，不休假也不会让你升职。那么，为什么我们总是如此自豪地谈论自己有多忙呢？</div>
+
+  <div class="para" id="a2"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-a2',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-a2">2016年，来自哥伦比亚大学、哈佛大学和乔治城大学的研究人员进行了一项研究，想要弄清这个问题。他们发现，忙碌的人被认为社会地位更高，有趣的是，这些地位的归因在很大程度上受到我们自身对社会流动性信念的影响。换句话说，我们越相信通过努力可以获得成功的机会，就越容易认为那些跳过休闲、整天工作的人地位更高。</div>
+
+  <div class="para" id="a3"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-a3',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-a3">这就是为什么我们觉得必须表现出忙碌的样子，而且人们确实有一种看法，认为如果一个人深陷会议、邮件和压力之中，那么他多半是个大人物。这种忙碌文化使得员工很难找到工作与生活的平衡。根据最近的一项研究，每五个高度投入的员工中就有一个有倦怠的风险。</div>
+
+  <div class="para" id="a4"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-a4',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-a4">就我个人而言，当别人问我近况时，我决定不再说"很忙"。这听起来很自以为是，也定下了错误的基调。像"我暂时无法经常查看邮件"和"我回来后立即回复"这样的话，听起来像是你被迫无法工作，而不是在充分利用你的休假时间。</div>
+
+  <div class="para" id="a5"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-a5',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-a5">这就是为什么我们最近推出了"办公室外邮件生成器"——一个免费的在线工具，可以在你下次长周末或旅行前使用。你可以理直气壮地告诉别人，在回来之前你不会查看邮件。管理者需要三思而后行，不要在周末给团队发邮件，也不要总是说他们有多忙。领导者应该自己休假，并鼓励员工也这样做。</div>
+</div>
+
+<div class="card">
+  <h2>Questions 46–50</h2>
+  <div class="question-block">
+    <div class="question-text" id="q46"></div>
+    <div class="options-grid" id="opts46"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q46',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q46"><strong>题目：</strong>作者养成在被问近况时说"很忙"这一习惯的原因是什么？<br><strong>选项：</strong>A) 他只是效仿成功人士。&ensp;B) 他其实为忙碌感到自豪。&ensp;C) 他认为每个人都应该投入工作。&ensp;D) 他相信忙碌能够确保成就。</div>
+  </div>
+  <div class="question-block">
+    <div class="question-text" id="q47"></div>
+    <div class="options-grid" id="opts47"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q47',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q47"><strong>题目：</strong>为什么我们倾向于认为忙碌的人地位较高？<br><strong>选项：</strong>A) 我们的地位可以归因于社会流动性。&ensp;B) 我们持有努力工作能带来成功的信念。&ensp;C) 我们自己的成功机会从来不易获得。&ensp;D) 我们发现很少有地位高的人有时间休闲。</div>
+  </div>
+  <div class="question-block">
+    <div class="question-text" id="q48"></div>
+    <div class="options-grid" id="opts48"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q48',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q48"><strong>题目：</strong>从最近的一项研究中，我们了解到忙碌文化的什么情况？<br><strong>选项：</strong>A) 它使员工陷入无休止的会议、邮件和压力。&ensp;B) 它迫使约20%的员工总是显得很忙。&ensp;C) 它扭曲了许多员工对何为满意生活的信念。&ensp;D) 它对许多忙碌员工的身心健康造成很大伤害。</div>
+  </div>
+  <div class="question-block">
+    <div class="question-text" id="q49"></div>
+    <div class="options-grid" id="opts49"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q49',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q49"><strong>题目：</strong>据作者所述，"我暂时无法经常查看邮件"这类说法听起来如何？<br><strong>选项：</strong>A) 某人太忙而无法及时查看所有邮件。&ensp;B) 某人反对主流的工作文化。&ensp;C) 某人迫于环境而被迫停下工作。&ensp;D) 某人只是在享受他们的休假时光。</div>
+  </div>
+  <div class="question-block">
+    <div class="question-text" id="q50"></div>
+    <div class="options-grid" id="opts50"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q50',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q50"><strong>题目：</strong>作者和同事为什么推出"办公室外邮件生成器"？<br><strong>选项：</strong>A) 为了让忙碌的员工花更少时间查看邮件。&ensp;B) 为了确保员工及雇主真正拥有休假时间。&ensp;C) 为了阻止管理者谈论他们的团队通常有多忙。&ensp;D) 为了鼓励雇主和员工都及时回复邮件。</div>
+  </div>
+</div>
+</div>
+
+<!-- ====== PASSAGE TWO ====== -->
+<div class="tab-panel" id="tab-p2">
+<div class="card">
+  <h2>Passage Two</h2>
+  <div class="para" id="b1"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-b1',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-b1">女性员工在相同航班上始终比男性支付更低的机票价格，因为她们往往更早预订。</div>
+
+  <div class="para" id="b2"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-b2',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-b2">我们比较了同一公司中相同职位员工在同一舱位等级上的机票费用，并使用了常见的统计技术来排除可能影响机票价格差异的其他因素。我们发现，女性平均每张机票比男性同事少支付18美元。进一步调查让我们得出结论：这一差距很大程度上是因为女性往往比男性更早预订，平均提前1.8天。</div>
+
+  <div class="para" id="b3"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-b3',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-b3">我们想要确定是什么导致了商务旅行预订中的性别差异，因此我们测试了多种可能的解释，比如女性选择提前计划，或男性常旅客倾向于晚预订。但这些都无法解释性别差距，于是我们使用了从调查中收集的数据，这些调查反映了在经济决策中起核心作用的消费者偏好，如耐心和风险规避。</div>
+
+  <div class="para" id="b4"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-b4',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-b4">我们发现，只有"负面互惠"这一概念——即感到受不公平待遇的员工采取负面行为，如不那么谨慎地花公司的钱——才能解释这些差异。调查显示，男性比女性更容易表现出这类负面行为。这并不是说所有男性都会这样做，也不是说较晚预订就是不正常行为的标志。这只是说，当我们加入负面互惠变量后，性别差距就消失了。</div>
+
+  <div class="para" id="b5"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-b5',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-b5">先前关于员工负面互惠的研究发现，它可能导致员工积极性降低、企业业绩下降以及职场士气和文化的恶化。</div>
+
+  <div class="para" id="b6"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-b6',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-b6">我们的研究结果显示，这些负面行为还能以其他方式表现出来，比如在机票预订中，并且进一步证明了女性更少参与这类行为。</div>
+
+  <div class="para" id="b7"></div>
+  <button class="trans-toggle" onclick="toggleTrans('tr-b7',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+  <div class="trans-text" id="tr-b7">公司在商务旅行上花费了大量资金。虽然每张票18美元的差距看似很小，但积少成多。我们的分析表明，女性提前预订的做法可以为一家拥有20,000名常旅客的大型跨国公司每年节省100万美元。</div>
+</div>
+
+<div class="card">
+  <h2>Questions 51–55</h2>
+  <div class="question-block">
+    <div class="question-text" id="q51"></div>
+    <div class="options-grid" id="opts51"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q51',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q51"><strong>题目：</strong>作者团队从进一步调查中得出了什么关于票价性别差异的结论？<br><strong>选项：</strong>A) 很大程度上归因于女性比男性更早预订。&ensp;B) 很大程度上是因为女性选择更便宜的航班。&ensp;C) 主要是由于男性员工愿意支付更多。&ensp;D) 是由于女性更关心公司的钱。</div>
+  </div>
+  <div class="question-block">
+    <div class="question-text" id="q52"></div>
+    <div class="options-grid" id="opts52"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q52',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q52"><strong>题目：</strong>研究人员通过测试各种可能的解释想要确定什么？<br><strong>选项：</strong>A) 是什么让男性常旅客较晚预订机票。&ensp;B) 是什么让女性在预订商务旅行时提前计划。&ensp;C) 是什么促使女性选择更便宜的航班。&ensp;D) 是什么导致了机票费用的性别差距。</div>
+  </div>
+  <div class="question-block">
+    <div class="question-text" id="q53"></div>
+    <div class="options-grid" id="opts53"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q53',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q53"><strong>题目：</strong>当考虑负面互惠变量时发生了什么？<br><strong>选项：</strong>A) 男性和女性都被发现参与了负面行为。&ensp;B) 男性和女性都不认为晚预订是坏行为。&ensp;C) 机票费用的性别差异不复存在。&ensp;D) 性别差距趋于显著缩小。</div>
+  </div>
+  <div class="question-block">
+    <div class="question-text" id="q54"></div>
+    <div class="options-grid" id="opts54"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q54',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q54"><strong>题目：</strong>先前关于员工负面互惠的研究发现了什么？<br><strong>选项：</strong>A) 它对职场的伤害大于对员工的伤害。&ensp;B) 它加剧了职场中的性别差异。&ensp;C) 它在多个方面被证明适得其反。&ensp;D) 它可能导致劳资冲突增加。</div>
+  </div>
+  <div class="question-block">
+    <div class="question-text" id="q55"></div>
+    <div class="options-grid" id="opts55"></div>
+    <button class="trans-toggle" onclick="toggleTrans('tr-q55',this)"><span class="arrow">&#9654;</span> 查看翻译</button>
+    <div class="trans-text" id="tr-q55"><strong>题目：</strong>作者在最后一段强调了他们分析的什么意义？<br><strong>选项：</strong>A) 它可以帮公司大幅增加储蓄。&ensp;B) 它可以适当促进公司的业务绩效。&ensp;C) 它可以将女性的预订习惯转化为男性的行为。&ensp;D) 它可以增强大型跨国公司的竞争力。</div>
+  </div>
+</div>
+</div>
+
+<div class="footer-hint">点击文中任意英文单词查看音标与考研释义 · 中浩 · 2023.12 CET-4 第1套 Section C</div>
+</div>
+
+<!-- ====== WORD PANEL ====== -->
+<div class="word-panel-overlay" id="overlay" onclick="closePanel()"></div>
+<div class="word-panel" id="panel">
+  <div class="word-panel-header"><div><span class="word-panel-word" id="pWord">—</span><span class="word-panel-phonetic" id="pPhonetic"></span></div><button class="word-panel-close" onclick="closePanel()">&times;</button></div>
+  <div class="word-panel-body" id="pBody"></div>
+  <div class="word-panel-debug" id="pDebug"></div>
+</div>
+
+<script>
+// ===== DICTIONARY =====
+const D={
+"busy":{p:"/ˈbɪzi/",d:"adj. 忙碌的；繁忙的"},
+"habit":{p:"/ˈhæbɪt/",d:"n. 习惯；习性"},
+"supposed":{p:"/səˈpoʊzd/",d:"adj. 应该的；假定的；所谓的"},
+"promoted":{p:"/prəˈmoʊtɪd/",d:"adj. 晋升的 v. 晋升；推广"},
+"vacation":{p:"/veɪˈkeɪʃn/",d:"n. 假期；休假"},
+"promotion":{p:"/prəˈmoʊʃn/",d:"n. 晋升；推广；促销"},
+"proud":{p:"/praʊd/",d:"adj. 自豪的；骄傲的"},
+"researchers":{p:"/rɪˈsɜːrtʃərz/",d:"n. 研究人员"},
+"conducted":{p:"/kənˈdʌktɪd/",d:"v. 进行；实施；指挥"},
+"figure":{p:"/ˈfɪɡjər/",d:"v. 弄清楚；计算 n. 数字；人物"},
+"perceived":{p:"/pərˈsiːvd/",d:"adj. 被感知的；被认为的"},
+"status":{p:"/ˈsteɪtəs/",d:"n. 地位；身份；状态"},
+"attributions":{p:"/ˌætrɪˈbjuːʃnz/",d:"n. 归因；归属"},
+"heavily":{p:"/ˈhevɪli/",d:"adv. 大量地；沉重地；在很大程度上"},
+"influenced":{p:"/ˈɪnfluənst/",d:"v. 影响；左右"},
+"beliefs":{p:"/bɪˈliːfs/",d:"n. 信念；信仰"},
+"mobility":{p:"/moʊˈbɪləti/",d:"n. 流动性；移动性"},
+"skip":{p:"/skɪp/",d:"v. 跳过；略过；不做"},
+"leisure":{p:"/ˈliːʒər/",d:"n. 休闲；闲暇"},
+"standing":{p:"/ˈstændɪŋ/",d:"n. 地位；身份；声望"},
+"appear":{p:"/əˈpɪr/",d:"v. 显得；出现；似乎"},
+"knee-deep":{p:"/ˌniː ˈdiːp/",d:"adj. 深陷的；齐膝深的"},
+"meetings":{p:"/ˈmiːtɪŋz/",d:"n. 会议"},
+"emails":{p:"/ˈiːmeɪlz/",d:"n. 电子邮件"},
+"stress":{p:"/stres/",d:"n. 压力；紧张 v. 强调"},
+"deal":{p:"/diːl/",d:"n. 交易；大事 v. 处理"},
+"culture":{p:"/ˈkʌltʃər/",d:"n. 文化；氛围"},
+"busyness":{p:"/ˈbɪzinəs/",d:"n. 忙碌；繁忙"},
+"balance":{p:"/ˈbæləns/",d:"n. 平衡；均衡"},
+"engaged":{p:"/ɪnˈɡeɪdʒd/",d:"adj. 投入的；参与的；已订婚的"},
+"burnout":{p:"/ˈbɜːrnaʊt/",d:"n. 倦怠；精疲力竭"},
+"personally":{p:"/ˈpɜːrsənəli/",d:"adv. 就个人而言；亲自地"},
+"self-righteous":{p:"/ˌself ˈraɪtʃəs/",d:"adj. 自以为是的；自命清高的"},
+"tone":{p:"/toʊn/",d:"n. 语气；语调；基调"},
+"phrases":{p:"/ˈfreɪzɪz/",d:"n. 短语；说法"},
+"limited":{p:"/ˈlɪmɪtɪd/",d:"adj. 有限的；受限的"},
+"access":{p:"/ˈækses/",d:"n. 接触的机会；进入权；通道"},
+"respond":{p:"/rɪˈspɑːnd/",d:"v. 回应；回复；反应"},
+"opposed":{p:"/əˈpoʊzd/",d:"adj. 反对的；对立的"},
+"launched":{p:"/lɔːntʃt/",d:"v. 推出；发射；启动"},
+"generator":{p:"/ˈdʒenəreɪtər/",d:"n. 生成器；发生器"},
+"encourage":{p:"/ɪnˈkɜːrɪdʒ/",d:"v. 鼓励；激励；促进"},
+"female":{p:"/ˈfiːmeɪl/",d:"adj. 女性的 n. 女性"},
+"consistently":{p:"/kənˈsɪstəntli/",d:"adv. 始终如一地；一贯地"},
+"airfares":{p:"/ˈerferz/",d:"n. 机票价格；航空票价"},
+"flights":{p:"/flaɪts/",d:"n. 航班；飞行"},
+"book":{p:"/bʊk/",d:"v. 预订；预约 n. 书"},
+"compared":{p:"/kəmˈperd/",d:"v. 比较；对比"},
+"position":{p:"/pəˈzɪʃn/",d:"n. 职位；位置；立场"},
+"class":{p:"/klæs/",d:"n. 等级；阶级；课堂"},
+"travel":{p:"/ˈtrævl/",d:"n./v. 旅行；出行"},
+"statistical":{p:"/stəˈtɪstɪkl/",d:"adj. 统计的；统计学的"},
+"technique":{p:"/tekˈniːk/",d:"n. 技术；技巧；方法"},
+"account":{p:"/əˈkaʊnt/",d:"v. 解释；说明 n. 账户"},
+"factors":{p:"/ˈfæktərz/",d:"n. 因素；要素"},
+"affect":{p:"/əˈfekt/",d:"v. 影响；感染；打动"},
+"average":{p:"/ˈævərɪdʒ/",d:"n. 平均；平均数 adj. 平均的"},
+"colleagues":{p:"/ˈkɑːliːɡz/",d:"n. 同事；同僚"},
+"investigation":{p:"/ɪnˌvestɪˈɡeɪʃn/",d:"n. 调查；研究"},
+"conclude":{p:"/kənˈkluːd/",d:"v. 得出结论；断定；结束"},
+"gap":{p:"/ɡæp/",d:"n. 差距；间隙；缺口"},
+"largely":{p:"/ˈlɑːrdʒli/",d:"adv. 很大程度上；主要地"},
+"explained":{p:"/ɪkˈspleɪnd/",d:"v. 解释；说明"},
+"tended":{p:"/ˈtendɪd/",d:"v. 倾向于；往往会"},
+"determine":{p:"/dɪˈtɜːrmɪn/",d:"v. 确定；决定；查明"},
+"causing":{p:"/ˈkɔːzɪŋ/",d:"v. 导致；引起"},
+"gender":{p:"/ˈdʒendər/",d:"n. 性别"},
+"booking":{p:"/ˈbʊkɪŋ/",d:"n. 预订；预约"},
+"trips":{p:"/trɪps/",d:"n. 旅行；出行"},
+"tested":{p:"/ˈtestɪd/",d:"v. 测试；检验"},
+"variety":{p:"/vəˈraɪəti/",d:"n. 多样性；种类；变化"},
+"explanations":{p:"/ˌekspləˈneɪʃnz/",d:"n. 解释；说明"},
+"choosing":{p:"/ˈtʃuːzɪŋ/",d:"v. 选择；挑选"},
+"ahead":{p:"/əˈhed/",d:"adv. 提前；在前面；领先"},
+"frequent":{p:"/ˈfriːkwənt/",d:"adj. 频繁的；经常的"},
+"travelers":{p:"/ˈtrævələrz/",d:"n. 旅客；旅行者"},
+"inclined":{p:"/ɪnˈklaɪnd/",d:"adj. 倾向于……的；有……意向的"},
+"none":{p:"/nʌn/",d:"pron. 没有一个；毫无"},
+"applied":{p:"/əˈplaɪd/",d:"v. 应用；运用；申请"},
+"surveys":{p:"/ˈsɜːrveɪz/",d:"n. 调查；问卷"},
+"express":{p:"/ɪkˈspres/",d:"v. 表达；表示；体现"},
+"consumer":{p:"/kənˈsuːmər/",d:"n. 消费者；顾客"},
+"preferences":{p:"/ˈprefrənsɪz/",d:"n. 偏好；偏爱"},
+"economic":{p:"/ˌiːkəˈnɑːmɪk/",d:"adj. 经济的；经济学的"},
+"patience":{p:"/ˈpeɪʃns/",d:"n. 耐心；忍耐力"},
+"risk":{p:"/rɪsk/",d:"n. 风险；危险 v. 冒……的风险"},
+"avoidance":{p:"/əˈvɔɪdəns/",d:"n. 避免；回避；规避"},
+"negative":{p:"/ˈneɡətɪv/",d:"adj. 负面的；消极的；否定的"},
+"reciprocity":{p:"/ˌresɪˈprɑːsəti/",d:"n. 互惠；相互性；相互作用"},
+"unfairly":{p:"/ˌʌnˈferli/",d:"adv. 不公平地；不公正地"},
+"treated":{p:"/ˈtriːtɪd/",d:"v. 对待；处理；款待"},
+"engages":{p:"/ɪnˈɡeɪdʒɪz/",d:"v. 参与；从事；吸引"},
+"spending":{p:"/ˈspendɪŋ/",d:"n./v. 花费；支出"},
+"carefully":{p:"/ˈkerfəli/",d:"adv. 小心地；仔细地；谨慎地"},
+"exhibit":{p:"/ɪɡˈzɪbɪt/",d:"v. 表现出；展示；展览"},
+"abnormal":{p:"/æbˈnɔːrml/",d:"adj. 不正常的；反常的"},
+"disappears":{p:"/ˌdɪsəˈpɪrz/",d:"v. 消失；不复存在"},
+"variable":{p:"/ˈveriəbl/",d:"n. 变量；可变因素 adj. 可变的"},
+"prior":{p:"/ˈpraɪər/",d:"adj. 先前的；在前的；优先的"},
+"motivation":{p:"/ˌmoʊtɪˈveɪʃn/",d:"n. 积极性；动机；动力"},
+"workplace":{p:"/ˈwɜːrkpleɪs/",d:"n. 职场；工作场所"},
+"morale":{p:"/məˈræl/",d:"n. 士气；斗志；精神面貌"},
+"manifest":{p:"/ˈmænɪfest/",d:"v. 表现；显现；显露"},
+"evidence":{p:"/ˈevɪdəns/",d:"n. 证据；证明；迹象"},
+"sums":{p:"/sʌmz/",d:"n. 金额；款项；总和"},
+"significant":{p:"/sɪɡˈnɪfɪkənt/",d:"adj. 显著的；重要的；有意义的"},
+"savings":{p:"/ˈseɪvɪŋz/",d:"n. 节省；储蓄金"},
+"multinational":{p:"/ˌmʌltiˈnæʃnəl/",d:"adj. 跨国的；多国的"},
+"regular":{p:"/ˈreɡjələr/",d:"adj. 经常的；定期的；常规的"},
+"uttered":{p:"/ˈʌtərd/",d:"adj. 说出的；出声的"},
+"utterances":{p:"/ˈʌtərənsɪz/",d:"n. 话语；言辞；说法"},
+"prevailing":{p:"/prɪˈveɪlɪŋ/",d:"adj. 盛行的；主流的；普遍的"},
+"circumstances":{p:"/ˈsɜːrkəmstænsɪz/",d:"n. 环境；情况；境遇"},
+"ensures":{p:"/ɪnˈʃʊrz/",d:"v. 确保；保证"},
+"accomplishments":{p:"/əˈkɑːmplɪʃmənts/",d:"n. 成就；成绩"},
+"employers":{p:"/ɪmˈplɔɪərz/",d:"n. 雇主；老板"},
+"readiness":{p:"/ˈredinəs/",d:"n. 愿意；准备就绪"},
+"counterproductive":{p:"/ˌkaʊntərprəˈdʌktɪv/",d:"adj. 适得其反的；产生反效果的"},
+"competitiveness":{p:"/kəmˈpetətɪvnəs/",d:"n. 竞争力"},
+"ticket":{p:"/ˈtɪkɪt/",d:"n. 票；入场券；罚单"},
+"duly":{p:"/ˈduːli/",d:"adv. 适当地；恰当地；按时"},
+"distorts":{p:"/dɪˈstɔːrts/",d:"v. 扭曲；歪曲；使变形"},
+"satisfying":{p:"/ˈsætɪsfaɪɪŋ/",d:"adj. 令人满意的"},
+"compels":{p:"/kəmˈpelz/",d:"v. 迫使；强迫"},
+"harm":{p:"/hɑːrm/",d:"n./v. 伤害；损害"},
+"well-being":{p:"/ˌwel ˈbiːɪŋ/",d:"n. 健康；幸福；福祉"},
+"simply":{p:"/ˈsɪmpli/",d:"adv. 仅仅；只是；简单地"},
+"enjoying":{p:"/ɪnˈdʒɔɪɪŋ/",d:"v. 享受；喜欢"},
+"promptly":{p:"/ˈprɑːmptli/",d:"adv. 迅速地；立即；及时"},
+"employers":{p:"/ɪmˈplɔɪərz/",d:"n. 雇主"},
+"employer":{p:"/ɪmˈplɔɪər/",d:"n. 雇主"},
+// Common words inherited
+"people":{p:"/ˈpiːpl/",d:"n. 人；人们；民族"},"who":{p:"/huː/",d:"pron. 谁；……的人"},
+"their":{p:"/ðer/",d:"pron. 他们的；她们的；它们的"},"which":{p:"/wɪtʃ/",d:"pron. 哪一个"},
+"what":{p:"/wʌt/",d:"pron. 什么"},"from":{p:"/frʌm/",d:"prep. 来自"},
+"about":{p:"/əˈbaʊt/",d:"prep. 关于；大约"},"have":{p:"/hæv/",d:"v. 有"},
+"been":{p:"/bɪn/",d:"v. 是；在 (be 的过去分词)"},"more":{p:"/mɔːr/",d:"adj. 更多的"},
+"most":{p:"/moʊst/",d:"adj. 最多的"},"much":{p:"/mʌtʃ/",d:"adj. 许多的"},
+"very":{p:"/ˈveri/",d:"adv. 非常"},"too":{p:"/tuː/",d:"adv. 太；也"},
+"just":{p:"/dʒʌst/",d:"adv. 只是"},"only":{p:"/ˈoʊnli/",d:"adv. 只"},
+"also":{p:"/ˈɔːlsoʊ/",d:"adv. 也"},"even":{p:"/ˈiːvn/",d:"adv. 甚至"},
+"still":{p:"/stɪl/",d:"adv. 仍然"},"never":{p:"/ˈnevər/",d:"adv. 从不"},
+"always":{p:"/ˈɔːlweɪz/",d:"adv. 总是"},"often":{p:"/ˈɔːfn/",d:"adv. 经常"},
+"sometimes":{p:"/ˈsʌmtaɪmz/",d:"adv. 有时"},"already":{p:"/ɔːlˈredi/",d:"adv. 已经"},
+"usually":{p:"/ˈjuːʒuəli/",d:"adv. 通常"},"other":{p:"/ˈʌðər/",d:"adj. 其他的"},
+"different":{p:"/ˈdɪfrənt/",d:"adj. 不同的"},"same":{p:"/seɪm/",d:"adj. 相同的"},
+"all":{p:"/ɔːl/",d:"adj. 所有的"},"every":{p:"/ˈevri/",d:"adj. 每个的"},
+"each":{p:"/iːtʃ/",d:"pron. 每个"},"both":{p:"/boʊθ/",d:"pron. 两者"},
+"number":{p:"/ˈnʌmbər/",d:"n. 数字；数量"},"lead":{p:"/liːd/",d:"v. 导致"},
+"find":{p:"/faɪnd/",d:"v. 找到；发现"},"look":{p:"/lʊk/",d:"v. 看"},
+"like":{p:"/laɪk/",d:"prep. 像 v. 喜欢"},"means":{p:"/miːnz/",d:"n. 手段 v. 意味着"},
+"being":{p:"/ˈbiːɪŋ/",d:"n. 存在 v. 是"},"doing":{p:"/ˈduːɪŋ/",d:"n./v. 做"},
+"time":{p:"/taɪm/",d:"n. 时间"},"well":{p:"/wel/",d:"adv. 好地"},
+"something":{p:"/ˈsʌmθɪŋ/",d:"pron. 某事"},"new":{p:"/nuː/",d:"adj. 新的"},
+"good":{p:"/ɡʊd/",d:"adj. 好的"},"small":{p:"/smɔːl/",d:"adj. 小的"},
+"great":{p:"/ɡreɪt/",d:"adj. 伟大的"},"high":{p:"/haɪ/",d:"adj. 高的"},
+"right":{p:"/raɪt/",d:"adj. 正确的"},"wrong":{p:"/rɔːŋ/",d:"adj. 错误的"},
+"long":{p:"/lɔːŋ/",d:"adj. 长的"},"before":{p:"/bɪˈfɔːr/",d:"prep. 在……之前"},
+"after":{p:"/ˈæftər/",d:"prep. 在……之后"},"between":{p:"/bɪˈtwiːn/",d:"prep. 在……之间"},
+"without":{p:"/wɪˈðaʊt/",d:"prep. 没有"},"during":{p:"/ˈdʊrɪŋ/",d:"prep. 在……期间"},
+"or":{p:"/ɔːr/",d:"conj. 或"},"not":{p:"/nɑːt/",d:"adv. 不"},
+"no":{p:"/noʊ/",d:"adv. 不"},"can":{p:"/kæn/",d:"aux. 能"},
+"should":{p:"/ʃʊd/",d:"aux. 应该"},"would":{p:"/wʊd/",d:"aux. 会"},
+"could":{p:"/kʊd/",d:"aux. 能"},"may":{p:"/meɪ/",d:"aux. 可能"},
+"will":{p:"/wɪl/",d:"aux. 将"},"does":{p:"/dʌz/",d:"v. 做"},
+"come":{p:"/kʌm/",d:"v. 来"},"where":{p:"/wer/",d:"adv. 在哪里"},
+"used":{p:"/juːzd/",d:"v. 使用"},"person":{p:"/ˈpɜːrsn/",d:"n. 人"},
+"take":{p:"/teɪk/",d:"v. 拿；采取"},"make":{p:"/meɪk/",d:"v. 做；使"},
+"know":{p:"/noʊ/",d:"v. 知道"},"think":{p:"/θɪŋk/",d:"v. 认为"},
+"want":{p:"/wɑːnt/",d:"v. 想要"},"say":{p:"/seɪ/",d:"v. 说"},
+"help":{p:"/help/",d:"v. 帮助"},"show":{p:"/ʃoʊ/",d:"v. 显示"},
+"give":{p:"/ɡɪv/",d:"v. 给"},"keep":{p:"/kiːp/",d:"v. 保持"},
+"work":{p:"/wɜːrk/",d:"n./v. 工作"},"going":{p:"/ˈɡoʊɪŋ/",d:"v. 去"},
+"need":{p:"/niːd/",d:"v./n. 需要"},"first":{p:"/fɜːrst/",d:"adj. 第一"},
+"second":{p:"/ˈsekənd/",d:"adj. 第二"},"important":{p:"/ɪmˈpɔːrtnt/",d:"adj. 重要的"},
+"success":{p:"/səkˈses/",d:"n. 成功"},"worker":{p:"/ˈwɜːrkər/",d:"n. 工作者"},
+"workers":{p:"/ˈwɜːrkərz/",d:"n. 员工"},"employee":{p:"/ɪmˈplɔɪiː/",d:"n. 雇员"},
+"employees":{p:"/ɪmˈplɔɪiːz/",d:"n. 雇员(复)"},"managers":{p:"/ˈmænɪdʒərz/",d:"n. 管理者"},
+"leaders":{p:"/ˈliːdərz/",d:"n. 领导者"},"likely":{p:"/ˈlaɪkli/",d:"adj. 可能的"},
+"result":{p:"/rɪˈzʌlt/",d:"n. 结果 v. 导致"},"company":{p:"/ˈkʌmpəni/",d:"n. 公司"},
+"companies":{p:"/ˈkʌmpəniz/",d:"n. 公司(复)"},"money":{p:"/ˈmʌni/",d:"n. 钱"},
+"year":{p:"/jɪr/",d:"n. 年"},"million":{p:"/ˈmɪljən/",d:"n. 百万"},
+"among":{p:"/əˈmʌŋ/",d:"prep. 在……之中"},"such":{p:"/sʌtʃ/",d:"adj. 这样的"},
+"seem":{p:"/siːm/",d:"v. 似乎"},"real":{p:"/ˈriːəl/",d:"adj. 真正的"},
+"fact":{p:"/fækt/",d:"n. 事实"},"study":{p:"/ˈstʌdi/",d:"n. 研究"},
+"recent":{p:"/ˈriːsnt/",d:"adj. 最近的"},"according":{p:"/əˈkɔːrdɪŋ/",d:"adv. 根据"},
+"found":{p:"/faʊnd/",d:"v. 发现"},"early":{p:"/ˈɜːrli/",d:"adv. 早；提前"},
+"later":{p:"/ˈleɪtər/",d:"adv. 晚；后来"},"late":{p:"/leɪt/",d:"adj./adv. 晚"},
+"hard":{p:"/hɑːrd/",d:"adj. 努力的；困难的"},"attention":{p:"/əˈtenʃn/",d:"n. 注意力"},
+"question":{p:"/ˈkwestʃən/",d:"n. 问题"},"answer":{p:"/ˈænsər/",d:"n. 答案"},
+"whether":{p:"/ˈweðər/",d:"conj. 是否"},"actually":{p:"/ˈæktʃuəli/",d:"adv. 实际上"},
+"possible":{p:"/ˈpɑːsəbl/",d:"adj. 可能的"},"opportunity":{p:"/ˌɑːpərˈtuːnəti/",d:"n. 机会"},
+"change":{p:"/tʃeɪndʒ/",d:"n./v. 改变"},"team":{p:"/tiːm/",d:"n. 团队"},
+};
+
+function lookupWord(raw){
+  let clean=raw.replace(/[.,;:!?—\-–'"()\[\]{}""''/\\]+$/g,'').replace(/^[.,;:!?—\-–'"()\[\]{}""''/\\]+/g,'');
+  if(!clean)return null;
+  let key=clean.toLowerCase();
+  if(D[key])return D[key];
+  if(key.endsWith('s')&&key.length>3){let s=key.slice(0,-1);if(D[s])return D[s]}
+  if(key.endsWith('ing')&&key.length>5){let b=key.slice(0,-3);if(D[b])return D[b];let b2=b+'e';if(D[b2])return D[b2]}
+  if(key.endsWith('ed')&&key.length>4){let b=key.slice(0,-2);if(D[b])return D[b];if(key.endsWith('ied')&&key.length>5){let b2=key.slice(0,-3)+'y';if(D[b2])return D[b2]}}
+  if(key.endsWith('ly')&&key.length>4){let b=key.slice(0,-2);if(D[b])return D[b]}
+  return null;
+}
+
+function wordize(text){
+  const tokens=text.split(/(\s+)/g);
+  let html='';
+  for(const tok of tokens){
+    if(/^\s+$/.test(tok)){html+=tok;continue}
+    const m=tok.match(/^([^a-zA-Z0-9]*)([a-zA-Z0-9'-]+?)([^a-zA-Z0-9]*)$/);
+    if(m){
+      html+=escHTML(m[1]);
+      const w=m[2],pct=m[3];
+      const e=lookupWord(w);
+      if(e&&/[a-zA-Z]/.test(w)&&w.length>=2){
+        html+=`<span class="word" data-word="${escHTML(w)}" data-phonetic="${escHTML(e.p)}" data-def="${escHTML(e.d)}">${escHTML(w)}</span>`;
+      }else{html+=escHTML(w)}
+      html+=escHTML(pct);
+    }else{html+=escHTML(tok)}
+  }
+  return html;
+}
+function escHTML(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+let curEl=null;
+function openPanel(el){
+  if(curEl)curEl.classList.remove('highlight');
+  el.classList.add('highlight');curEl=el;
+  document.getElementById('pWord').textContent=el.dataset.word;
+  document.getElementById('pPhonetic').textContent=el.dataset.phonetic||'';
+  document.getElementById('pBody').innerHTML=`<div class="def"><strong>考研释义：</strong>${el.dataset.def||'（暂无释义，可后续补充）'}</div>`;
+  document.getElementById('pDebug').textContent=`🔍 Debug | 命中词条: ${el.dataset.word} | 音标: ${el.dataset.phonetic||'N/A'} | 释义已渲染 — Made for 中浩`;
+  document.getElementById('panel').classList.add('open');
+  document.getElementById('overlay').classList.add('show');
+}
+function closePanel(){
+  document.getElementById('panel').classList.remove('open');
+  document.getElementById('overlay').classList.remove('show');
+  if(curEl){curEl.classList.remove('highlight');curEl=null}
+}
+document.addEventListener('click',function(e){const w=e.target.closest('.word');if(!w)return;openPanel(w)});
+
+function toggleTrans(id,btn){
+  const el=document.getElementById(id);if(!el)return;
+  if(el.classList.contains('show')){
+    el.classList.remove('show');btn.classList.remove('open');
+    btn.querySelector('.arrow').textContent='▶';
+    btn.innerHTML=btn.innerHTML.replace('收起翻译','查看翻译');
+  }else{
+    el.classList.add('show');btn.classList.add('open');
+    btn.querySelector('.arrow').textContent='▼';
+    btn.innerHTML=btn.innerHTML.replace('查看翻译','收起翻译');
+  }
+}
+
+function switchTab(name){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  event.target.closest('.tab-btn').classList.add('active');
+}
+
+// Passage One
+const P1=["One of my bad habits is saying \"busy\" when people ask me how I'm doing. Sometimes it's because I actually am busy, but other times it's because that's what I think I'm supposed to say. That's what important people say. That's what people who get promoted say. But working long hours doesn't drive better results. Never taking a vacation won't lead to a promotion. So why are we so proud to talk about how busy we are all the time?","In 2016, researchers from Columbia, Harvard, and Georgetown conducted a study to figure it out. They found busy people are perceived to be of high status, and interestingly, these status attributions are heavily influenced by our own beliefs about social mobility. In other words, the more we believe that one has the opportunity for success based on hard work, the more we tend to think that people who skip leisure and work all the time are of higher standing.","That's why we feel like we have to appear busy, and there's a real perception that if someone is knee-deep in meetings, emails, and stress, then they're probably a big deal. This culture of busyness is making it hard for employees to find work-life balance. According to a recent study, one in five highly engaged employees is at risk of burnout.","Personally, I'm going to stop saying \"busy\" when people ask me how I am. It sounds self-righteous and sets the wrong tone. Phrases like \"I have limited access to email\" and \"I'll respond as soon as I get back\" sound like you're being held against your will from working as opposed to making the most of your time off.","That's why we recently launched the Out of Office Email Generator, a free tool you can use before your next long weekend or trip. You can share loud and proud that you won't be checking email until you're back. Managers need to think twice about emailing their teams on the weekend and talking about how busy they are. Leaders should take time off themselves and encourage employees to do the same."];
+for(let i=0;i<P1.length;i++)document.getElementById('a'+(i+1)).innerHTML=wordize(P1[i]);
+
+// Passage Two
+const P2=["Female employees consistently pay lower airfares than men do for the same flights because they tend to book earlier.","We compared the airfare paid by employees in the same position within a company for the same class of travel and used a common statistical technique to account for other factors that might affect differences in airfares. We found that women paid on average $18 less per ticket than their male colleagues. Further investigation allowed us to conclude that this gap is largely explained by the fact that women tended to book earlier than men, 1.8 days on average.","We wanted to determine what was causing these gender differences in booking business trips so we tested a variety of possible explanations, such as women choosing to plan ahead or male frequent travelers being inclined to book late. None of these explained away the gender gap, so we applied data collected from surveys that express consumer preferences that play a central role in economic decisions, such as patience and risk avoidance.","We found that only the concept of \"negative reciprocity\"—in which an employee who feels unfairly treated engages in negative behaviors, such as spending their company's money less carefully—explains these differences. The surveys showed men tend to exhibit more of these negative behaviors than women. This isn't to say that all men engage in these behaviors—or that booking relatively late is a sign of abnormal behavior. It only means that the gender gap disappears when we plug in the negative reciprocity variable.","Prior research on negative reciprocity among workers found that it can result in lower employee motivation, business performance and workplace morale and culture.","Our results show another way these negative behaviors can manifest themselves, like in airline bookings, and add to evidence that women are less likely to engage in them.","Companies spend significant sums of money on business travel. While that $18 difference per ticket may seem small, it adds up. Our analysis suggests early booking by women can translate into savings of $1 million a year for a large multinational company with 20,000 regular travelers."];
+for(let i=0;i<P2.length;i++)document.getElementById('b'+(i+1)).innerHTML=wordize(P2[i]);
+
+// Questions
+const Q1=[{id:46,text:'46. What is a reason for the author to be in the habit of saying "busy" when asked how he is doing?',opts:["A) He just follows successful people's example.","B) He is actually proud to be fully occupied.","C) He thinks everyone should be devoted to work.","D) He believes busyness ensures accomplishments."]},{id:47,text:'47. Why do we tend to think that busy people are of high status?',opts:["A) Our status can be attributed to our social mobility.","B) We hold the belief that hard work leads to success.","C) Our own opportunity for success never comes easily.","D) We find few people of high status have time for leisure."]},{id:48,text:'48. What do we learn about the culture of busyness from a recent study?',opts:["A) It places employees in endless meetings, emails and stress.","B) It compels some 20% of employees to appear always busy.","C) It distorts many employees' belief of what a satisfying life is.","D) It does much harm to many busy employees' well-being."]},{id:49,text:'49. What do such utterances as "I have limited access to email" sound like according to the author?',opts:["A) One is too busy to check all emails in time.","B) One is opposed to the prevailing work culture.","C) One is forced by circumstances to stop working.","D) One is simply enjoying their time off work."]},{id:50,text:'50. Why did the author and his colleagues launch the Out of Office Email Generator?',opts:[
+"A) To enable busy employees to spend less time checking emails.","B) To ensure employees as well as employers truly have time off.","C) To stop managers from talking about how busy their teams usually are.","D) To encourage both employers and employees to answer emails promptly."]}];
+for(const q of Q1){document.getElementById('q'+q.id).innerHTML=wordize(q.text);document.getElementById('opts'+q.id).innerHTML=q.opts.map(o=>`<div class="option">${wordize(o)}</div>`).join('')}
+
+const Q2=[{id:51,text:'51. What did the author\'s team conclude about the gender difference in airfares from their further investigation?',opts:["A) It is largely attributed to women booking earlier than men.","B) It is largely explained by women's choosing cheaper flights.","C) It is mainly accounted for by male employees' readiness to pay more.","D) It is due to the fact that women care more about their company's money."]},{id:52,text:'52. What did the researchers want to determine by testing a variety of possible explanations?',opts:["A) What made male frequent travelers book air tickets late.","B) What caused women to plan ahead in booking business trips.","C) What motivated women to book cheaper flights.","D) What accounted for the gender gap in airfares."]},{id:53,text:'53. What happened when the negative reciprocity variable was taken into account?',opts:["A) Both men and women were found to engage in negative behaviors.","B) Neither men nor women viewed booking late as a bad behavior.","C) The gender difference in airfare expenses no longer existed.","D) The gender gap tended to narrow to a significant degree."]},{id:54,text:'54. What did prior research on negative reciprocity among workers find?',opts:["A) It can do more harm to the workplace than to employees.","B) It contributes to the male-female divide in the workplace.","C) It proves to be counterproductive in a number of ways.","D) It can result in increasing labor-management conflicts."]},{id:55,text:'55. What does the author emphasize about their analysis in the last paragraph?',opts:["A) It can help companies increase their savings significantly.","B) It can duly contribute to companies' business performance.","C) It can translate women's booking practice into men's behavior.","D) It can enhance large multinational companies' competitiveness."]}];
+for(const q of Q2){document.getElementById('q'+q.id).innerHTML=wordize(q.text);document.getElementById('opts'+q.id).innerHTML=q.opts.map(o=>`<div class="option">${wordize(o)}</div>`).join('')}
+
+console.log('%c📖 2023.12 CET-4 第1套 Section C | Made for 中浩 %c| %c点击单词查词','font-size:1.1em;color:#b8753e;','','color:#888;');
+console.log('%c✅ 词典已加载 '+Object.keys(D).length+' 条词条','color:#4a8;');
+</script>
+</body>
+</html>
