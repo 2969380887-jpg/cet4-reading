@@ -564,35 +564,67 @@ const D = {
   "sometimes":{p:"/ˈsʌmtaɪmz/",d:"adv. 有时；偶尔"},
   "also":{p:"/ˈɔːlsoʊ/",d:"adv. 也；同样；而且"},
   "even":{p:"/ˈiːvn/",d:"adv. 甚至；即使 adj. 平均的"},
-  "has":{p:"/hæz/",d:"v. 有 (have 的第三人称单数)"},
-  "have":{p:"/hæv/",d:"v. 有；拥有；必须"},
-  "had":{p:"/hæd/",d:"v. 有 (have 的过去式)"},
-  "been":{p:"/bɪn/",d:"v. 是；在 (be 的过去分词)"},
-  "was":{p:"/wʌz/",d:"v. 是；在 (is/am 的过去式)"},
-  "were":{p:"/wɜːr/",d:"v. 是；在 (are 的过去式)"},
-  "are":{p:"/ɑːr/",d:"v. 是；在"},
-  "should":{p:"/ʃʊd/",d:"aux. 应该；应当"},
-  "would":{p:"/wʊd/",d:"aux. 会；将会；愿意"},
-  "could":{p:"/kʊd/",d:"aux. 能；可以；可能"},
-  "might":{p:"/maɪt/",d:"aux. 可能；也许；可以"},
-  "will":{p:"/wɪl/",d:"aux. 将；会；愿意"},
-  "may":{p:"/meɪ/",d:"aux. 可能；可以；也许"},
-  "must":{p:"/mʌst/",d:"aux. 必须；一定"},
-  "need":{p:"/niːd/",d:"v./n. 需要；必须"},
-  "make":{p:"/meɪk/",d:"v. 做；制造；使；让"},
-  "made":{p:"/meɪd/",d:"v. 做；制造 (make 的过去式)"},
-  "take":{p:"/teɪk/",d:"v. 拿；取；采取；花费"},
-  "took":{p:"/tʊk/",d:"v. 拿；取 (take 的过去式)"},
-  "say":{p:"/seɪ/",d:"v. 说；讲；表明"},
-  "said":{p:"/sed/",d:"v. 说 (say 的过去式)"},
-  "know":{p:"/noʊ/",d:"v. 知道；了解；认识"},
-  "think":{p:"/θɪŋk/",d:"v. 认为；想；思考"},
-  "want":{p:"/wɑːnt/",d:"v. 想要；希望"},
-  "going":{p:"/ˈɡoʊɪŋ/",d:"v. 去；进行 (go 的现在分词)"},
-  "keep":{p:"/kiːp/",d:"v. 保持；保留；继续"},
-  "help":{p:"/help/",d:"v. 帮助；有助于 n. 帮助"},
-  "show":{p:"/ʃoʊ/",d:"v. 显示；展示；表明"},
-  "give":{p:"/ɡɪv/",d:"v. 给；给予；提供"},
+  // Basic vocabulary
+  "the":{p:"/ðə/",d:"art. 这；那（定冠词）"},"a":{p:"/ə/",d:"art. 一个（用于辅音前）"},"an":{p:"/æn/",d:"art. 一个（用于元音前）"},
+  "this":{p:"/ðɪs/",d:"pron./adj. 这个"},"that":{p:"/ðæt/",d:"pron./adj. 那个"},"these":{p:"/ðiːz/",d:"pron./adj. 这些"},"those":{p:"/ðoʊz/",d:"pron./adj. 那些"},
+  "some":{p:"/sʌm/",d:"adj./pron. 一些"},"any":{p:"/ˈeni/",d:"adj./pron. 任何"},"many":{p:"/ˈmeni/",d:"adj./pron. 许多"},
+  "I":{p:"/aɪ/",d:"pron. 我"},"me":{p:"/miː/",d:"pron. 我（宾格）"},"my":{p:"/maɪ/",d:"pron. 我的"},
+  "you":{p:"/juː/",d:"pron. 你；你们"},"your":{p:"/jʊr/",d:"pron. 你的"},"he":{p:"/hiː/",d:"pron. 他"},"him":{p:"/hɪm/",d:"pron. 他（宾格）"},"his":{p:"/hɪz/",d:"pron. 他的"},
+  "she":{p:"/ʃiː/",d:"pron. 她"},"her":{p:"/hɜːr/",d:"pron. 她/她的"},"it":{p:"/ɪt/",d:"pron. 它"},"its":{p:"/ɪts/",d:"pron. 它的"},
+  "we":{p:"/wiː/",d:"pron. 我们"},"us":{p:"/ʌs/",d:"pron. 我们（宾格）"},"our":{p:"/aʊr/",d:"pron. 我们的"},
+  "they":{p:"/ðeɪ/",d:"pron. 他们"},"them":{p:"/ðem/",d:"pron. 他们（宾格）"},"their":{p:"/ðer/",d:"pron. 他们的"},
+  "who":{p:"/huː/",d:"pron. 谁"},"whom":{p:"/huːm/",d:"pron. 谁（宾格）"},"whose":{p:"/huːz/",d:"pron. 谁的"},
+  "in":{p:"/ɪn/",d:"prep. 在……里面"},"on":{p:"/ɑːn/",d:"prep. 在……上面"},"at":{p:"/æt/",d:"prep. 在（某处/某时）"},
+  "to":{p:"/tuː/",d:"prep. 向；到；为了"},"for":{p:"/fɔːr/",d:"prep. 为了；对于"},"of":{p:"/ʌv/",d:"prep. ……的"},
+  "with":{p:"/wɪð/",d:"prep. 和……一起；用"},"by":{p:"/baɪ/",d:"prep. 通过；被"},"as":{p:"/æz/",d:"prep./conj. 作为；当……时"},
+  "from":{p:"/frʌm/",d:"prep. 来自"},"about":{p:"/əˈbaʊt/",d:"prep. 关于"},"into":{p:"/ˈɪntuː/",d:"prep. 进入"},
+  "over":{p:"/ˈoʊvər/",d:"prep./adv. 在……上方"},"under":{p:"/ˈʌndər/",d:"prep./adv. 在……下面"},
+  "after":{p:"/ˈæftər/",d:"prep. 在……之后"},"before":{p:"/bɪˈfɔːr/",d:"prep. 在……之前"},"between":{p:"/bɪˈtwiːn/",d:"prep. 在……之间"},
+  "during":{p:"/ˈdʊrɪŋ/",d:"prep. 在……期间"},"without":{p:"/wɪˈðaʊt/",d:"prep. 没有"},"among":{p:"/əˈmʌŋ/",d:"prep. 在……之中"},
+  "and":{p:"/ænd/",d:"conj. 和；并且"},"or":{p:"/ɔːr/",d:"conj. 或"},"but":{p:"/bʌt/",d:"conj. 但是"},"so":{p:"/soʊ/",d:"conj. 所以"},
+  "if":{p:"/ɪf/",d:"conj. 如果"},"because":{p:"/bɪˈkɔːz/",d:"conj. 因为"},"although":{p:"/ɔːlˈðoʊ/",d:"conj. 虽然"},
+  "when":{p:"/wen/",d:"conj./adv. 当……时"},"while":{p:"/waɪl/",d:"conj. 当……时；然而"},"than":{p:"/ðæn/",d:"conj. 比"},
+  "not":{p:"/nɑːt/",d:"adv. 不"},"no":{p:"/noʊ/",d:"adv. 不 adj. 没有"},"yes":{p:"/jes/",d:"adv. 是"},
+  "now":{p:"/naʊ/",d:"adv. 现在"},"then":{p:"/ðen/",d:"adv. 然后"},"here":{p:"/hɪr/",d:"adv. 在这里"},"there":{p:"/ðer/",d:"adv. 在那里"},
+  "just":{p:"/dʒʌst/",d:"adv. 只是"},"only":{p:"/ˈoʊnli/",d:"adv. 只"},"also":{p:"/ˈɔːlsoʊ/",d:"adv. 也"},"too":{p:"/tuː/",d:"adv. 太；也"},
+  "very":{p:"/ˈveri/",d:"adv. 非常"},"still":{p:"/stɪl/",d:"adv. 仍然"},"already":{p:"/ɔːlˈredi/",d:"adv. 已经"},
+  "always":{p:"/ˈɔːlweɪz/",d:"adv. 总是"},"never":{p:"/ˈnevər/",d:"adv. 从不"},"often":{p:"/ˈɔːfn/",d:"adv. 经常"},
+  "well":{p:"/wel/",d:"adv. 好地"},"really":{p:"/ˈriːəli/",d:"adv. 真正地"},"quite":{p:"/kwaɪt/",d:"adv. 相当"},
+  "be":{p:"/biː/",d:"v. 是；在"},"am":{p:"/æm/",d:"v. 是"},"is":{p:"/ɪz/",d:"v. 是"},"are":{p:"/ɑːr/",d:"v. 是"},
+  "was":{p:"/wʌz/",d:"v. 是（过去式单数）"},"were":{p:"/wɜːr/",d:"v. 是（过去式复数）"},"been":{p:"/bɪn/",d:"v. 是（过去分词）"},
+  "do":{p:"/duː/",d:"v. 做"},"does":{p:"/dʌz/",d:"v. 做（第三人称）"},"did":{p:"/dɪd/",d:"v. 做（过去式）"},"done":{p:"/dʌn/",d:"adj. 完成的"},
+  "have":{p:"/hæv/",d:"v. 有"},"has":{p:"/hæz/",d:"v. 有（第三人称）"},"had":{p:"/hæd/",d:"v. 有（过去式）"},
+  "can":{p:"/kæn/",d:"aux. 能"},"could":{p:"/kʊd/",d:"aux. 能（过去式）"},"will":{p:"/wɪl/",d:"aux. 将"},"would":{p:"/wʊd/",d:"aux. 会"},
+  "shall":{p:"/ʃæl/",d:"aux. 将要"},"should":{p:"/ʃʊd/",d:"aux. 应该"},"may":{p:"/meɪ/",d:"aux. 可能"},"might":{p:"/maɪt/",d:"aux. 也许"},"must":{p:"/mʌst/",d:"aux. 必须"},
+  "say":{p:"/seɪ/",d:"v. 说"},"said":{p:"/sed/",d:"v. 说（过去式）"},"get":{p:"/ɡet/",d:"v. 得到；变得"},"go":{p:"/ɡoʊ/",d:"v. 去"},"come":{p:"/kʌm/",d:"v. 来"},
+  "make":{p:"/meɪk/",d:"v. 做；使"},"made":{p:"/meɪd/",d:"v. 做（过去式）"},"take":{p:"/teɪk/",d:"v. 拿"},"took":{p:"/tʊk/",d:"v. 拿（过去式）"},
+  "know":{p:"/noʊ/",d:"v. 知道"},"think":{p:"/θɪŋk/",d:"v. 认为"},"want":{p:"/wɑːnt/",d:"v. 想要"},"see":{p:"/siː/",d:"v. 看见"},
+  "give":{p:"/ɡɪv/",d:"v. 给"},"find":{p:"/faɪnd/",d:"v. 找到"},"found":{p:"/faʊnd/",d:"v. 找到（过去式）"},"tell":{p:"/tel/",d:"v. 告诉"},
+  "ask":{p:"/æsk/",d:"v. 问"},"help":{p:"/help/",d:"v. 帮助"},"try":{p:"/traɪ/",d:"v. 尝试"},"keep":{p:"/kiːp/",d:"v. 保持"},
+  "let":{p:"/let/",d:"v. 让"},"put":{p:"/pʊt/",d:"v. 放"},"show":{p:"/ʃoʊ/",d:"v. 显示"},"seem":{p:"/siːm/",d:"v. 似乎"},
+  "feel":{p:"/fiːl/",d:"v. 感觉"},"work":{p:"/wɜːrk/",d:"v./n. 工作"},"look":{p:"/lʊk/",d:"v. 看"},"like":{p:"/laɪk/",d:"prep. 像 v. 喜欢"},
+  "use":{p:"/juːz/",d:"v. 使用"},"used":{p:"/juːzd/",d:"v. 使用（过去式）；习惯于"},"mean":{p:"/miːn/",d:"v. 意味着"},"call":{p:"/kɔːl/",d:"v. 称呼"},
+  "good":{p:"/ɡʊd/",d:"adj. 好的"},"bad":{p:"/bæd/",d:"adj. 坏的"},"new":{p:"/nuː/",d:"adj. 新的"},"old":{p:"/oʊld/",d:"adj. 旧的"},
+  "big":{p:"/bɪɡ/",d:"adj. 大的"},"small":{p:"/smɔːl/",d:"adj. 小的"},"great":{p:"/ɡreɪt/",d:"adj. 伟大的"},"high":{p:"/haɪ/",d:"adj. 高的"},
+  "low":{p:"/loʊ/",d:"adj. 低的"},"long":{p:"/lɔːŋ/",d:"adj. 长的"},"right":{p:"/raɪt/",d:"adj. 正确的"},"wrong":{p:"/rɔːŋ/",d:"adj. 错误的"},
+  "important":{p:"/ɪmˈpɔːrtnt/",d:"adj. 重要的"},"different":{p:"/ˈdɪfrənt/",d:"adj. 不同的"},"same":{p:"/seɪm/",d:"adj. 相同的"},
+  "other":{p:"/ˈʌðər/",d:"adj. 其他的"},"own":{p:"/oʊn/",d:"adj. 自己的"},"much":{p:"/mʌtʃ/",d:"adj. 许多的"},"many":{p:"/ˈmeni/",d:"adj. 许多"},
+  "more":{p:"/mɔːr/",d:"adj. 更多的"},"most":{p:"/moʊst/",d:"adj. 最多的"},"few":{p:"/fjuː/",d:"adj. 很少"},"each":{p:"/iːtʃ/",d:"pron. 每个"},
+  "every":{p:"/ˈevri/",d:"adj. 每个的"},"all":{p:"/ɔːl/",d:"adj. 所有的"},"both":{p:"/boʊθ/",d:"pron. 两者"},
+  "time":{p:"/taɪm/",d:"n. 时间"},"year":{p:"/jɪr/",d:"n. 年"},"day":{p:"/deɪ/",d:"n. 天"},"week":{p:"/wiːk/",d:"n. 周"},
+  "people":{p:"/ˈpiːpl/",d:"n. 人们"},"person":{p:"/ˈpɜːrsn/",d:"n. 人"},"man":{p:"/mæn/",d:"n. 男人"},"woman":{p:"/ˈwʊmən/",d:"n. 女人"},
+  "life":{p:"/laɪf/",d:"n. 生命；生活"},"world":{p:"/wɜːrld/",d:"n. 世界"},"way":{p:"/weɪ/",d:"n. 方式；道路"},"thing":{p:"/θɪŋ/",d:"n. 东西；事物"},
+  "money":{p:"/ˈmʌni/",d:"n. 钱"},"company":{p:"/ˈkʌmpəni/",d:"n. 公司"},"job":{p:"/dʒɑːb/",d:"n. 工作"},"research":{p:"/rɪˈsɜːrtʃ/",d:"n./v. 研究"},
+  "study":{p:"/ˈstʌdi/",d:"n./v. 研究；学习"},"question":{p:"/ˈkwestʃən/",d:"n. 问题"},"answer":{p:"/ˈænsər/",d:"n. 答案"},"fact":{p:"/fækt/",d:"n. 事实"},
+  "success":{p:"/səkˈses/",d:"n. 成功"},"opportunity":{p:"/ˌɑːpərˈtuːnəti/",d:"n. 机会"},"risk":{p:"/rɪsk/",d:"n. 风险"},"number":{p:"/ˈnʌmbər/",d:"n. 数字"},
+  "being":{p:"/ˈbiːɪŋ/",d:"n. 存在 v. 是"},"doing":{p:"/ˈduːɪŋ/",d:"n./v. 做"},"going":{p:"/ˈɡoʊɪŋ/",d:"v. 去（现在分词）"},
+  "means":{p:"/miːnz/",d:"n. 手段 v. 意味着"},"need":{p:"/niːd/",d:"v./n. 需要"},"something":{p:"/ˈsʌmθɪŋ/",d:"pron. 某事"},
+  "change":{p:"/tʃeɪndʒ/",d:"v./n. 改变"},"lead":{p:"/liːd/",d:"v. 导致"},"first":{p:"/fɜːrst/",d:"adj./adv. 第一"},"second":{p:"/ˈsekənd/",d:"adj. 第二"},
+  "early":{p:"/ˈɜːrli/",d:"adj./adv. 早"},"late":{p:"/leɪt/",d:"adj./adv. 晚"},"hard":{p:"/hɑːrd/",d:"adj. 困难的；努力的"},
+  "even":{p:"/ˈiːvn/",d:"adv. 甚至"},"whether":{p:"/ˈweðər/",d:"conj. 是否"},"actually":{p:"/ˈæktʃuəli/",d:"adv. 实际上"},
+  "likely":{p:"/ˈlaɪkli/",d:"adj. 可能的"},"result":{p:"/rɪˈzʌlt/",d:"n. 结果 v. 导致"},"believe":{p:"/bɪˈliːv/",d:"v. 相信"},
+  "attention":{p:"/əˈtenʃn/",d:"n. 注意力"},"effect":{p:"/ɪˈfekt/",d:"n. 效果；影响"},
+}
   "put":{p:"/pʊt/",d:"v. 放；置；使处于"},
   "done":{p:"/dʌn/",d:"adj. 完成的 v. 做 (do 的过去分词)"},
   "own":{p:"/oʊn/",d:"adj. 自己的 v. 拥有"},
@@ -633,8 +665,10 @@ function wordize(text){
       html+=escHTML(m[1]);
       const w=m[2],pct=m[3];
       const e=lookupWord(w);
-      if(e&&/[a-zA-Z]/.test(w)&&w.length>=2){
-        html+=`<span class="word" data-word="${escHTML(w)}" data-phonetic="${escHTML(e.p)}" data-def="${escHTML(e.d)}">${escHTML(w)}</span>`;
+      if(/[a-zA-Z]/.test(w)&&w.length>=1){
+        const ph=e?e.p:'';
+        const df=e?e.d:'（基础词汇，可后续补充详细释义）';
+        html+=`<span class="word" data-word="${escHTML(w)}" data-phonetic="${escHTML(ph)}" data-def="${escHTML(df)}">${escHTML(w)}</span>`;
       }else{html+=escHTML(w)}
       html+=escHTML(pct);
     }else{html+=escHTML(tok)}
@@ -650,8 +684,9 @@ function openPanel(el){
   el.classList.add('highlight');curEl=el;
   document.getElementById('pWord').textContent=el.dataset.word;
   document.getElementById('pPhonetic').textContent=el.dataset.phonetic||'';
-  document.getElementById('pBody').innerHTML=`<div class="def"><strong>考研释义：</strong>${el.dataset.def||'（暂无释义，可后续补充）'}</div>`;
-  document.getElementById('pDebug').textContent=`🔍 Debug | 命中词条: ${el.dataset.word} | 音标: ${el.dataset.phonetic||'N/A'} | 释义已渲染 — Made for 中浩`;
+  const ph=el.dataset.phonetic;
+  document.getElementById('pBody').innerHTML=ph?`<div class="def"><strong>音标：</strong>${ph}</div><div class="def" style="margin-top:.3rem"><strong>考研释义：</strong>${el.dataset.def||''}</div>`:`<div class="def"><strong>考研释义：</strong>${el.dataset.def||''}</div>`;
+  document.getElementById('pDebug').textContent=`🔍 Debug | 命中词条: ${el.dataset.word} | 音标: ${ph||'（暂无，待补充）'} | Made for 中浩`;
   document.getElementById('panel').classList.add('open');
   document.getElementById('overlay').classList.add('show');
 }
