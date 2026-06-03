@@ -130,11 +130,11 @@ function lw(raw){
 }
 
 function wx(text){
-  var tokens=text.split(/(\\s+)/g);
+  var tokens=text.split(/(\s+)/g);
   var h='';
   for(var ti=0;ti<tokens.length;ti++){
     var tok=tokens[ti];
-    if(/^\\s+$/.test(tok)){h+=tok;continue}
+    if(/^\s+$/.test(tok)){h+=tok;continue}
     var m=tok.match(/^([^a-zA-Z0-9]*)([a-zA-Z0-9'-]+?)([^a-zA-Z0-9]*)$/);
     if(m){
       h+=esh(m[1]);var w=m[2],pc=m[3];
@@ -248,23 +248,83 @@ for(var i=0;i<P2.length;i++){h2+='<div class="p">'+wx(P2[i])+'</div><button clas
 document.getElementById('p2c').innerHTML=h2;
 
 // QUESTIONS
-function mq(q){return'<div class="qb"><div class="qt">'+wx(q.text)+'</div><div class="og">'+q.opts.map(function(o){return'<div class="op">'+wx(o)+'</div>'}).join('')+'</div><button class="tt" onclick="ttg(\'tr-q'+q.id+'\',this)"><span class="ar">&#9654;</span> 查看翻译</button><div class="tx" id="tr-q'+q.id+'">'+q.tr+'</div></div>'}
+function mq(q){
+  var h='<div class="qb"><div class="qt">'+wx(q.text)+'</div>';
+  h+='<button class="tt" onclick="ttg(\'tr-q'+q.id+'\',this)"><span class="ar">&#9654;</span> 查看题目翻译</button>';
+  h+='<div class="tx" id="tr-q'+q.id+'">'+q.qtr+'</div>';
+  h+='<div class="og">';
+  for(var oi=0;oi<q.opts.length;oi++){
+    h+='<div class="op">'+wx(q.opts[oi].t)+' <button class="tt" style="font-size:.7rem;padding:.15em .45em;margin:0" onclick="event.stopPropagation();ttg(\'tr-q'+q.id+'-o'+oi+'\',this)"><span class="ar">&#9654;</span> 译</button><div class="tx" id="tr-q'+q.id+'-o'+oi+'">'+q.opts[oi].tr+'</div></div>';
+  }
+  h+='</div></div>';
+  return h;
+}
 
 var Q1=[
-{id:46,text:'46. What is a reason for the author to be in the habit of saying busy when asked how he is doing?',opts:["A) He just follows successful people's example.","B) He is actually proud to be fully occupied.","C) He thinks everyone should be devoted to work.","D) He believes busyness ensures accomplishments."],tr:'<strong>题目：</strong>作者在被问近况时说「很忙」这一习惯的原因是什么？<br><strong>选项：</strong>A) 他只是效仿成功人士。 B) 他其实为忙碌感到自豪。 C) 他认为每个人都应该投入工作。 D) 他相信忙碌能够确保成就。'},
-{id:47,text:'47. Why do we tend to think that busy people are of high status?',opts:["A) Our status can be attributed to our social mobility.","B) We hold the belief that hard work leads to success.","C) Our own opportunity for success never comes easily.","D) We find few people of high status have time for leisure."],tr:'<strong>题目：</strong>为什么我们倾向于认为忙碌的人地位较高？<br><strong>选项：</strong>A) 我们的地位可以归因于社会流动性。 B) 我们持有努力工作能带来成功的信念。 C) 我们自己的成功机会从来不易获得。 D) 我们发现很少有地位高的人有时间休闲。'},
-{id:48,text:'48. What do we learn about the culture of busyness from a recent study?',opts:["A) It places employees in endless meetings, emails and stress.","B) It compels some 20% of employees to appear always busy.","C) It distorts many employees belief of what a satisfying life is.","D) It does much harm to many busy employees well-being."],tr:'<strong>题目：</strong>从最近的一项研究中，我们了解到忙碌文化的什么情况？<br><strong>选项：</strong>A) 它使员工陷入无休止的会议、邮件和压力。 B) 它迫使约20%的员工总是显得很忙。 C) 它扭曲了许多员工对何为满意生活的信念。 D) 它对许多忙碌员工的身心健康造成很大伤害。'},
-{id:49,text:'49. What do such utterances as I have limited access to email sound like according to the author?',opts:["A) One is too busy to check all emails in time.","B) One is opposed to the prevailing work culture.","C) One is forced by circumstances to stop working.","D) One is simply enjoying their time off work."],tr:'<strong>题目：</strong>据作者所述，「我暂时无法经常查看邮件」这类说法听起来如何？<br><strong>选项：</strong>A) 某人太忙而无法及时查看所有邮件。 B) 某人反对主流的工作文化。 C) 某人迫于环境而被迫停下工作。 D) 某人只是在享受他们的休假时光。'},
-{id:50,text:'50. Why did the author and his colleagues launch the Out of Office Email Generator?',opts:["A) To enable busy employees to spend less time checking emails.","B) To ensure employees as well as employers truly have time off.","C) To stop managers from talking about how busy their teams usually are.","D) To encourage both employers and employees to answer emails promptly."],tr:'<strong>题目：</strong>作者和同事为什么推出「办公室外邮件生成器」？<br><strong>选项：</strong>A) 为了让忙碌的员工花更少时间查看邮件。 B) 为了确保员工及雇主真正拥有休假时间。 C) 为了阻止管理者谈论他们的团队通常有多忙。 D) 为了鼓励雇主和员工都及时回复邮件。'}
+{id:46,text:'46. What is a reason for the author to be in the habit of saying busy when asked how he is doing?',qtr:'作者在被问近况时说「很忙」这一习惯的原因是什么？',opts:[
+{t:"A) He just follows successful people's example.",tr:"他只是效仿成功人士的做法。"},
+{t:"B) He is actually proud to be fully occupied.",tr:"他其实为忙碌感到自豪。"},
+{t:"C) He thinks everyone should be devoted to work.",tr:"他认为每个人都应该投入工作。"},
+{t:"D) He believes busyness ensures accomplishments.",tr:"他相信忙碌能够确保取得成就。"}
+]},
+{id:47,text:'47. Why do we tend to think that busy people are of high status?',qtr:'为什么我们倾向于认为忙碌的人地位较高？',opts:[
+{t:"A) Our status can be attributed to our social mobility.",tr:"我们的地位可以归因于我们的社会流动性。"},
+{t:"B) We hold the belief that hard work leads to success.",tr:"我们持有努力工作能带来成功的信念。"},
+{t:"C) Our own opportunity for success never comes easily.",tr:"我们自己的成功机会从来不易获得。"},
+{t:"D) We find few people of high status have time for leisure.",tr:"我们发现很少有地位高的人有时间休闲。"}
+]},
+{id:48,text:'48. What do we learn about the culture of busyness from a recent study?',qtr:'从最近的一项研究中，我们了解到忙碌文化的什么情况？',opts:[
+{t:"A) It places employees in endless meetings, emails and stress.",tr:"它使员工陷入无休止的会议、邮件和压力之中。"},
+{t:"B) It compels some 20% of employees to appear always busy.",tr:"它迫使约20%的员工总是显得很忙。"},
+{t:"C) It distorts many employees belief of what a satisfying life is.",tr:"它扭曲了许多员工对何为满意生活的信念。"},
+{t:"D) It does much harm to many busy employees well-being.",tr:"它对许多忙碌员工的身心健康造成很大伤害。"}
+]},
+{id:49,text:'49. What do such utterances as I have limited access to email sound like according to the author?',qtr:'据作者所述，「我暂时无法经常查看邮件」这类说法听起来如何？',opts:[
+{t:"A) One is too busy to check all emails in time.",tr:"某人太忙而无法及时查看所有邮件。"},
+{t:"B) One is opposed to the prevailing work culture.",tr:"某人反对主流的工作文化。"},
+{t:"C) One is forced by circumstances to stop working.",tr:"某人迫于环境而被迫停下工作。"},
+{t:"D) One is simply enjoying their time off work.",tr:"某人只是在享受他们的休假时光。"}
+]},
+{id:50,text:'50. Why did the author and his colleagues launch the Out of Office Email Generator?',qtr:'作者和同事为什么推出「办公室外邮件生成器」？',opts:[
+{t:"A) To enable busy employees to spend less time checking emails.",tr:"为了让忙碌的员工花更少时间查看邮件。"},
+{t:"B) To ensure employees as well as employers truly have time off.",tr:"为了确保员工及雇主真正拥有休假时间。"},
+{t:"C) To stop managers from talking about how busy their teams usually are.",tr:"为了阻止管理者谈论他们的团队通常有多忙。"},
+{t:"D) To encourage both employers and employees to answer emails promptly.",tr:"为了鼓励雇主和员工都及时回复邮件。"}
+]}
 ];
 document.getElementById('p1q').innerHTML=Q1.map(mq).join('');
 
 var Q2=[
-{id:51,text:"51. What did the author's team conclude about the gender difference in airfares from their further investigation?",opts:["A) It is largely attributed to women booking earlier than men.","B) It is largely explained by womens choosing cheaper flights.","C) It is mainly accounted for by male employees readiness to pay more.","D) It is due to the fact that women care more about their company's money."],tr:'<strong>题目：</strong>作者团队从进一步调查中得出了什么关于票价性别差异的结论？<br><strong>选项：</strong>A) 很大程度上归因于女性比男性更早预订。 B) 很大程度上是因为女性选择更便宜的航班。 C) 主要是由于男性员工愿意支付更多。 D) 是由于女性更关心公司的钱。'},
-{id:52,text:'52. What did the researchers want to determine by testing a variety of possible explanations?',opts:["A) What made male frequent travelers book air tickets late.","B) What caused women to plan ahead in booking business trips.","C) What motivated women to book cheaper flights.","D) What accounted for the gender gap in airfares."],tr:'<strong>题目：</strong>研究人员通过测试各种可能的解释想要确定什么？<br><strong>选项：</strong>A) 是什么让男性常旅客较晚预订机票。 B) 是什么让女性在预订商务旅行时提前计划。 C) 是什么促使女性选择更便宜的航班。 D) 是什么导致了机票费用的性别差距。'},
-{id:53,text:'53. What happened when the negative reciprocity variable was taken into account?',opts:["A) Both men and women were found to engage in negative behaviors.","B) Neither men nor women viewed booking late as a bad behavior.","C) The gender difference in airfare expenses no longer existed.","D) The gender gap tended to narrow to a significant degree."],tr:'<strong>题目：</strong>当考虑负面互惠变量时发生了什么？<br><strong>选项：</strong>A) 男性和女性都被发现参与了负面行为。 B) 男性和女性都不认为晚预订是坏行为。 C) 机票费用的性别差异不复存在。 D) 性别差距趋于显著缩小。'},
-{id:54,text:'54. What did prior research on negative reciprocity among workers find?',opts:["A) It can do more harm to the workplace than to employees.","B) It contributes to the male-female divide in the workplace.","C) It proves to be counterproductive in a number of ways.","D) It can result in increasing labor-management conflicts."],tr:'<strong>题目：</strong>先前关于员工负面互惠的研究发现了什么？<br><strong>选项：</strong>A) 它对职场的伤害大于对员工的伤害。 B) 它加剧了职场中的性别差异。 C) 它在多个方面被证明适得其反。 D) 它可能导致劳资冲突增加。'},
-{id:55,text:'55. What does the author emphasize about their analysis in the last paragraph?',opts:["A) It can help companies increase their savings significantly.","B) It can duly contribute to companies business performance.","C) It can translate womens booking practice into mens behavior.","D) It can enhance large multinational companies competitiveness."],tr:'<strong>题目：</strong>作者在最后一段强调了他们分析的什么意义？<br><strong>选项：</strong>A) 它可以帮公司大幅增加储蓄。 B) 它可以适当促进公司的业务绩效。 C) 它可以将女性的预订习惯转化为男性的行为。 D) 它可以增强大型跨国公司的竞争力。'}
+{id:51,text:"51. What did the author's team conclude about the gender difference in airfares from their further investigation?",qtr:'作者团队从进一步调查中得出了什么关于票价性别差异的结论？',opts:[
+{t:"A) It is largely attributed to women booking earlier than men.",tr:"很大程度上归因于女性比男性更早预订。"},
+{t:"B) It is largely explained by womens choosing cheaper flights.",tr:"很大程度上是因为女性选择更便宜的航班。"},
+{t:"C) It is mainly accounted for by male employees readiness to pay more.",tr:"主要是由于男性员工愿意支付更多。"},
+{t:"D) It is due to the fact that women care more about their company's money.",tr:"是由于女性更关心公司的钱。"}
+]},
+{id:52,text:'52. What did the researchers want to determine by testing a variety of possible explanations?',qtr:'研究人员通过测试各种可能的解释想要确定什么？',opts:[
+{t:"A) What made male frequent travelers book air tickets late.",tr:"是什么让男性常旅客较晚预订机票。"},
+{t:"B) What caused women to plan ahead in booking business trips.",tr:"是什么让女性在预订商务旅行时提前计划。"},
+{t:"C) What motivated women to book cheaper flights.",tr:"是什么促使女性选择更便宜的航班。"},
+{t:"D) What accounted for the gender gap in airfares.",tr:"是什么导致了机票费用的性别差距。"}
+]},
+{id:53,text:'53. What happened when the negative reciprocity variable was taken into account?',qtr:'当考虑负面互惠变量时发生了什么？',opts:[
+{t:"A) Both men and women were found to engage in negative behaviors.",tr:"男性和女性都被发现参与了负面行为。"},
+{t:"B) Neither men nor women viewed booking late as a bad behavior.",tr:"男性和女性都不认为晚预订是坏行为。"},
+{t:"C) The gender difference in airfare expenses no longer existed.",tr:"机票费用的性别差异不复存在。"},
+{t:"D) The gender gap tended to narrow to a significant degree.",tr:"性别差距趋于显著缩小。"}
+]},
+{id:54,text:'54. What did prior research on negative reciprocity among workers find?',qtr:'先前关于员工负面互惠的研究发现了什么？',opts:[
+{t:"A) It can do more harm to the workplace than to employees.",tr:"它对职场的伤害大于对员工的伤害。"},
+{t:"B) It contributes to the male-female divide in the workplace.",tr:"它加剧了职场中的性别差异。"},
+{t:"C) It proves to be counterproductive in a number of ways.",tr:"它在多个方面被证明适得其反。"},
+{t:"D) It can result in increasing labor-management conflicts.",tr:"它可能导致劳资冲突增加。"}
+]},
+{id:55,text:'55. What does the author emphasize about their analysis in the last paragraph?',qtr:'作者在最后一段强调了他们分析的什么意义？',opts:[
+{t:"A) It can help companies increase their savings significantly.",tr:"它可以帮助公司大幅节省开支。"},
+{t:"B) It can duly contribute to companies business performance.",tr:"它可以适当促进公司的业务绩效。"},
+{t:"C) It can translate womens booking practice into mens behavior.",tr:"它可以将女性的预订习惯转化为男性的行为。"},
+{t:"D) It can enhance large multinational companies competitiveness.",tr:"它可以增强大型跨国公司的竞争力。"}
+]}
 ];
 document.getElementById('p2q').innerHTML=Q2.map(mq).join('');
 </script>
