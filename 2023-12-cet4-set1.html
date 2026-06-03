@@ -21,7 +21,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--f);line-height:1.8
 .tab-panel.on{display:block}
 .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(1.2rem,3vw,2rem);margin-bottom:1.5rem}
 .card h2{font-size:1.15rem;color:var(--accent);margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);font-family:var(--u);letter-spacing:.04em}
-.w{display:inline;cursor:pointer;padding:1px 1px;border-radius:3px;transition:background .15s,color .15s;position:relative;border-bottom:1px dotted #d5c8b0}
+.w{display:inline;cursor:pointer;padding:1px 1px;border-radius:3px;transition:background .15s,color .15s;position:relative;border-bottom:1px dotted #d5c8b0;background:#fffaee}
 .w:hover{background:#fce8c8;color:#8b5e2a}
 .w:active{background:#f5d090}
 .w.hl{background:#f5d090;color:#7a4e1c;outline:2px solid var(--accent);outline-offset:1px;z-index:2}
@@ -327,6 +327,7 @@ var Q2=[
 ]}
 ];
 document.getElementById('p2q').innerHTML=Q2.map(mq).join('');
+console.log('%c✓ 2023.12 CET-4 Set1 脚本加载完成 | Made for 中浩 | '+new Date().toISOString(),'color:#b8753e;font-size:1.1em;');
 </script>
 </body>
 </html>
