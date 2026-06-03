@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2024年6月四级真题(第2套) — 阅读 | 中浩</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f8f5f0;--card:#fff;--text:#2c2416;--text-light:#5c5344;--accent:#b8753e;--accent-light:#f0e6d8;--border:#e0d5c4;--shadow:0 2px 12px rgba(0,0,0,.06);--radius:12px;--f:'Georgia','Noto Serif SC','Songti SC',serif;--u:'PingFang SC','Microsoft YaHei',sans-serif;--pb:#1e1b18;--pt:#f0e8dc}
+body{background:var(--bg);color:var(--text);font-family:var(--f);line-height:1.85;min-height:100vh;padding-bottom:5rem}
+.c{max-width:860px;margin:0 auto;padding:0 18px}
+.h{text-align:center;padding:2.4rem 0 1.6rem;border-bottom:2px solid var(--border);margin-bottom:1.5rem}
+.h h1{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700}
+.h .sub{font-size:.95rem;color:var(--text-light);margin-top:.35rem;font-family:var(--u)}
+.h .badge{display:inline-block;margin-top:.6rem;padding:.2em .9em;background:var(--accent-light);color:var(--accent);border-radius:99px;font-size:.8rem;font-weight:600;font-family:var(--u)}
+.tab-bar{display:flex;gap:0;margin-bottom:1.5rem;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.tb{flex:1;padding:.65rem .5rem;border:none;background:var(--card);color:var(--text-light);font-size:.82rem;font-weight:600;font-family:var(--u);cursor:pointer;transition:all .2s;border-bottom:3px solid transparent;-webkit-tap-highlight-color:transparent;text-align:center;line-height:1.3}
+.tb:hover{color:var(--accent);background:#fdfaf6}
+.tb.on{color:var(--accent);border-bottom-color:var(--accent);background:#fdfaf6}
+.tab-panel{display:none}
+.tab-panel.on{display:block}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(1.2rem,3vw,2rem);margin-bottom:1.5rem}
+.card h2{font-size:1.15rem;color:var(--accent);margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);font-family:var(--u);letter-spacing:.04em}
+.w{display:inline;cursor:pointer;padding:1px 1px;border-radius:3px;transition:background .15s,color .15s;position:relative;border-bottom:1px dotted #d5c8b0}
+.w:hover{background:#fce8c8;color:#8b5e2a}
+.w:active{background:#f5d090}
+.w.hl{background:#f5d090;color:#7a4e1c;outline:2px solid var(--accent);outline-offset:1px;z-index:2}
+.p{margin-bottom:1.15rem;text-align:justify;font-size:clamp(.95rem,2vw,1.05rem);word-break:break-word}
+.tt{display:inline-flex;align-items:center;gap:.35em;background:none;border:1.5px solid var(--border);color:var(--text-light);padding:.35em .85em;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:var(--u);margin-top:.3rem;margin-bottom:.6rem;transition:all .2s;user-select:none;-webkit-tap-highlight-color:transparent}
+.tt:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+.tt .ar{display:inline-block;transition:transform .25s;font-size:.7rem}
+.tt.open .ar{transform:rotate(90deg)}
+.tx{display:none;color:#6b5e4a;font-size:.9rem;line-height:1.75;padding:.7rem 1rem;margin:.3rem 0 .8rem;background:#fdfaf4;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;animation:fi .3s ease}
+.tx.show{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.qb{margin-bottom:1.4rem;padding-bottom:1rem;border-bottom:1px dashed var(--border)}
+.qb:last-child{border-bottom:none;margin-bottom:0}
+.qt{font-weight:600;margin-bottom:.5rem;font-size:clamp(.9rem,2vw,1rem)}
+.og{display:grid;grid-template-columns:1fr;gap:.35rem;margin-bottom:.3rem}
+@media(min-width:640px){.og{grid-template-columns:1fr 1fr}}
+.op{padding:.45em .75em;border-radius:6px;background:#fafaf7;border:1px solid transparent;font-size:.92rem;line-height:1.65}
+.op:hover{border-color:var(--border)}
+.wb{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.wb span{background:var(--accent-light);color:var(--accent);padding:.2em .65em;border-radius:5px;font-weight:600;font-size:.9rem;font-family:var(--u)}
+.wp{position:fixed;bottom:0;left:0;right:0;background:var(--pb);color:var(--pt);padding:1rem 1.2rem;z-index:999;border-radius:16px 16px 0 0;box-shadow:0 -4px 24px rgba(0,0,0,.3);transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);font-family:var(--u);max-height:42vh;overflow-y:auto}
+.wp.open{transform:translateY(0)}
+.wp-h{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem}
+.wp-w{font-size:1.3rem;font-weight:700;color:#fff}
+.wp-p{font-size:.85rem;color:#b0a592;margin-left:.5em}
+.wp-x{background:none;border:none;color:#8a8070;font-size:1.3rem;cursor:pointer;padding:.2em .4em;border-radius:4px;line-height:1;-webkit-tap-highlight-color:transparent}
+.wp-x:hover{color:#fff}
+.wp-b{font-size:.9rem;line-height:1.65}
+.wp-b .d strong{color:#d4a96a}
+.wp-db{margin-top:.5rem;padding-top:.45rem;border-top:1px solid #3a3530;font-size:.75rem;color:#6a6258}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:998;display:none}
+.ov.show{display:block}
+.ft{text-align:center;font-size:.78rem;color:#b0a590;margin-top:2rem;padding:1rem;font-family:var(--u);line-height:1.7}
+@media(max-width:480px){.c{padding:0 10px}.card{padding:1rem .85rem;border-radius:10px}.w{padding:2px 1px}.wp{padding:.85rem 1rem;max-height:45vh}.tb{font-size:.7rem;padding:.5rem .25rem}}
+</style>
+</head>
+<body>
+
+<div class="c">
+<div class="h">
+  <h1>2024年6月 · 四级真题（第2套）</h1>
+  <div class="sub">Reading Comprehension</div>
+  <div class="badge">Section A 选词填空 · Passage One · Passage Two</div>
+</div>
+
+<div class="tab-bar">
+  <button class="tb on" onclick="sw('sa')">Section A<br><small>选词填空 Q26-35</small></button>
+  <button class="tb" onclick="sw('p1')">Passage One<br><small>意志力与成功 Q46-50</small></button>
+  <button class="tb" onclick="sw('p2')">Passage Two<br><small>科研资助 Q51-55</small></button>
+</div>
+
+<div class="tab-panel on" id="tp-sa">
+<div class="card"><h2>Section A — 选词填空</h2>
+<div id="sap"></div><div class="wb" id="sab"></div></div></div>
+
+<div class="tab-panel" id="tp-p1">
+<div class="card"><h2>Passage One — Willpower and Success</h2><div id="p1c"></div></div>
+<div class="card"><h2>Questions 46–50</h2><div id="p1q"></div></div></div>
+
+<div class="tab-panel" id="tp-p2">
+<div class="card"><h2>Passage Two — Funding of Scientific Research</h2><div id="p2c"></div></div>
+<div class="card"><h2>Questions 51–55</h2><div id="p2q"></div></div></div>
+
+<div class="ft">点击任意英文单词查看音标与考研释义 · 中浩 · 2024.06 CET-4 第2套</div>
+</div>
+
+<div class="ov" id="ov" onclick="cp()"></div>
+<div class="wp" id="wp">
+  <div class="wp-h"><div><span class="wp-w" id="pW">—</span><span class="wp-p" id="pP"></span></div><button class="wp-x" onclick="cp()">&times;</button></div>
+  <div class="wp-b" id="pB"></div>
+  <div class="wp-db" id="pD"></div>
+</div>
+
+<script>
+var D={
+"the":"/ðə/|art. 这；那（定冠词）","a":"/ə/|art. 一个","an":"/æn/|art. 一个（元音前）",
+"this":"/ðɪs/|pron./adj. 这个","that":"/ðæt/|pron./adj. 那个","these":"/ðiːz/|pron./adj. 这些","those":"/ðoʊz/|pron./adj. 那些",
+"some":"/sʌm/|adj. 一些","any":"/ˈeni/|adj. 任何","many":"/ˈmeni/|adj. 许多","few":"/fjuː/|adj. 很少","much":"/mʌtʃ/|adj. 许多的 adv. 非常","more":"/mɔːr/|adj. 更多的","most":"/moʊst/|adj. 最多的","all":"/ɔːl/|adj. 所有的","each":"/iːtʃ/|pron. 每个","every":"/ˈevri/|adj. 每个的","several":"/ˈsevrəl/|adj. 几个的","both":"/boʊθ/|pron. 两者",
+"I":"/aɪ/|pron. 我","me":"/miː/|pron. 我（宾格）","my":"/maɪ/|pron. 我的","you":"/juː/|pron. 你；你们","your":"/jʊr/|pron. 你的","he":"/hiː/|pron. 他","him":"/hɪm/|pron. 他（宾格）","his":"/hɪz/|pron. 他的","she":"/ʃiː/|pron. 她","her":"/hɜːr/|pron. 她/她的","it":"/ɪt/|pron. 它","its":"/ɪts/|pron. 它的","we":"/wiː/|pron. 我们","us":"/ʌs/|pron. 我们（宾格）","our":"/aʊr/|pron. 我们的","they":"/ðeɪ/|pron. 他们","them":"/ðem/|pron. 他们（宾格）","their":"/ðer/|pron. 他们的","who":"/huː/|pron. 谁",
+"in":"/ɪn/|prep. 在……里面","on":"/ɑːn/|prep. 在……上面","at":"/æt/|prep. 在（某处/某时）","to":"/tuː/|prep. 向；到","for":"/fɔːr/|prep. 为了；对于","of":"/ʌv/|prep. ……的","with":"/wɪð/|prep. 和……一起；用","by":"/baɪ/|prep. 通过；被","as":"/æz/|prep./conj. 作为","from":"/frʌm/|prep. 来自","about":"/əˈbaʊt/|prep. 关于","into":"/ˈɪntuː/|prep. 进入","over":"/ˈoʊvər/|prep./adv. 在……上方","under":"/ˈʌndər/|prep./adv. 在……下面","after":"/ˈæftər/|prep. 在……之后","before":"/bɪˈfɔːr/|prep. 在……之前","between":"/bɪˈtwiːn/|prep. 在……之间","among":"/əˈmʌŋ/|prep. 在……之中","within":"/wɪˈðɪn/|prep. 在……之内","without":"/wɪˈðaʊt/|prep. 没有","during":"/ˈdʊrɪŋ/|prep. 在……期间","until":"/ʌnˈtɪl/|prep./conj. 直到","since":"/sɪns/|prep./conj. 自从","like":"/laɪk/|prep. 像 v. 喜欢","despite":"/dɪˈspaɪt/|prep. 尽管","including":"/ɪnˈkluːdɪŋ/|prep. 包括","per":"/pɜːr/|prep. 每",
+"and":"/ænd/|conj. 和；并且","or":"/ɔːr/|conj. 或","but":"/bʌt/|conj. 但是","so":"/soʊ/|conj. 所以","if":"/ɪf/|conj. 如果","whether":"/ˈweðər/|conj. 是否","because":"/bɪˈkɔːz/|conj. 因为","although":"/ɔːlˈðoʊ/|conj. 虽然","though":"/ðoʊ/|conj./adv. 虽然","when":"/wen/|conj./adv. 当……时","while":"/waɪl/|conj. 当……时；然而","than":"/ðæn/|conj. 比","unless":"/ʌnˈles/|conj. 除非","however":"/haʊˈevər/|adv. 然而","therefore":"/ˈðerfɔːr/|adv. 因此",
+"not":"/nɑːt/|adv. 不","no":"/noʊ/|adv. 不 adj. 没有","now":"/naʊ/|adv. 现在","then":"/ðen/|adv. 然后","here":"/hɪr/|adv. 在这里","there":"/ðer/|adv. 在那里","just":"/dʒʌst/|adv. 只是","only":"/ˈoʊnli/|adv. 只","also":"/ˈɔːlsoʊ/|adv. 也","too":"/tuː/|adv. 太；也","very":"/ˈveri/|adv. 非常","even":"/ˈiːvn/|adv. 甚至","still":"/stɪl/|adv. 仍然","already":"/ɔːlˈredi/|adv. 已经","always":"/ˈɔːlweɪz/|adv. 总是","never":"/ˈnevər/|adv. 从不","often":"/ˈɔːfn/|adv. 经常","sometimes":"/ˈsʌmtaɪmz/|adv. 有时","usually":"/ˈjuːʒuəli/|adv. 通常","well":"/wel/|adv. 好地","really":"/ˈriːəli/|adv. 真正地","quite":"/kwaɪt/|adv. 相当","actually":"/ˈæktʃuəli/|adv. 实际上","simply":"/ˈsɪmpli/|adv. 仅仅","largely":"/ˈlɑːrdʒli/|adv. 很大程度上","particularly":"/pərˈtɪkjələrli/|adv. 尤其",
+"be":"/biː/|v. 是；在","am":"/æm/|v. 是","is":"/ɪz/|v. 是","are":"/ɑːr/|v. 是","was":"/wʌz/|v. 是（过去式单数）","were":"/wɜːr/|v. 是（过去式复数）","been":"/bɪn/|v. 是（过去分词）","being":"/ˈbiːɪŋ/|v. 是（现在分词） n. 存在","do":"/duː/|v. 做","does":"/dʌz/|v. 做（第三人称）","did":"/dɪd/|v. 做（过去式）","done":"/dʌn/|adj. 完成的","have":"/hæv/|v. 有 aux. 已经","has":"/hæz/|v. 有（第三人称）","had":"/hæd/|v. 有（过去式）","can":"/kæn/|aux. 能","could":"/kʊd/|aux. 能（过去式）","will":"/wɪl/|aux. 将","would":"/wʊd/|aux. 会","should":"/ʃʊd/|aux. 应该","may":"/meɪ/|aux. 可能","might":"/maɪt/|aux. 也许","must":"/mʌst/|aux. 必须","need":"/niːd/|v./aux. 需要","say":"/seɪ/|v. 说","said":"/sed/|v. 说（过去式）","get":"/ɡet/|v. 得到；变得","go":"/ɡoʊ/|v. 去","going":"/ˈɡoʊɪŋ/|v. 去（现在分词）","come":"/kʌm/|v. 来","make":"/meɪk/|v. 做；使","made":"/meɪd/|v. 做（过去式）","take":"/teɪk/|v. 拿；花费","took":"/tʊk/|v. 拿（过去式）","see":"/siː/|v. 看见","know":"/noʊ/|v. 知道","think":"/θɪŋk/|v. 认为","want":"/wɑːnt/|v. 想要","give":"/ɡɪv/|v. 给","find":"/faɪnd/|v. 找到","found":"/faʊnd/|v. 找到（过去式）；建立","tell":"/tel/|v. 告诉","ask":"/æsk/|v. 问","help":"/help/|v. 帮助","try":"/traɪ/|v. 尝试","keep":"/kiːp/|v. 保持","let":"/let/|v. 让","put":"/pʊt/|v. 放","show":"/ʃoʊ/|v. 显示","seem":"/siːm/|v. 似乎","feel":"/fiːl/|v. 感觉","work":"/wɜːrk/|v./n. 工作","look":"/lʊk/|v. 看","use":"/juːz/|v. 使用","used":"/juːzd/|v. 使用（过去式）；习惯于","mean":"/miːn/|v. 意味着","means":"/miːnz/|n. 方法；手段","call":"/kɔːl/|v. 称呼","change":"/tʃeɪndʒ/|v./n. 改变","lead":"/liːd/|v. 导致；带领","happen":"/ˈhæpən/|v. 发生","believe":"/bɪˈliːv/|v. 相信","result":"/rɪˈzʌlt/|n. 结果 v. 导致","continue":"/kənˈtɪnjuː/|v. 继续","determine":"/dɪˈtɜːrmɪn/|v. 确定；查明","encourage":"/ɪnˈkɜːrɪdʒ/|v. 鼓励","ensure":"/ɪnˈʃʊr/|v. 确保",
+"good":"/ɡʊd/|adj. 好的","bad":"/bæd/|adj. 坏的","new":"/nuː/|adj. 新的","old":"/oʊld/|adj. 旧的","big":"/bɪɡ/|adj. 大的","small":"/smɔːl/|adj. 小的","great":"/ɡreɪt/|adj. 伟大的","high":"/haɪ/|adj. 高的","low":"/loʊ/|adj. 低的","long":"/lɔːŋ/|adj. 长的","right":"/raɪt/|adj. 正确的 n. 权利","wrong":"/rɔːŋ/|adj. 错误的","important":"/ɪmˈpɔːrtnt/|adj. 重要的","different":"/ˈdɪfrənt/|adj. 不同的","same":"/seɪm/|adj. 相同的","other":"/ˈʌðər/|adj. 其他的","own":"/oʊn/|adj. 自己的","real":"/ˈriːəl/|adj. 真正的","hard":"/hɑːrd/|adj. 困难的；努力的","easy":"/ˈiːzi/|adj. 容易的","possible":"/ˈpɑːsəbl/|adj. 可能的","likely":"/ˈlaɪkli/|adj. 可能的","clear":"/klɪr/|adj. 清楚的","common":"/ˈkɑːmən/|adj. 普通的；共同的","first":"/fɜːrst/|adj./adv. 第一","second":"/ˈsekənd/|adj. 第二 n. 秒","last":"/læst/|adj. 最后的","next":"/nekst/|adj. 下一个","early":"/ˈɜːrli/|adj./adv. 早","late":"/leɪt/|adj./adv. 晚","recent":"/ˈriːsnt/|adj. 最近的","public":"/ˈpʌblɪk/|adj. 公共的 n. 公众","free":"/friː/|adj. 自由的；免费的","able":"/ˈeɪbl/|adj. 能够的","available":"/əˈveɪləbl/|adj. 可用的","similar":"/ˈsɪmələr/|adj. 相似的",
+"time":"/taɪm/|n. 时间","year":"/jɪr/|n. 年","day":"/deɪ/|n. 天","days":"/deɪz/|n. 天（复数）","week":"/wiːk/|n. 周","minutes":"/ˈmɪnɪts/|n. 分钟","people":"/ˈpiːpl/|n. 人们","person":"/ˈpɜːrsn/|n. 人","man":"/mæn/|n. 男人","men":"/men/|n. 男人们","woman":"/ˈwʊmən/|n. 女人","women":"/ˈwɪmɪn/|n. 女人们","life":"/laɪf/|n. 生命；生活","world":"/wɜːrld/|n. 世界","way":"/weɪ/|n. 方式；道路","thing":"/θɪŋ/|n. 东西；事物","things":"/θɪŋz/|n. 事物","something":"/ˈsʌmθɪŋ/|pron. 某事","money":"/ˈmʌni/|n. 钱","company":"/ˈkʌmpəni/|n. 公司","companies":"/ˈkʌmpəniz/|n. 公司（复）","job":"/dʒɑːb/|n. 工作","research":"/rɪˈsɜːrtʃ/|n./v. 研究","study":"/ˈstʌdi/|n./v. 研究；学习","question":"/ˈkwestʃən/|n. 问题","answer":"/ˈænsər/|n. 答案","fact":"/fækt/|n. 事实","success":"/səkˈses/|n. 成功","opportunity":"/ˌɑːpərˈtuːnəti/|n. 机会","risk":"/rɪsk/|n. 风险","number":"/ˈnʌmbər/|n. 数字","attention":"/əˈtenʃn/|n. 注意力","effect":"/ɪˈfekt/|n. 效果；影响","impact":"/ˈɪmpækt/|n./v. 影响","difference":"/ˈdɪfrəns/|n. 差异","behavior":"/bɪˈheɪvjər/|n. 行为","ability":"/əˈbɪləti/|n. 能力","evidence":"/ˈevɪdəns/|n. 证据","performance":"/pərˈfɔːrməns/|n. 表现","balance":"/ˈbæləns/|n./v. 平衡","culture":"/ˈkʌltʃər/|n. 文化","stress":"/stres/|n. 压力 v. 强调","email":"/ˈiːmeɪl/|n. 电子邮件","emails":"/ˈiːmeɪlz/|n. 电子邮件（复）","leaders":"/ˈliːdərz/|n. 领导者","managers":"/ˈmænɪdʒərz/|n. 管理者","employees":"/ɪmˈplɔɪiːz/|n. 员工","employers":"/ɪmˈplɔɪərz/|n. 雇主","teams":"/tiːmz/|n. 团队","workers":"/ˈwɜːrkərz/|n. 工作者","health":"/helθ/|n. 健康","government":"/ˈɡʌvərnmənt/|n. 政府","data":"/ˈdeɪtə/|n. 数据","survey":"/ˈsɜːrveɪ/|n./v. 调查","science":"/ˈsaɪəns/|n. 科学","group":"/ɡruːp/|n. 群；组","type":"/taɪp/|n. 类型","example":"/ɪɡˈzæmpl/|n. 例子","case":"/keɪs/|n. 情况；案例","point":"/pɔɪnt/|n. 点；观点","end":"/end/|n./v. 结束","status":"/ˈsteɪtəs/|n. 地位","power":"/ˈpaʊər/|n. 权力；力量；电力","tendency":"/ˈtendənsi/|n. 倾向；趋势","context":"/ˈkɑːntekst/|n. 上下文；背景；环境","role":"/roʊl/|n. 角色；作用","process":"/ˈprɑːses/|n. 过程 v. 处理","society":"/səˈsaɪəti/|n. 社会","individuals":"/ˌɪndɪˈvɪdʒuəlz/|n. 个人；个体","habit":"/ˈhæbɪt/|n. 习惯","habits":"/ˈhæbɪts/|n. 习惯（复）","belief":"/bɪˈliːf/|n. 信念","business":"/ˈbɪznəs/|n. 生意；企业","industry":"/ˈɪndəstri/|n. 行业；工业","product":"/ˈprɑːdʌkt/|n. 产品","products":"/ˈprɑːdʌkts/|n. 产品","scientists":"/ˈsaɪəntɪsts/|n. 科学家","results":"/rɪˈzʌlts/|n. 结果","outcomes":"/ˈaʊtkʌmz/|n. 结果；成果",
+
+// Section A - Communicative Abstraction
+"abstraction":"/æbˈstrækʃn/|n. 抽象；抽象概念","abstract":"/ˈæbstrækt/|adj. 抽象的 n. 摘要","verbally":"/ˈvɜːrbəli/|adv. 口头地；用言辞地","convey":"/kənˈveɪ/|v. 传达；表达；运输","communicative":"/kəˈmjuːnɪkeɪtɪv/|adj. 交际的；健谈的","concrete":"/ˈkɑːŋkriːt/|adj. 具体的；混凝土的 n. 混凝土","broader":"/ˈbrɔːdər/|adj. 更广阔的；更广泛的","attaining":"/əˈteɪnɪŋ/|v. 达到；获得","linguistic":"/lɪŋˈɡwɪstɪk/|adj. 语言的；语言学的","computed":"/kəmˈpjuːtɪd/|v. 计算；推断","abstractness":"/æbˈstræktnəs/|n. 抽象性","visualized":"/ˈvɪʒuəlaɪzd/|v. 使可视化；想象","visualize":"/ˈvɪʒuəlaɪz/|v. 可视化；想象","justice":"/ˈdʒʌstɪs/|n. 正义；公正；司法","morality":"/məˈræləti/|n. 道德；品行","significantly":"/sɪɡˈnɪfɪkəntli/|adv. 显著地；重大地","emerges":"/ɪˈmɜːrdʒɪz/|v. 出现；浮现","determinant":"/dɪˈtɜːrmɪnənt/|n. 决定因素","interpersonal":"/ˌɪntərˈpɜːrsənl/|adj. 人际的","manipulated":"/məˈnɪpjuleɪtɪd/|v. 操控；操纵","interviewee":"/ˌɪntərvjuːˈiː/|n. 受访者；被面试者","descriptions":"/dɪˈskrɪpʃnz/|n. 描述；说明","fixed":"/fɪkst/|adj. 固定的；确定的","signals":"/ˈsɪɡnəlz/|n./v. 信号；表明","source":"/sɔːrs/|n. 来源；出处","ultimate":"/ˈʌltɪmət/|adj. 最终的；根本的","approximately":"/əˈprɑːksɪmətli/|adv. 大约","conclusion":"/kənˈkluːʒn/|n. 结论","refraining":"/rɪˈfreɪnɪŋ/|v. 克制；避免","legally":"/ˈliːɡəli/|adv. 合法地","examine":"/ɪɡˈzæmɪn/|v. 检查；考察；审查","degree":"/dɪˈɡriː/|n. 程度；学位；度数","relied":"/rɪˈlaɪd/|v. 依赖；依靠（过去式）","reflects":"/rɪˈflekts/|v. 反映；反射；表现","focusing":"/ˈfoʊkəsɪŋ/|v. 专注；聚焦","speech":"/spiːtʃ/|n. 言论；演讲；话语","details":"/dɪˈteɪlz/|n. 细节；详情","patterns":"/ˈpætərnz/|n. 模式","posts":"/poʊsts/|n. 帖子；岗位","ratings":"/ˈreɪtɪŋz/|n. 评级；评分","commonly":"/ˈkɑːmənli/|adv. 通常；普遍地","chair":"/tʃer/|n. 椅子","difficult":"/ˈdɪfɪkəlt/|adj. 困难的","follow-up":"/ˈfɑːloʊ ʌp/|adj. 后续的 n. 跟进","conducted":"/kənˈdʌktɪd/|v. 实施；进行","sample":"/ˈsæmpl/|n. 样本 v. 抽样","dynamics":"/daɪˈnæmɪks/|n. 动态；动力学","setting":"/ˈsetɪŋ/|n. 环境；设置","influence":"/ˈɪnfluəns/|v./n. 影响","participants":"/pɑːrˈtɪsɪpənts/|n. 参与者","interviewer":"/ˈɪntərvjuːər/|n. 面试官；采访者",
+
+// Passage One - Willpower
+"entrepreneurs":"/ˌɑːntrəprəˈnɜːrz/|n. 企业家","willpower":"/ˈwɪlˌpaʊər/|n. 意志力；毅力","determination":"/dɪˌtɜːrmɪˈneɪʃn/|n. 决心；决定","discipline":"/ˈdɪsəplɪn/|n. 纪律；自律 v. 训练","motivation":"/ˌmoʊtɪˈveɪʃn/|n. 动力；积极性","positive":"/ˈpɑːzətɪv/|adj. 积极的；正面的","automatically":"/ˌɔːtəˈmætɪkli/|adv. 自动地；无意识地","passionate":"/ˈpæʃənət/|adj. 充满热情的","permanently":"/ˈpɜːrmənəntli/|adv. 永久地","self-control":"/ˌself kənˈtroʊl/|n. 自制力","mastered":"/ˈmæstərd/|v. 掌握；精通","delayed":"/dɪˈleɪd/|adj. 延迟的","satisfaction":"/ˌsætɪsˈfækʃn/|n. 满足；满意","incredible":"/ɪnˈkredəbl/|adj. 难以置信的；惊人的","talent":"/ˈtælənt/|n. 天赋；才能","achieve":"/əˈtʃiːv/|v. 实现；达到","outcome":"/ˈaʊtkʌm/|n. 结果；成果","reward":"/rɪˈwɔːrd/|n. 回报；奖励","wonder":"/ˈwʌndər/|v. 想知道；纳闷","connections":"/kəˈnekʃnz/|n. 人脉；联系","luck":"/lʌk/|n. 运气；幸运","ethic":"/ˈeθɪk/|n. 道德；伦理","work ethic":"/wɜːrk ˈeθɪk/|n. 职业道德","muscle":"/ˈmʌsl/|n. 肌肉","constantly":"/ˈkɑːnstəntli/|adv. 持续地；不断地","strengthen":"/ˈstreŋθən/|v. 加强；增强","develop":"/dɪˈveləp/|v. 培养；发展","critical":"/ˈkrɪtɪkl/|adj. 关键的；批评的","actions":"/ˈækʃnz/|n. 行动","basis":"/ˈbeɪsɪs/|n. 基础；基准","weight":"/weɪt/|n. 体重；重量","issue":"/ˈɪʃuː/|n. 问题 v. 发布","valuable":"/ˈvæljuəbl/|adj. 有价值的","associated":"/əˈsoʊsieɪtɪd/|adj. 相关联的","art":"/ɑːrt/|n. 艺术；技艺","avoid":"/əˈvɔɪd/|v. 避免","contribute":"/kənˈtrɪbjuːt/|v. 贡献；有助于","adopt":"/əˈdɑːpt/|v. 采取；采纳；收养","track":"/træk/|n. 轨道；路径 v. 追踪","stick":"/stɪk/|v. 坚持；粘贴；卡住","achieve":"/əˈtʃiːv/|v. 实现；获得",
+
+// Passage Two - Research Funding
+"funded":"/ˈfʌndɪd/|adj. 资助的 v. 资助","funding":"/ˈfʌndɪŋ/|n. 资金；资助","grants":"/ɡrænts/|n. 拨款；授予 v. 授予","foundations":"/faʊnˈdeɪʃnz/|n. 基金会；基础","indirectly":"/ˌɪndəˈrektli/|adv. 间接地","donations":"/doʊˈneɪʃnz/|n. 捐赠；捐款","historically":"/hɪˈstɔːrɪkli/|adv. 历史上","patronage":"/ˈpeɪtrənɪdʒ/|n. 赞助；资助","sponsorship":"/ˈspɑːnsərʃɪp/|n. 赞助；资助","clinical":"/ˈklɪnɪkl/|adj. 临床的","trials":"/ˈtraɪəlz/|n. 试验；审判","pharmaceutical":"/ˌfɑːrməˈsuːtɪkl/|adj. 制药的","nutrition":"/nuːˈtrɪʃn/|n. 营养","charitable":"/ˈtʃærɪtəbl/|adj. 慈善的","biases":"/ˈbaɪəsɪz/|n. 偏见","bias":"/ˈbaɪəs/|n. 偏见；偏好","safeguards":"/ˈseɪfɡɑːrdz/|n. 保障措施","misleading":"/ˌmɪsˈliːdɪŋ/|adj. 误导性的","independently":"/ˌɪndɪˈpendəntli/|adv. 独立地","objective":"/əbˈdʒektɪv/|adj. 客观的 n. 目标","invaluable":"/ɪnˈvæljuəbl/|adj. 无价的；极其宝贵的","consistent":"/kənˈsɪstənt/|adj. 一致的；符合的","proceeds":"/prəˈsiːdz/|v. 进行；继续","budget":"/ˈbʌdʒɪt/|n. 预算","nuclear":"/ˈnuːkliər/|adj. 核能的；原子核的","birdwatchers":"/ˈbɜːrdˌwɑːtʃərz/|n. 观鸟者","collectors":"/kəˈlektərz/|n. 收藏家","reap":"/riːp/|v. 收获；获得","purchase":"/ˈpɜːrtʃəs/|v./n. 购买","agencies":"/ˈeɪdʒənsiz/|n. 机构","institutions":"/ˌɪnstɪˈtuːʃnz/|n. 机构","corporate":"/ˈkɔːrpərət/|adj. 公司的；法人的","widespread":"/ˈwaɪdspred/|adj. 广泛的","hobby":"/ˈhɑːbi/|n. 业余爱好","taxes":"/ˈtæksɪz/|n. 税收","services":"/ˈsɜːrvɪsɪz/|n. 服务","donations":"/doʊˈneɪʃnz/|n. 捐赠","private":"/ˈpraɪvət/|adj. 私人的；私营的","church":"/tʃɜːrtʃ/|n. 教会","mix":"/mɪks/|n./v. 混合","various":"/ˈveriəs/|adj. 各种各样的","agencies":"/ˈeɪdʒənsiz/|n. 机构","fields":"/fiːldz/|n. 领域","medicine":"/ˈmedɪsn/|n. 医学；药","afford":"/əˈfɔːrd/|v. 负担得起","perfect":"/ˈpɜːrfɪkt/|adj. 完美的","matter":"/ˈmætər/|v. 重要；要紧 n. 问题","completely":"/kəmˈpliːtli/|adv. 完全地","introduce":"/ˌɪntrəˈduːs/|v. 引入；介绍","drug":"/drʌɡ/|n. 药物；毒品","sponsored":"/ˈspɑːnsərd/|adj. 赞助的","favoring":"/ˈfeɪvərɪŋ/|v. 偏向；有利于","consideration":"/kənˌsɪdəˈreɪʃn/|n. 考虑","similarly":"/ˈsɪmələrli/|adv. 同样地","ignore":"/ɪɡˈnɔːr/|v. 忽视；忽略","special":"/ˈspeʃl/|adj. 特别的；特殊的","interest":"/ˈɪntrəst/|n. 兴趣；利益","certainly":"/ˈsɜːrtnli/|adv. 当然；必定","provide":"/prəˈvaɪd/|v. 提供","furthermore":"/ˌfɜːrðərˈmɔːr/|adv. 此外；而且","catch":"/kætʃ/|v. 发现；抓住","instances":"/ˈɪnstənsɪz/|n. 实例；情况","affect":"/əˈfekt/|v. 影响","ultimately":"/ˈʌltɪmətli/|adv. 最终；根本上","corrected":"/kəˈrektɪd/|v. 纠正；改正","meanwhile":"/ˈmiːnwaɪl/|adv. 与此同时","examine":"/ɪɡˈzæmɪn/|v. 审视；检查","extra":"/ˈekstrə/|adj. 额外的","examination":"/ɪɡˌzæmɪˈneɪʃn/|n. 审查；检查","identifying":"/aɪˈdentɪfaɪɪŋ/|v. 识别；确认"
+};
+
+// Remap D from pipe format to object format
+var D2={};
+for(var k in D){var v=D[k].split('|');D2[k]={p:v[0],d:v[1]||''}}
+
+function lw(raw){
+  var c=raw.replace(/[.,;:!?—\-–—'"()\\[\\]{}«»\/\\\\]+$/g,'').replace(/^[.,;:!?—\-–—'"()\\[\\]{}«»\/\\\\]+/g,'');
+  if(!c||c.length<1)return null;
+  var k=c.toLowerCase();
+  if(D2[k])return D2[k];
+  if(k.endsWith('s')&&k.length>3){var s=k.slice(0,-1);if(D2[s])return D2[s]}
+  if(k.endsWith('ing')&&k.length>5){var b=k.slice(0,-3);if(D2[b])return D2[b];var b2=b+'e';if(D2[b2])return D2[b2]}
+  if(k.endsWith('ed')&&k.length>4){var b=k.slice(0,-2);if(D2[b])return D2[b];if(k.endsWith('ied')&&k.length>5){var ib=k.slice(0,-3)+'y';if(D2[ib])return D2[ib]}}
+  if(k.endsWith('ly')&&k.length>4){var b=k.slice(0,-2);if(D2[b])return D2[b]}
+  if(k.endsWith('er')&&k.length>4){var b=k.slice(0,-2);if(D2[b])return D2[b]}
+  return null;
+}
+
+function wx(text){
+  var tokens=text.split(/(\s+)/g);
+  var h='';
+  for(var ti=0;ti<tokens.length;ti++){
+    var tok=tokens[ti];
+    if(/^\s+$/.test(tok)){h+=tok;continue}
+    var m=tok.match(/^([^a-zA-Z0-9]*)([a-zA-Z0-9'-]+?)([^a-zA-Z0-9]*)$/);
+    if(m){
+      h+=esh(m[1]);var w=m[2],pc=m[3];
+      if(/[a-zA-Z]/.test(w)&&w.length>=1){
+        var e=lw(w);
+        h+='<span class="w" data-w="'+esh(w)+'" data-p="'+esh(e?e.p:'')+'" data-d="'+esh(e?e.d:'(基础词汇)')+'">'+esh(w)+'</span>';
+      }else{h+=esh(w)}
+      h+=esh(pc);
+    }else{h+=esh(tok)}
+  }
+  return h;
+}
+function esh(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+var ce=null;
+function op(el){
+  if(ce)ce.classList.remove('hl');
+  el.classList.add('hl');ce=el;
+  var w=el.dataset.w,p=el.dataset.p,d=el.dataset.d;
+  document.getElementById('pW').textContent=w;
+  document.getElementById('pP').textContent=p||'';
+  document.getElementById('pB').innerHTML=p?'<div class="d"><strong>音标：</strong>'+p+'</div><div class="d" style="margin-top:.3rem"><strong>考研释义：</strong>'+(d||'')+'</div>':'<div class="d"><strong>考研释义：</strong>'+(d||'')+'</div>';
+  document.getElementById('pD').textContent='Debug | '+w+' | '+(p||'无音标')+' | Made for 中浩';
+  document.getElementById('wp').classList.add('open');
+  document.getElementById('ov').classList.add('show');
+}
+function cp(){
+  document.getElementById('wp').classList.remove('open');
+  document.getElementById('ov').classList.remove('show');
+  if(ce){ce.classList.remove('hl');ce=null}
+}
+document.addEventListener('click',function(e){var w=e.target.closest('.w');if(!w)return;e.stopPropagation();op(w)});
+
+function ttg(id,btn){
+  var el=document.getElementById(id);if(!el)return;
+  if(el.classList.contains('show')){el.classList.remove('show');btn.classList.remove('open');btn.querySelector('.ar').textContent='▶';btn.innerHTML=btn.innerHTML.replace('收起翻译','查看翻译')}
+  else{el.classList.add('show');btn.classList.add('open');btn.querySelector('.ar').textContent='▼';btn.innerHTML=btn.innerHTML.replace('查看翻译','收起翻译')}
+}
+
+function sw(name){
+  var bs=document.querySelectorAll('.tb');for(var i=0;i<bs.length;i++)bs[i].classList.remove('on');
+  var ps=document.querySelectorAll('.tab-panel');for(var i=0;i<ps.length;i++)ps[i].classList.remove('on');
+  document.getElementById('tp-'+name).classList.add('on');
+  event.target.closest('.tb').classList.add('on');
+}
+
+// SECTION A — Communicative Abstraction
+var saPars=[
+"A team of researchers led by Priyanka Joshi examined the degree to which men and women relied on 'communicative abstraction' to verbally convey their ideas and emotions. Communicative abstraction, according to the researchers, reflects the tendency of people to use 'abstract speech that focuses on the broader picture and __26__ purpose of action rather than concrete speech focusing on details and the means of __27__ action.' Interestingly, they found that men were far more likely to speak in the abstract than were women.",
+"To arrive at this __28__, the researchers examined the linguistic patterns of men and women in over 600,000 blog posts written on websites. To do this, the researchers computed abstractness ratings for __29__ 40,000 commonly used words in the English language. Words considered to be concrete could be easily visualized, such as 'table' or 'chair'. Words that were more __30__ to visualize, for example, 'justice' or 'morality' were considered to be more abstract. They found that men used __31__ more abstract language in their blog posts.",
+"What is the __32__ of this effect? The researchers suggest that power differences between the genders — that is, men having more power in society — might be a key determinant. For instance, in a follow-up study conducted with a sample of 300 students, the researchers __33__ power dynamics in an interpersonal setting to see if this would influence communicative abstraction. They found that participants in a high-power interviewer role were more likely to give abstract descriptions of behaviors than were participants in a low-power interviewee role. This suggests that communicating more abstractly does not reflect a __34__ tendency of men or women but rather __35__ within specific contexts."
+];
+var saTr=[
+"由Priyanka Joshi领导的一组研究人员考察了男性和女性在多大程度上依赖「交际抽象」来口头传达他们的想法和情感。据研究人员称，交际抽象反映了人们倾向于使用「关注更广阔图景和行动最终目的的抽象语言，而非关注细节和达成行动手段的具体语言」。有趣的是，他们发现男性远比女性更倾向于使用抽象语言。",
+"为了得出这一结论，研究人员分析了超过60万篇博客帖子中男性和女性的语言模式。为此，研究人员为英语中大约4万个常用词计算了抽象度评分。被认为具体的词很容易可视化，比如「桌子」或「椅子」。更难可视化的词，例如「正义」或「道德」，则被认为更抽象。他们发现男性在博客帖子中使用的语言明显更抽象。",
+"这一效应的根源是什么？研究人员认为，性别之间的权力差异——即男性在社会中拥有更多权力——可能是一个关键决定因素。例如，在一项以300名学生为样本的后续研究中，研究人员在人际环境中操控了权力动态，以观察这是否会影响交际抽象。他们发现，担任高权力面试官角色的参与者比担任低权力受访者角色的参与者更倾向于对行为给出抽象描述。这表明，更抽象的交流并不反映男性或女性的固有倾向，而是在特定情境中产生的。"
+];
+var saH='';
+for(var pi=0;pi<saPars.length;pi++){
+var ph=wx(saPars[pi]);
+for(var i=26;i<=35;i++){ph=ph.replace('__'+i+'__','<span style="display:inline-block;min-width:1.8em;border-bottom:2px solid #b8753e;text-align:center;margin:0 2px;font-weight:700;color:#b8753e">'+i+'</span>')}
+saH+='<div class="p">'+ph+'</div><button class="tt" onclick="ttg(\'tr-sa-'+pi+'\',this)"><span class="ar">&#9654;</span> 查看翻译</button><div class="tx" id="tr-sa-'+pi+'">'+saTr[pi]+'</div>';
+}
+document.getElementById('sap').innerHTML=saH;
+document.getElementById('sab').innerHTML='A) approximately B) attaining C) conclusion D) difficult E) emerges F) fixed G) ignored H) legally I) manipulated J) recommended K) refraining L) signals M) significantly N) source O) ultimate'.split(' ').filter(function(x){return x.trim()}).map(function(x){return '<span>'+wx(x)+'</span>'}).join(' ');
+
+// PASSAGE ONE — Willpower and Success
+var P1=[
+"People often wonder why some entrepreneurs have greater success than others. Is it habits, connections, luck, work ethic or any other behavior? I believe the key to success is willpower. Willpower is the ability to control yourself. It is a strong determination that allows you to do something difficult. It is a behavior we are born with more than one we learn; however, it is possible to not only learn it, but also strengthen it with constant exercise.",
+"Willpower is just like a muscle; to keep it strong you need to constantly exercise it. People with a great amount of willpower have the discipline to develop positive, successful habits. Even with an incredible amount of talent, without the discipline and motivation to create positive habits, it can be difficult to achieve success.",
+"Willpower and habits go hand in hand. It is critical to create good habits and take the actions necessary to stick to those habits day in and day out for greater success. Almost half of our daily actions are part of our habits and not decisions, so once the correct habits are in place, you will automatically perform those tasks on a day-to-day basis.",
+"The best way to create and stick to a habit is to have strong motivation. It's easier to change your habits to lose weight if you have a health issue and you want to be around longer for your kids, or if your business is something you're passionate about. Having a valuable outcome associated with a habit will help you stick to that habit permanently.",
+"The art of self-control is one that most successful individuals have mastered. Self-control enables you to avoid behaviors that don't contribute to your success and adopt those that do.",
+"Because there is a delayed satisfaction associated with self-control, it can be easy to get off track. However if you work on sticking to those small positive habits one day at a time, it becomes easier to stay strong and achieve that delayed reward. Once a reward is achieved, it is much easier to continue sticking to your habits."
+];
+var PT1=[
+"人们常常想知道为什么一些企业家比其他人更成功。是习惯、人脉、运气、职业道德还是其他行为？我相信成功的关键是意志力。意志力是控制自己的能力。它是一种坚定的决心，让你能够去做困难的事情。它是一种我们天生具备而非后天习得的行为；然而，我们不仅可以学会它，还可以通过不断锻炼来增强它。",
+"意志力就像肌肉一样；要保持它的强壮，你需要不断锻炼它。拥有强大意志力的人有纪律去培养积极、成功的习惯。即使拥有惊人的天赋，如果没有创造积极习惯的纪律和动力，也很难取得成功。",
+"意志力与习惯密不可分。关键在于培养好习惯，并采取必要行动日复一日地坚持这些习惯，以获得更大的成功。我们每天几乎一半的行动属于习惯而非决定，所以一旦正确的习惯到位，你就会日复一日地自动执行这些任务。",
+"创建并坚持一个习惯的最好方法是有强大的动力。如果你有健康问题并且想为了孩子活得更久，或者如果你对某项事业充满热情，那么为了减肥而改变习惯会更容易。将一个有价值的成果与习惯联系起来，会有助于你永久地坚持这个习惯。",
+"自制的艺术是大多数成功人士已经掌握的。自制力使你能够避免那些对成功无益的行为，并采取那些有益的行为。",
+"由于自制力伴随着延迟的满足感，很容易偏离正轨。然而，如果你努力一天一天地坚持那些小的积极习惯，保持坚定并实现那个延迟的回报就会变得更容易。一旦获得了回报，继续坚持你的习惯就会容易得多。"
+];
+var h1='';
+for(var i=0;i<P1.length;i++){h1+='<div class="p">'+wx(P1[i])+'</div><button class="tt" onclick="ttg(\'tr-p1-'+i+'\',this)"><span class="ar">&#9654;</span> 查看翻译</button><div class="tx" id="tr-p1-'+i+'">'+PT1[i]+'</div>'}
+document.getElementById('p1c').innerHTML=h1;
+
+// PASSAGE TWO — Funding of Scientific Research
+var P2=[
+"Today, most scientific research is funded by government grants, companies doing research and development, and non-profit foundations. As a society, we reap the rewards from this science, but we also help pay for it. You indirectly support science through taxes you pay, products and services you purchase, and donations you make.",
+"Funding for science has changed with the times. Historically, science has been largely supported through private patronage, church sponsorship, or simply paying for the research yourself. Today, researchers are likely to be funded by a mix of grants from various government agencies, institutions, and foundations. Other research is funded by private companies. Such corporate sponsorship is widespread in some fields. Almost 75% of U.S. clinical trials in medicine are paid for by private companies. And, of course, some researchers today still fund small-scale studies out of their own pockets. Most of us can't afford to do nuclear research as a private hobby, but birdwatchers, rock collectors, and others can do real research on a limited budget.",
+"In a perfect world, money wouldn't matter — all scientific studies would be completely objective. But in the real world, funding may introduce biases. Drug research sponsored by the pharmaceutical industry is more likely to end up favoring the drug under consideration than studies sponsored by government grants or charitable organizations. Similarly, nutrition research sponsored by the food industry is more likely to end up favoring the food under consideration than independently funded research.",
+"So what should we make of all this? Should we ignore any research funded by companies or special interest groups? Certainly not. These groups provide invaluable funding for scientific research. Furthermore, science has many safeguards in place to catch instances of bias that affect research outcomes. Ultimately, misleading results will be corrected as science proceeds; however, this process takes time. Meanwhile, it pays to examine studies funded by industry or special interest groups with extra care. Are the results consistent with other independently funded studies? What do other scientists have to say about this research? A little examination can go a long way towards identifying bias associated with the funding source."
+];
+var PT2=[
+"如今，大多数科学研究由政府拨款、从事研发的公司和非营利基金会资助。作为社会成员，我们从这些科学中获益，但我们也为其提供资金。你通过缴纳的税收、购买的产品和服务以及做出的捐赠间接地支持了科学。",
+"科学资助随着时代而变化。历史上，科学主要通过私人赞助、教会资助或仅仅是自费研究来获得支持。如今，研究人员可能通过来自各政府机构、研究机构和基金会的多种拨款组合获得资助。其他研究由私营公司资助——这种企业赞助在某些领域很普遍。美国近75%的临床医学试验由私营公司出资。当然，如今有些研究人员仍然自掏腰包资助小规模研究。我们大多数人负担不起把核研究当作业余爱好，但观鸟者、矿石收藏家和其他人可以在有限的预算下做真正的研究。",
+"在一个完美的世界里，金钱无关紧要——所有科学研究都将完全客观。但在现实世界中，资助可能会引入偏见。由制药行业赞助的药物研究比政府拨款或慈善组织赞助的研究更有可能最终倾向于所考察的药物。同样，由食品行业赞助的营养研究比独立资助的研究更有可能最终倾向于所考察的食品。",
+"那么我们该如何看待这一切呢？我们是否应该忽视任何由公司或特殊利益集团资助的研究？当然不是。这些团体为科学研究提供了宝贵的资助。此外，科学有许多保障措施来发现影响研究结果的偏见实例。最终，误导性的结果会随着科学的进步而被纠正；然而，这个过程需要时间。同时，对行业或特殊利益集团资助的研究进行格外仔细的审查是值得的。这些结果与其他独立资助的研究一致吗？其他科学家对这项研究有什么看法？稍加审视就能大大有助于识别与资助来源相关的偏见。"
+];
+var h2='';
+for(var i=0;i<P2.length;i++){h2+='<div class="p">'+wx(P2[i])+'</div><button class="tt" onclick="ttg(\'tr-p2-'+i+'\',this)"><span class="ar">&#9654;</span> 查看翻译</button><div class="tx" id="tr-p2-'+i+'">'+PT2[i]+'</div>'}
+document.getElementById('p2c').innerHTML=h2;
+
+// QUESTIONS
+function mq(q){
+  var h='<div class="qb"><div class="qt">'+wx(q.text)+'</div>';
+  h+='<button class="tt" onclick="ttg(\'tr-q'+q.id+'\',this)"><span class="ar">&#9654;</span> 查看题目翻译</button>';
+  h+='<div class="tx" id="tr-q'+q.id+'">'+q.qtr+'</div>';
+  h+='<div class="og">';
+  for(var oi=0;oi<q.opts.length;oi++){
+    h+='<div class="op">'+wx(q.opts[oi].t)+' <button class="tt" style="font-size:.7rem;padding:.15em .45em;margin:0" onclick="event.stopPropagation();ttg(\'tr-q'+q.id+'-o'+oi+'\',this)"><span class="ar">&#9654;</span> 译</button><div class="tx" id="tr-q'+q.id+'-o'+oi+'">'+q.opts[oi].tr+'</div></div>';
+  }
+  h+='</div></div>';
+  return h;
+}
+
+var Q1=[
+{id:46,text:'46. What does the author say we need to do to strengthen our willpower?',qtr:'作者说我们需要做什么来增强我们的意志力？',opts:[
+{t:"A) Keep it under control.",tr:"控制住它。"},
+{t:"B) Apply it continuously.",tr:"持续运用它。"},
+{t:"C) Learn from entrepreneurs.",tr:"向企业家学习。"},
+{t:"D) Aim at success determinedly.",tr:"坚定地瞄准成功。"}
+]},
+{id:47,text:'47. How are almost half of our daily actions performed according to the passage?',qtr:'根据文章，我们几乎一半的日常行为是如何完成的？',opts:[
+{t:"A) Out of habit.",tr:"出于习惯。"},
+{t:"B) With determination.",tr:"凭决心。"},
+{t:"C) Like muscle building.",tr:"像练肌肉一样。"},
+{t:"D) By self-discipline.",tr:"通过自律。"}
+]},
+{id:48,text:'48. What will help people stick to doing something constructive automatically?',qtr:'什么会帮助人们自动坚持做有建设性的事情？',opts:[
+{t:"A) Practising it on a day-to-day basis.",tr:"日复一日地练习。"},
+{t:"B) Associating it with improving health.",tr:"把它与改善健康联系起来。"},
+{t:"C) Possessing a reasonable amount of talent.",tr:"拥有合理的天赋。"},
+{t:"D) Foreseeing the desired outcome it will yield.",tr:"预见到它将产生的预期成果。"}
+]},
+{id:49,text:'49. How does the art of self-control help us succeed?',qtr:'自制的艺术如何帮助我们成功？',opts:[
+{t:"A) By allowing us to remain clear-headed permanently.",tr:"让我们永久保持清醒的头脑。"},
+{t:"B) By enabling us to alter our behaviors constantly.",tr:"让我们不断改变行为。"},
+{t:"C) By enabling us to take positive actions.",tr:"让我们能够采取积极的行动。"},
+{t:"D) By allowing us to avoid taking risks.",tr:"让我们避免冒险。"}
+]},
+{id:50,text:'50. Why can it be difficult for us to maintain self-control?',qtr:'为什么我们难以保持自制力？',opts:[
+{t:"A) Most of us are not in the habit of exercising self-control.",tr:"我们大多数人不习惯运用自制力。"},
+{t:"B) We may not get immediate rewards from self-control.",tr:"我们可能不会立即从自制中获得回报。"},
+{t:"C) Self-control tends to be associated with pains.",tr:"自制力往往与痛苦相关。"},
+{t:"D) Self-control only brings about small benefits.",tr:"自制力只带来很小的好处。"}
+]}
+];
+document.getElementById('p1q').innerHTML=Q1.map(mq).join('');
+
+var Q2=[
+{id:51,text:'51. What does the passage mainly discuss regarding scientific research?',qtr:'关于科学研究，文章主要讨论了什么？',opts:[
+{t:"A) Its foundation.",tr:"它的基础。"},
+{t:"B) Its rewards.",tr:"它的回报。"},
+{t:"C) Its prospect.",tr:"它的前景。"},
+{t:"D) Its funding.",tr:"它的资助。"}
+]},
+{id:52,text:'52. What do we learn from the passage about researchers like birdwatchers and rock collectors?',qtr:'关于像观鸟者和矿石收藏家这样的研究者，我们从文章中了解到什么？',opts:[
+{t:"A) They have little access to government funding.",tr:"他们很少获得政府资助。"},
+{t:"B) They can do research with limited resources.",tr:"他们可以用有限的资源做研究。"},
+{t:"C) They can do amateur work in their own fields.",tr:"他们可以在自己的领域做业余工作。"},
+{t:"D) They have no means for large-scale research.",tr:"他们没有进行大规模研究的手段。"}
+]},
+{id:53,text:'53. What would scientific studies look like in a perfect world according to the author?',qtr:'根据作者的说法，在一个完美的世界里科学研究会是什么样子？',opts:[
+{t:"A) They would be totally unbiased.",tr:"它们将完全无偏见。"},
+{t:"B) They would be independently funded.",tr:"它们将独立获得资助。"},
+{t:"C) They would be responsibly conducted.",tr:"它们将负责任地进行。"},
+{t:"D) They would be strictly supervised.",tr:"它们将受到严格的监督。"}
+]},
+{id:54,text:'54. What does the author say about companies and special interest groups?',qtr:'作者对公司与特殊利益集团有什么评价？',opts:[
+{t:"A) They try hard to pull down the safeguards for research.",tr:"它们竭力破坏研究的保障措施。"},
+{t:"B) They make extra efforts to research their own products.",tr:"它们格外努力地研究自己的产品。"},
+{t:"C) They provide valuable resources for scientific research.",tr:"它们为科学研究提供了宝贵的资源。"},
+{t:"D) They reap the most benefits from scientific research.",tr:"它们从科学研究中获得最多的利益。"}
+]},
+{id:55,text:'55. What does the author think of research funded by industry or special interest groups?',qtr:'作者如何看待由行业或特殊利益集团资助的研究？',opts:[
+{t:"A) Its recommendations should be examined for feasibility.",tr:"其建议应检查可行性。"},
+{t:"B) Its misleading results should be corrected in time.",tr:"其误导性结果应及时纠正。"},
+{t:"C) Its validity should be checked with additional care.",tr:"其有效性应格外仔细地检查。"},
+{t:"D) Its hidden biases should be identified independently.",tr:"其隐藏的偏见应被独立识别。"}
+]}
+];
+document.getElementById('p2q').innerHTML=Q2.map(mq).join('');
+
+console.log('%c✓ 2024.06 CET-4 Set2 脚本加载完成 | Made for 中浩 | '+new Date().toISOString(),'color:#b8753e;font-size:1.1em;');
+</script>
+</body>
+</html>
