@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025年12月 四级真题 第2套 — 阅读部分</title>
+<style>
+  :root {
+    --bg: #f5f0eb;
+    --card: #fff;
+    --text: #2c2416;
+    --muted: #6b5e4a;
+    --accent: #8b5e3c;
+    --accent-light: #f0e6d8;
+    --border: #d4c8b4;
+    --tag-bg: #e8dcc8;
+    --blank: #e8c864;
+    --correct: #5a8a4a;
+    --option-hover: #faf6f0;
+    --shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", "Songti SC", Georgia, serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    padding: 24px;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 40px 20px 32px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: #3d2e1c;
+    margin-bottom: 6px;
+  }
+  .header .sub {
+    font-size: .95rem;
+    color: var(--muted);
+  }
+
+  /* Section title */
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3d2e1c;
+    margin: 36px 0 16px;
+    padding-left: 14px;
+    border-left: 4px solid var(--accent);
+  }
+  .section-en {
+    font-size: .85rem;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 8px;
+  }
+
+  /* Passage card */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 30px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  .card .passage-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #4a3520;
+  }
+
+  /* Blanks */
+  .blank {
+    display: inline-block;
+    min-width: 3em;
+    border-bottom: 2px solid var(--blank);
+    text-align: center;
+    margin: 0 2px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* Word bank */
+  .wordbank {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px 10px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border);
+  }
+  .wordbank .item {
+    font-size: .92rem;
+    padding: 2px 0;
+  }
+  .wordbank .item strong {
+    color: var(--accent);
+    margin-right: 4px;
+    font-size: .85rem;
+  }
+
+  /* Paragraph matching: paragraphs */
+  .para-block {
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted var(--border);
+  }
+  .para-block:last-child { border-bottom: none; }
+  .para-label {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: #5a3e28;
+    font-weight: 700;
+    font-size: .82rem;
+    padding: 1px 8px;
+    border-radius: 3px;
+    margin-right: 6px;
+    vertical-align: top;
+    letter-spacing: .03em;
+  }
+  .para-text { display: inline; }
+
+  /* Statements list */
+  .stmt-list { counter-reset: stmt; }
+  .stmt-item {
+    counter-increment: stmt;
+    padding: 8px 0 8px 36px;
+    position: relative;
+    border-bottom: 1px solid #f0ebe0;
+  }
+  .stmt-item::before {
+    content: counter(stmt, decimal);
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 26px;
+    height: 26px;
+    background: var(--tag-bg);
+    color: #5a3e28;
+    font-size: .78rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stmt-item:last-child { border-bottom: none; }
+
+  /* QC questions */
+  .q-block {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0ebe0;
+  }
+  .q-block:last-child { border-bottom: none; }
+  .q-num {
+    font-weight: 700;
+    color: var(--accent);
+    margin-right: 6px;
+  }
+  .q-stem { margin-bottom: 6px; }
+  .q-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 16px;
+    margin-left: 28px;
+    font-size: .92rem;
+  }
+  .q-options div {
+    padding: 3px 0;
+    color: #4a4030;
+  }
+
+  /* Reading passage text */
+  .reading-passage {
+    font-size: .95rem;
+    line-height: 1.9;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+  .reading-passage p { text-indent: 2em; margin-bottom: 10px; }
+  .reading-passage p:first-child { text-indent: 0; }
+
+  /* Divider */
+  .divider {
+    text-align: center;
+    color: var(--muted);
+    margin: 32px 0;
+    font-size: .85rem;
+    letter-spacing: .3em;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 28px 0;
+    color: var(--muted);
+    font-size: .8rem;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    body { padding: 12px; }
+    .card { padding: 16px 14px; }
+    .wordbank { grid-template-columns: repeat(3, 1fr); }
+    .q-options { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====== HEADER ====== -->
+<div class="header">
+  <h1>2025年12月 · 大学英语四级真题（第2套）</h1>
+  <div class="sub">Part III　Reading Comprehension　（阅读部分 40 minutes）</div>
+</div>
+
+<!-- ====== SECTION A: 选词填空 ====== -->
+<h2 class="section-title">Section A<span class="section-en">选词填空 — Banked Cloze</span></h2>
+
+<div class="card">
+  <div class="passage-title">Passage: Music, ASMR and Alzheimer's</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Direction: 从方框中的15个选项中选词填入10个空格（26–35），每词限用一次。
+  </p>
+
+  <div class="reading-passage">
+    <p>Some music inspires you to move your feet, some inspires you to get out there and change the world. In any case, it's <span class="blank">26</span> to say that music moves people in special ways.</p>
+
+    <p>If you're especially into a piece of music, your brain does something called Autonomous Sensory Meridian Response (ASMR), which <span class="blank">27</span> to you like a sting in your brain.</p>
+
+    <p>It turns out that ASMR is pretty special. According to a <span class="blank">28</span> published study in <i>The Journal of Prevention of Alzheimer's Disease</i>, the part of your brain responsible for ASMR doesn't get lost to Alzheimer's. Alzheimer's <span class="blank">29</span> to put people into layers of confusion, and the study confirms that music can sometimes <span class="blank">30</span> lift people out of the Alzheimer's haze and bring them back to (at least a likeness of) normality...if only for a short while. ASMR is powerful stuff!</p>
+
+    <p>This phenomenon has been <span class="blank">31</span> several times but rarely studied properly. One of the most famous examples of this is the story of 92-year-old Henry Dryer, who comes out of dementia while listening to songs from his youth.</p>
+
+    <p>Jeff Anderson, associate professor in Radiology at the University of Utah and <span class="blank">32</span> author on the study, says "In our society, the diagnoses of dementia are <span class="blank">33</span> resources to the maximum. No one says playing music will be a cure for Alzheimer's disease, but it might make the symptoms more <span class="blank">34</span>, decrease the cost of care and improve a patient's <span class="blank">35</span> of life."</p>
+  </div>
+
+  <div class="wordbank">
+    <div class="item"><strong>A)</strong> actually</div>
+    <div class="item"><strong>B)</strong> consequently</div>
+    <div class="item"><strong>C)</strong> contributing</div>
+    <div class="item"><strong>D)</strong> fair</div>
+    <div class="item"><strong>E)</strong> feels</div>
+    <div class="item"><strong>F)</strong> manageable</div>
+    <div class="item"><strong>G)</strong> mends</div>
+    <div class="item"><strong>H)</strong> observed</div>
+    <div class="item"><strong>I)</strong> phase</div>
+    <div class="item"><strong>J)</strong> plotting</div>
+    <div class="item"><strong>K)</strong> quality</div>
+    <div class="item"><strong>L)</strong> recently</div>
+    <div class="item"><strong>M)</strong> taxing</div>
+    <div class="item"><strong>N)</strong> tends</div>
+    <div class="item"><strong>O)</strong> yielded</div>
+  </div>
+</div>
+
+<!-- ====== SECTION B: 段落匹配 ====== -->
+<h2 class="section-title">Section B<span class="section-en">段落匹配 — Paragraph Matching</span></h2>
+
+<div class="card">
+  <div class="passage-title">Can playing video games help you get a better job?</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Direction: 阅读段落 A–L，将下方10个陈述（36–45）匹配到对应段落。
+  </p>
+
+  <!-- Paragraphs -->
+  <div class="para-block"><span class="para-label">A</span><span class="para-text">The gaming industry is larger than films and music combined, yet few of us are likely to list our achievements in playing computer games as work experience in our resume. But why not? Businesses are waking up to the skills gamers can bring to the workplace.</span></div>
+
+  <div class="para-block"><span class="para-label">B</span><span class="para-text">One start-up is convinced that the skills learned by playing games—hard-won through years of training and battle—can be applied to real-life work situations. And Game Academy reckons its belief is backed up by hard data. Do you enjoy unusual puzzle games like Portal, or tower defence games like Defense Grid? The team has found that IT workers play those more than average. But if you prefer Civilization, Total War, or X-Com, where strategy and resource management are key, then you might have more in common with managers.</span></div>
+
+  <div class="para-block"><span class="para-label">C</span><span class="para-text">Game Academy's idea is simple: analyse gamers' habits from their online gaming profile, and offer courses in valuable skills that reflect their aptitudes—skills they can practise and refine in-game. And there is already a growing acceptance that gaming skills are transferable.</span></div>
+
+  <div class="para-block"><span class="para-label">D</span><span class="para-text">Even the military is hiring gamers. "The ability to absorb information, react swiftly and coordinate actions whilst remaining calm under pressure are often attributes of people that are good at gaming," according to a Royal Air Force spokesperson. Those skills are part of what the Royal Air Force is looking for "in a variety of roles". "Skills acquired through gaming can be very relevant to certain areas."</span></div>
+
+  <div class="para-block"><span class="para-label">E</span><span class="para-text">"There are plenty of soft skills that gamers can utilise in a professional setting, such as teamwork, problem solving and strategic planning," says Ryan Gardner, a regional director with Hays recruitment. But does that really mean your top 100 ranking in Overwatch should go down in your resume? "It's about how you either make it relevant to the job you are applying for, or how it makes you more interesting as a potential employee," Mr. Gardner says.</span></div>
+
+  <div class="para-block"><span class="para-label">F</span><span class="para-text">Two years ago, a Glasgow University study made headlines for suggesting gaming could make students more successful. But "the research hasn't really changed minds, at least not yet," says one of the authors of the study, Dr. Matthew Barr. He's now writing a book on the topic. "For now, I think the negative reputation around games means that telling someone you're a determined gamer is more likely to harm your chances of getting a job. But if someone can explain how they've led a team in an online game, for example, they may be able to persuade an employer that this is useful," says Dr Barr.</span></div>
+
+  <div class="para-block"><span class="para-label">G</span><span class="para-text">Playing games casually is unlikely to help your career prospects. But part of Game Academy's suggestion is to transform casual gamers into "conscious" ones, applying critical thinking to developing their skills. "We see gameplay as a resource of talent," says co-founder David Barrie. "Why can't we put in our resume our gaming victories and achievements?" he asks. "If they say they want leadership—why can't I point to my years of leading World of Warcraft raids?"</span></div>
+
+  <div class="para-block"><span class="para-label">H</span><span class="para-text">There are already plenty of gamers out there who know that their hobby has made them who they are. Earlier this year, Matthew Ricci told gaming site Kotaku: "If you're playing EVE Online you basically already have an MBA." Often made fun of in gaming circles as a spreadsheet simulator, the economy of the fictional EVE universe is driven by real market principles. If you want to build a new spaceship, the raw material has to be mined by another player. Manufacturing costs come into effect, and commodities fluctuate in price based on demand and the distance to haul the commodity.</span></div>
+
+  <div class="para-block"><span class="para-label">I</span><span class="para-text">Mr. Ricci, who had always dreamed of being the boss of his own company, ran an in-game corporation comprising hundreds of players. Eventually, he realised he could transfer his skills to real-life business instead of doing it for free. He restructured Zentech, once a taxation vehicle for his father's business, and it is now in its fourth year helping international brands enter the Canadian market. EVE teaches skills like creativity, leadership, organisation, and conflict resolution, he maintains. He credits his success to his family, his strong desire to run his own business—and "a damn good company in Iceland that made a damn good game."</span></div>
+
+  <div class="para-block"><span class="para-label">J</span><span class="para-text">Digital entrepreneur and business consultant Mia Bennett says: "In more traditional settings, gaming is still imagined to be the pursuit of teenage boys—a waste of time." But there are some links to skills like "decision-making, the ability to anticipate and future planning," she says. "It also helps with meta-skills—learning how to learn, experimentation, and creative thinking."</span></div>
+
+  <div class="para-block"><span class="para-label">K</span><span class="para-text">Twelve years into his career, Mark Long, a radiotherapy physicist with the NHS in Surrey, doesn't get as much gaming time as he used to. "I would love to say that my gaming skills allow me to destroy cancer using linear accelerators like photon blasters, but that's not quite the reality." Instead, he credits old-school games like Palace of Magic with exposing him to computers. Every new gaming upgrade improved his knowledge of how they worked. Gaming also encouraged a competitive spirit—and that, he believes, translates. "When creating treatment plans, the aim is to optimise the radiation dose to the tumour and restrict it as much as possible to healthy surrounding tissues and organs," he says. It's about "repeating the process, but each time doing something slightly different to improve the result". Not unlike achieving a high score or a perfect run. "Most videogames are essentially puzzles to solve," he says. "And problem-solving is a big part of my job."</span></div>
+
+  <div class="para-block"><span class="para-label">L</span><span class="para-text">Over at Game Academy, Mr. Barrie is aware they still have a mountain to climb. "The employer community will need the science," he says, but confesses he only became a true believer when he started asking players about their biggest in-game achievements. "The scale and scope of their answers were amazing," he says. "But ask them the same about their work, and they don't know." "The engagement and powerful skills that people get playing a game—why can't work be like that?" he asks.</span></div>
+
+  <!-- Statements 36-45 -->
+  <div style="margin-top:20px;padding-top:16px;border-top:2px solid var(--border);">
+    <p style="font-weight:700;margin-bottom:8px;color:#4a3520;">Statements（匹配下列陈述对应的段落）</p>
+    <div class="stmt-list">
+      <div class="stmt-item">Certain gaming skills meet the requirements of the armed forces in Britain.</div>
+      <div class="stmt-item">One veteran player has applied his gaming skills to his real-world business and owes his success partly to a game company.</div>
+      <div class="stmt-item">According to a researcher, bad reputation about games will probably limit a gamer's chances of landing a job.</div>
+      <div class="stmt-item">Businesses are beginning to realise gaming skills are applicable to their employees' work.</div>
+      <div class="stmt-item">A physicist admits gaming has contributed to his computer knowledge and skills of solving problems.</div>
+      <div class="stmt-item">Game Academy proposes to help gamers develop their skills using critical thinking.</div>
+      <div class="stmt-item">One who enjoys playing games that require management skills to win might possess more qualities of a manager.</div>
+      <div class="stmt-item">In more conventional views, gaming is a time-wasting activity pursued by young boys.</div>
+      <div class="stmt-item">It is suggested that gaming skills be included in a resume if they enhance a job applicant's appeal.</div>
+      <div class="stmt-item">Many gamers know their passion for playing games has shaped their identity.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== SECTION C: 仔细阅读 ====== -->
+<h2 class="section-title">Section C<span class="section-en">仔细阅读 — In-depth Reading</span></h2>
+
+<!-- Passage One -->
+<div class="card">
+  <div class="passage-title">Passage One — Junk Food, Teens, and an Innovative Intervention</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Questions 46 – 50 &nbsp;|&nbsp; 选择最佳答案
+  </p>
+
+  <div class="reading-passage">
+    <p>Junk food is now a staple of many Americans' diets. Advertising campaigns from the snack food companies, often featuring sports stars, send the message that we can neutralize any negative effects of consuming their products simply by getting more physical exercise. But recent studies show a lack of exercise is not to blame for rising obesity rates. Bad diets are.</p>
+
+    <p>Interventions to help reduce junk food consumption are especially important for children and teenagers. Prevention is better than cure because obesity is so difficult to treat. Unfortunately, while health education has shown some success among young children, teens have been harder to reach.</p>
+
+    <p>Now a large-scale study has tried an innovative approach to change teenagers' attitudes towards healthy eating, and the results are promising. The researchers argued that previous interventions have probably been unsuccessful because of a major flaw: they focused on a future, healthier you and assumed that this would be enough motivation for teenagers. In contrast, the new intervention cleverly exploits teenagers' instinct for rebelliousness and autonomy, and the value they place on social justice.</p>
+
+    <p>To do this, researchers had students read an article on the food industry. It revealed a secret about the manipulative and deceptive strategies used to make junk food more addictive and characterize the products as healthy. The article also explained how advertising campaigns specifically target very young and poor people, causing harm for these vulnerable groups. Afterwards, the participants read a fictional survey of teens who wanted to "fight back against the companies by buying and eating less processed food".</p>
+
+    <p>After the intervention, participants associated healthy eating with autonomy and social justice. The teenagers also rated healthy eating as being more appealing. Importantly, there were also some promising effects of the new intervention on actual behavior. A day later the students were offered a choice of snacks and drinks in a seemingly unrelated context. The teens chose healthy snacks and drinks (such as fruit or water) more often over unhealthy options (like biscuits and soda). Apparently associating a healthy diet with teenagers' own values seems to be a promising avenue to prevent obesity.</p>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">46.</span>What do we learn about advertising campaigns from the snack food companies?</div>
+    <div class="q-options">
+      <div>A) They convey the idea that their products are ok if consumers exercise more.</div>
+      <div>B) They send the message that bad diets are responsible for Americans' obesity.</div>
+      <div>C) They usually feature sports stars to emphasize the benefits of their snack foods.</div>
+      <div>D) They claim that lack of exercise is to blame for the increasing obesity rates.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">47.</span>What does the passage say about health education?</div>
+    <div class="q-options">
+      <div>A) It has shed light on teens' instinct for rebellion and autonomy.</div>
+      <div>B) It has placed much more emphasis on cure than on prevention.</div>
+      <div>C) It has contributed little to the campaigns against obesity.</div>
+      <div>D) It has largely failed to turn teens away from junk food.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">48.</span>What is a major flaw in previous interventions to help reduce junk food consumption?</div>
+    <div class="q-options">
+      <div>A) They motivated teens to stay away from junk food only temporarily.</div>
+      <div>B) They focused on the benefits young people would reap in the future.</div>
+      <div>C) They were based on the assumption that motivation was the only key.</div>
+      <div>D) They were incapable of appealing to teens' instinct for rebelliousness.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">49.</span>In what way is the new intervention innovative?</div>
+    <div class="q-options">
+      <div>A) It emphasizes people's sense of social responsibility.</div>
+      <div>B) It cleverly exploits teenagers' personal weaknesses.</div>
+      <div>C) It takes advantage of teenagers' natural inclination.</div>
+      <div>D) It promises immediate rather than future benefits.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">50.</span>What conclusion can be drawn from the new research?</div>
+    <div class="q-options">
+      <div>A) A totally different approach could be adopted to combat advertising campaigns for snack food.</div>
+      <div>B) An effective intervention has to be found to persuade teenagers to switch to a healthier lifestyle.</div>
+      <div>C) Obesity can be hopefully prevented by building links between teenagers' values and healthy eating.</div>
+      <div>D) An innovative way to beat obesity is to expose food companies' manipulative and deceptive practices.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Passage Two -->
+<div class="card">
+  <div class="passage-title">Passage Two — Babies and Dreaming: When Do Dreams Begin?</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Questions 51 – 55 &nbsp;|&nbsp; 选择最佳答案
+  </p>
+
+  <div class="reading-passage">
+    <p>Adults dream during REM (rapid eye movement) sleep and infants have loads of REM. So, it might be fair to assume that babies have tons of dreams.</p>
+
+    <p>But scientists believe REM serves a completely different purpose for newborns and infants than dreaming. When babies are in REM, it allows their brain to develop pathways, connections, and eventually, learn languages.</p>
+
+    <p>Since your baby doesn't dream at this stage of brain development, it's safe to assume babies do not have nightmares, either. Nightmares stem from exposure to trauma, an overactive imagination, and the normal stresses of everyday life.</p>
+
+    <p>Are you wondering, what do babies dream about? Good question, but the answer is nothing!</p>
+
+    <p>So, when do babies start dreaming? The general consensus is that they start dreaming around the age of two. Psychologist David Foulkes studies children (from very small kids to teens) to bring the secrets of their dreams to the light of day. In his lab, he lets kids fall asleep and then wakes them 3 times a night and asks them to describe what they recall.</p>
+
+    <p>Foulkes' findings are unsurprising. Basically, little kids have little dreams. But exactly what kids see while dreaming depends on their age. As children develop and grow, their dreams do too.</p>
+
+    <p>Dreams of very small kids are usually just snapshots, looking much more like a slideshow than a movie, when compared to the dreams of adults. They heavily feature animals and other familiar sights, like images of people eating. According to Foulkes, "Children's dream life...seems to be similar to their waking imagination and narration." Kids ages 5–9 begin seeing moving images and characters in action. Dreams now include multiple events strung together, one after the other. They also start developing greater ability to remember dreams. Still, that's not always the case: When roused during REM sleep, 25% of the kids in Foulkes' studies had no recollection of dreaming, a trend that continues through age 9.</p>
+
+    <p>So, if your baby seems to be in a stressful state while sleeping or is upset upon waking, there may be other factors at play.</p>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">51.</span>What do scientists think of REM?</div>
+    <div class="q-options">
+      <div>A) It is a sign of dreaming in adults and infants alike.</div>
+      <div>B) It is essential to human beings' language learning.</div>
+      <div>C) It determines the formation of connections in the brain.</div>
+      <div>D) It performs a different function in babies than in adults.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">52.</span>What can we infer about nightmares from the passage?</div>
+    <div class="q-options">
+      <div>A) They occur often in people with an active imagination.</div>
+      <div>B) They occur in people suffering from emotional stress.</div>
+      <div>C) They vary in different stages of brain development.</div>
+      <div>D) They appear in the sleep of both adults and infants.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">53.</span>What is the aim of psychologist David Foulkes' study?</div>
+    <div class="q-options">
+      <div>A) To reveal the secrets of children's dreams.</div>
+      <div>B) To see if children start dreaming at age two.</div>
+      <div>C) To solve the mystery of dreaming and brain growth.</div>
+      <div>D) To confirm the general consensus on when kids dream.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">54.</span>What are Foulkes' findings about kids' dreams?</div>
+    <div class="q-options">
+      <div>A) They feature strange animals.</div>
+      <div>B) They are unsurprising to adults.</div>
+      <div>C) They grow and evolve with age.</div>
+      <div>D) They reflect kids' waking life.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">55.</span>What can we assume about babies who appear upset upon waking?</div>
+    <div class="q-options">
+      <div>A) They have been roused against their will.</div>
+      <div>B) They have been disturbed by a nightmare.</div>
+      <div>C) They have trouble recollecting the images of their dreams.</div>
+      <div>D) They have been affected by something other than dreaming.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  2025年12月 · 大学英语四级真题第2套 · 阅读部分整合 &nbsp;|&nbsp; 总题数：30 题（26–55）
+</div>
+
+</div>
+</body>
+</html>

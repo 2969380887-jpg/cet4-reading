@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2024年12月 四级真题 第2套 — 阅读部分</title>
+<style>
+  :root {
+    --bg: #f5f0eb;
+    --card: #fff;
+    --text: #2c2416;
+    --muted: #6b5e4a;
+    --accent: #8b5e3c;
+    --accent-light: #f0e6d8;
+    --border: #d4c8b4;
+    --tag-bg: #e8dcc8;
+    --blank: #e8c864;
+    --correct: #5a8a4a;
+    --option-hover: #faf6f0;
+    --shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", "Songti SC", Georgia, serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    padding: 24px;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 40px 20px 32px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: #3d2e1c;
+    margin-bottom: 6px;
+  }
+  .header .sub {
+    font-size: .95rem;
+    color: var(--muted);
+  }
+
+  /* Section title */
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3d2e1c;
+    margin: 36px 0 16px;
+    padding-left: 14px;
+    border-left: 4px solid var(--accent);
+  }
+  .section-en {
+    font-size: .85rem;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 8px;
+  }
+
+  /* Passage card */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 30px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  .card .passage-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #4a3520;
+  }
+
+  /* Blanks */
+  .blank {
+    display: inline-block;
+    min-width: 3em;
+    border-bottom: 2px solid var(--blank);
+    text-align: center;
+    margin: 0 2px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* Word bank */
+  .wordbank {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px 10px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border);
+  }
+  .wordbank .item {
+    font-size: .92rem;
+    padding: 2px 0;
+  }
+  .wordbank .item strong {
+    color: var(--accent);
+    margin-right: 4px;
+    font-size: .85rem;
+  }
+
+  /* Paragraph matching: paragraphs */
+  .para-block {
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted var(--border);
+  }
+  .para-block:last-child { border-bottom: none; }
+  .para-label {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: #5a3e28;
+    font-weight: 700;
+    font-size: .82rem;
+    padding: 1px 8px;
+    border-radius: 3px;
+    margin-right: 6px;
+    vertical-align: top;
+    letter-spacing: .03em;
+  }
+  .para-text { display: inline; }
+
+  /* Statements list */
+  .stmt-list { counter-reset: stmt; }
+  .stmt-item {
+    counter-increment: stmt;
+    padding: 8px 0 8px 36px;
+    position: relative;
+    border-bottom: 1px solid #f0ebe0;
+  }
+  .stmt-item::before {
+    content: counter(stmt, decimal);
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 26px;
+    height: 26px;
+    background: var(--tag-bg);
+    color: #5a3e28;
+    font-size: .78rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stmt-item:last-child { border-bottom: none; }
+
+  /* QC questions */
+  .q-block {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0ebe0;
+  }
+  .q-block:last-child { border-bottom: none; }
+  .q-num {
+    font-weight: 700;
+    color: var(--accent);
+    margin-right: 6px;
+  }
+  .q-stem { margin-bottom: 6px; }
+  .q-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 16px;
+    margin-left: 28px;
+    font-size: .92rem;
+  }
+  .q-options div {
+    padding: 3px 0;
+    color: #4a4030;
+  }
+
+  /* Reading passage text */
+  .reading-passage {
+    font-size: .95rem;
+    line-height: 1.9;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+  .reading-passage p { text-indent: 2em; margin-bottom: 10px; }
+  .reading-passage p:first-child { text-indent: 0; }
+
+  /* Divider */
+  .divider {
+    text-align: center;
+    color: var(--muted);
+    margin: 32px 0;
+    font-size: .85rem;
+    letter-spacing: .3em;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 28px 0;
+    color: var(--muted);
+    font-size: .8rem;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    body { padding: 12px; }
+    .card { padding: 16px 14px; }
+    .wordbank { grid-template-columns: repeat(3, 1fr); }
+    .q-options { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====== HEADER ====== -->
+<div class="header">
+  <h1>2024年12月 · 大学英语四级真题（第2套）</h1>
+  <div class="sub">Part III　Reading Comprehension　（阅读部分 40 minutes）</div>
+</div>
+
+<!-- ====== SECTION A: 选词填空 ====== -->
+<h2 class="section-title">Section A<span class="section-en">选词填空 — Banked Cloze</span></h2>
+
+<div class="card">
+  <div class="passage-title">Passage: Vision Deprivation Enhances Hearing in Mice</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Direction: 从方框中的15个选项中选词填入10个空格（26–35），每词限用一次。
+  </p>
+
+  <div class="reading-passage">
+    <p>Scientists have known that depriving adult mice of vision can increase the sensitivity of individual neurons in the part of the brain devoted to hearing. New research from biologists at the University of Maryland <span class="blank">26</span> that sight deprivation also changes the way brain cells <span class="blank">27</span> with one another, shifting the mice's sensitivity to different frequencies.</p>
+
+    <p>"This study <span class="blank">28</span> what we are learning about how manipulating vision can have a <span class="blank">29</span> effect on the ability of an animal to hear long after the window for auditory learning was thought to have <span class="blank">30</span>," said Patrick Kanold, senior author of the study.</p>
+
+    <p>It was once thought that the sensory regions of the brain were not <span class="blank">31</span> after a critical period in childhood. This is why children learn languages much more <span class="blank">32</span> than adults. Kanold's earlier research disproved this idea by showing that depriving adult mice of vision for a short period increased the sensitivity of individual neurons in the auditory cortex, which is devoted to hearing.</p>
+
+    <p>Young brains wire themselves according to the sounds they hear frequently, assigning areas of the auditory cortex to <span class="blank">33</span> frequencies based on what they are used to hearing. The researchers found that, in adult mice, a week in the dark also changed the <span class="blank">34</span> of space to different frequencies.</p>
+
+    <p>"We don't know why we are seeing these patterns," Kanold said. "We <span class="blank">35</span> that it may have to do with what the mice are paying attention to while they are in the dark."</p>
+  </div>
+
+  <div class="wordbank">
+    <div class="item"><strong>A)</strong> adaptable</div>
+    <div class="item"><strong>B)</strong> closed</div>
+    <div class="item"><strong>C)</strong> distribution</div>
+    <div class="item"><strong>D)</strong> interact</div>
+    <div class="item"><strong>E)</strong> narration</div>
+    <div class="item"><strong>F)</strong> neutral</div>
+    <div class="item"><strong>G)</strong> permanently</div>
+    <div class="item"><strong>H)</strong> prescribes</div>
+    <div class="item"><strong>I)</strong> readily</div>
+    <div class="item"><strong>J)</strong> registered</div>
+    <div class="item"><strong>K)</strong> reinforces</div>
+    <div class="item"><strong>L)</strong> revealed</div>
+    <div class="item"><strong>M)</strong> significant</div>
+    <div class="item"><strong>N)</strong> specific</div>
+    <div class="item"><strong>O)</strong> speculate</div>
+  </div>
+</div>
+
+<!-- ====== SECTION B: 段落匹配 ====== -->
+<h2 class="section-title">Section B<span class="section-en">段落匹配 — Paragraph Matching</span></h2>
+
+<div class="card">
+  <div class="passage-title">If We Care About Plastic Waste, Why Won't We Stop Drinking Bottled Water?</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Direction: 阅读段落 A–L，将下方10个陈述（36–45）匹配到对应段落。
+  </p>
+
+  <!-- Paragraphs -->
+  <div class="para-block"><span class="para-label">A</span><span class="para-text">For all the innovation and choice that define the food and drink industries, if you want to make money, you could do a lot worse than fill a bottle with water and sell it. A litre of tap water, the stuff we have cleverly piped into our homes, costs less than half a penny. A litre of bottled water can cost well over a pound, especially for something fancy that has been sucked through a mountain.</span></div>
+
+  <div class="para-block"><span class="para-label">B</span><span class="para-text">Yet the bottled water market is livelier than ever. It defies our increasing awareness of the harm plastics do to the environment and a broader, growing sense that something has to change. Sales in the UK were worth a record 558.4 million this past year, an increase of 7%, according to the latest figures from the market analyst Kantar. Separate data from other analysts show that last year the British consumed more than 2.2 billion litres of bottled water, including "take-home" and "on-the-go" products. That's an annual rise in volume of 8.5%.</span></div>
+
+  <div class="para-block"><span class="para-label">C</span><span class="para-text">Environmental campaigners are struggling to understand why nations blessed with clean tap water grow only fonder of the bottle. "It's very surprising to me," says Sam Chetan-Walsh, a political adviser at Greenpeace and campaigner against ocean plastic. "Public awareness has never been higher, but the message is not quite reaching all the people it needs to." Where it is heard, the message is causing concern. Plastic water bottles require oceans of fossil fuels to make and ship. Additionally, single-use plastics of all types are polluting our cities and seas. Numerous documentaries have shown how plastic is ultimately killing wildlife.</span></div>
+
+  <div class="para-block"><span class="para-label">D</span><span class="para-text">Moves against various plastics have gathered pace, from shopping bags to straws and plastic-lined coffee cups. Chetan-Walsh argues that bottled water is different because the alternatives are so obvious. "If a product that is so nakedly unnecessary can exist, then the whole system is failing," he says.</span></div>
+
+  <div class="para-block"><span class="para-label">E</span><span class="para-text">Hope is not entirely out of reach. The rate of growth has begun to ease (sales were up 7% in the year, compared with 8% the previous year).</span></div>
+
+  <div class="para-block"><span class="para-label">F</span><span class="para-text">But even if large numbers of people are quitting bottled water because of care for the environment, others are taking it up. The introduction of the "sugar tax" on juices and soda drinks has pushed more people to bottled water, while health awareness has boosted its desirability. Tap water consumption is growing at roughly the same pace (UK consumers still drink almost three times as much tap water as bottled water).</span></div>
+
+  <div class="para-block"><span class="para-label">G</span><span class="para-text">So the plastic tide only creeps higher. The industry is quick to point out that all its bottles are recyclable. "But collection rates are, at the most generous estimates, 56%, so the actual recycling rate will be lower than that," Chetan-Walsh says. And while bottles may be recyclable, very few are made of recycled plastic. One water bottle company launched recycled half-litre "eco" bottles alongside its standard bottles. Another has pledged to use only recycled plastic across its range by 2025. Chetan-Walsh believes in a ban on single-use bottles. Bans do exist in some places. Organisers of a famous music festival announced that water bottles will not be sold this summer. San Francisco has banned them from city property and events. Last year, the UK government set out plans to ban single-use plastic from its estate.</span></div>
+
+  <div class="para-block"><span class="para-label">H</span><span class="para-text">Water bottlers, unsurprisingly, don't support bans. But they raise concerns about health rather than profit margins. Last month one chief executive of a water bottling company said that bans would "result in greater consumption of sugary drinks, adding to all the health dangers of obesity, diabetes and tooth decay". Kinvara Carey, general manager of an association of the biggest bottled water manufacturers, cites a survey in which people were asked what they would do if bottled water were not available. "Forty-four per cent would buy another drink, which is not great, 14% would go without and 4.5% said they would find a fountain," she says. "The choice is important."</span></div>
+
+  <div class="para-block"><span class="para-label">I</span><span class="para-text">What if fountains were more numerous, and tap water more clearly available in cafes, restaurants and elsewhere? Dozens of fountains are being installed in London. There are similar initiatives elsewhere. Before plastic and the marketing that made people think they needed bottled water in the first place, fountains were an urban fixture. Greenpeace, among others, is also pushing for a "deposit return" scheme. This would mean tax on bottled water would be refunded to customers who returned the plastic for recycling.</span></div>
+
+  <div class="para-block"><span class="para-label">J</span><span class="para-text">Even if bottled water sales are growing slightly more slowly, the industry is racing to adapt to changing concerns and tastes. Flavoured water is booming: sales of the sparkling variety shot up by 20%, according to the latest analyst data. Meanwhile, international water brands, as well as a range of new companies, are selling high-end reusable bottles. And if you must fill them with tap water, why not add flavouring?</span></div>
+
+  <div class="para-block"><span class="para-label">K</span><span class="para-text">As the owner of multiple sugary drink brands and bottled water, PepsiCo is facing challenges on health and environmental fronts. Last year, the company bought SodaStream (a drinks company that sells machines for making tap water bubbly and then consumers add flavours) for $3.2 billion. It also launched a range of fancy bottles that work with tap water and flavour packets. The bottle is reusable. The packets? Not so much, and, yes, they are made of plastic, although the company invites users to post them back for recycling.</span></div>
+
+  <div class="para-block"><span class="para-label">L</span><span class="para-text">As is so often the case, clever marketing can beat reason; awareness is rarely enough. "There is always this kind of slip between concern, intent and changed behaviour," says Giles Quick, an analyst of bottled water. "The best example is five a day, the recommendation to have at least five portions of fruit and vegetables every day. Almost everyone is aware of this, but something like 15% of us achieve it." Unless a far-reaching bottle ban does come into force, it will be up to consumers to not only demand change — but to act themselves.</span></div>
+
+  <!-- Statements 36-45 -->
+  <div style="margin-top:20px;padding-top:16px;border-top:2px solid var(--border);">
+    <p style="font-weight:700;margin-bottom:8px;color:#4a3520;">Statements（匹配下列陈述对应的段落）</p>
+    <div class="stmt-list">
+      <div class="stmt-item">Judging from the slowing rate of sales growth, there is still hope to combat bottled water.</div>
+      <div class="stmt-item">Bottled water manufacturers base their arguments against bans of plastic bottles on health concerns rather than on profits.</div>
+      <div class="stmt-item">Sales of bottled water in Britain hit a record high last year even though people are increasingly aware that plastics are environmentally unfriendly.</div>
+      <div class="stmt-item">It often happens that people can lack reason when faced with skillful marketing.</div>
+      <div class="stmt-item">One city on the west coast of America has banned single-use bottles from its property and events.</div>
+      <div class="stmt-item">Manufacturing and shipping of plastic water bottles consume a tremendous amount of fossil fuels.</div>
+      <div class="stmt-item">One large beverage company has adapted its operations when confronted with challenges from health and environmental advocates.</div>
+      <div class="stmt-item">Bottled water is considerably more expensive than tap water.</div>
+      <div class="stmt-item">Fountains could be seen in cities before bottled water became popular.</div>
+      <div class="stmt-item">More people have taken to bottled water because of their health awareness.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== SECTION C: 仔细阅读 ====== -->
+<h2 class="section-title">Section C<span class="section-en">仔细阅读 — In-depth Reading</span></h2>
+
+<!-- Passage One -->
+<div class="card">
+  <div class="passage-title">Passage One — Financial Literacy Education for Australian Youth</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Questions 46 – 50 &nbsp;|&nbsp; 选择最佳答案
+  </p>
+
+  <div class="reading-passage">
+    <p>As a university student, I've come to realise just how little I know about money. I've come to the brutal realisation that Australia's youth are being done a great disservice by not receiving any consistent financial education.</p>
+
+    <p>Diving headfirst into the crash course of starting university, I've quickly tried to get myself up to speed with the financial terms of the modern era to help manage my personal finances.</p>
+
+    <p>I've read some financial education books, done some online learning, and have spoken to my nearest and dearest for their pearls of financial wisdom.</p>
+
+    <p>There are undoubtedly hundreds of great resources out there for those wishing to improve their financial literacy, but while I was researching, I still kept wishing that I didn't have to play catch-up with the money world. I felt that I was sailing the financial seas with no skills and no life jacket!</p>
+
+    <p>However, after talking to my friends who felt the same, I quickly realised that it wasn't my ignorance but the lack of financial education in our schooling system that is leaving high schoolers seriously behind in the modern world of money.</p>
+
+    <p>Let's compare a theoretical financial education subject to the standard compulsory English class. On average, English may not be the most popular subject, but it's consistently on the schedule throughout high school, with all students graduating fluent in English.</p>
+
+    <p>A financial education subject should do just the same. It shouldn't be just a one-day event but a course integrated throughout the whole of high school that would allow students to gradually expand their financial literacy, and would prevent the need for a "catch up" phase once we're out on our own after graduation.</p>
+
+    <p>In the same way that learning a language or new skills takes time, building financial skills requires practice and years to gradually accumulate bits and pieces of knowledge.</p>
+
+    <p>Giving young people the opportunity to become familiar with the world of money would provide them with a great advantage to enter adulthood with confidence and security so that they are able to manage their own money and look after themselves.</p>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">46.</span>What has the author come to realise since entering university?</div>
+    <div class="q-options">
+      <div>A) He needs a crash course on financial terms.</div>
+      <div>B) He is very much lacking in financial literacy.</div>
+      <div>C) It requires consistent education to be financially independent.</div>
+      <div>D) It is unrealistic to give all Australian youth a financial education.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">47.</span>How did the author feel in today's money world?</div>
+    <div class="q-options">
+      <div>A) Badly equipped to survive.</div>
+      <div>B) Ignorant of financial literature.</div>
+      <div>C) Barely capable of moving ahead.</div>
+      <div>D) Overwhelmed by the resources online.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">48.</span>What did the author realise after talking to his friends?</div>
+    <div class="q-options">
+      <div>A) They were as keen as he was on financial matters.</div>
+      <div>B) The schooling system was to blame for his trouble.</div>
+      <div>C) High schoolers knew nothing about the modern financial world.</div>
+      <div>D) Financial courses were as unpopular as compulsory English classes.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">49.</span>What is the author's idea of a financial education course?</div>
+    <div class="q-options">
+      <div>A) It should foresee students' needs after graduation.</div>
+      <div>B) It should provide students with some basic knowledge.</div>
+      <div>C) It should be taught the same way as English is taught.</div>
+      <div>D) It should be integrated into high school education.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">50.</span>What would financial literacy do to young people?</div>
+    <div class="q-options">
+      <div>A) Allow them to enter adulthood with financial security.</div>
+      <div>B) Enable them to look after themselves without worrying about money.</div>
+      <div>C) Render them confident and secure in terms of money management.</div>
+      <div>D) Help them become familiar with the world of money.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Passage Two -->
+<div class="card">
+  <div class="passage-title">Passage Two — Chocolates May Go Extinct and Gene-Editing to Save Cacao</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Questions 51 – 55 &nbsp;|&nbsp; 选择最佳答案
+  </p>
+
+  <div class="reading-passage">
+    <p>Chocolates save us from many things, especially emotional distress. They comfort us in times of trouble, calming down a racing heart by channelling happy calories inside us. We all have faith in chocolates to delight us in an instant!</p>
+
+    <p>Recently, chocolate lovers were heartbroken as scientists claimed that they can become extinct by 2050! But hey, we have some happy news for you. Scientists can still help save chocolates from dying out! If you are not aware as to why scientists made the statement about the death of this wonderful thing, let us tell you the facts. Chocolate trees, whose seeds are used to make chocolate, grow in the tropical plant world and require very specific weather conditions to prosper.</p>
+
+    <p>Now, fifty percent of the world's cocoa beans come from two countries in West Africa: Cote d'Ivoire and Ghana. Scientists believe that both of these countries will experience a 3.8 degrees Fahrenheit temperature increase by 2050 due to global warming, endangering the cacao farms in the rainforests. These farms will then have to be shifted to cooler mountainous areas, which are the natural habitat of wildlife. This will lead to some tough decisions: whether to grow chocolate or save wildlife.</p>
+
+    <p>Unfortunately, the crisis of global warming has already had a serious negative impact on cacao farms' yields, leading to the prices of chocolates skyrocketing.</p>
+
+    <p>Scientists, however, are trying to find a long-term and eco-friendly solution to this problem! They are trying to modify the species with a gene-editing technology, which will transform the seedlings into a species that survives even in a drier and warmer climate.</p>
+
+    <p>According to a report by The Business Insider, in the University of California's new bio-sciences building, tiny green cacao seedlings are lined up in refrigerated greenhouses for a new experiment by using a technology called CRISPR. By manipulating the DNA of plants, this technology is already being used across the world to make plants tougher and cheaper. Similarly, in this unconventional experiment, scientists will make tiny, precise changes to the DNA of the seedlings to make the cocoa crops survive in warmer and drier climates.</p>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">51.</span>What do people believe chocolates can do?</div>
+    <div class="q-options">
+      <div>A) Cheer them up instantly.</div>
+      <div>B) Create happy calories.</div>
+      <div>C) Conceal emotional distress.</div>
+      <div>D) Relieve them of heart trouble.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">52.</span>What was scientists' recent assertion about chocolates?</div>
+    <div class="q-options">
+      <div>A) They could become a rare treat in the near future.</div>
+      <div>B) They could calm people down a bit in times of crisis.</div>
+      <div>C) They could prevent people from getting heartbroken.</div>
+      <div>D) They could become unavailable in less than 30 years.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">53.</span>What would happen if the cacao farms were shifted to cooler mountainous areas?</div>
+    <div class="q-options">
+      <div>A) The natural habitat of wildlife there would be ruined.</div>
+      <div>B) The cacao farmers would have a tough time to adapt.</div>
+      <div>C) The rainforests would be shrinking dramatically.</div>
+      <div>D) The quality of cocoa beans would suffer greatly.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">54.</span>What do we learn about the cacao farms in the crisis of global warming?</div>
+    <div class="q-options">
+      <div>A) They try to seek help from gene-editing scientists.</div>
+      <div>B) They decide to move to cooler mountainous areas.</div>
+      <div>C) They have suffered a lot due to a decrease in produce.</div>
+      <div>D) They have benefited by raising prices of cocoa beans.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">55.</span>What are scientists trying to do in the University of California's new bio-sciences building?</div>
+    <div class="q-options">
+      <div>A) Build rows of refrigerated greenhouses for research on cacao seedlings.</div>
+      <div>B) Gene-edit cacao seedlings for them to withstand a drier, warmer climate.</div>
+      <div>C) Produce chocolates with the latest gene-editing technology.</div>
+      <div>D) Transplant the genes of tougher plants to cacao seedlings.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  2024年12月 · 大学英语四级真题第2套 · 阅读部分整合 &nbsp;|&nbsp; 总题数：30 题（26–55）
+</div>
+
+</div>
+</body>
+</html>

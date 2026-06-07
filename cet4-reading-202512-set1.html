@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025年12月 四级真题 第1套 — 阅读部分</title>
+<style>
+  :root {
+    --bg: #f5f0eb;
+    --card: #fff;
+    --text: #2c2416;
+    --muted: #6b5e4a;
+    --accent: #8b5e3c;
+    --accent-light: #f0e6d8;
+    --border: #d4c8b4;
+    --tag-bg: #e8dcc8;
+    --blank: #e8c864;
+    --correct: #5a8a4a;
+    --option-hover: #faf6f0;
+    --shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", "Songti SC", Georgia, serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    padding: 24px;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 40px 20px 32px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: #3d2e1c;
+    margin-bottom: 6px;
+  }
+  .header .sub {
+    font-size: .95rem;
+    color: var(--muted);
+  }
+
+  /* Section title */
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3d2e1c;
+    margin: 36px 0 16px;
+    padding-left: 14px;
+    border-left: 4px solid var(--accent);
+  }
+  .section-en {
+    font-size: .85rem;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 8px;
+  }
+
+  /* Passage card */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 30px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  .card .passage-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #4a3520;
+  }
+
+  /* Blanks */
+  .blank {
+    display: inline-block;
+    min-width: 3em;
+    border-bottom: 2px solid var(--blank);
+    text-align: center;
+    margin: 0 2px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* Word bank */
+  .wordbank {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px 10px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border);
+  }
+  .wordbank .item {
+    font-size: .92rem;
+    padding: 2px 0;
+  }
+  .wordbank .item strong {
+    color: var(--accent);
+    margin-right: 4px;
+    font-size: .85rem;
+  }
+
+  /* Paragraph matching: paragraphs */
+  .para-block {
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted var(--border);
+  }
+  .para-block:last-child { border-bottom: none; }
+  .para-label {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: #5a3e28;
+    font-weight: 700;
+    font-size: .82rem;
+    padding: 1px 8px;
+    border-radius: 3px;
+    margin-right: 6px;
+    vertical-align: top;
+    letter-spacing: .03em;
+  }
+  .para-text { display: inline; }
+
+  /* Statements list */
+  .stmt-list { counter-reset: stmt; }
+  .stmt-item {
+    counter-increment: stmt;
+    padding: 8px 0 8px 36px;
+    position: relative;
+    border-bottom: 1px solid #f0ebe0;
+  }
+  .stmt-item::before {
+    content: counter(stmt, decimal);
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 26px;
+    height: 26px;
+    background: var(--tag-bg);
+    color: #5a3e28;
+    font-size: .78rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stmt-item:last-child { border-bottom: none; }
+
+  /* QC questions */
+  .q-block {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0ebe0;
+  }
+  .q-block:last-child { border-bottom: none; }
+  .q-num {
+    font-weight: 700;
+    color: var(--accent);
+    margin-right: 6px;
+  }
+  .q-stem { margin-bottom: 6px; }
+  .q-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 16px;
+    margin-left: 28px;
+    font-size: .92rem;
+  }
+  .q-options div {
+    padding: 3px 0;
+    color: #4a4030;
+  }
+
+  /* Reading passage text */
+  .reading-passage {
+    font-size: .95rem;
+    line-height: 1.9;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+  .reading-passage p { text-indent: 2em; margin-bottom: 10px; }
+  .reading-passage p:first-child { text-indent: 0; }
+
+  /* Divider */
+  .divider {
+    text-align: center;
+    color: var(--muted);
+    margin: 32px 0;
+    font-size: .85rem;
+    letter-spacing: .3em;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 28px 0;
+    color: var(--muted);
+    font-size: .8rem;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    body { padding: 12px; }
+    .card { padding: 16px 14px; }
+    .wordbank { grid-template-columns: repeat(3, 1fr); }
+    .q-options { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====== HEADER ====== -->
+<div class="header">
+  <h1>2025年12月 · 大学英语四级真题（第1套）</h1>
+  <div class="sub">Part III　Reading Comprehension　（阅读部分 40 minutes）</div>
+</div>
+
+<!-- ====== SECTION A: 选词填空 ====== -->
+<h2 class="section-title">Section A<span class="section-en">选词填空 — Banked Cloze</span></h2>
+
+<div class="card">
+  <div class="passage-title">Passage: Choice Overload</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Direction: 从方框中的15个选项中选词填入10个空格（26–35），每词限用一次。
+  </p>
+
+  <div class="reading-passage">
+    <p>People tend to want as many choices as possible. They believe this will maximize their <span class="blank">26</span> of making the best decision. But research shows that, when it comes to actually making a <span class="blank">27</span> from all of these choices, people can become <span class="blank">28</span> and avoid making a decision altogether. Even worse, when people finally do decide, they are generally less satisfied with their decision and feel more regretful over whatever choice they made.</p>
+
+    <p>Why does this happen? Research shows that when people choose from many options, they <span class="blank">29</span> more in the decision, but feel less confident in their ability to decide well. In other words, when we are <span class="blank">30</span> with more choices, making the "right" or "correct" decision begins to feel more <span class="blank">31</span> and, at the same time, more difficult to do. This may contribute to the deep fear that we will make the wrong decision.</p>
+
+    <p>How can we solve this problem? I believe this fear could be tempered by putting decisions into perspective. It might help to remember that many of the choices you make, such as what to have for lunch, will not <span class="blank">32</span> much in the future and that, even more important choices like accepting a new job, can <span class="blank">33</span> be changed. It could also help to <span class="blank">34</span> these situations with clear guidelines and ideas of what you want from the <span class="blank">35</span> of options, which can narrow the possible choices, and also make you more confident about your ability to make the right decision.</p>
+  </div>
+
+  <div class="wordbank">
+    <div class="item"><strong>A)</strong> approximately</div>
+    <div class="item"><strong>B)</strong> case</div>
+    <div class="item"><strong>C)</strong> chance</div>
+    <div class="item"><strong>D)</strong> confused</div>
+    <div class="item"><strong>E)</strong> crucial</div>
+    <div class="item"><strong>F)</strong> deposited</div>
+    <div class="item"><strong>G)</strong> enter</div>
+    <div class="item"><strong>H)</strong> invest</div>
+    <div class="item"><strong>I)</strong> matter</div>
+    <div class="item"><strong>J)</strong> presented</div>
+    <div class="item"><strong>K)</strong> range</div>
+    <div class="item"><strong>L)</strong> regular</div>
+    <div class="item"><strong>M)</strong> seize</div>
+    <div class="item"><strong>N)</strong> selection</div>
+    <div class="item"><strong>O)</strong> ultimately</div>
+  </div>
+</div>
+
+<!-- ====== SECTION B: 段落匹配 ====== -->
+<h2 class="section-title">Section B<span class="section-en">段落匹配 — Paragraph Matching</span></h2>
+
+<div class="card">
+  <div class="passage-title">The battle over bike lanes needs a mindset shift</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Direction: 阅读段落 A–O，将下方10个陈述（36–45）匹配到对应段落。
+  </p>
+
+  <!-- Paragraphs -->
+  <div class="para-block"><span class="para-label">A</span><span class="para-text">Five years ago, the city of Queens, New York, announced that it would be putting bike lanes onto a stretch of Skillman Ave—and removing 116 parking spots. Cyclists loved the plan, but local business owners got very angry. Taking out those parking spots, as they argued at protests and in letters to the city council, would ruin stores and restaurants along Skillman. "Parking here is already a nightmare," one shouted at a protest rally.</span></div>
+
+  <div class="para-block"><span class="para-label">B</span><span class="para-text">But the bike lanes were a done deal, and soon they were in place. Early this year, Jesse Coburn—an investigative writer with Streetsblog New York—wondered whether those predictions of economic collapse came true. So he asked the city's Department of Finance to give him a few years' worth of sales figures for that stretch of Skillman Ave. How had the businesses on that street fared?</span></div>
+
+  <div class="para-block"><span class="para-label">C</span><span class="para-text">Quite well, it turns out. In the year after the bike lanes arrived, businesses on Skillman saw sales rise by 12 percent, compared to 3 percent for Queens in general. What's more, that section of road saw new businesses open, while Queens overall had a net loss.</span></div>
+
+  <div class="para-block"><span class="para-label">D</span><span class="para-text">The thing is, the actual merchants along Skillman? They didn't believe it. When Coburn spoke to them and described what he'd found, only a few store owners admitted the lanes had helped. Many still insisted the lanes were killing their part of the city. And emotions ran hot: Someone scattered tacks on the bike lane.</span></div>
+
+  <div class="para-block"><span class="para-label">E</span><span class="para-text">This little story turns out to be a fascinating glimpse at the challenges cities face as they try to update their urban infrastructure—to clean up the air, reduce greenhouse emissions, and speed up travel by making towns more bike-friendly. There's a rising amount of data showing that installing bike lanes and making streets more pedestrian-friendly boosts the economic fortunes of a place. Removing cars and parking spots works. But the folks who run local businesses simply aren't convinced, even when their own street performs. Given that sort of mess, can political fights over bike lanes ever end?</span></div>
+
+  <div class="para-block"><span class="para-label">F</span><span class="para-text">In 2013, researchers at New York City's Department of Transportation studied seven stretches of road that had installed bike lanes or created pedestrian-friendly areas. The city analyzed the data for businesses along those routes and found that by the third year, sales grew faster on five of the streets than in the district overall, on average—up to five times faster, in fact.</span></div>
+
+  <div class="para-block"><span class="para-label">G</span><span class="para-text">Beyond New York, a survey of research from 23 cities found that bike lanes and pedestrian-friendly design didn't hurt local retail and food stores. ("Fears of disastrous consequences for local businesses are unfounded," the researchers concluded.) More recent work has shown roughly the same.</span></div>
+
+  <div class="para-block"><span class="para-label">H</span><span class="para-text">The truth is that in fairly dense areas, bikes are more efficient at moving people around. You might lose one car driver's business—but you gain shoppers who now can arrive more easily on bikes. "Cyclists and pedestrians are consumers too," notes Professor Susan Handy. Plus, streets redesigned for bikes and pedestrians tend to become more pleasant places to hang around, so "in a lot of cases, that's created much nicer environments that are really good for those businesses."</span></div>
+
+  <div class="para-block"><span class="para-label">I</span><span class="para-text">Mom-and-pop shops are usually pretty quick at recognizing situations that will help their bottom lines. So why the blind spot here? Perhaps it's that attention focuses on horror stories—and some merchants do get hit when bike lanes come in.</span></div>
+
+  <div class="para-block"><span class="para-label">J</span><span class="para-text">I spoke to Cindy Hughes, a hairdresser in Cambridge, Massachusetts. She said business fell by at least 40 percent when the city removed nearby parking to put in a bike lane. The majority of her customers drive, with many coming from nearby towns. Only a very few have shifted to cycling, and even those almost certainly won't cycle in Boston's snowy winters. So while Hughes supports bike lanes—"cyclists deserve to be safe"—she sees the parking loss as an existential risk. "Look, 90 percent of my customers drive," she told me. "For our business, the bike lanes are way worse than Covid was."</span></div>
+
+  <div class="para-block"><span class="para-label">K</span><span class="para-text">For others, the pushback is cultural, says Henry Grabar, a writer for the Slate Magazine. Small business owners are frequently drivers who commute from other parts of the city by car, Grabar points out. They're also often longtime locals. "They tend to be people with deep roots in the city, who have hung around since before the neighborhood became what it is today," he adds. Driving around town in a car is so normal to them that cycling seems weird and unusual—despite its boost from Covid, when bike sales exploded by 75 percent.</span></div>
+
+  <div class="para-block"><span class="para-label">L</span><span class="para-text">Psychology beats all! Who knew, right? The fierce divide between store owners and bike-lane advocates seems similar to our larger culture wars over climate change. If we've learned anything about culture wars, it's that data isn't much good at changing minds.</span></div>
+
+  <div class="para-block"><span class="para-label">M</span><span class="para-text">When Janette Sadik-Khan was the head of New York City's Transportation Department back in the early 2000s, she oversaw a rollout of bike lanes—and got angry blowback from residents and business owners who claimed there weren't enough cyclists to justify installing lanes. Now, she notes ironically, the lanes are so full of activity that opponents have turned to claiming the problem is the opposite: There are too many cyclists getting in the way of cars.</span></div>
+
+  <div class="para-block"><span class="para-label">N</span><span class="para-text">Maybe bike lanes will always be charged with emotion, until enough of the public is finally concerned about climate change—and it seems reckless to not have them.</span></div>
+
+  <div class="para-block"><span class="para-label">O</span><span class="para-text">Crises, after all, have a way of opening people's eyes to possibilities. During Covid, restaurants and cafes lost so much business that cities nationwide began allowing them to build curbside seating areas where people could sit, safely, in the open air. It greatly reduced parking—but because, well, shop owners didn't see any way around it. Customers loved the outdoor seating so much that cities are making it permanent: A New York City study of several streets closed during Covid found storeowners making more than before, and diners enjoying the outdoor lifestyle. If data won't change minds, customers might.</span></div>
+
+  <!-- Statements 36-45 -->
+  <div style="margin-top:20px;padding-top:16px;border-top:2px solid var(--border);">
+    <p style="font-weight:700;margin-bottom:8px;color:#4a3520;">Statements（匹配下列陈述对应的段落）</p>
+    <div class="stmt-list">
+      <div class="stmt-item">An increasing amount of data indicates that installing bike lanes raises local business revenues.</div>
+      <div class="stmt-item">According to a magazine writer, some small business owners' resistance to bike lanes arises from cultural factors.</div>
+      <div class="stmt-item">A stretch of Skillman Ave witnessed not only a big increase in sales but also the opening of new businesses.</div>
+      <div class="stmt-item">When people have no way out in crises, they are more likely to embrace changes.</div>
+      <div class="stmt-item">According to one survey, city design with bike lanes and pedestrian space did not negatively impact local businesses.</div>
+      <div class="stmt-item">Despite increased business activity on Skillman Ave, many store owners insisted the bike lanes were destroying their area.</div>
+      <div class="stmt-item">In a war of culture, data does not help much in changing people's minds.</div>
+      <div class="stmt-item">A businesswoman said her business dropped sharply when parking space gave way to a bike lane, because most of her customers came by car.</div>
+      <div class="stmt-item">Local business owners on Skillman Ave argued that their businesses would be ruined when parking spots were replaced by bike lanes.</div>
+      <div class="stmt-item">People may find it more pleasant to wander around streets redesigned for cycling and walking.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== SECTION C: 仔细阅读 ====== -->
+<h2 class="section-title">Section C<span class="section-en">仔细阅读 — In-depth Reading</span></h2>
+
+<!-- Passage One -->
+<div class="card">
+  <div class="passage-title">Passage One — Drug Timing and the Body's 24-Hour Cycle</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Questions 46 – 50 &nbsp;|&nbsp; 选择最佳答案
+  </p>
+
+  <div class="reading-passage">
+    <p>All living organisms on Earth are exposed to a 24-hour day-night cycle. This cycle is the reason why people rest at night and are active during the day. Consequently, all human body functions also follow this daily rhythm, and the timing of behaviors like exercise or food intake can significantly influence your health. For example, eating at night can lead to weight gain over time because food intake at night leads to increased fat storage.</p>
+
+    <p>Many drug targets in the body follow a 24-hour cycle, too. This means that the specific proteins a drug is designed to modify can react differently to the medicine over the course of a 24-hour time period. Because how the body responds to a drug can differ depending on the time it is taken, it logically follows that taking medicines at specific times could help increase their effectiveness and reduce unwanted side effects.</p>
+
+    <p>When doctors prescribe medicine for people, they rarely consider the best time to take it. There are two main reasons for that oversight. First, many physicians are not aware that some drugs work better during a specific time of the day. And second, most drugs have not been studied for possible different effects during a 24-hour cycle. Therefore, patients are directed to take most drugs during the morning or evening primarily to ensure compliance.</p>
+
+    <p>Over 50 years ago, researchers found that the cholesterol drug simvastatin is more effective at lowering cholesterol levels when taken at night rather than during the day. This is because the liver enzyme these drugs target is more active at night.</p>
+
+    <p>Taking medicine at the wrong time can even cause harm. My colleagues and I wondered whether midazolam, the most common sedative used in surgical procedures worldwide, might interfere with the internal clock that protects the heart at night. Currently, there are no guidelines regarding when midazolam should be administered.</p>
+
+    <p>More research is needed to determine the best times to administer treatments for different diseases. I believe taking drug timing into account could help make treatments more effective and help more people worldwide.</p>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">46.</span>What do we learn from the passage about the timing of our behaviors?</div>
+    <div class="q-options">
+      <div>A) It has a considerable impact on our health.</div>
+      <div>B) It confines us to a 24-hour day-night cycle.</div>
+      <div>C) It requires us to follow a particular rhythm.</div>
+      <div>D) It holds the key to all human body functions.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">47.</span>What does the author say about the proteins in our body?</div>
+    <div class="q-options">
+      <div>A) They can modify the effects of medicines in different ways.</div>
+      <div>B) They can reduce unwanted side effects of certain medicines.</div>
+      <div>C) Their reaction to medicines changes during the day-night cycle.</div>
+      <div>D) Their design determines how differently they react to medicines.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">48.</span>What do doctors do when prescribing medicine for people?</div>
+    <div class="q-options">
+      <div>A) They give little thought to the time of taking it for maximum effect.</div>
+      <div>B) They rarely consider which medicine works better for which patient.</div>
+      <div>C) They tell patients its possible side effects during a period of 24 hours.</div>
+      <div>D) They tell patients to comply with the directions of drug manufacturers.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">49.</span>Why do doctors advise patients to take most drugs in the morning or in the evening?</div>
+    <div class="q-options">
+      <div>A) To discourage them from making complaints.</div>
+      <div>B) To ensure they take the drugs as instructed.</div>
+      <div>C) To comply with new research findings strictly.</div>
+      <div>D) To guarantee the maximum effect of the drugs.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">50.</span>What does the author suggest near the end of the passage?</div>
+    <div class="q-options">
+      <div>A) Considering drug-taking timing when prescribing drugs for patients.</div>
+      <div>B) Making treatments less complex by taking drug timing into account.</div>
+      <div>C) Conducting more studies to find out the best timing for treating different diseases.</div>
+      <div>D) Finding out the most effective drugs for treating diseases through further research.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Passage Two -->
+<div class="card">
+  <div class="passage-title">Passage Two — Americans Working into Their 70s</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Questions 51 – 55 &nbsp;|&nbsp; 选择最佳答案
+  </p>
+
+  <div class="reading-passage">
+    <p>Katharine Abraham, an economics professor, was chatting with her hairdresser about retirement plans. The economist said she plans to continue working because she wants to. The hairdresser agreed but for a different reason: She needs the money.</p>
+
+    <p>Both scenarios are contributing to a big increase in the number of people in the US working into their 70s. Over the past 20 years, the share of Americans working in their 70s has risen from less than 10% to nearly 15%.</p>
+
+    <p>In addition to people being healthier and living much longer, economists say that a combination of financial considerations such as years of slow rise in real wages and a shift away from traditional pensions in the private sector are some of the reasons people delay retirement. The decline of manufacturing and the increase in the number of people working in less labor-intensive occupations also has contributed to the trend, says Abraham, who researches work and retirement decisions of older Americans.</p>
+
+    <p>"Which matters more depends on what your history up until that point has been in the type of work you're doing," Abraham says.</p>
+
+    <p>The overall trend is hitting Americans of all different levels of educational attainment, although the percentages vary by category. The share of Americans with bachelor's degrees who were working into their 70s reached nearly 20% in 2018. For those with a high school degree or less, the proportion of those working in their 70s had risen to around 10%, while those with some college education were in the middle at around 15%.</p>
+
+    <p>Martin Neil Baily, an economist who is leading a research project on retirement security, notes that quitting a career can lead to feelings of isolation and loneliness, particularly for men. He suggests that many college-educated workers are choosing to stay in the labor force more for social benefits than for financial reasons. They're also more likely to be in professional occupations where they tend to enjoy their work more.</p>
+
+    <p>Workers in more physical jobs, meanwhile, may be more likely to look forward to retiring, Baily says, suggesting those who stay on are more likely doing so for financial reasons.</p>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">51.</span>What do we learn from the passage about the economics professor and her hairdresser?</div>
+    <div class="q-options">
+      <div>A) They differ in their reasons for continuing to work.</div>
+      <div>B) They are both committed to working into their 70s.</div>
+      <div>C) They are happy about their current financial situation.</div>
+      <div>D) They hold different views about postponing retirement.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">52.</span>What is one of the reasons for people to delay retirement?</div>
+    <div class="q-options">
+      <div>A) More and more people have switched to less intellectually challenging jobs.</div>
+      <div>B) The number of jobs suitable for older people has increased in the private sector.</div>
+      <div>C) The rate of wage increase in terms of purchasing power has slowed down for years.</div>
+      <div>D) More and more people in the workplace find it hard to rely on traditional pensions.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">53.</span>What is the general trend in people delaying retirement?</div>
+    <div class="q-options">
+      <div>A) The higher their earnings, the more likely they are tempted to delay retirement.</div>
+      <div>B) Those who have more job satisfaction tend to retire later than those who have less.</div>
+      <div>C) More men than women are likely to stay in the labor force until their late seventies.</div>
+      <div>D) The higher their educational level, the more likely they are to delay retirement.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">54.</span>What is the chief reason for college-educated workers delaying retirement according to an economist?</div>
+    <div class="q-options">
+      <div>A) Enjoying financial security.</div>
+      <div>B) Staying connected socially.</div>
+      <div>C) Contributing more professionally.</div>
+      <div>D) Increasing social security payments.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">55.</span>What does the passage say about people doing manual work?</div>
+    <div class="q-options">
+      <div>A) They are eager to enjoy life after retiring.</div>
+      <div>B) They are likely to have financial troubles.</div>
+      <div>C) They generally don't enjoy doing it.</div>
+      <div>D) They tend to anticipate retirement.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  2025年12月 · 大学英语四级真题第1套 · 阅读部分整合 &nbsp;|&nbsp; 总题数：30 题（26–55）
+</div>
+
+</div>
+</body>
+</html>

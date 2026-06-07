@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2024年12月 四级真题 第1套 — 阅读部分</title>
+<style>
+  :root {
+    --bg: #f5f0eb;
+    --card: #fff;
+    --text: #2c2416;
+    --muted: #6b5e4a;
+    --accent: #8b5e3c;
+    --accent-light: #f0e6d8;
+    --border: #d4c8b4;
+    --tag-bg: #e8dcc8;
+    --blank: #e8c864;
+    --correct: #5a8a4a;
+    --option-hover: #faf6f0;
+    --shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", "Songti SC", Georgia, serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    padding: 24px;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 40px 20px 32px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: #3d2e1c;
+    margin-bottom: 6px;
+  }
+  .header .sub {
+    font-size: .95rem;
+    color: var(--muted);
+  }
+
+  /* Section title */
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3d2e1c;
+    margin: 36px 0 16px;
+    padding-left: 14px;
+    border-left: 4px solid var(--accent);
+  }
+  .section-en {
+    font-size: .85rem;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 8px;
+  }
+
+  /* Passage card */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 30px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  .card .passage-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #4a3520;
+  }
+
+  /* Blanks */
+  .blank {
+    display: inline-block;
+    min-width: 3em;
+    border-bottom: 2px solid var(--blank);
+    text-align: center;
+    margin: 0 2px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* Word bank */
+  .wordbank {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px 10px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border);
+  }
+  .wordbank .item {
+    font-size: .92rem;
+    padding: 2px 0;
+  }
+  .wordbank .item strong {
+    color: var(--accent);
+    margin-right: 4px;
+    font-size: .85rem;
+  }
+
+  /* Paragraph matching: paragraphs */
+  .para-block {
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted var(--border);
+  }
+  .para-block:last-child { border-bottom: none; }
+  .para-label {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: #5a3e28;
+    font-weight: 700;
+    font-size: .82rem;
+    padding: 1px 8px;
+    border-radius: 3px;
+    margin-right: 6px;
+    vertical-align: top;
+    letter-spacing: .03em;
+  }
+  .para-text { display: inline; }
+
+  /* Statements list */
+  .stmt-list { counter-reset: stmt; }
+  .stmt-item {
+    counter-increment: stmt;
+    padding: 8px 0 8px 36px;
+    position: relative;
+    border-bottom: 1px solid #f0ebe0;
+  }
+  .stmt-item::before {
+    content: counter(stmt, decimal);
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 26px;
+    height: 26px;
+    background: var(--tag-bg);
+    color: #5a3e28;
+    font-size: .78rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stmt-item:last-child { border-bottom: none; }
+
+  /* QC questions */
+  .q-block {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0ebe0;
+  }
+  .q-block:last-child { border-bottom: none; }
+  .q-num {
+    font-weight: 700;
+    color: var(--accent);
+    margin-right: 6px;
+  }
+  .q-stem { margin-bottom: 6px; }
+  .q-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 16px;
+    margin-left: 28px;
+    font-size: .92rem;
+  }
+  .q-options div {
+    padding: 3px 0;
+    color: #4a4030;
+  }
+
+  /* Reading passage text */
+  .reading-passage {
+    font-size: .95rem;
+    line-height: 1.9;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+  .reading-passage p { text-indent: 2em; margin-bottom: 10px; }
+  .reading-passage p:first-child { text-indent: 0; }
+
+  /* Divider */
+  .divider {
+    text-align: center;
+    color: var(--muted);
+    margin: 32px 0;
+    font-size: .85rem;
+    letter-spacing: .3em;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 28px 0;
+    color: var(--muted);
+    font-size: .8rem;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    body { padding: 12px; }
+    .card { padding: 16px 14px; }
+    .wordbank { grid-template-columns: repeat(3, 1fr); }
+    .q-options { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====== HEADER ====== -->
+<div class="header">
+  <h1>2024年12月 · 大学英语四级真题（第1套）</h1>
+  <div class="sub">Part III　Reading Comprehension　（阅读部分 40 minutes）</div>
+</div>
+
+<!-- ====== SECTION A: 选词填空 ====== -->
+<h2 class="section-title">Section A<span class="section-en">选词填空 — Banked Cloze</span></h2>
+
+<div class="card">
+  <div class="passage-title">Passage: Toni Morrison and Language / Aging</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Direction: 从方框中的15个选项中选词填入10个空格（26–35），每词限用一次。
+  </p>
+
+  <div class="reading-passage">
+    <p>When Toni Morrison died in 2019, the world lost one of its most influential authors. But Morrison was not an early success. Her first novel was not published until she was 39, and her last appeared when she was 84. And Morrison was not <span class="blank">26</span> in this regard. Numerous writers produce masterpieces well into their 70s and beyond. Such <span class="blank">27</span> accomplishments highlight an important point. Our capacity to speak, write and learn new vocabulary does not seem to <span class="blank">28</span> with age. Our eyesight may dim and our recall may weaken, but, by comparison, our ability to produce and to <span class="blank">29</span> language is well preserved into older adulthood.</p>
+
+    <p>Indeed, the latest research that has emerged on language and aging shows that language mastery is a <span class="blank">30</span> that we begin as infants and continue on for the rest of our lives. Some aspects of our language abilities, such as our knowledge of word meanings, <span class="blank">31</span> improve during middle and late adulthood. One study, for example, found that adults over sixty had an average vocabulary size of over 21,000 words. The researchers also studied a <span class="blank">32</span> of college students and found that their average vocabulary contained <span class="blank">33</span> 16,000 words. In another study, older adults, with an average age of 75, <span class="blank">34</span> better than participants in their youth or middle years on tasks that required them to determine the meaning of words. Thus, language seems to be a skill that, contrary to what many might <span class="blank">35</span>, does not weaken with age.</p>
+  </div>
+
+  <div class="wordbank">
+    <div class="item"><strong>A)</strong> actually</div>
+    <div class="item"><strong>B)</strong> approximately</div>
+    <div class="item"><strong>C)</strong> assume</div>
+    <div class="item"><strong>D)</strong> component</div>
+    <div class="item"><strong>E)</strong> comprehend</div>
+    <div class="item"><strong>F)</strong> deteriorate</div>
+    <div class="item"><strong>G)</strong> equivalent</div>
+    <div class="item"><strong>H)</strong> journey</div>
+    <div class="item"><strong>I)</strong> literary</div>
+    <div class="item"><strong>J)</strong> performed</div>
+    <div class="item"><strong>K)</strong> rarely</div>
+    <div class="item"><strong>L)</strong> sample</div>
+    <div class="item"><strong>M)</strong> undermined</div>
+    <div class="item"><strong>N)</strong> unique</div>
+    <div class="item"><strong>O)</strong> unit</div>
+  </div>
+</div>
+
+<!-- ====== SECTION B: 段落匹配 ====== -->
+<h2 class="section-title">Section B<span class="section-en">段落匹配 — Paragraph Matching</span></h2>
+
+<div class="card">
+  <div class="passage-title">Why it's wrong to look at work-life balance as an achievement</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Direction: 阅读段落 A–L，将下方10个陈述（36–45）匹配到对应段落。
+  </p>
+
+  <!-- Paragraphs -->
+  <div class="para-block"><span class="para-label">A</span><span class="para-text">Few topics have been so endlessly analysed as work-life balance. The quest to attain this mysterious state has dominated discussion around careers for years — especially for working parents. The concept is often presented as something to achieve, or a goal to reach. And once you've reached it, congratulations: you've made it; you're a successful human being of the 21st century.</span></div>
+
+  <div class="para-block"><span class="para-label">B</span><span class="para-text">But the problem is that we often tell ourselves: "I'm going to put in eight hours' worth of work, and then I'm going to put in eight hours' worth of 'me time', which will include my family, my hobbies, my workout, my everything," says Anat Lechner, clinical associate professor of management at New York University. "I don't think it's such a simple formula."</span></div>
+
+  <div class="para-block"><span class="para-label">C</span><span class="para-text">And, according to new findings, it may not be. Some researchers are now encouraging us to stop thinking about work-life balance as an achievement that you either hit or don't. Instead, they suggest it may be more of a lifelong process — a continuous, never-ending exercise that requires self-awareness and timely adjustments. Researchers Ioana Lupu and Mayra Ruiz-Castro argue that work-life balance is "a cycle, not an achievement". In their 2020 study, the researchers interviewed nearly 80 employees at two London-based firms — an equal number of men and women between the ages of 30 and 50, all with at least one dependent child — who worked in middle or senior management roles.</span></div>
+
+  <div class="para-block"><span class="para-label">D</span><span class="para-text">Although it sounds like the respondents had a lot in common, here's what separated them: about 30% of the men and 50% of the women reported resisting working long hours. The other respondents, meanwhile, all worked long hours because they thought that's what successful professionals should do.</span></div>
+
+  <div class="para-block"><span class="para-label">E</span><span class="para-text">Lupu and Ruiz-Castro looked at those who rejected the long hours and they found that those workers actually had strikingly similar strategies for maintaining their work-life balance. They had a tendency to reflect and question assumptions in the name of self-awareness and regularly took steps to adjust the things standing in their way to work-life balance.</span></div>
+
+  <div class="para-block"><span class="para-label">F</span><span class="para-text">Lupu and Ruiz-Castro identified five steps that the respondents in the study who had better work-life balance used in their jobs. First, they paused and reconsidered beliefs such as 'I'm a professional, so I should work, work, work', and asked themselves questions like, "What's currently causing me stress?" Second, after identifying the cause, they zeroed in on their resultant emotions. Did they feel angry, sad, energised? Third, they reprioritised, asking "Is working long hours really worth cutting back on family time?" for example. Fourth, they considered their alternatives: is there anything at work that could be changed to accommodate these new priorities? And finally, they implemented changes, like asking their supervisor for greater flexibility, or deciding not to take on every project that comes their way.</span></div>
+
+  <div class="para-block"><span class="para-label">G</span><span class="para-text">This five-step process is something anyone can adopt. Going through the steps, and constantly checking in with yourself, can help you shift and adapt your professional life to something that will better harmonise with your personal one. "Awareness of your emotional state is essential in order to determine the changes you want to make in your work and in your life," says Lupu.</span></div>
+
+  <div class="para-block"><span class="para-label">H</span><span class="para-text">New York University's Lechner agrees that finding that balance is an ongoing pursuit. It's not simply about dividing up the hours in your day between work, the gym, kids and chores. If the underlying emotional sources of stress are still there, then the time you actually spend at home may not be enjoyable. "We come home and even though physically we are there, mentally we still may be processing things that happened at work. We're not present," she says. What we call "work-life balance" is actually just a substitute to having a sense of fulfillment and contentment.</span></div>
+
+  <div class="para-block"><span class="para-label">I</span><span class="para-text">Of course, finding that balance probably shouldn't be something you have to do by yourself. Research by Erin Kelly, professor of work and organisation studies at MIT, shows companies and managers can play a key role in creating a better environment for workers. For her book <i>Overload: How Good Jobs Went Bad and What to Do about It</i>, she and co-author Phyllis Moen split more than 1,000 employees at a Fortune 500 company into two groups, one that worked under a management redesign and one that continued working within the existing management structure.</span></div>
+
+  <div class="para-block"><span class="para-label">J</span><span class="para-text">Under the management redesign, many steps were taken to ensure better work-life balance and prevent burnout (过劳). Managers were regularly reminded to explicitly support their employees. Workers were allowed to make changes, like cancelling 9 am meetings. All of this was done in the name of increasing job satisfaction and giving workers greater flexibility, and to assure workers that it was something management was committed to. Unsurprisingly, Kelly and Moen found that employees in the redesign group reported less stress and less burnout. They were less likely to quit their jobs; indeed, over the next four years, they were 40% less likely to quit than those who kept working under the old policies.</span></div>
+
+  <div class="para-block"><span class="para-label">K</span><span class="para-text">"Work-life balance is understood to be an individual's response, so people think 'it's up to me to manage the craziness of my work life,'" says Kelly. But organisations need to examine the demands they're placing on employees. "The root problem is not how the two pieces of work and life come together. It's that we have unrealistic expectations of what we're asked to do on the work side." If your workplace isn't an environment where work-life balance is possible in the first place, any effort you attempt to make toward it on a personal level will be in vain.</span></div>
+
+  <div class="para-block"><span class="para-label">L</span><span class="para-text">That's a conversation that appears to be gathering pace. The new prevalence of remote and flexible working models will likely all play important roles in how we balance our professional and personal lives. And if it seems like finding that perfect balance remains difficult to achieve, the experts say that keeping some perspective can help. For millions of people, work is about being able to put food on the table. Talking about work-life balance "is a very privileged conversation," says Lechner. "If we're reflecting, maybe we should also reflect on that."</span></div>
+
+  <!-- Statements 36-45 -->
+  <div style="margin-top:20px;padding-top:16px;border-top:2px solid var(--border);">
+    <p style="font-weight:700;margin-bottom:8px;color:#4a3520;">Statements（匹配下列陈述对应的段落）</p>
+    <div class="stmt-list">
+      <div class="stmt-item">According to a management expert, work-life balance is not as simple as giving equal amounts of time to work and personal life.</div>
+      <div class="stmt-item">Research found that those who are given greater flexibility at work are less stressed and more likely to stay in their jobs.</div>
+      <div class="stmt-item">Workers who rejected working long hours tended to make regular adjustments in order to achieve work-life balance.</div>
+      <div class="stmt-item">Talking about work-life balance is said to be a privilege reserved for the better-off, not for those who barely make a living.</div>
+      <div class="stmt-item">Knowing one's emotional state is of utmost importance in deciding what changes to make for a better work-life balance.</div>
+      <div class="stmt-item">More female professionals reported being reluctant to work overtime than their male counterparts.</div>
+      <div class="stmt-item">Without organisational support, any personal effort to maintain work-life balance will be unsuccessful.</div>
+      <div class="stmt-item">The question of how to achieve work-life balance has long been the main subject of discussion among workers.</div>
+      <div class="stmt-item">You may not actually experience emotional wellbeing at home if you remain occupied with what happened at work.</div>
+      <div class="stmt-item">Some researchers suggest that work-life balance is not a goal to achieve, but a process for life to be adjusted promptly.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== SECTION C: 仔细阅读 ====== -->
+<h2 class="section-title">Section C<span class="section-en">仔细阅读 — In-depth Reading</span></h2>
+
+<!-- Passage One -->
+<div class="card">
+  <div class="passage-title">Passage One — The Human Connection to Nature</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Questions 46 – 50 &nbsp;|&nbsp; 选择最佳答案
+  </p>
+
+  <div class="reading-passage">
+    <p>The weakening of the human connection to nature might be good for economic growth but is bad for people. A tipping point was reached in 2020 when human-made materials — such as steel, concrete and plastic — were found to weigh more than all life on Earth. Continuing to grow concrete forests rather than real ones is shortsighted. Simply being in the nearest wood has such health benefits that the Woodland Trust successfully lobbied for it to be prescribed by doctors.</p>
+
+    <p>Yet slipping from popular culture is the wonder and beauty of the natural world. For every three nature-related words in hit songs of the 1950s, researchers found, there was only slightly more than one 50 years later. It is not a moment too soon that teenagers will be able to take a natural history test, given that for decades children have been able to name more video game characters than wildlife species.</p>
+
+    <p>Part of remedying this social disease would be for parliament to pass a "right to grow" law, allowing anyone to turn underused public spaces into vegetable and fruit gardens. The idea is for people to get back in touch with the soil — while producing food sustainably.</p>
+
+    <p>Vegetable planting has a respectable tradition. In April 1649, locals responded to high prices and food shortages by cultivating vegetables on common land in Southern England. The practice of throwing seed bombs to turn vacant plots of land green took off in 1970s New York, and has been revived (复兴) by green-thumbed (擅长园艺的) social media influencers who defy local US regulations in a war on ugly spots in cities.</p>
+
+    <p>Apart from the urgent task of providing more healthy nutrients to those who increasingly can't afford them, publicly accessible fruit and vegetable gardens connect what we eat to where it comes from — the means of production, if you will. They can make unlovely spaces lovely, and marry use and beauty as well as help promote a sense of community. Plants are also, of course, our first defence against species loss and climate change. Such planting is a small step for humanity — in the right direction.</p>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">46.</span>What does the author want to emphasise in the first paragraph?</div>
+    <div class="q-options">
+      <div>A) The year 2020 was a big turning point in human history.</div>
+      <div>B) Economic growth benefits people little in the long run.</div>
+      <div>C) It is unwise to weaken the human connection to nature.</div>
+      <div>D) It is harmful to mankind to use human-made materials.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">47.</span>What did researchers find about popular culture?</div>
+    <div class="q-options">
+      <div>A) It is increasingly detached from the natural world.</div>
+      <div>B) It is filled with all kinds of video game characters.</div>
+      <div>C) It is especially appealing to the taste of teenagers.</div>
+      <div>D) It is still impacted by the hit songs of the 1950s.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">48.</span>What does the author propose people do?</div>
+    <div class="q-options">
+      <div>A) Take measures to ensure sustainable food development.</div>
+      <div>B) Reconnect with nature through the right to grow.</div>
+      <div>C) Stand by the parliament in fighting social diseases.</div>
+      <div>D) Cover public spaces with fruit trees and vegetable plants.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">49.</span>What do we learn from the passage about vegetable planting?</div>
+    <div class="q-options">
+      <div>A) It all started in 1649 in Southern England.</div>
+      <div>B) It is protected by US government regulations.</div>
+      <div>C) It has long been used to increase food supply and improve urban landscape.</div>
+      <div>D) It has been popularised worldwide with the increasing influence of social media.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">50.</span>What can publicly accessible fruit and vegetable gardens do apart from their practical functions?</div>
+    <div class="q-options">
+      <div>A) Raise people's environmental awareness.</div>
+      <div>B) Add to the great variety of plant species.</div>
+      <div>C) Act as the first defence against natural disasters.</div>
+      <div>D) Enhance people's community spirit.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Passage Two -->
+<div class="card">
+  <div class="passage-title">Passage Two — Women Engineers in the United States</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Questions 51 – 55 &nbsp;|&nbsp; 选择最佳答案
+  </p>
+
+  <div class="reading-passage">
+    <p>Engineering in the U.S. has long been a male-dominated profession. Fifty years ago, it looked like that might change.</p>
+
+    <p>In 1970, the percentage of women majoring in engineering was less than 1%. In 1979, that number was 9%. Many hoped women would continue to enter the field at the same rate. But that's not what happened. Today, only 21% of engineering majors are women, a number largely unchanged since 2000.</p>
+
+    <p>I am a historian who, along with my colleagues, surveyed 251 women engineers who graduated from college in the 1970s. These pioneers reflected on the challenges they faced — and had advice for women entering the field today.</p>
+
+    <p>One survey taker explained, "The greatest challenge for me was continuing to believe in myself when all the messages I was getting were that I would never be taken seriously or promoted or given raises at the same rate as men, who were clearly less qualified and not as smart as I was."</p>
+
+    <p>A chemical engineer who worked in manufacturing agreed, "You have to prove yourself just because you are female. And you have to work twice as hard!"</p>
+
+    <p>A civil engineer said, "We are 'women engineers.' People don't refer to a man as a 'man engineer' — he's an engineer. We are constantly reminded that we don't truly belong." Another civil engineer stated, "On many levels, you're never quite one of the group."</p>
+
+    <p>Women also talked about family caregiving responsibilities. A retired vice president from a major chemical company stated, "Young women engineers are on an equal footing until they have children, then they struggle to balance work and family — and compete with men who don't have the same household responsibilities."</p>
+
+    <p>But over the years things have changed a lot. Young women engineers are more accepted mostly because there are just more of them.</p>
+
+    <p>Many women engineers hailed the benefits of their chosen career. A program manager in manufacturing stated that engineering is the best degree. A mechanical engineer said, "It will give you the flexibility to do almost anything. It is also satisfying to see the effects of what you have done."</p>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">51.</span>What does the passage say about the engineering profession in the United States?</div>
+    <div class="q-options">
+      <div>A) It has seen a change in attitude towards women engineers since 1979.</div>
+      <div>B) It witnessed a significant increase in women engineers in the 1970s.</div>
+      <div>C) It has experienced the gradual weakening of male dominance.</div>
+      <div>D) It boasted the largest number of engineering majors in 2000.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">52.</span>What does one survey taker say was her greatest challenge?</div>
+    <div class="q-options">
+      <div>A) Not to feel superior to less qualified male engineers.</div>
+      <div>B) Not to take seriously all the messages she was getting.</div>
+      <div>C) Not to think highly of her qualifications when promoted or given a pay raise.</div>
+      <div>D) Not to lose self-confidence though constantly discouraged or unfairly treated.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">53.</span>How do women engineers frequently feel according to the two civil engineers?</div>
+    <div class="q-options">
+      <div>A) Disqualified on many levels.</div>
+      <div>B) Excluded from the group.</div>
+      <div>C) Overworked by their organizations.</div>
+      <div>D) Looked down upon by male colleagues.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">54.</span>What probably makes young women engineers more accepted nowadays?</div>
+    <div class="q-options">
+      <div>A) Their success in gaining an equal footing.</div>
+      <div>B) Their ability to balance work and family.</div>
+      <div>C) The change in their responsibilities.</div>
+      <div>D) The increase in their number.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">55.</span>What can we conclude about many female engineers from the statement of a mechanical engineer?</div>
+    <div class="q-options">
+      <div>A) They take great pride in their chosen career.</div>
+      <div>B) They have reaped the benefits of being flexible.</div>
+      <div>C) They enjoy doing engineering to the best degree.</div>
+      <div>D) They have proved capable of doing almost anything.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  2024年12月 · 大学英语四级真题第1套 · 阅读部分整合 &nbsp;|&nbsp; 总题数：30 题（26–55）
+</div>
+
+</div>
+</body>
+</html>

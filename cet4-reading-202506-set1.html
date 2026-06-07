@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025年6月 四级真题 第1套 — 阅读部分</title>
+<style>
+  :root {
+    --bg: #f5f0eb;
+    --card: #fff;
+    --text: #2c2416;
+    --muted: #6b5e4a;
+    --accent: #8b5e3c;
+    --accent-light: #f0e6d8;
+    --border: #d4c8b4;
+    --tag-bg: #e8dcc8;
+    --blank: #e8c864;
+    --correct: #5a8a4a;
+    --option-hover: #faf6f0;
+    --shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", "Songti SC", Georgia, serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    padding: 24px;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 40px 20px 32px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: #3d2e1c;
+    margin-bottom: 6px;
+  }
+  .header .sub {
+    font-size: .95rem;
+    color: var(--muted);
+  }
+
+  /* Section title */
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3d2e1c;
+    margin: 36px 0 16px;
+    padding-left: 14px;
+    border-left: 4px solid var(--accent);
+  }
+  .section-en {
+    font-size: .85rem;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 8px;
+  }
+
+  /* Passage card */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 30px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  .card .passage-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #4a3520;
+  }
+
+  /* Blanks */
+  .blank {
+    display: inline-block;
+    min-width: 3em;
+    border-bottom: 2px solid var(--blank);
+    text-align: center;
+    margin: 0 2px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* Word bank */
+  .wordbank {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px 10px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border);
+  }
+  .wordbank .item {
+    font-size: .92rem;
+    padding: 2px 0;
+  }
+  .wordbank .item strong {
+    color: var(--accent);
+    margin-right: 4px;
+    font-size: .85rem;
+  }
+
+  /* Paragraph matching: paragraphs */
+  .para-block {
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted var(--border);
+  }
+  .para-block:last-child { border-bottom: none; }
+  .para-label {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: #5a3e28;
+    font-weight: 700;
+    font-size: .82rem;
+    padding: 1px 8px;
+    border-radius: 3px;
+    margin-right: 6px;
+    vertical-align: top;
+    letter-spacing: .03em;
+  }
+  .para-text { display: inline; }
+
+  /* Statements list */
+  .stmt-list { counter-reset: stmt; }
+  .stmt-item {
+    counter-increment: stmt;
+    padding: 8px 0 8px 36px;
+    position: relative;
+    border-bottom: 1px solid #f0ebe0;
+  }
+  .stmt-item::before {
+    content: counter(stmt, decimal);
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 26px;
+    height: 26px;
+    background: var(--tag-bg);
+    color: #5a3e28;
+    font-size: .78rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stmt-item:last-child { border-bottom: none; }
+
+  /* QC questions */
+  .q-block {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0ebe0;
+  }
+  .q-block:last-child { border-bottom: none; }
+  .q-num {
+    font-weight: 700;
+    color: var(--accent);
+    margin-right: 6px;
+  }
+  .q-stem { margin-bottom: 6px; }
+  .q-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 16px;
+    margin-left: 28px;
+    font-size: .92rem;
+  }
+  .q-options div {
+    padding: 3px 0;
+    color: #4a4030;
+  }
+
+  /* Reading passage text */
+  .reading-passage {
+    font-size: .95rem;
+    line-height: 1.9;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+  .reading-passage p { text-indent: 2em; margin-bottom: 10px; }
+  .reading-passage p:first-child { text-indent: 0; }
+
+  /* Divider */
+  .divider {
+    text-align: center;
+    color: var(--muted);
+    margin: 32px 0;
+    font-size: .85rem;
+    letter-spacing: .3em;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 28px 0;
+    color: var(--muted);
+    font-size: .8rem;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    body { padding: 12px; }
+    .card { padding: 16px 14px; }
+    .wordbank { grid-template-columns: repeat(3, 1fr); }
+    .q-options { grid-template-columns: 1fr; }
+  }
+
+  /* Interactive: answer reveal */
+  .answer-toggle {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 6px 18px;
+    background: var(--tag-bg);
+    color: #5a3e28;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: .85rem;
+    font-family: inherit;
+    transition: background .2s;
+  }
+  .answer-toggle:hover { background: #dfd0b0; }
+
+  .answer-key {
+    display: none;
+    margin-top: 14px;
+    padding: 14px 18px;
+    background: #faf7ef;
+    border: 1px dashed var(--border);
+    border-radius: 4px;
+    font-size: .88rem;
+    line-height: 2;
+  }
+  .answer-key.show { display: block; }
+
+  .answer-key .ans {
+    display: inline-block;
+    min-width: 2.4em;
+    font-weight: 700;
+    color: var(--accent);
+    margin-right: 6px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====== HEADER ====== -->
+<div class="header">
+  <h1>2025年6月 · 大学英语四级真题（第1套）</h1>
+  <div class="sub">Part III　Reading Comprehension　（阅读部分 40 minutes）</div>
+</div>
+
+<!-- ====== SECTION A: 选词填空 ====== -->
+<h2 class="section-title">Section A<span class="section-en">选词填空 — Banked Cloze</span></h2>
+
+<div class="card">
+  <div class="passage-title">Passage: How Children Construct Identities</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Directions: 从方框中的15个选项中选词填入10个空格（26–35），每词限用一次。
+  </p>
+
+  <div class="reading-passage">
+    <p>Psychologists have long been interested in how we construct our identities and the sorts of strategies that we use to present ourselves in society. New findings suggest that the kinds of <span class="blank">26</span> and strategic self-presentation behaviour we see in adults appear at a much younger age than <span class="blank">27</span> known.</p>
+
+    <p>Research shows that a child's awareness of social standing comes from adults. Like grown-ups, kids want to be <span class="blank">28</span> by those they admire. Interactive experiences may provide opportunities for children to learn about what <span class="blank">29</span> a desirable reputation and the kinds of strategies that are effective for <span class="blank">30</span> a good reputation in their social environment.</p>
+
+    <p>Five-year-olds aren't just aware of their reputations, they also behave strategically to alter their outward image. They will <span class="blank">31</span> their behaviour in order to appear moral or socially good in the eyes of key observers. While we know that adults use a large variety of attributes to manage and create impressions, we don't yet know whether children <span class="blank">32</span> and use the fact that different attributes are valuable at different times to different <span class="blank">33</span>. It's important for us to further consider where in this process children succeed in controlling their reputation and where they <span class="blank">34</span>.</p>
+
+    <p>A question to think about is, "What happens even earlier than age five?" Children don't just show up to the first day of kindergarten and have the idea of reputation pop <span class="blank">35</span> into existence. The logical question to ask is, "What happens even earlier?"</p>
+  </div>
+
+  <div class="wordbank">
+    <div class="item"><strong>A)</strong> accepted</div>
+    <div class="item"><strong>B)</strong> audiences</div>
+    <div class="item"><strong>C)</strong> building</div>
+    <div class="item"><strong>D)</strong> complex</div>
+    <div class="item"><strong>E)</strong> constitutes</div>
+    <div class="item"><strong>F)</strong> deputies</div>
+    <div class="item"><strong>G)</strong> previously</div>
+    <div class="item"><strong>H)</strong> revolving</div>
+    <div class="item"><strong>I)</strong> samples</div>
+    <div class="item"><strong>J)</strong> selected</div>
+    <div class="item"><strong>K)</strong> solemn</div>
+    <div class="item"><strong>L)</strong> struggle</div>
+    <div class="item"><strong>M)</strong> suddenly</div>
+    <div class="item"><strong>N)</strong> understand</div>
+    <div class="item"><strong>O)</strong> vary</div>
+  </div>
+
+  <button class="answer-toggle" onclick="toggleAnswer('ansA')">显示答案 / 隐藏答案</button>
+  <div id="ansA" class="answer-key">
+    <span class="ans">26.</span>D) complex<br>
+    <span class="ans">27.</span>G) previously<br>
+    <span class="ans">28.</span>A) accepted<br>
+    <span class="ans">29.</span>E) constitutes<br>
+    <span class="ans">30.</span>C) building<br>
+    <span class="ans">31.</span>O) vary<br>
+    <span class="ans">32.</span>N) understand<br>
+    <span class="ans">33.</span>B) audiences<br>
+    <span class="ans">34.</span>L) struggle<br>
+    <span class="ans">35.</span>M) suddenly
+  </div>
+</div>
+
+<!-- ====== SECTION B: 段落匹配 ====== -->
+<h2 class="section-title">Section B<span class="section-en">段落匹配 — Paragraph Matching</span></h2>
+
+<div class="card">
+  <div class="passage-title">Getting Young Minds into Design</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Directions: 阅读段落 A–M，将下方10个陈述（36–45）匹配到对应段落。每个段落可能被选多次。
+  </p>
+
+  <!-- Paragraphs -->
+  <div class="para-block"><span class="para-label">A</span><span class="para-text">Recently, a leading design federation in the UK warned that the UK could face a creative skills shortage, after the latest figures revealed a drop of almost 10 percent in students studying Design and Technology. These figures showed that the number of pupils that sat exams in Design and Technology fell 10 percent from 204,788 to 185,279 last year.</span></div>
+
+  <div class="para-block"><span class="para-label">B</span><span class="para-text">Chief executive John Kampfher of the Creative Industries Federation thinks that this drop in figures has worrying implications for the skills pipeline in Britain's hugely successful arts and creative industries. He said, "We already have skills shortages in many jobs such as animation and special effects." He added: "Engineering, which requires a similar mix of creative and technical skills, also has recruitment problems."</span></div>
+
+  <div class="para-block"><span class="para-label">C</span><span class="para-text">Many other designers and architects have expressed concern over the future supply of home-grown talent for UK firms, and industry bodies have pointed out that there has been a lack of roots-level support. However, if these designers had visited the Design Museum shop in London earlier this year their fears may have been eased. With £10 to spend, they could have bought a fascinating children's toy called "Dazzle Racer". An automotive cylinder, it included a wind-up, elastic-band-powered mechanism, minimal parts, all 100 percent recycled, and lots of stickers. It was good fun, simple, eye-catching and very original.</span></div>
+
+  <div class="para-block"><span class="para-label">D</span><span class="para-text">Well, you'd expect the Design Museum to commission and make some interesting items, but this one was different. Designed by a group of six Year 9 and Year 10 boys from Finchley Catholic High School, the toy was the winning entry in the museum's 2015 Design Ventura competition, which brings the business of design to life for students aged 13 to 16 by challenging them to develop a new creative, sustainable and commercially feasible product for the Design Museum shop and attracts hundreds of entries nationwide.</span></div>
+
+  <div class="para-block"><span class="para-label">E</span><span class="para-text">"We did Design Ventura in my previous school," says Liam Hourican, Finchley Catholic High School's design technology curriculum leader. "Then when I changed schools four years ago, I introduced it here because it helps to develop so many skills."</span></div>
+
+  <div class="para-block"><span class="para-label">F</span><span class="para-text">The theme for last year's competition was "Move" and Hourican began with three groups working in lunch breaks and after school before selecting the group with the most innovative idea. Each participating school may submit just one proposal. "It's the taking part and doing the work which is important," he says. "And I never dreamt we'd win."</span></div>
+
+  <div class="para-block"><span class="para-label">G</span><span class="para-text">Catherine Ritman Smith, head of learning at the Design Museum, is expecting around 10,000 participants aged 13 to 16 to take part this year and says that the project — funded by Deutsche Bank as part of its youth engagement programme Born To Be — is the biggest event in the museum's calendar. "We started Design Ventura with around 800 young people in 2010 and it has grown steadily since," she says. "Teachers like it because the skills are all transferable and it helps to validate the value of design as a subject," she explains, telling me that nearly 600 schools have taken part so far.</span></div>
+
+  <div class="para-block"><span class="para-label">H</span><span class="para-text">So how does the competition work? A single-word theme is announced in the summer. This year it is "Change". Schools work with groups to produce imaginative design ideas for a product in simple materials that could sell for £10 in the Design Museum shop. Participating schools then register by November and eventually submit their design idea. Along the way there is training and support for teachers and tutoring for students from designers. An additional bonus is when the winners see their design on sale in the spring of the following year.</span></div>
+
+  <div class="para-block"><span class="para-label">I</span><span class="para-text">Hourican and his pupils have happy memories of spending a whole day at the museum, having been selected as one of 10 shortlisted schools to present their idea to a panel of judges, including designer Jasper Conran. Then they worked with the Kin Design Studio in Shoreditch, met designers at their school and attended a lunch with Deutsche Bank employees. The students helped to make decisions and there were plenty of discussions — they changed the product's name, for example.</span></div>
+
+  <div class="para-block"><span class="para-label">J</span><span class="para-text">"One of the really useful things about this competition," says Hourican, "is that there's a commercial element because the product is going on sale for real and the boys had to learn about budgeting and marketing, as well as designing their game." Profits go to charity. "The winning team chooses where it wants the profits to go," says Ritman Smith. "The Finchley Catholic High School product raised about £1,000 for Great Ormond Street Hospital." Winning entries in past years have included a make-your-own cloth kit called Dove Bunting and a threefold, wallet-sized travel game with goals at each end, called Badoiiing.</span></div>
+
+  <div class="para-block"><span class="para-label">K</span><span class="para-text">It costs the schools nothing to participate in Design Ventura; the professional designers provide their services for free. Among them are architect Asif Khan, a Design Museum trustee who has worked as designer-in-residence at the museum, helping emerging architects. He has recently been commissioned to design the new Museum of London building in Smithfield.</span></div>
+
+  <div class="para-block"><span class="para-label">L</span><span class="para-text">Another is television presenter and interior designer Naomi Cleaver, who is one of the competition's judges. "I'm very keen to encourage young people," she says, observing that design brings together other subjects such as literature, art, history, geography and science. "Now that design education is limited in the curriculum, I'm all in favour of competitions such as Design Ventura, which helps to bring the standard curriculum to life," says Cleaver. "And the judging day is terrific fun. Some of these students are very imaginative. One group presented their idea in the form of a puppet show and we see some marvellous demonstration models. I'm always impressed by the levels of confidence and the support the students get from their teachers."</span></div>
+
+  <div class="para-block"><span class="para-label">M</span><span class="para-text">Ritman Smith adds: "Design technology has become a tricky subject to make a case for, and we've heard of departments closing in some schools. We find that if pupils take part in Design Ventura in Year Nine it can be the trigger which leads them to opt for it at General Certificate of Secondary Education, so we are helping to keep alive something which is crucial to industry and entrepreneurship."</span></div>
+
+  <!-- Statements 36-45 -->
+  <div style="margin-top:20px;padding-top:16px;border-top:2px solid var(--border);">
+    <p style="font-weight:700;margin-bottom:8px;color:#4a3520;">Statements（匹配下列陈述对应的段落）</p>
+    <div class="stmt-list">
+      <div class="stmt-item">During the course of preparing for Design Ventura, teachers receive training and support while students get tutoring from designers.</div>
+      <div class="stmt-item">A visit to the Design Museum shop in London can reduce the designers' fears about the future supply of talents educated in Britain.</div>
+      <div class="stmt-item">One of Design Ventura's judges says the competition adds vigour to the standard curriculum in schools.</div>
+      <div class="stmt-item">Enrollment in Design and Technology decreased by nearly ten percent last year in the UK.</div>
+      <div class="stmt-item">Participation of ninth graders in Design Ventura can motivate them to choose design technology as their subject.</div>
+      <div class="stmt-item">Design Ventura is welcomed by teachers because it helps to prove the worth of design as a school subject.</div>
+      <div class="stmt-item">The schools don't have to pay anything to take part in the Design Ventura competition.</div>
+      <div class="stmt-item">Participants in Design Ventura are challenged to create sustainable and marketable products.</div>
+      <div class="stmt-item">Students benefit from Design Ventura because they can learn about budgeting and marketing in addition to game design.</div>
+      <div class="stmt-item">According to an officer of the Creative Industries Federation, there is difficulty now in recruiting engineers in the UK.</div>
+    </div>
+  </div>
+
+  <button class="answer-toggle" onclick="toggleAnswer('ansB')">显示答案 / 隐藏答案</button>
+  <div id="ansB" class="answer-key">
+    <span class="ans">36.</span>H &nbsp;&nbsp;<span class="ans">37.</span>C &nbsp;&nbsp;<span class="ans">38.</span>L &nbsp;&nbsp;<span class="ans">39.</span>A &nbsp;&nbsp;<span class="ans">40.</span>M<br>
+    <span class="ans">41.</span>G &nbsp;&nbsp;<span class="ans">42.</span>K &nbsp;&nbsp;<span class="ans">43.</span>D &nbsp;&nbsp;<span class="ans">44.</span>J &nbsp;&nbsp;<span class="ans">45.</span>B
+  </div>
+</div>
+
+<!-- ====== SECTION C: 仔细阅读 ====== -->
+<h2 class="section-title">Section C<span class="section-en">仔细阅读 — In-depth Reading</span></h2>
+
+<!-- Passage One -->
+<div class="card">
+  <div class="passage-title">Passage One — Pandas and the Goldilocks Principle</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Questions 46 – 50 &nbsp;|&nbsp; 选择最佳答案
+  </p>
+
+  <div class="reading-passage">
+    <p>New research suggests that pandas may be at risk of dying out because they are too comfortable. Experts say too much happiness can stop the bears from searching for new mates.</p>
+
+    <p>Environmentalists have long believed that building roads or homes near the bears may threaten their survival by "reducing or fragmenting their natural habitats", The Times reported. But the new research suggests that a "modest degree of discomfort and fragmentation" may actually help preserve panda populations.</p>
+
+    <p>The research was conducted by scientists from Michigan State University. It concluded that pandas fail to wander off in search of new mates if they find their habitat too comfortable, resulting in a lack of vital genetic diversity.</p>
+
+    <p>For their study — outlined in a paper in the journal Conservation Biology — the team looked at genetic diversity and spread among a Chinese panda population. The ideal level of perfectly livable habitat was found to be only 80% of an area, with the remainder either too harsh or too affected by human activity.</p>
+
+    <p>The experts concluded that pandas should ideally "be happy enough to thrive, but not so content that they don't want to move around and find new mates".</p>
+
+    <p>Their conclusions about what The Guardian described as this "sweet spot" are in line with the so-called Goldilocks principle: that there can be just the right amount of something. The concept has been applied to a wide range of disciplines, from developmental psychology to economics and engineering.</p>
+
+    <p>Claudio Sillero, a professor of conservation biology at Oxford University, told the newspaper that the new findings could have implications beyond panda conservation.</p>
+
+    <p>"Most large animals that eat meat live in increasingly fragmented landscapes," said Sillero, who was not involved in the research, "It may well be that the messy nature of their relationship with human efforts induces more animals to scatter or travel further, and might result in greater genetic connectivity and enhanced population persistence."</p>
+
+    <p>The most recent count of pandas found that there were more than 1,800 left in the wild, putting them on the list of vulnerable, but not endangered, species.</p>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">46.</span>What do we learn from new research about pandas?</div>
+    <div class="q-options">
+      <div>A) They are losing habitat due to the building of roads and houses.</div>
+      <div>B) They have stopped seeking new mates for reproduction.</div>
+      <div>C) They may not adapt to the fragmentation of their habitat.</div>
+      <div>D) They may cease to exist as a result of enjoying too good a life.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">47.</span>What can we conclude from the new research by scientists at Michigan State University?</div>
+    <div class="q-options">
+      <div>A) Environmentalists' long-time belief regarding panda conservation may be misleading.</div>
+      <div>B) Housing development near pandas' homes may threaten their survival.</div>
+      <div>C) Pandas' natural habitats are becoming less suitable for reproduction.</div>
+      <div>D) The increased panda population is attributed to the fragmentation of their habitat.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">48.</span>What is the experts' conclusion regarding pandas?</div>
+    <div class="q-options">
+      <div>A) It is urgent to provide an ideal habitat for them to thrive.</div>
+      <div>B) It is very important to preserve their genetic diversity.</div>
+      <div>C) Their chances of finding new mates have a lot to do with their habitat.</div>
+      <div>D) Their environment for survival has been continuously worsening.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">49.</span>What can we infer from the passage about the Goldilocks principle?</div>
+    <div class="q-options">
+      <div>A) It needs to be confirmed by more studies on pandas.</div>
+      <div>B) It applies to the preservation of pandas too.</div>
+      <div>C) It has implications for future panda research.</div>
+      <div>D) It can be used to locate the right spot for pandas.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">50.</span>What can the new findings do according to Professor Sillero?</div>
+    <div class="q-options">
+      <div>A) Help discover new ways for the conservation of pandas.</div>
+      <div>B) Help remove pandas from the list of endangered species.</div>
+      <div>C) Shed light on the conservation of most large meat-eating animals.</div>
+      <div>D) Show the complexity of interactions between humans and animals.</div>
+    </div>
+  </div>
+
+  <button class="answer-toggle" onclick="toggleAnswer('ansC1')">显示答案 / 隐藏答案</button>
+  <div id="ansC1" class="answer-key">
+    <span class="ans">46.</span>D &nbsp;&nbsp;<span class="ans">47.</span>A &nbsp;&nbsp;<span class="ans">48.</span>C &nbsp;&nbsp;<span class="ans">49.</span>B &nbsp;&nbsp;<span class="ans">50.</span>C
+  </div>
+</div>
+
+<!-- Passage Two -->
+<div class="card">
+  <div class="passage-title">Passage Two — Grit: The Power of Passion and Perseverance</div>
+  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
+    Questions 51 – 55 &nbsp;|&nbsp; 选择最佳答案
+  </p>
+
+  <div class="reading-passage">
+    <p>With those born with natural talents, it feels as if they excel without really trying. But what about those of us who don't have a natural talent? We've been told all our lives that if you work hard, you too can succeed. But with the release of Angela Duckworth's Grit, we are given a new key to success.</p>
+
+    <p>"As much as talent counts, effort counts twice," says Duckworth in Grit. She introduces a new concept that talent may be overrated, and if you want real success, what you need is grit, the perfect combination of passion and persistence. Even if you have natural talent, it's nothing without grit.</p>
+
+    <p>Duckworth says grit is the difference between success and failure. A person who has grit is more likely to succeed than a person who does not. When we think about attaining success — whether it's landing that job or learning that new skill — our thoughts are immediately burdened by all the things we must first learn. If you want that new job, you have to learn the job skills, then the interview skills, then the dress part — and you must be perfect at all of them. Grit is different because it tells us that perfection isn't the goal.</p>
+
+    <p>Grit lifts the unreasonable expectations off our shoulders. Grit tells us that the door is open wider than we first thought possible. Grit allows us to redefine our goals. Think about it: what's something you've always wanted to do, but gave up because you "don't have the skills for it"? What's something you love but aren't good at?</p>
+
+    <p>The real workings of grit are to have sustainable passion and continue to try. Effort means more than your natural ability. Even if you haven't mastered a skill, grit tells you that you can still succeed if you can transform your passion into action. In a way, Duckworth is giving new hope to people who have shut the doors on their dreams. She is saying it is possible that you can accomplish anything. If at first you fail, then try one more time with grit.</p>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">51.</span>What does the passage say about people born with natural talents?</div>
+    <div class="q-options">
+      <div>A) They seem to outdo others without hard work.</div>
+      <div>B) They appear to know all the secrets to success.</div>
+      <div>C) They feel it only too logical to succeed.</div>
+      <div>D) They are bound to excel effortlessly.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">52.</span>What does Duckworth say about talent?</div>
+    <div class="q-options">
+      <div>A) It is a new concept much too overrated.</div>
+      <div>B) It proves necessary for big achievements.</div>
+      <div>C) It plays a lesser role in one's success.</div>
+      <div>D) It is a guarantee for real success in life.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">53.</span>What does the passage say about people thinking of attaining success?</div>
+    <div class="q-options">
+      <div>A) They are puzzled how to present their best to the employer.</div>
+      <div>B) They are burdened by their expectation of perfection.</div>
+      <div>C) They will try hard to land a job that fits their skills best.</div>
+      <div>D) They will find themselves lacking in all the skills they need.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">54.</span>How does the author think grit can be helpful to us?</div>
+    <div class="q-options">
+      <div>A) It allows us to know what we are good at.</div>
+      <div>B) It opens our eyes to new opportunities.</div>
+      <div>C) It focuses our attention on what we do.</div>
+      <div>D) It lets us reconsider the goals to achieve.</div>
+    </div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-stem"><span class="q-num">55.</span>What message does Duckworth try to convey in her book Grit?</div>
+    <div class="q-options">
+      <div>A) We should perfect ourselves to ensure success.</div>
+      <div>B) We should stay persistent even in face of failures.</div>
+      <div>C) We can never master a skill without constant practice.</div>
+      <div>D) We can never expect to reach our goals without passion.</div>
+    </div>
+  </div>
+
+  <button class="answer-toggle" onclick="toggleAnswer('ansC2')">显示答案 / 隐藏答案</button>
+  <div id="ansC2" class="answer-key">
+    <span class="ans">51.</span>A &nbsp;&nbsp;<span class="ans">52.</span>C &nbsp;&nbsp;<span class="ans">53.</span>B &nbsp;&nbsp;<span class="ans">54.</span>D &nbsp;&nbsp;<span class="ans">55.</span>B
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  2025年6月 · 大学英语四级真题第1套 · 阅读部分整合 &nbsp;|&nbsp; 总题数：30 题（26–55）
+</div>
+
+</div>
+
+<script>
+function toggleAnswer(id) {
+  var el = document.getElementById(id);
+  if (el.classList.contains('show')) {
+    el.classList.remove('show');
+  } else {
+    el.classList.add('show');
+  }
+}
+</script>
+</body>
+</html>
