@@ -3,473 +3,328 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2024年12月 四级真题 第1套 — 阅读部分</title>
+<title>2024年12月四级真题(第1套) — 阅读 | 中浩</title>
 <style>
-  :root {
-    --bg: #f5f0eb;
-    --card: #fff;
-    --text: #2c2416;
-    --muted: #6b5e4a;
-    --accent: #8b5e3c;
-    --accent-light: #f0e6d8;
-    --border: #d4c8b4;
-    --tag-bg: #e8dcc8;
-    --blank: #e8c864;
-    --correct: #5a8a4a;
-    --option-hover: #faf6f0;
-    --shadow: 0 1px 3px rgba(0,0,0,.06);
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", "Songti SC", Georgia, serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.8;
-    padding: 24px;
-  }
-  .container { max-width: 860px; margin: 0 auto; }
-
-  /* Header */
-  .header {
-    text-align: center;
-    padding: 40px 20px 32px;
-    border-bottom: 2px solid var(--border);
-    margin-bottom: 32px;
-  }
-  .header h1 {
-    font-size: 1.75rem;
-    font-weight: 700;
-    letter-spacing: .04em;
-    color: #3d2e1c;
-    margin-bottom: 6px;
-  }
-  .header .sub {
-    font-size: .95rem;
-    color: var(--muted);
-  }
-
-  /* Section title */
-  .section-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #3d2e1c;
-    margin: 36px 0 16px;
-    padding-left: 14px;
-    border-left: 4px solid var(--accent);
-  }
-  .section-en {
-    font-size: .85rem;
-    font-weight: 400;
-    color: var(--muted);
-    margin-left: 8px;
-  }
-
-  /* Passage card */
-  .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 28px 30px;
-    margin-bottom: 20px;
-    box-shadow: var(--shadow);
-  }
-  .card .passage-title {
-    font-size: 1.05rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #4a3520;
-  }
-
-  /* Blanks */
-  .blank {
-    display: inline-block;
-    min-width: 3em;
-    border-bottom: 2px solid var(--blank);
-    text-align: center;
-    margin: 0 2px;
-    font-weight: 700;
-    color: var(--accent);
-  }
-
-  /* Word bank */
-  .wordbank {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 6px 10px;
-    margin-top: 18px;
-    padding-top: 14px;
-    border-top: 1px dashed var(--border);
-  }
-  .wordbank .item {
-    font-size: .92rem;
-    padding: 2px 0;
-  }
-  .wordbank .item strong {
-    color: var(--accent);
-    margin-right: 4px;
-    font-size: .85rem;
-  }
-
-  /* Paragraph matching: paragraphs */
-  .para-block {
-    margin-bottom: 14px;
-    padding-bottom: 10px;
-    border-bottom: 1px dotted var(--border);
-  }
-  .para-block:last-child { border-bottom: none; }
-  .para-label {
-    display: inline-block;
-    background: var(--tag-bg);
-    color: #5a3e28;
-    font-weight: 700;
-    font-size: .82rem;
-    padding: 1px 8px;
-    border-radius: 3px;
-    margin-right: 6px;
-    vertical-align: top;
-    letter-spacing: .03em;
-  }
-  .para-text { display: inline; }
-
-  /* Statements list */
-  .stmt-list { counter-reset: stmt; }
-  .stmt-item {
-    counter-increment: stmt;
-    padding: 8px 0 8px 36px;
-    position: relative;
-    border-bottom: 1px solid #f0ebe0;
-  }
-  .stmt-item::before {
-    content: counter(stmt, decimal);
-    position: absolute;
-    left: 0;
-    top: 8px;
-    width: 26px;
-    height: 26px;
-    background: var(--tag-bg);
-    color: #5a3e28;
-    font-size: .78rem;
-    font-weight: 700;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .stmt-item:last-child { border-bottom: none; }
-
-  /* QC questions */
-  .q-block {
-    padding: 12px 0;
-    border-bottom: 1px solid #f0ebe0;
-  }
-  .q-block:last-child { border-bottom: none; }
-  .q-num {
-    font-weight: 700;
-    color: var(--accent);
-    margin-right: 6px;
-  }
-  .q-stem { margin-bottom: 6px; }
-  .q-options {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px 16px;
-    margin-left: 28px;
-    font-size: .92rem;
-  }
-  .q-options div {
-    padding: 3px 0;
-    color: #4a4030;
-  }
-
-  /* Reading passage text */
-  .reading-passage {
-    font-size: .95rem;
-    line-height: 1.9;
-    text-align: justify;
-    margin-bottom: 20px;
-  }
-  .reading-passage p { text-indent: 2em; margin-bottom: 10px; }
-  .reading-passage p:first-child { text-indent: 0; }
-
-  /* Divider */
-  .divider {
-    text-align: center;
-    color: var(--muted);
-    margin: 32px 0;
-    font-size: .85rem;
-    letter-spacing: .3em;
-  }
-
-  /* Footer */
-  .footer {
-    text-align: center;
-    padding: 28px 0;
-    color: var(--muted);
-    font-size: .8rem;
-    border-top: 1px solid var(--border);
-    margin-top: 40px;
-  }
-
-  /* Responsive */
-  @media (max-width: 640px) {
-    body { padding: 12px; }
-    .card { padding: 16px 14px; }
-    .wordbank { grid-template-columns: repeat(3, 1fr); }
-    .q-options { grid-template-columns: 1fr; }
-  }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f8f5f0;--card:#fff;--text:#2c2416;--text-light:#5c5344;--accent:#b8753e;--accent-light:#f0e6d8;--border:#e0d5c4;--shadow:0 2px 12px rgba(0,0,0,.06);--radius:12px;--f:'Georgia','Noto Serif SC','Songti SC',serif;--u:'PingFang SC','Microsoft YaHei',sans-serif;--pb:#1e1b18;--pt:#f0e8dc}
+body{background:var(--bg);color:var(--text);font-family:var(--f);line-height:1.85;min-height:100vh;padding-bottom:5rem}
+.c{max-width:860px;margin:0 auto;padding:0 18px}
+.h{text-align:center;padding:2.4rem 0 1.6rem;border-bottom:2px solid var(--border);margin-bottom:1.5rem}
+.h h1{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700}
+.h .sub{font-size:.95rem;color:var(--text-light);margin-top:.35rem;font-family:var(--u)}
+.h .badge{display:inline-block;margin-top:.6rem;padding:.2em .9em;background:var(--accent-light);color:var(--accent);border-radius:99px;font-size:.8rem;font-weight:600;font-family:var(--u)}
+.tab-bar{display:flex;gap:0;margin-bottom:1.5rem;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.tb{flex:1;padding:.65rem .5rem;border:none;background:var(--card);color:var(--text-light);font-size:.82rem;font-weight:600;font-family:var(--u);cursor:pointer;transition:all .2s;border-bottom:3px solid transparent;-webkit-tap-highlight-color:transparent;text-align:center;line-height:1.3}
+.tb:hover{color:var(--accent);background:#fdfaf6}
+.tb.on{color:var(--accent);border-bottom-color:var(--accent);background:#fdfaf6}
+.tab-panel{display:none}
+.tab-panel.on{display:block}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(1.2rem,3vw,2rem);margin-bottom:1.5rem}
+.card h2{font-size:1.15rem;color:var(--accent);margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);font-family:var(--u);letter-spacing:.04em}
+.w{display:inline;cursor:pointer;padding:1px 1px;border-radius:3px;transition:background .15s,color .15s;position:relative;border-bottom:1px dotted #d5c8b0}
+.w:hover{background:#fce8c8;color:#8b5e2a}
+.w:active{background:#f5d090}
+.w.hl{background:#f5d090;color:#7a4e1c;outline:2px solid var(--accent);outline-offset:1px;z-index:2}
+.p{margin-bottom:1.15rem;text-align:justify;font-size:clamp(.95rem,2vw,1.05rem);word-break:break-word}
+.tt{display:inline-flex;align-items:center;gap:.35em;background:none;border:1.5px solid var(--border);color:var(--text-light);padding:.35em .85em;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:var(--u);margin-top:.3rem;margin-bottom:.6rem;transition:all .2s;user-select:none;-webkit-tap-highlight-color:transparent}
+.tt:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+.tt .ar{display:inline-block;transition:transform .25s;font-size:.7rem}
+.tt.open .ar{transform:rotate(90deg)}
+.tx{display:none;color:#6b5e4a;font-size:.9rem;line-height:1.75;padding:.7rem 1rem;margin:.3rem 0 .8rem;background:#fdfaf4;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;animation:fi .3s ease}
+.tx.show{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.qb{margin-bottom:1.4rem;padding-bottom:1rem;border-bottom:1px dashed var(--border)}
+.qb:last-child{border-bottom:none;margin-bottom:0}
+.qt{font-weight:600;margin-bottom:.5rem;font-size:clamp(.9rem,2vw,1rem)}
+.og{display:grid;grid-template-columns:1fr;gap:.35rem;margin-bottom:.3rem}
+@media(min-width:640px){.og{grid-template-columns:1fr 1fr}}
+.op{padding:.45em .75em;border-radius:6px;background:#fafaf7;border:1px solid transparent;font-size:.92rem;line-height:1.65}
+.op:hover{border-color:var(--border)}
+.wb{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.wb span{background:var(--accent-light);color:var(--accent);padding:.2em .65em;border-radius:5px;font-weight:600;font-size:.9rem;font-family:var(--u)}
+.wp{position:fixed;bottom:0;left:0;right:0;background:var(--pb);color:var(--pt);padding:1rem 1.2rem;z-index:999;border-radius:16px 16px 0 0;box-shadow:0 -4px 24px rgba(0,0,0,.3);transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);font-family:var(--u);max-height:42vh;overflow-y:auto}
+.wp.open{transform:translateY(0)}
+.wp-h{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem}
+.wp-w{font-size:1.3rem;font-weight:700;color:#fff}
+.wp-p{font-size:.85rem;color:#b0a592;margin-left:.5em}
+.wp-x{background:none;border:none;color:#8a8070;font-size:1.3rem;cursor:pointer;padding:.2em .4em;border-radius:4px;line-height:1;-webkit-tap-highlight-color:transparent}
+.wp-x:hover{color:#fff}
+.wp-b{font-size:.9rem;line-height:1.65}
+.wp-b .d strong{color:#d4a96a}
+.wp-db{margin-top:.5rem;padding-top:.45rem;border-top:1px solid #3a3530;font-size:.75rem;color:#6a6258}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:998;display:none}
+.ov.show{display:block}
+.ft{text-align:center;font-size:.78rem;color:#b0a590;margin-top:2rem;padding:1rem;font-family:var(--u);line-height:1.7}
+@media(max-width:480px){.c{padding:0 10px}.card{padding:1rem .85rem;border-radius:10px}.w{padding:2px 1px}.wp{padding:.85rem 1rem;max-height:45vh}.tb{font-size:.7rem;padding:.5rem .25rem}}
 </style>
 </head>
 <body>
-<div class="container">
 
-<!-- ====== HEADER ====== -->
-<div class="header">
-  <h1>2024年12月 · 大学英语四级真题（第1套）</h1>
-  <div class="sub">Part III　Reading Comprehension　（阅读部分 40 minutes）</div>
+<div class="c">
+<div class="h">
+  <h1>2024年12月 · 四级真题（第1套）</h1>
+  <div class="sub">Reading Comprehension</div>
+  <div class="badge">Section A 选词填空 · Passage One · Passage Two</div>
 </div>
 
-<!-- ====== SECTION A: 选词填空 ====== -->
-<h2 class="section-title">Section A<span class="section-en">选词填空 — Banked Cloze</span></h2>
-
-<div class="card">
-  <div class="passage-title">Passage: Toni Morrison and Language / Aging</div>
-  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
-    Direction: 从方框中的15个选项中选词填入10个空格（26–35），每词限用一次。
-  </p>
-
-  <div class="reading-passage">
-    <p>When Toni Morrison died in 2019, the world lost one of its most influential authors. But Morrison was not an early success. Her first novel was not published until she was 39, and her last appeared when she was 84. And Morrison was not <span class="blank">26</span> in this regard. Numerous writers produce masterpieces well into their 70s and beyond. Such <span class="blank">27</span> accomplishments highlight an important point. Our capacity to speak, write and learn new vocabulary does not seem to <span class="blank">28</span> with age. Our eyesight may dim and our recall may weaken, but, by comparison, our ability to produce and to <span class="blank">29</span> language is well preserved into older adulthood.</p>
-
-    <p>Indeed, the latest research that has emerged on language and aging shows that language mastery is a <span class="blank">30</span> that we begin as infants and continue on for the rest of our lives. Some aspects of our language abilities, such as our knowledge of word meanings, <span class="blank">31</span> improve during middle and late adulthood. One study, for example, found that adults over sixty had an average vocabulary size of over 21,000 words. The researchers also studied a <span class="blank">32</span> of college students and found that their average vocabulary contained <span class="blank">33</span> 16,000 words. In another study, older adults, with an average age of 75, <span class="blank">34</span> better than participants in their youth or middle years on tasks that required them to determine the meaning of words. Thus, language seems to be a skill that, contrary to what many might <span class="blank">35</span>, does not weaken with age.</p>
-  </div>
-
-  <div class="wordbank">
-    <div class="item"><strong>A)</strong> actually</div>
-    <div class="item"><strong>B)</strong> approximately</div>
-    <div class="item"><strong>C)</strong> assume</div>
-    <div class="item"><strong>D)</strong> component</div>
-    <div class="item"><strong>E)</strong> comprehend</div>
-    <div class="item"><strong>F)</strong> deteriorate</div>
-    <div class="item"><strong>G)</strong> equivalent</div>
-    <div class="item"><strong>H)</strong> journey</div>
-    <div class="item"><strong>I)</strong> literary</div>
-    <div class="item"><strong>J)</strong> performed</div>
-    <div class="item"><strong>K)</strong> rarely</div>
-    <div class="item"><strong>L)</strong> sample</div>
-    <div class="item"><strong>M)</strong> undermined</div>
-    <div class="item"><strong>N)</strong> unique</div>
-    <div class="item"><strong>O)</strong> unit</div>
-  </div>
+<div class="tab-bar">
+  <button class="tb on" onclick="sw('sa')">Section A<br><small>选词填空 Q26-35</small></button>
+  <button class="tb" onclick="sw('p1')">Passage One<br><small>人与自然 Q46-50</small></button>
+  <button class="tb" onclick="sw('p2')">Passage Two<br><small>女性工程师 Q51-55</small></button>
 </div>
 
-<!-- ====== SECTION B: 段落匹配 ====== -->
-<h2 class="section-title">Section B<span class="section-en">段落匹配 — Paragraph Matching</span></h2>
+<div class="tab-panel on" id="tp-sa">
+<div class="card"><h2>Section A — 选词填空</h2><div id="sap"></div><div class="wb" id="sab"></div></div></div>
 
-<div class="card">
-  <div class="passage-title">Why it's wrong to look at work-life balance as an achievement</div>
-  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
-    Direction: 阅读段落 A–L，将下方10个陈述（36–45）匹配到对应段落。
-  </p>
+<div class="tab-panel" id="tp-p1">
+<div class="card"><h2>Passage One — Reconnecting with Nature</h2><div id="p1c"></div></div>
+<div class="card"><h2>Questions 46–50</h2><div id="p1q"></div></div></div>
 
-  <!-- Paragraphs -->
-  <div class="para-block"><span class="para-label">A</span><span class="para-text">Few topics have been so endlessly analysed as work-life balance. The quest to attain this mysterious state has dominated discussion around careers for years — especially for working parents. The concept is often presented as something to achieve, or a goal to reach. And once you've reached it, congratulations: you've made it; you're a successful human being of the 21st century.</span></div>
+<div class="tab-panel" id="tp-p2">
+<div class="card"><h2>Passage Two — Women in Engineering</h2><div id="p2c"></div></div>
+<div class="card"><h2>Questions 51–55</h2><div id="p2q"></div></div></div>
 
-  <div class="para-block"><span class="para-label">B</span><span class="para-text">But the problem is that we often tell ourselves: "I'm going to put in eight hours' worth of work, and then I'm going to put in eight hours' worth of 'me time', which will include my family, my hobbies, my workout, my everything," says Anat Lechner, clinical associate professor of management at New York University. "I don't think it's such a simple formula."</span></div>
-
-  <div class="para-block"><span class="para-label">C</span><span class="para-text">And, according to new findings, it may not be. Some researchers are now encouraging us to stop thinking about work-life balance as an achievement that you either hit or don't. Instead, they suggest it may be more of a lifelong process — a continuous, never-ending exercise that requires self-awareness and timely adjustments. Researchers Ioana Lupu and Mayra Ruiz-Castro argue that work-life balance is "a cycle, not an achievement". In their 2020 study, the researchers interviewed nearly 80 employees at two London-based firms — an equal number of men and women between the ages of 30 and 50, all with at least one dependent child — who worked in middle or senior management roles.</span></div>
-
-  <div class="para-block"><span class="para-label">D</span><span class="para-text">Although it sounds like the respondents had a lot in common, here's what separated them: about 30% of the men and 50% of the women reported resisting working long hours. The other respondents, meanwhile, all worked long hours because they thought that's what successful professionals should do.</span></div>
-
-  <div class="para-block"><span class="para-label">E</span><span class="para-text">Lupu and Ruiz-Castro looked at those who rejected the long hours and they found that those workers actually had strikingly similar strategies for maintaining their work-life balance. They had a tendency to reflect and question assumptions in the name of self-awareness and regularly took steps to adjust the things standing in their way to work-life balance.</span></div>
-
-  <div class="para-block"><span class="para-label">F</span><span class="para-text">Lupu and Ruiz-Castro identified five steps that the respondents in the study who had better work-life balance used in their jobs. First, they paused and reconsidered beliefs such as 'I'm a professional, so I should work, work, work', and asked themselves questions like, "What's currently causing me stress?" Second, after identifying the cause, they zeroed in on their resultant emotions. Did they feel angry, sad, energised? Third, they reprioritised, asking "Is working long hours really worth cutting back on family time?" for example. Fourth, they considered their alternatives: is there anything at work that could be changed to accommodate these new priorities? And finally, they implemented changes, like asking their supervisor for greater flexibility, or deciding not to take on every project that comes their way.</span></div>
-
-  <div class="para-block"><span class="para-label">G</span><span class="para-text">This five-step process is something anyone can adopt. Going through the steps, and constantly checking in with yourself, can help you shift and adapt your professional life to something that will better harmonise with your personal one. "Awareness of your emotional state is essential in order to determine the changes you want to make in your work and in your life," says Lupu.</span></div>
-
-  <div class="para-block"><span class="para-label">H</span><span class="para-text">New York University's Lechner agrees that finding that balance is an ongoing pursuit. It's not simply about dividing up the hours in your day between work, the gym, kids and chores. If the underlying emotional sources of stress are still there, then the time you actually spend at home may not be enjoyable. "We come home and even though physically we are there, mentally we still may be processing things that happened at work. We're not present," she says. What we call "work-life balance" is actually just a substitute to having a sense of fulfillment and contentment.</span></div>
-
-  <div class="para-block"><span class="para-label">I</span><span class="para-text">Of course, finding that balance probably shouldn't be something you have to do by yourself. Research by Erin Kelly, professor of work and organisation studies at MIT, shows companies and managers can play a key role in creating a better environment for workers. For her book <i>Overload: How Good Jobs Went Bad and What to Do about It</i>, she and co-author Phyllis Moen split more than 1,000 employees at a Fortune 500 company into two groups, one that worked under a management redesign and one that continued working within the existing management structure.</span></div>
-
-  <div class="para-block"><span class="para-label">J</span><span class="para-text">Under the management redesign, many steps were taken to ensure better work-life balance and prevent burnout (过劳). Managers were regularly reminded to explicitly support their employees. Workers were allowed to make changes, like cancelling 9 am meetings. All of this was done in the name of increasing job satisfaction and giving workers greater flexibility, and to assure workers that it was something management was committed to. Unsurprisingly, Kelly and Moen found that employees in the redesign group reported less stress and less burnout. They were less likely to quit their jobs; indeed, over the next four years, they were 40% less likely to quit than those who kept working under the old policies.</span></div>
-
-  <div class="para-block"><span class="para-label">K</span><span class="para-text">"Work-life balance is understood to be an individual's response, so people think 'it's up to me to manage the craziness of my work life,'" says Kelly. But organisations need to examine the demands they're placing on employees. "The root problem is not how the two pieces of work and life come together. It's that we have unrealistic expectations of what we're asked to do on the work side." If your workplace isn't an environment where work-life balance is possible in the first place, any effort you attempt to make toward it on a personal level will be in vain.</span></div>
-
-  <div class="para-block"><span class="para-label">L</span><span class="para-text">That's a conversation that appears to be gathering pace. The new prevalence of remote and flexible working models will likely all play important roles in how we balance our professional and personal lives. And if it seems like finding that perfect balance remains difficult to achieve, the experts say that keeping some perspective can help. For millions of people, work is about being able to put food on the table. Talking about work-life balance "is a very privileged conversation," says Lechner. "If we're reflecting, maybe we should also reflect on that."</span></div>
-
-  <!-- Statements 36-45 -->
-  <div style="margin-top:20px;padding-top:16px;border-top:2px solid var(--border);">
-    <p style="font-weight:700;margin-bottom:8px;color:#4a3520;">Statements（匹配下列陈述对应的段落）</p>
-    <div class="stmt-list">
-      <div class="stmt-item">According to a management expert, work-life balance is not as simple as giving equal amounts of time to work and personal life.</div>
-      <div class="stmt-item">Research found that those who are given greater flexibility at work are less stressed and more likely to stay in their jobs.</div>
-      <div class="stmt-item">Workers who rejected working long hours tended to make regular adjustments in order to achieve work-life balance.</div>
-      <div class="stmt-item">Talking about work-life balance is said to be a privilege reserved for the better-off, not for those who barely make a living.</div>
-      <div class="stmt-item">Knowing one's emotional state is of utmost importance in deciding what changes to make for a better work-life balance.</div>
-      <div class="stmt-item">More female professionals reported being reluctant to work overtime than their male counterparts.</div>
-      <div class="stmt-item">Without organisational support, any personal effort to maintain work-life balance will be unsuccessful.</div>
-      <div class="stmt-item">The question of how to achieve work-life balance has long been the main subject of discussion among workers.</div>
-      <div class="stmt-item">You may not actually experience emotional wellbeing at home if you remain occupied with what happened at work.</div>
-      <div class="stmt-item">Some researchers suggest that work-life balance is not a goal to achieve, but a process for life to be adjusted promptly.</div>
-    </div>
-  </div>
+<div class="ft">点击任意英文单词查看音标与考研释义 · 中浩 · 2024.12 CET-4 第1套</div>
 </div>
 
-<!-- ====== SECTION C: 仔细阅读 ====== -->
-<h2 class="section-title">Section C<span class="section-en">仔细阅读 — In-depth Reading</span></h2>
-
-<!-- Passage One -->
-<div class="card">
-  <div class="passage-title">Passage One — The Human Connection to Nature</div>
-  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
-    Questions 46 – 50 &nbsp;|&nbsp; 选择最佳答案
-  </p>
-
-  <div class="reading-passage">
-    <p>The weakening of the human connection to nature might be good for economic growth but is bad for people. A tipping point was reached in 2020 when human-made materials — such as steel, concrete and plastic — were found to weigh more than all life on Earth. Continuing to grow concrete forests rather than real ones is shortsighted. Simply being in the nearest wood has such health benefits that the Woodland Trust successfully lobbied for it to be prescribed by doctors.</p>
-
-    <p>Yet slipping from popular culture is the wonder and beauty of the natural world. For every three nature-related words in hit songs of the 1950s, researchers found, there was only slightly more than one 50 years later. It is not a moment too soon that teenagers will be able to take a natural history test, given that for decades children have been able to name more video game characters than wildlife species.</p>
-
-    <p>Part of remedying this social disease would be for parliament to pass a "right to grow" law, allowing anyone to turn underused public spaces into vegetable and fruit gardens. The idea is for people to get back in touch with the soil — while producing food sustainably.</p>
-
-    <p>Vegetable planting has a respectable tradition. In April 1649, locals responded to high prices and food shortages by cultivating vegetables on common land in Southern England. The practice of throwing seed bombs to turn vacant plots of land green took off in 1970s New York, and has been revived (复兴) by green-thumbed (擅长园艺的) social media influencers who defy local US regulations in a war on ugly spots in cities.</p>
-
-    <p>Apart from the urgent task of providing more healthy nutrients to those who increasingly can't afford them, publicly accessible fruit and vegetable gardens connect what we eat to where it comes from — the means of production, if you will. They can make unlovely spaces lovely, and marry use and beauty as well as help promote a sense of community. Plants are also, of course, our first defence against species loss and climate change. Such planting is a small step for humanity — in the right direction.</p>
-  </div>
-
-  <div class="q-block">
-    <div class="q-stem"><span class="q-num">46.</span>What does the author want to emphasise in the first paragraph?</div>
-    <div class="q-options">
-      <div>A) The year 2020 was a big turning point in human history.</div>
-      <div>B) Economic growth benefits people little in the long run.</div>
-      <div>C) It is unwise to weaken the human connection to nature.</div>
-      <div>D) It is harmful to mankind to use human-made materials.</div>
-    </div>
-  </div>
-
-  <div class="q-block">
-    <div class="q-stem"><span class="q-num">47.</span>What did researchers find about popular culture?</div>
-    <div class="q-options">
-      <div>A) It is increasingly detached from the natural world.</div>
-      <div>B) It is filled with all kinds of video game characters.</div>
-      <div>C) It is especially appealing to the taste of teenagers.</div>
-      <div>D) It is still impacted by the hit songs of the 1950s.</div>
-    </div>
-  </div>
-
-  <div class="q-block">
-    <div class="q-stem"><span class="q-num">48.</span>What does the author propose people do?</div>
-    <div class="q-options">
-      <div>A) Take measures to ensure sustainable food development.</div>
-      <div>B) Reconnect with nature through the right to grow.</div>
-      <div>C) Stand by the parliament in fighting social diseases.</div>
-      <div>D) Cover public spaces with fruit trees and vegetable plants.</div>
-    </div>
-  </div>
-
-  <div class="q-block">
-    <div class="q-stem"><span class="q-num">49.</span>What do we learn from the passage about vegetable planting?</div>
-    <div class="q-options">
-      <div>A) It all started in 1649 in Southern England.</div>
-      <div>B) It is protected by US government regulations.</div>
-      <div>C) It has long been used to increase food supply and improve urban landscape.</div>
-      <div>D) It has been popularised worldwide with the increasing influence of social media.</div>
-    </div>
-  </div>
-
-  <div class="q-block">
-    <div class="q-stem"><span class="q-num">50.</span>What can publicly accessible fruit and vegetable gardens do apart from their practical functions?</div>
-    <div class="q-options">
-      <div>A) Raise people's environmental awareness.</div>
-      <div>B) Add to the great variety of plant species.</div>
-      <div>C) Act as the first defence against natural disasters.</div>
-      <div>D) Enhance people's community spirit.</div>
-    </div>
-  </div>
+<div class="ov" id="ov" onclick="cp()"></div>
+<div class="wp" id="wp">
+  <div class="wp-h"><div><span class="wp-w" id="pW">—</span><span class="wp-p" id="pP"></span></div><button class="wp-x" onclick="cp()">&times;</button></div>
+  <div class="wp-b" id="pB"></div>
+  <div class="wp-db" id="pD"></div>
 </div>
 
-<!-- Passage Two -->
-<div class="card">
-  <div class="passage-title">Passage Two — Women Engineers in the United States</div>
-  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px;">
-    Questions 51 – 55 &nbsp;|&nbsp; 选择最佳答案
-  </p>
+<script>
+var D={
+"the":"/ðə/|art. 这；那（定冠词）","a":"/ə/|art. 一个","an":"/æn/|art. 一个（元音前）",
+"this":"/ðɪs/|pron./adj. 这个","that":"/ðæt/|pron./adj. 那个","these":"/ðiːz/|pron./adj. 这些","those":"/ðoʊz/|pron./adj. 那些",
+"some":"/sʌm/|adj. 一些","any":"/ˈeni/|adj. 任何","many":"/ˈmeni/|adj. 许多","few":"/fjuː/|adj. 很少","much":"/mʌtʃ/|adj. 许多的 adv. 非常","more":"/mɔːr/|adj. 更多的","most":"/moʊst/|adj. 最多的","all":"/ɔːl/|adj. 所有的","each":"/iːtʃ/|pron. 每个","every":"/ˈevri/|adj. 每个的","several":"/ˈsevrəl/|adj. 几个的","both":"/boʊθ/|pron. 两者",
+"I":"/aɪ/|pron. 我","me":"/miː/|pron. 我（宾格）","my":"/maɪ/|pron. 我的","you":"/juː/|pron. 你；你们","your":"/jʊr/|pron. 你的","he":"/hiː/|pron. 他","him":"/hɪm/|pron. 他（宾格）","his":"/hɪz/|pron. 他的","she":"/ʃiː/|pron. 她","her":"/hɜːr/|pron. 她/她的","it":"/ɪt/|pron. 它","its":"/ɪts/|pron. 它的","we":"/wiː/|pron. 我们","us":"/ʌs/|pron. 我们（宾格）","our":"/aʊr/|pron. 我们的","they":"/ðeɪ/|pron. 他们","them":"/ðem/|pron. 他们（宾格）","their":"/ðer/|pron. 他们的","who":"/huː/|pron. 谁",
+"in":"/ɪn/|prep. 在……里面","on":"/ɑːn/|prep. 在……上面","at":"/æt/|prep. 在（某处/某时）","to":"/tuː/|prep. 向；到","for":"/fɔːr/|prep. 为了；对于","of":"/ʌv/|prep. ……的","with":"/wɪð/|prep. 和……一起；用","by":"/baɪ/|prep. 通过；被","as":"/æz/|prep./conj. 作为","from":"/frʌm/|prep. 来自","about":"/əˈbaʊt/|prep. 关于","into":"/ˈɪntuː/|prep. 进入","over":"/ˈoʊvər/|prep./adv. 在……上方","under":"/ˈʌndər/|prep./adv. 在……下面","after":"/ˈæftər/|prep. 在……之后","before":"/bɪˈfɔːr/|prep. 在……之前","between":"/bɪˈtwiːn/|prep. 在……之间","among":"/əˈmʌŋ/|prep. 在……之中","within":"/wɪˈðɪn/|prep. 在……之内","without":"/wɪˈðaʊt/|prep. 没有","during":"/ˈdʊrɪŋ/|prep. 在……期间","until":"/ʌnˈtɪl/|prep./conj. 直到","since":"/sɪns/|prep./conj. 自从","like":"/laɪk/|prep. 像 v. 喜欢","despite":"/dɪˈspaɪt/|prep. 尽管","including":"/ɪnˈkluːdɪŋ/|prep. 包括","per":"/pɜːr/|prep. 每",
+"and":"/ænd/|conj. 和；并且","or":"/ɔːr/|conj. 或","but":"/bʌt/|conj. 但是","so":"/soʊ/|conj. 所以","if":"/ɪf/|conj. 如果","whether":"/ˈweðər/|conj. 是否","because":"/bɪˈkɔːz/|conj. 因为","although":"/ɔːlˈðoʊ/|conj. 虽然","though":"/ðoʊ/|conj./adv. 虽然","when":"/wen/|conj./adv. 当……时","while":"/waɪl/|conj. 当……时；然而","than":"/ðæn/|conj. 比","unless":"/ʌnˈles/|conj. 除非","however":"/haʊˈevər/|adv. 然而","therefore":"/ˈðerfɔːr/|adv. 因此",
+"not":"/nɑːt/|adv. 不","no":"/noʊ/|adv. 不 adj. 没有","now":"/naʊ/|adv. 现在","then":"/ðen/|adv. 然后","here":"/hɪr/|adv. 在这里","there":"/ðer/|adv. 在那里","just":"/dʒʌst/|adv. 只是","only":"/ˈoʊnli/|adv. 只","also":"/ˈɔːlsoʊ/|adv. 也","too":"/tuː/|adv. 太；也","very":"/ˈveri/|adv. 非常","even":"/ˈiːvn/|adv. 甚至","still":"/stɪl/|adv. 仍然","already":"/ɔːlˈredi/|adv. 已经","always":"/ˈɔːlweɪz/|adv. 总是","never":"/ˈnevər/|adv. 从不","often":"/ˈɔːfn/|adv. 经常","sometimes":"/ˈsʌmtaɪmz/|adv. 有时","usually":"/ˈjuːʒuəli/|adv. 通常","well":"/wel/|adv. 好地","really":"/ˈriːəli/|adv. 真正地","quite":"/kwaɪt/|adv. 相当","actually":"/ˈæktʃuəli/|adv. 实际上","simply":"/ˈsɪmpli/|adv. 仅仅","largely":"/ˈlɑːrdʒli/|adv. 很大程度上","particularly":"/pərˈtɪkjələrli/|adv. 尤其",
+"be":"/biː/|v. 是；在","am":"/æm/|v. 是","is":"/ɪz/|v. 是","are":"/ɑːr/|v. 是","was":"/wʌz/|v. 是（过去式单数）","were":"/wɜːr/|v. 是（过去式复数）","been":"/bɪn/|v. 是（过去分词）","being":"/ˈbiːɪŋ/|v. 是（现在分词） n. 存在","do":"/duː/|v. 做","does":"/dʌz/|v. 做（第三人称）","did":"/dɪd/|v. 做（过去式）","done":"/dʌn/|adj. 完成的","have":"/hæv/|v. 有 aux. 已经","has":"/hæz/|v. 有（第三人称）","had":"/hæd/|v. 有（过去式）","can":"/kæn/|aux. 能","could":"/kʊd/|aux. 能（过去式）","will":"/wɪl/|aux. 将","would":"/wʊd/|aux. 会","should":"/ʃʊd/|aux. 应该","may":"/meɪ/|aux. 可能","might":"/maɪt/|aux. 也许","must":"/mʌst/|aux. 必须","need":"/niːd/|v./aux. 需要","say":"/seɪ/|v. 说","said":"/sed/|v. 说（过去式）","get":"/ɡet/|v. 得到；变得","go":"/ɡoʊ/|v. 去","come":"/kʌm/|v. 来","make":"/meɪk/|v. 做；使","made":"/meɪd/|v. 做（过去式）","take":"/teɪk/|v. 拿；花费","see":"/siː/|v. 看见","know":"/noʊ/|v. 知道","think":"/θɪŋk/|v. 认为","want":"/wɑːnt/|v. 想要","give":"/ɡɪv/|v. 给","find":"/faɪnd/|v. 找到","found":"/faʊnd/|v. 找到（过去式）；建立","tell":"/tel/|v. 告诉","ask":"/æsk/|v. 问","help":"/help/|v. 帮助","try":"/traɪ/|v. 尝试","keep":"/kiːp/|v. 保持","let":"/let/|v. 让","put":"/pʊt/|v. 放","show":"/ʃoʊ/|v. 显示","seem":"/siːm/|v. 似乎","feel":"/fiːl/|v. 感觉","work":"/wɜːrk/|v./n. 工作","look":"/lʊk/|v. 看","use":"/juːz/|v. 使用","used":"/juːzd/|v. 使用（过去式）；习惯于","mean":"/miːn/|v. 意味着","means":"/miːnz/|n. 方法；手段","call":"/kɔːl/|v. 称呼","change":"/tʃeɪndʒ/|v./n. 改变","lead":"/liːd/|v. 导致；带领","happen":"/ˈhæpən/|v. 发生","believe":"/bɪˈliːv/|v. 相信","result":"/rɪˈzʌlt/|n. 结果 v. 导致","continue":"/kənˈtɪnjuː/|v. 继续","determine":"/dɪˈtɜːrmɪn/|v. 确定；查明","encourage":"/ɪnˈkɜːrɪdʒ/|v. 鼓励","ensure":"/ɪnˈʃʊr/|v. 确保",
+"good":"/ɡʊd/|adj. 好的","bad":"/bæd/|adj. 坏的","new":"/nuː/|adj. 新的","old":"/oʊld/|adj. 旧的","big":"/bɪɡ/|adj. 大的","small":"/smɔːl/|adj. 小的","great":"/ɡreɪt/|adj. 伟大的","high":"/haɪ/|adj. 高的","low":"/loʊ/|adj. 低的","long":"/lɔːŋ/|adj. 长的","right":"/raɪt/|adj. 正确的 n. 权利","wrong":"/rɔːŋ/|adj. 错误的","important":"/ɪmˈpɔːrtnt/|adj. 重要的","different":"/ˈdɪfrənt/|adj. 不同的","same":"/seɪm/|adj. 相同的","other":"/ˈʌðər/|adj. 其他的","own":"/oʊn/|adj. 自己的","real":"/ˈriːəl/|adj. 真正的","hard":"/hɑːrd/|adj. 困难的；努力的","easy":"/ˈiːzi/|adj. 容易的","possible":"/ˈpɑːsəbl/|adj. 可能的","likely":"/ˈlaɪkli/|adj. 可能的","clear":"/klɪr/|adj. 清楚的","common":"/ˈkɑːmən/|adj. 普通的；共同的","first":"/fɜːrst/|adj./adv. 第一","second":"/ˈsekənd/|adj. 第二 n. 秒","last":"/læst/|adj. 最后的","next":"/nekst/|adj. 下一个","early":"/ˈɜːrli/|adj./adv. 早","late":"/leɪt/|adj./adv. 晚","recent":"/ˈriːsnt/|adj. 最近的","public":"/ˈpʌblɪk/|adj. 公共的 n. 公众","free":"/friː/|adj. 自由的；免费的","able":"/ˈeɪbl/|adj. 能够的","available":"/əˈveɪləbl/|adj. 可用的","similar":"/ˈsɪmələr/|adj. 相似的",
+"time":"/taɪm/|n. 时间","year":"/jɪr/|n. 年","day":"/deɪ/|n. 天","week":"/wiːk/|n. 周","people":"/ˈpiːpl/|n. 人们","person":"/ˈpɜːrsn/|n. 人","man":"/mæn/|n. 男人","men":"/men/|n. 男人们","woman":"/ˈwʊmən/|n. 女人","women":"/ˈwɪmɪn/|n. 女人们","life":"/laɪf/|n. 生命；生活","world":"/wɜːrld/|n. 世界","way":"/weɪ/|n. 方式；道路","thing":"/θɪŋ/|n. 东西；事物","things":"/θɪŋz/|n. 事物","something":"/ˈsʌmθɪŋ/|pron. 某事","money":"/ˈmʌni/|n. 钱","company":"/ˈkʌmpəni/|n. 公司","companies":"/ˈkʌmpəniz/|n. 公司（复）","job":"/dʒɑːb/|n. 工作","research":"/rɪˈsɜːrtʃ/|n./v. 研究","study":"/ˈstʌdi/|n./v. 研究；学习","question":"/ˈkwestʃən/|n. 问题","answer":"/ˈænsər/|n. 答案","fact":"/fækt/|n. 事实","success":"/səkˈses/|n. 成功","risk":"/rɪsk/|n. 风险","number":"/ˈnʌmbər/|n. 数字","attention":"/əˈtenʃn/|n. 注意力","effect":"/ɪˈfekt/|n. 效果；影响","difference":"/ˈdɪfrəns/|n. 差异","behavior":"/bɪˈheɪvjər/|n. 行为","ability":"/əˈbɪləti/|n. 能力","evidence":"/ˈevɪdəns/|n. 证据","performance":"/pərˈfɔːrməns/|n. 表现","culture":"/ˈkʌltʃər/|n. 文化","health":"/helθ/|n. 健康","data":"/ˈdeɪtə/|n. 数据","science":"/ˈsaɪəns/|n. 科学","group":"/ɡruːp/|n. 群；组","type":"/taɪp/|n. 类型","example":"/ɪɡˈzæmpl/|n. 例子","case":"/keɪs/|n. 情况；案例","point":"/pɔɪnt/|n. 点；观点","end":"/end/|n./v. 结束","power":"/ˈpaʊər/|n. 权力；力量","society":"/səˈsaɪəti/|n. 社会","process":"/ˈprɑːses/|n. 过程","nature":"/ˈneɪtʃər/|n. 自然","skill":"/skɪl/|n. 技能","skills":"/skɪlz/|n. 技能（复）",
+"novel":"/ˈnɑːvl/|n. 小说 adj. 新颖的","published":"/ˈpʌblɪʃt/|v. 出版","influential":"/ˌɪnfluˈenʃl/|adj. 有影响力的","masterpiece":"/ˈmæstərpiːs/|n. 杰作","masterpieces":"/ˈmæstərpiːsɪz/|n. 杰作（复）","numerous":"/ˈnuːmərəs/|adj. 许多的；大量的","capacity":"/kəˈpæsəti/|n. 能力；容量","vocabulary":"/vəˈkæbjəleri/|n. 词汇","eyesight":"/ˈaɪsaɪt/|n. 视力","dim":"/dɪm/|v. 变暗；变模糊","recall":"/rɪˈkɔːl/|n./v. 记忆；回忆","weaken":"/ˈwiːkən/|v. 减弱；变弱","comparison":"/kəmˈpærɪsn/|n. 比较","preserved":"/prɪˈzɜːrvd/|adj. 保持的 v. 保持","adulthood":"/əˈdʌlthʊd/|n. 成年期","mastery":"/ˈmæstəri/|n. 掌握；精通","infants":"/ˈɪnfənts/|n. 婴儿","aspects":"/ˈæspekts/|n. 方面","aspect":"/ˈæspekt/|n. 方面","knowledge":"/ˈnɑːlɪdʒ/|n. 知识","meanings":"/ˈmiːnɪŋz/|n. 含义","improve":"/ɪmˈpruːv/|v. 改进；提高","adults":"/əˈdʌlts/|n. 成年人","average":"/ˈævərɪdʒ/|adj. 平均的 n. 平均数","size":"/saɪz/|n. 大小；尺寸","contained":"/kənˈteɪnd/|v. 包含","tasks":"/tæsks/|n. 任务","required":"/rɪˈkwaɪərd/|v. 要求","contrary":"/ˈkɑːntreri/|adj. 相反的 n. 相反","decline":"/dɪˈklaɪn/|v. 下降；衰退","weaken":"/ˈwiːkən/|v. 削弱；变弱",
+"deteriorate":"/dɪˈtɪriəreɪt/|v. 恶化；衰退","comprehend":"/ˌkɑːmprɪˈhend/|v. 理解；领悟","component":"/kəmˈpoʊnənt/|n. 组成部分；成分","journey":"/ˈdʒɜːrni/|n. 旅程；历程","literary":"/ˈlɪtəreri/|adj. 文学的","unique":"/juːˈniːk/|adj. 独特的；独一无二的","approximately":"/əˈprɑːksɪmətli/|adv. 大约","assume":"/əˈsuːm/|v. 假设；认为","performed":"/pərˈfɔːrmd/|v. 表现；执行","sample":"/ˈsæmpl/|n. 样本 v. 抽样","actually":"/ˈæktʃuəli/|adv. 实际上","undermined":"/ˌʌndərˈmaɪnd/|v. 削弱；破坏","equivalent":"/ɪˈkwɪvələnt/|adj./n. 等同的；等价物","unit":"/ˈjuːnɪt/|n. 单位；单元","rarely":"/ˈrerli/|adv. 很少；罕见地",
+"connection":"/kəˈnekʃn/|n. 联系；连接","weakening":"/ˈwiːkənɪŋ/|n. 削弱；减弱","economic":"/ˌekəˈnɑːmɪk/|adj. 经济的","growth":"/ɡroʊθ/|n. 增长","tipping":"/ˈtɪpɪŋ/|n. 临界点","steel":"/stiːl/|n. 钢铁","concrete":"/ˈkɑːŋkriːt/|n. 混凝土 adj. 具体的","plastic":"/ˈplæstɪk/|n. 塑料","weigh":"/weɪ/|v. 称重；重量为","forests":"/ˈfɔːrɪsts/|n. 森林","shortsighted":"/ˌʃɔːrtˈsaɪtɪd/|adj. 目光短浅的","woodland":"/ˈwʊdlənd/|n. 林地；树林","lobbied":"/ˈlɑːbid/|v. 游说","prescribed":"/prɪˈskraɪbd/|v. 开处方；规定","slipping":"/ˈslɪpɪŋ/|v. 滑落；消逝","wonder":"/ˈwʌndər/|n. 奇迹；奇妙 v. 想知道","beauty":"/ˈbjuːti/|n. 美丽","natural":"/ˈnætʃrəl/|adj. 自然的","hit":"/hɪt/|n. 热门歌曲；成功 v. 打击","decades":"/ˈdekeɪdz/|n. 数十年","teenagers":"/ˈtiːneɪdʒərz/|n. 青少年","video":"/ˈvɪdioʊ/|n. 视频","characters":"/ˈkærəktərz/|n. 角色；人物","wildlife":"/ˈwaɪldlaɪf/|n. 野生动植物","species":"/ˈspiːʃiːz/|n. 物种","remedying":"/ˈremədiɪŋ/|v. 治疗；补救","disease":"/dɪˈziːz/|n. 疾病","parliament":"/ˈpɑːrləmənt/|n. 议会","underused":"/ˌʌndərˈjuːzd/|adj. 未充分利用的","spaces":"/ˈspeɪsɪz/|n. 空间","vegetable":"/ˈvedʒtəbl/|n. 蔬菜","fruit":"/fruːt/|n. 水果","gardens":"/ˈɡɑːrdnz/|n. 花园","soil":"/sɔɪl/|n. 土壤","sustainably":"/səˈsteɪnəbli/|adv. 可持续地","respectable":"/rɪˈspektəbl/|adj. 体面的；可观的","tradition":"/trəˈdɪʃn/|n. 传统","shortages":"/ˈʃɔːrtɪdʒɪz/|n. 短缺","cultivating":"/ˈkʌltɪveɪtɪŋ/|v. 种植；培养","seed":"/siːd/|n. 种子","bombs":"/bɑːmz/|n. 炸弹","vacant":"/ˈveɪkənt/|adj. 空置的；无人使用的","plots":"/plɑːts/|n. 小块土地","revived":"/rɪˈvaɪvd/|v. 使复活；复兴","influencers":"/ˈɪnfluənsərz/|n. 影响者；网红","defy":"/dɪˈfaɪ/|v. 违抗；藐视","regulations":"/ˌreɡjuˈleɪʃnz/|n. 法规；规定","nutrients":"/ˈnuːtriənts/|n. 营养物质","increasingly":"/ɪnˈkriːsɪŋli/|adv. 越来越多地","afford":"/əˈfɔːrd/|v. 负担得起","accessible":"/əkˈsesəbl/|adj. 可进入的；可及的","connect":"/kəˈnekt/|v. 连接；联系","production":"/prəˈdʌkʃn/|n. 生产","unlovely":"/ʌnˈlʌvli/|adj. 不美观的","marry":"/ˈmæri/|v. 结合；结婚","promote":"/prəˈmoʊt/|v. 促进；推广","community":"/kəˈmjuːnəti/|n. 社区；团体","defence":"/dɪˈfens/|n. 防御；保护","climate":"/ˈklaɪmət/|n. 气候","humanity":"/hjuːˈmænəti/|n. 人类；人性","direction":"/dɪˈrekʃn/|n. 方向",
+"engineering":"/ˌendʒɪˈnɪrɪŋ/|n. 工程学；工程","male":"/meɪl/|adj. 男性的 n. 男性","dominated":"/ˈdɑːmɪneɪtɪd/|adj. 主导的","profession":"/prəˈfeʃn/|n. 职业；行业","percentage":"/pərˈsentɪdʒ/|n. 百分比","majoring":"/ˈmeɪdʒərɪŋ/|v. 主修","rate":"/reɪt/|n. 比率；速度","unchanged":"/ʌnˈtʃeɪndʒd/|adj. 未改变的","historian":"/hɪˈstɔːriən/|n. 历史学家","colleagues":"/ˈkɑːliːɡz/|n. 同事","surveyed":"/ˈsɜːrveɪd/|v. 调查","pioneers":"/ˌpaɪəˈnɪrz/|n. 先驱者","reflected":"/rɪˈflektɪd/|v. 回顾；反思","challenges":"/ˈtʃælɪndʒɪz/|n. 挑战","advice":"/ədˈvaɪs/|n. 建议","entering":"/ˈentərɪŋ/|v. 进入","taker":"/ˈteɪkər/|n. 接受者；受访者","explained":"/ɪkˈspleɪnd/|v. 解释","challenge":"/ˈtʃælɪndʒ/|n./v. 挑战","messages":"/ˈmesɪdʒɪz/|n. 信息；消息","seriously":"/ˈsɪriəsli/|adv. 认真地","promoted":"/prəˈmoʊtɪd/|v. 晋升；推广","raises":"/ˈreɪzɪz/|n. 加薪 v. 提高","qualified":"/ˈkwɑːlɪfaɪd/|adj. 合格的；有资格的","chemical":"/ˈkemɪkl/|adj. 化学的 n. 化学品","manufacturing":"/ˌmænjuˈfæktʃərɪŋ/|n. 制造业","prove":"/pruːv/|v. 证明","female":"/ˈfiːmeɪl/|adj. 女性的 n. 女性","civil":"/ˈsɪvl/|adj. 土木的；公民的","reminded":"/rɪˈmaɪndɪd/|v. 提醒","truly":"/ˈtruːli/|adv. 真正地","belong":"/bɪˈlɔːŋ/|v. 属于","stated":"/ˈsteɪtɪd/|v. 陈述；表示","levels":"/ˈlevlz/|n. 层面；水平","caregiving":"/ˈkerˌɡɪvɪŋ/|n. 照护；看护","responsibilities":"/rɪˌspɑːnsəˈbɪlətiz/|n. 责任","retired":"/rɪˈtaɪərd/|adj. 退休的","vice":"/vaɪs/|adj. 副的","president":"/ˈprezɪdənt/|n. 总裁；总统","footing":"/ˈfʊtɪŋ/|n. 立足点；地位","struggle":"/ˈstrʌɡl/|v./n. 挣扎；奋斗","compete":"/kəmˈpiːt/|v. 竞争","household":"/ˈhaʊshoʊld/|n. 家庭 adj. 家庭的","accepted":"/əkˈseptɪd/|adj. 被接纳的","hailed":"/heɪld/|v. 赞扬；欢呼","benefits":"/ˈbenɪfɪts/|n. 益处；好处","chosen":"/ˈtʃoʊzn/|adj. 选择的","career":"/kəˈrɪr/|n. 职业","program":"/ˈproʊɡræm/|n. 项目；程序","manager":"/ˈmænɪdʒər/|n. 经理","degree":"/dɪˈɡriː/|n. 学位；程度","mechanical":"/mɪˈkænɪkl/|adj. 机械的","flexibility":"/ˌfleksəˈbɪləti/|n. 灵活性","satisfying":"/ˈsætɪsfaɪɪŋ/|adj. 令人满足的","effects":"/ɪˈfekts/|n. 效果；影响"
+};
 
-  <div class="reading-passage">
-    <p>Engineering in the U.S. has long been a male-dominated profession. Fifty years ago, it looked like that might change.</p>
+var D2={};
+for(var k in D){var v=D[k].split('|');D2[k]={p:v[0],d:v[1]||''}}
 
-    <p>In 1970, the percentage of women majoring in engineering was less than 1%. In 1979, that number was 9%. Many hoped women would continue to enter the field at the same rate. But that's not what happened. Today, only 21% of engineering majors are women, a number largely unchanged since 2000.</p>
+function lw(raw){
+  var c=raw.replace(/[.,;:!?—\-–—'"()\\[\\]{}«»\/\\\\]+$/g,'').replace(/^[.,;:!?—\-–—'"()\\[\\]{}«»\/\\\\]+/g,'');
+  if(!c||c.length<1)return null;
+  var k=c.toLowerCase();
+  if(D2[k])return D2[k];
+  if(k.endsWith('s')&&k.length>3){var s=k.slice(0,-1);if(D2[s])return D2[s]}
+  if(k.endsWith('ing')&&k.length>5){var b=k.slice(0,-3);if(D2[b])return D2[b];var b2=b+'e';if(D2[b2])return D2[b2]}
+  if(k.endsWith('ed')&&k.length>4){var b=k.slice(0,-2);if(D2[b])return D2[b];if(k.endsWith('ied')&&k.length>5){var ib=k.slice(0,-3)+'y';if(D2[ib])return D2[ib]}}
+  if(k.endsWith('ly')&&k.length>4){var b=k.slice(0,-2);if(D2[b])return D2[b]}
+  if(k.endsWith('er')&&k.length>4){var b=k.slice(0,-2);if(D2[b])return D2[b]}
+  return null;
+}
 
-    <p>I am a historian who, along with my colleagues, surveyed 251 women engineers who graduated from college in the 1970s. These pioneers reflected on the challenges they faced — and had advice for women entering the field today.</p>
+function wx(text){
+  var tokens=text.split(/(\s+)/g);
+  var h='';
+  for(var ti=0;ti<tokens.length;ti++){
+    var tok=tokens[ti];
+    if(/^\s+$/.test(tok)){h+=tok;continue}
+    var m=tok.match(/^([^a-zA-Z0-9]*)([a-zA-Z0-9'-]+?)([^a-zA-Z0-9]*)$/);
+    if(m){
+      h+=esh(m[1]);var w=m[2],pc=m[3];
+      if(/[a-zA-Z]/.test(w)&&w.length>=1){
+        var e=lw(w);
+        h+='<span class="w" data-w="'+esh(w)+'" data-p="'+esh(e?e.p:'')+'" data-d="'+esh(e?e.d:'(基础词汇)')+'">'+esh(w)+'</span>';
+      }else{h+=esh(w)}
+      h+=esh(pc);
+    }else{h+=esh(tok)}
+  }
+  return h;
+}
+function esh(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 
-    <p>One survey taker explained, "The greatest challenge for me was continuing to believe in myself when all the messages I was getting were that I would never be taken seriously or promoted or given raises at the same rate as men, who were clearly less qualified and not as smart as I was."</p>
+var ce=null;
+function op(el){
+  if(ce)ce.classList.remove('hl');
+  el.classList.add('hl');ce=el;
+  var w=el.dataset.w,p=el.dataset.p,d=el.dataset.d;
+  document.getElementById('pW').textContent=w;
+  document.getElementById('pP').textContent=p||'';
+  document.getElementById('pB').innerHTML=p?'<div class="d"><strong>音标：</strong>'+p+'</div><div class="d" style="margin-top:.3rem"><strong>考研释义：</strong>'+(d||'')+'</div>':'<div class="d"><strong>考研释义：</strong>'+(d||'')+'</div>';
+  document.getElementById('pD').textContent='Debug | '+w+' | '+(p||'无音标')+' | Made for 中浩';
+  document.getElementById('wp').classList.add('open');
+  document.getElementById('ov').classList.add('show');
+}
+function cp(){
+  document.getElementById('wp').classList.remove('open');
+  document.getElementById('ov').classList.remove('show');
+  if(ce){ce.classList.remove('hl');ce=null}
+}
+document.addEventListener('click',function(e){var w=e.target.closest('.w');if(!w)return;e.stopPropagation();op(w)});
 
-    <p>A chemical engineer who worked in manufacturing agreed, "You have to prove yourself just because you are female. And you have to work twice as hard!"</p>
+function ttg(id,btn){
+  var el=document.getElementById(id);if(!el)return;
+  if(el.classList.contains('show')){el.classList.remove('show');btn.classList.remove('open');btn.querySelector('.ar').textContent='▶';btn.innerHTML=btn.innerHTML.replace('收起翻译','查看翻译')}
+  else{el.classList.add('show');btn.classList.add('open');btn.querySelector('.ar').textContent='▼';btn.innerHTML=btn.innerHTML.replace('查看翻译','收起翻译')}
+}
 
-    <p>A civil engineer said, "We are 'women engineers.' People don't refer to a man as a 'man engineer' — he's an engineer. We are constantly reminded that we don't truly belong." Another civil engineer stated, "On many levels, you're never quite one of the group."</p>
+function sw(name){
+  var bs=document.querySelectorAll('.tb');for(var i=0;i<bs.length;i++)bs[i].classList.remove('on');
+  var ps=document.querySelectorAll('.tab-panel');for(var i=0;i<ps.length;i++)ps[i].classList.remove('on');
+  document.getElementById('tp-'+name).classList.add('on');
+  event.target.closest('.tb').classList.add('on');
+}
 
-    <p>Women also talked about family caregiving responsibilities. A retired vice president from a major chemical company stated, "Young women engineers are on an equal footing until they have children, then they struggle to balance work and family — and compete with men who don't have the same household responsibilities."</p>
+// SECTION A — Language and Aging
+var saPars=[
+"When Toni Morrison died in 2019, the world lost one of its most influential authors. But Morrison was not an early success. Her first novel was not published until she was 39, and her last appeared when she was 84. And Morrison was not __26__ in this regard. Numerous writers produce masterpieces well into their 70s and beyond. Such __27__ accomplishments highlight an important point. Our capacity to speak, write and learn new vocabulary does not seem to __28__ with age. Our eyesight may dim and our recall may weaken, but, by comparison, our ability to produce and to __29__ language is well preserved into older adulthood.",
+"Indeed, the latest research that has emerged on language and aging shows that language mastery is a __30__ that we begin as infants and continue on for the rest of our lives. Some aspects of our language abilities, such as our knowledge of word meanings, __31__ improve during middle and late adulthood. One study, for example, found that adults over sixty had an average vocabulary size of over 21,000 words. The researchers also studied a __32__ of college students and found that their average vocabulary contained __33__ 16,000 words. In another study, older adults, with an average age of 75, __34__ better than participants in their youth or middle years on tasks that required them to determine the meaning of words. Thus, language seems to be a skill that, contrary to what many might __35__, does not weaken with age."
+];
+var saTr=[
+"当Toni Morrison于2019年去世时，世界失去了一位最具影响力的作家。但Morrison并非早成的成功者。她的第一部小说直到39岁才出版，最后一部作品问世时她已84岁。而Morrison在这方面并非独一无二。许多作家在70多岁甚至更年长时仍能创作出杰作。这些文学成就突出了一个重要观点：我们说话、写作和学习新词汇的能力似乎并不随年龄增长而衰退。我们的视力可能变差，记忆力可能减弱，但相比之下，我们产出和理解语言的能力在晚年仍然保持良好。",
+"事实上，关于语言与衰老的最新研究表明，语言掌握是一段从婴儿期开始并贯穿余生的旅程。我们语言能力的某些方面，比如对词义的知识，实际上在中年和晚年会有所提升。例如，一项研究发现，60岁以上的成年人平均词汇量超过21,000个单词。研究人员还研究了一组大学生样本，发现他们的平均词汇量大约为16,000个单词。在另一项研究中，平均年龄75岁的老年人在需要判断词义的任务上比青年或中年参与者表现更好。因此，语言似乎是一种——与许多人的假设相反——并不随年龄衰退的技能。"
+];
+var saH='';
+for(var pi=0;pi<saPars.length;pi++){
+var ph=wx(saPars[pi]);
+for(var i=26;i<=35;i++){ph=ph.replace('__'+i+'__','<span style="display:inline-block;min-width:1.8em;border-bottom:2px solid #b8753e;text-align:center;margin:0 2px;font-weight:700;color:#b8753e">'+i+'</span>')}
+saH+='<div class="p">'+ph+'</div><button class="tt" onclick="ttg(\'tr-sa-'+pi+'\',this)"><span class="ar">&#9654;</span> 查看翻译</button><div class="tx" id="tr-sa-'+pi+'">'+saTr[pi]+'</div>';
+}
+document.getElementById('sap').innerHTML=saH;
+document.getElementById('sab').innerHTML='A) actually B) approximately C) assume D) component E) comprehend F) deteriorate G) equivalent H) journey I) literary J) performed K) rarely L) sample M) undermined N) unique O) unit'.split(' ').filter(function(x){return x.trim()}).map(function(x){return '<span>'+wx(x)+'</span>'}).join(' ');
 
-    <p>But over the years things have changed a lot. Young women engineers are more accepted mostly because there are just more of them.</p>
+// PASSAGE ONE — Reconnecting with Nature
+var P1=[
+"The weakening of the human connection to nature might be good for economic growth but is bad for people. A tipping point was reached in 2020 when human-made materials — such as steel, concrete and plastic — were found to weigh more than all life on Earth. Continuing to grow concrete forests rather than real ones is shortsighted. Simply being in the nearest wood has such health benefits that the Woodland Trust successfully lobbied for it to be prescribed by doctors.",
+"Yet slipping from popular culture is the wonder and beauty of the natural world. For every three nature-related words in hit songs of the 1950s, researchers found, there was only slightly more than one 50 years later. It is not a moment too soon that teenagers will be able to take a natural history test, given that for decades children have been able to name more video game characters than wildlife species.",
+"Part of remedying this social disease would be for parliament to pass a 'right to grow' law, allowing anyone to turn underused public spaces into vegetable and fruit gardens. The idea is for people to get back in touch with the soil — while producing food sustainably.",
+"Vegetable planting has a respectable tradition. In April 1649, locals responded to high prices and food shortages by cultivating vegetables on common land in Southern England. The practice of throwing seed bombs to turn vacant plots of land green took off in 1970s New York, and has been revived by green-thumbed social media influencers who defy local US regulations in a war on ugly spots in cities.",
+"Apart from the urgent task of providing more healthy nutrients to those who increasingly can't afford them, publicly accessible fruit and vegetable gardens connect what we eat to where it comes from — the means of production, if you will. They can make unlovely spaces lovely, and marry use and beauty as well as help promote a sense of community. Plants are also, of course, our first defence against species loss and climate change. Such planting is a small step for humanity — in the right direction."
+];
+var PT1=[
+"人类与自然联系的削弱可能有利于经济增长，但对人却是有害的。2020年达到了一个临界点，当时人造材料——如钢铁、混凝土和塑料——被发现在重量上超过了地球上所有生命的总和。继续建造混凝土森林而非真正的森林是目光短浅的。仅仅待在最近的树林中就有如此大的健康益处，以至于林地信托基金会成功游说医生将其作为处方开出。",
+"然而，自然界的神奇与美丽正在从流行文化中消逝。研究人员发现，20世纪50年代热门歌曲中每三个与自然相关的词，在50年后只有略多于一个。几十年来，孩子们能叫出更多电子游戏角色而非野生物种的名字，因此青少年将能够参加自然史考试这件事已刻不容缓。",
+"治疗这一社会疾病的部分方案是让议会通过一项「种植权」法律，允许任何人将未充分利用的公共空间变成蔬果花园。其理念是让人们重新接触土壤——同时可持续地生产食物。",
+"蔬菜种植有着悠久的传统。1649年4月，当地人为应对高物价和食物短缺，在英格兰南部的公共土地上种植蔬菜。投掷种子炸弹让空地变绿的做法在20世纪70年代的纽约兴起，并已被有园艺才能的社交媒体影响者复活，他们在对抗城市丑陋角落的战争中无视美国当地法规。",
+"除了为越来越多负担不起的人提供更多健康营养这一紧迫任务外，公众可及的蔬果花园将我们的食物与其来源——可以说是生产方式——联系起来。它们能让不美观的空间变得可爱，将实用与美丽结合，并有助于促进社区意识。当然，植物也是我们抵御物种丧失和气候变化的第一道防线。这种种植是人类迈出的一小步——但方向是正确的。"
+];
+var h1='';
+for(var i=0;i<P1.length;i++){h1+='<div class="p">'+wx(P1[i])+'</div><button class="tt" onclick="ttg(\'tr-p1-'+i+'\',this)"><span class="ar">&#9654;</span> 查看翻译</button><div class="tx" id="tr-p1-'+i+'">'+PT1[i]+'</div>'}
+document.getElementById('p1c').innerHTML=h1;
 
-    <p>Many women engineers hailed the benefits of their chosen career. A program manager in manufacturing stated that engineering is the best degree. A mechanical engineer said, "It will give you the flexibility to do almost anything. It is also satisfying to see the effects of what you have done."</p>
-  </div>
+// PASSAGE TWO — Women in Engineering
+var P2=[
+"Engineering in the U.S. has long been a male-dominated profession. Fifty years ago, it looked like that might change.",
+"In 1970, the percentage of women majoring in engineering was less than 1%. In 1979, that number was 9%. Many hoped women would continue to enter the field at the same rate. But that's not what happened. Today, only 21% of engineering majors are women, a number largely unchanged since 2000.",
+"I am a historian who, along with my colleagues, surveyed 251 women engineers who graduated from college in the 1970s. These pioneers reflected on the challenges they faced — and had advice for women entering the field today.",
+"One survey taker explained, 'The greatest challenge for me was continuing to believe in myself when all the messages I was getting were that I would never be taken seriously or promoted or given raises at the same rate as men, who were clearly less qualified and not as smart as I was.'",
+"A chemical engineer who worked in manufacturing agreed, 'You have to prove yourself just because you are female. And you have to work twice as hard!'",
+"A civil engineer said, 'We are \"women engineers.\" People don't refer to a man as a \"man engineer\" — he's an engineer. We are constantly reminded that we don't truly belong.' Another civil engineer stated, 'On many levels, you're never quite one of the groups.'",
+"Women also talked about family caregiving responsibilities. A retired vice president from a major chemical company stated, 'Young women engineers are on an equal footing until they have children, then they struggle to balance work and family — and compete with men who don't have the same household responsibilities.'",
+"But over the years things have changed a lot. Young women engineers are more accepted mostly because there are just more of them.",
+"Many women engineers hailed the benefits of their chosen career. A program manager in manufacturing stated that engineering is the best degree. A mechanical engineer said, 'It will give you the flexibility to do almost anything. It is also satisfying to see the effects of what you have done.'"
+];
+var PT2=[
+"在美国，工程学长期以来是一个男性主导的职业。50年前，情况似乎可能改变。",
+"1970年，主修工程学的女性比例不到1%。1979年，这一数字达到9%。许多人希望女性会以同样的速度继续进入这一领域。但这并没有发生。如今，工程学专业中只有21%是女性，这一数字自2000年以来基本没有变化。",
+"作为一名历史学家，我与同事们一起调查了251位于20世纪70年代大学毕业的女性工程师。这些先驱者回顾了她们面临的挑战——并对今天进入该领域的女性提出了建议。",
+"一位受访者解释道：「对我来说最大的挑战是继续相信自己，而我收到的所有信息都是：我永远不会像男性那样被认真对待、获得晋升或同等加薪——那些男性明显不如我合格，也不如我聪明。」",
+"一位在制造业工作的化学工程师表示赞同：「就因为你是女性，你必须证明自己。而且你必须加倍努力工作！」",
+"一位土木工程师说：「我们是『女工程师』。人们不会称男性为『男工程师』——他就是工程师。我们不断被提醒我们并不真正属于这里。」另一位土木工程师则表示：「在很多层面上，你永远不会真正成为群体的一员。」",
+"女性也谈到了家庭照护的责任。一家大型化学公司的退休副总裁表示：「年轻的女工程师一开始处于平等地位，直到她们有了孩子，然后她们就要在工作和家庭之间挣扎——并与那些没有同样家庭责任的男性竞争。」",
+"但多年来事情已经发生了很大变化。年轻的女工程师更被接纳，主要是因为她们的人数更多了。",
+"许多女性工程师赞扬她们所选职业的益处。一位制造业的项目经理表示，工程学是最好的学位。一位机械工程师说：「它会给你灵活性，让你几乎可以做任何事。看到自己所做之事的效果也令人满足。」"
+];
+var h2='';
+for(var i=0;i<P2.length;i++){h2+='<div class="p">'+wx(P2[i])+'</div><button class="tt" onclick="ttg(\'tr-p2-'+i+'\',this)"><span class="ar">&#9654;</span> 查看翻译</button><div class="tx" id="tr-p2-'+i+'">'+PT2[i]+'</div>'}
+document.getElementById('p2c').innerHTML=h2;
 
-  <div class="q-block">
-    <div class="q-stem"><span class="q-num">51.</span>What does the passage say about the engineering profession in the United States?</div>
-    <div class="q-options">
-      <div>A) It has seen a change in attitude towards women engineers since 1979.</div>
-      <div>B) It witnessed a significant increase in women engineers in the 1970s.</div>
-      <div>C) It has experienced the gradual weakening of male dominance.</div>
-      <div>D) It boasted the largest number of engineering majors in 2000.</div>
-    </div>
-  </div>
+function mq(q){
+  var h='<div class="qb"><div class="qt">'+wx(q.text)+'</div>';
+  h+='<button class="tt" onclick="ttg(\'tr-q'+q.id+'\',this)"><span class="ar">&#9654;</span> 查看题目翻译</button>';
+  h+='<div class="tx" id="tr-q'+q.id+'">'+q.qtr+'</div>';
+  h+='<div class="og">';
+  for(var oi=0;oi<q.opts.length;oi++){
+    h+='<div class="op">'+wx(q.opts[oi].t)+' <button class="tt" style="font-size:.7rem;padding:.15em .45em;margin:0" onclick="event.stopPropagation();ttg(\'tr-q'+q.id+'-o'+oi+'\',this)"><span class="ar">&#9654;</span> 译</button><div class="tx" id="tr-q'+q.id+'-o'+oi+'">'+q.opts[oi].tr+'</div></div>';
+  }
+  h+='</div></div>';
+  return h;
+}
 
-  <div class="q-block">
-    <div class="q-stem"><span class="q-num">52.</span>What does one survey taker say was her greatest challenge?</div>
-    <div class="q-options">
-      <div>A) Not to feel superior to less qualified male engineers.</div>
-      <div>B) Not to take seriously all the messages she was getting.</div>
-      <div>C) Not to think highly of her qualifications when promoted or given a pay raise.</div>
-      <div>D) Not to lose self-confidence though constantly discouraged or unfairly treated.</div>
-    </div>
-  </div>
+var Q1=[
+{id:46,text:'46. What does the author want to emphasise in the first paragraph?',qtr:'作者在第一段想要强调什么？',opts:[
+{t:"A) The year 2020 was a big turning point in human history.",tr:"2020年是人类历史上的重大转折点。"},
+{t:"B) Economic growth benefits people little in the long run.",tr:"从长远来看，经济增长对人们益处不大。"},
+{t:"C) It is unwise to weaken the human connection to nature.",tr:"削弱人类与自然的联系是不明智的。"},
+{t:"D) It is harmful to mankind to use human-made materials.",tr:"使用人造材料对人类是有害的。"}
+]},
+{id:47,text:'47. What did researchers find about popular culture?',qtr:'关于流行文化，研究人员发现了什么？',opts:[
+{t:"A) It is increasingly detached from the natural world.",tr:"它越来越脱离自然世界。"},
+{t:"B) It is filled with all kinds of video game characters.",tr:"它充满了各种电子游戏角色。"},
+{t:"C) It is especially appealing to the taste of teenagers.",tr:"它特别迎合青少年的口味。"},
+{t:"D) It is still impacted by the hit songs of the 1950s.",tr:"它仍然受到20世纪50年代热门歌曲的影响。"}
+]},
+{id:48,text:'48. What does the author propose people do?',qtr:'作者建议人们做什么？',opts:[
+{t:"A) Take measures to ensure sustainable food development.",tr:"采取措施确保可持续的食物发展。"},
+{t:"B) Reconnect with nature through the right to grow.",tr:"通过种植权重新与自然建立联系。"},
+{t:"C) Stand by the parliament in fighting social diseases.",tr:"支持议会对抗社会疾病。"},
+{t:"D) Cover public spaces with fruit trees and vegetable plants.",tr:"用果树和蔬菜植物覆盖公共空间。"}
+]},
+{id:49,text:'49. What do we learn from the passage about vegetable planting?',qtr:'关于蔬菜种植，我们从文章中了解到什么？',opts:[
+{t:"A) It all started in 1649 in Southern England.",tr:"它全部始于1649年的英格兰南部。"},
+{t:"B) It is protected by US government regulations.",tr:"它受到美国政府法规的保护。"},
+{t:"C) It has long been used to increase food supply and improve urban landscape.",tr:"它长期以来被用于增加食物供应和改善城市景观。"},
+{t:"D) It has been popularised worldwide with the increasing influence of social media.",tr:"随着社交媒体影响力的增加，它已在全球普及。"}
+]},
+{id:50,text:'50. What can publicly accessible fruit and vegetable gardens do apart from their practical functions?',qtr:'除了实用功能外，公众可及的蔬果花园还能做什么？',opts:[
+{t:"A) Raise people\'s environmental awareness.",tr:"提高人们的环保意识。"},
+{t:"B) Add to the great variety of plant species.",tr:"增加植物物种的多样性。"},
+{t:"C) Act as the first defence against natural disasters.",tr:"作为抵御自然灾害的第一道防线。"},
+{t:"D) Enhance people\'s community spirit.",tr:"增强人们的社区精神。"}
+]}
+];
+document.getElementById('p1q').innerHTML=Q1.map(mq).join('');
 
-  <div class="q-block">
-    <div class="q-stem"><span class="q-num">53.</span>How do women engineers frequently feel according to the two civil engineers?</div>
-    <div class="q-options">
-      <div>A) Disqualified on many levels.</div>
-      <div>B) Excluded from the group.</div>
-      <div>C) Overworked by their organizations.</div>
-      <div>D) Looked down upon by male colleagues.</div>
-    </div>
-  </div>
+var Q2=[
+{id:51,text:'51. What does the passage say about the engineering profession in the United States?',qtr:'关于美国的工程学职业，文章说了什么？',opts:[
+{t:"A) It has seen a change in attitude towards women engineers since 1979.",tr:"自1979年以来，对女性工程师的态度发生了变化。"},
+{t:"B) It witnessed a significant increase in women engineers in the 1970s.",tr:"它在20世纪70年代见证了女性工程师的显著增长。"},
+{t:"C) It has experienced the gradual weakening of male dominance.",tr:"它经历了男性主导地位的逐渐削弱。"},
+{t:"D) It boasted the largest number of engineering majors in 2000.",tr:"它在2000年拥有最多的工程学专业学生。"}
+]},
+{id:52,text:'52. What does one survey taker say was her greatest challenge?',qtr:'一位受访者说她最大的挑战是什么？',opts:[
+{t:"A) Not to feel superior to less qualified male engineers.",tr:"不在能力和资质不如自己的男工程师面前感到优越。"},
+{t:"B) Not to take seriously all the messages she was getting.",tr:"不把她收到的所有信息当回事。"},
+{t:"C) Not to think highly of her qualifications when promoted or given a pay raise.",tr:"在晋升或加薪时对自己的资质保持谦逊。"},
+{t:"D) Not to lose self-confidence though constantly discouraged or unfairly treated.",tr:"尽管不断被打击或遭受不公，仍不失去自信。"}
+]},
+{id:53,text:'53. How do women engineers frequently feel according to the two civil engineers?',qtr:'根据两位土木工程师的说法，女性工程师经常有什么感受？',opts:[
+{t:"A) Disqualified on many levels.",tr:"在很多层面上不够格。"},
+{t:"B) Excluded from the group.",tr:"被群体排斥在外。"},
+{t:"C) Overworked by their organizations.",tr:"被组织过度劳累。"},
+{t:"D) Looked down upon by male colleagues.",tr:"被男性同事看不起。"}
+]},
+{id:54,text:'54. What probably makes young women engineers more accepted nowadays?',qtr:'如今是什么让年轻的女工程师更被接纳？',opts:[
+{t:"A) Their success in gaining an equal footing.",tr:"她们成功获得了平等地位。"},
+{t:"B) Their ability to balance work and family.",tr:"她们平衡工作与家庭的能力。"},
+{t:"C) The change in their responsibilities.",tr:"她们职责的变化。"},
+{t:"D) The increase in their number.",tr:"她们人数的增加。"}
+]},
+{id:55,text:'55. What can we conclude about many female engineers from the statement of a mechanical engineer?',qtr:'从一位机械工程师的陈述中，我们可以对许多女性工程师得出什么结论？',opts:[
+{t:"A) They take great pride in their chosen career.",tr:"她们对所选职业感到非常自豪。"},
+{t:"B) They have reaped the benefits of being flexible.",tr:"她们收获了灵活变通的益处。"},
+{t:"C) They enjoy doing engineering to the best degree.",tr:"她们喜欢把工程学做到最好。"},
+{t:"D) They have proved capable of doing almost anything.",tr:"她们证明了几乎什么都能做。"}
+]}
+];
+document.getElementById('p2q').innerHTML=Q2.map(mq).join('');
 
-  <div class="q-block">
-    <div class="q-stem"><span class="q-num">54.</span>What probably makes young women engineers more accepted nowadays?</div>
-    <div class="q-options">
-      <div>A) Their success in gaining an equal footing.</div>
-      <div>B) Their ability to balance work and family.</div>
-      <div>C) The change in their responsibilities.</div>
-      <div>D) The increase in their number.</div>
-    </div>
-  </div>
-
-  <div class="q-block">
-    <div class="q-stem"><span class="q-num">55.</span>What can we conclude about many female engineers from the statement of a mechanical engineer?</div>
-    <div class="q-options">
-      <div>A) They take great pride in their chosen career.</div>
-      <div>B) They have reaped the benefits of being flexible.</div>
-      <div>C) They enjoy doing engineering to the best degree.</div>
-      <div>D) They have proved capable of doing almost anything.</div>
-    </div>
-  </div>
-</div>
-
-<!-- Footer -->
-<div class="footer">
-  2024年12月 · 大学英语四级真题第1套 · 阅读部分整合 &nbsp;|&nbsp; 总题数：30 题（26–55）
-</div>
-
-</div>
+console.log('%c✓ 2024.12 CET-4 Set1 脚本加载完成 | Made for 中浩 | '+new Date().toISOString(),'color:#b8753e;font-size:1.1em;');
+</script>
 </body>
 </html>
