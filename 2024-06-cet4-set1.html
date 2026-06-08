@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2024年6月四级真题(第1套) — 阅读 | 中浩</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f8f5f0;--card:#fff;--text:#2c2416;--text-light:#5c5344;--accent:#b8753e;--accent-light:#f0e6d8;--border:#e0d5c4;--shadow:0 2px 12px rgba(0,0,0,.06);--radius:12px;--f:'Georgia','Noto Serif SC','Songti SC',serif;--u:'PingFang SC','Microsoft YaHei',sans-serif;--pb:#1e1b18;--pt:#f0e8dc}
+body{background:var(--bg);color:var(--text);font-family:var(--f);line-height:1.85;min-height:100vh;padding-bottom:5rem}
+.c{max-width:860px;margin:0 auto;padding:0 18px}
+.h{text-align:center;padding:2.4rem 0 1.6rem;border-bottom:2px solid var(--border);margin-bottom:1.5rem}
+.h h1{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700}
+.h .sub{font-size:.95rem;color:var(--text-light);margin-top:.35rem;font-family:var(--u)}
+.h .badge{display:inline-block;margin-top:.6rem;padding:.2em .9em;background:var(--accent-light);color:var(--accent);border-radius:99px;font-size:.8rem;font-weight:600;font-family:var(--u)}
+.tab-bar{display:flex;gap:0;margin-bottom:1.5rem;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.tb{flex:1;padding:.65rem .5rem;border:none;background:var(--card);color:var(--text-light);font-size:.82rem;font-weight:600;font-family:var(--u);cursor:pointer;transition:all .2s;border-bottom:3px solid transparent;-webkit-tap-highlight-color:transparent;text-align:center;line-height:1.3}
+.tb:hover{color:var(--accent);background:#fdfaf6}
+.tb.on{color:var(--accent);border-bottom-color:var(--accent);background:#fdfaf6}
+.tab-panel{display:none}
+.tab-panel.on{display:block}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(1.2rem,3vw,2rem);margin-bottom:1.5rem}
+.card h2{font-size:1.15rem;color:var(--accent);margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);font-family:var(--u);letter-spacing:.04em}
+.w{display:inline;cursor:pointer;padding:1px 1px;border-radius:3px;transition:background .15s,color .15s;position:relative;border-bottom:1px dotted #d5c8b0}
+.w:hover{background:#fce8c8;color:#8b5e2a}
+.w:active{background:#f5d090}
+.w.hl{background:#f5d090;color:#7a4e1c;outline:2px solid var(--accent);outline-offset:1px;z-index:2}
+.p{margin-bottom:1.15rem;text-align:justify;font-size:clamp(.95rem,2vw,1.05rem);word-break:break-word}
+.tt{display:inline-flex;align-items:center;gap:.35em;background:none;border:1.5px solid var(--border);color:var(--text-light);padding:.35em .85em;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:var(--u);margin-top:.3rem;margin-bottom:.6rem;transition:all .2s;user-select:none;-webkit-tap-highlight-color:transparent}
+.tt:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+.tt .ar{display:inline-block;transition:transform .25s;font-size:.7rem}
+.tt.open .ar{transform:rotate(90deg)}
+.tx{display:none;color:#6b5e4a;font-size:.9rem;line-height:1.75;padding:.7rem 1rem;margin:.3rem 0 .8rem;background:#fdfaf4;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;animation:fi .3s ease}
+.tx.show{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.qb{margin-bottom:1.4rem;padding-bottom:1rem;border-bottom:1px dashed var(--border)}
+.qb:last-child{border-bottom:none;margin-bottom:0}
+.qt{font-weight:600;margin-bottom:.5rem;font-size:clamp(.9rem,2vw,1rem)}
+.og{display:grid;grid-template-columns:1fr;gap:.35rem;margin-bottom:.3rem}
+@media(min-width:640px){.og{grid-template-columns:1fr 1fr}}
+.op{padding:.45em .75em;border-radius:6px;background:#fafaf7;border:1px solid transparent;font-size:.92rem;line-height:1.65}
+.op:hover{border-color:var(--border)}
+.wb{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.wb span{background:var(--accent-light);color:var(--accent);padding:.2em .65em;border-radius:5px;font-weight:600;font-size:.9rem;font-family:var(--u)}
+.wp{position:fixed;bottom:0;left:0;right:0;background:var(--pb);color:var(--pt);padding:1rem 1.2rem;z-index:999;border-radius:16px 16px 0 0;box-shadow:0 -4px 24px rgba(0,0,0,.3);transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);font-family:var(--u);max-height:42vh;overflow-y:auto}
+.wp.open{transform:translateY(0)}
+.wp-h{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem}
+.wp-w{font-size:1.3rem;font-weight:700;color:#fff}
+.wp-p{font-size:.85rem;color:#b0a592;margin-left:.5em}
+.wp-x{background:none;border:none;color:#8a8070;font-size:1.3rem;cursor:pointer;padding:.2em .4em;border-radius:4px;line-height:1;-webkit-tap-highlight-color:transparent}
+.wp-x:hover{color:#fff}
+.wp-b{font-size:.9rem;line-height:1.65}
+.wp-b .d strong{color:#d4a96a}
+.wp-db{margin-top:.5rem;padding-top:.45rem;border-top:1px solid #3a3530;font-size:.75rem;color:#6a6258}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:998;display:none}
+.ov.show{display:block}
+.ft{text-align:center;font-size:.78rem;color:#b0a590;margin-top:2rem;padding:1rem;font-family:var(--u);line-height:1.7}
+@media(max-width:480px){.c{padding:0 10px}.card{padding:1rem .85rem;border-radius:10px}.w{padding:2px 1px}.wp{padding:.85rem 1rem;max-height:45vh}.tb{font-size:.7rem;padding:.5rem .25rem}}
+</style>
+</head>
+<body>
+
+<div class="c">
+<div class="h">
+  <h1>2024年6月 · 四级真题（第1套）</h1>
+  <div class="sub">Reading Comprehension</div>
+  <div class="badge">Section A 选词填空 · Passage One · Passage Two</div>
+</div>
+
+<div class="tab-bar">
+  <button class="tb on" onclick="sw('sa')">Section A<br><small>选词填空 Q26-35</small></button>
+  <button class="tb" onclick="sw('p1')">Passage One<br><small>讨好型人格 Q46-50</small></button>
+  <button class="tb" onclick="sw('p2')">Passage Two<br><small>大脑与衰老 Q51-55</small></button>
+</div>
+
+<div class="tab-panel on" id="tp-sa">
+<div class="card"><h2>Section A — 选词填空</h2>
+<div id="sap"></div><div class="wb" id="sab"></div></div></div>
+
+<div class="tab-panel" id="tp-p1">
+<div class="card"><h2>Passage One — People-pleasing</h2><div id="p1c"></div></div>
+<div class="card"><h2>Questions 46–50</h2><div id="p1q"></div></div></div>
+
+<div class="tab-panel" id="tp-p2">
+<div class="card"><h2>Passage Two — Aging and the Brain</h2><div id="p2c"></div></div>
+<div class="card"><h2>Questions 51–55</h2><div id="p2q"></div></div></div>
+
+<div class="ft">点击任意英文单词查看音标与考研释义 · 中浩 · 2024.06 CET-4 第1套</div>
+</div>
+
+<div class="ov" id="ov" onclick="cp()"></div>
+<div class="wp" id="wp">
+  <div class="wp-h"><div><span class="wp-w" id="pW">—</span><span class="wp-p" id="pP"></span></div><button class="wp-x" onclick="cp()">&times;</button></div>
+  <div class="wp-b" id="pB"></div>
+  <div class="wp-db" id="pD"></div>
+</div>
+
+<script>
+var D={
+"the":"/ðə/|art. 这；那（定冠词）","a":"/ə/|art. 一个","an":"/æn/|art. 一个（元音前）",
+"this":"/ðɪs/|pron./adj. 这个","that":"/ðæt/|pron./adj. 那个","these":"/ðiːz/|pron./adj. 这些","those":"/ðoʊz/|pron./adj. 那些",
+"some":"/sʌm/|adj. 一些","any":"/ˈeni/|adj. 任何","many":"/ˈmeni/|adj. 许多","few":"/fjuː/|adj. 很少","much":"/mʌtʃ/|adj. 许多的 adv. 非常","more":"/mɔːr/|adj. 更多的","most":"/moʊst/|adj. 最多的","all":"/ɔːl/|adj. 所有的","each":"/iːtʃ/|pron. 每个","every":"/ˈevri/|adj. 每个的","several":"/ˈsevrəl/|adj. 几个的","both":"/boʊθ/|pron. 两者",
+"I":"/aɪ/|pron. 我","me":"/miː/|pron. 我（宾格）","my":"/maɪ/|pron. 我的","you":"/juː/|pron. 你；你们","your":"/jʊr/|pron. 你的","he":"/hiː/|pron. 他","him":"/hɪm/|pron. 他（宾格）","his":"/hɪz/|pron. 他的","she":"/ʃiː/|pron. 她","her":"/hɜːr/|pron. 她/她的","it":"/ɪt/|pron. 它","its":"/ɪts/|pron. 它的","we":"/wiː/|pron. 我们","us":"/ʌs/|pron. 我们（宾格）","our":"/aʊr/|pron. 我们的","they":"/ðeɪ/|pron. 他们","them":"/ðem/|pron. 他们（宾格）","their":"/ðer/|pron. 他们的","who":"/huː/|pron. 谁",
+"in":"/ɪn/|prep. 在……里面","on":"/ɑːn/|prep. 在……上面","at":"/æt/|prep. 在（某处/某时）","to":"/tuː/|prep. 向；到","for":"/fɔːr/|prep. 为了；对于","of":"/ʌv/|prep. ……的","with":"/wɪð/|prep. 和……一起；用","by":"/baɪ/|prep. 通过；被","as":"/æz/|prep./conj. 作为","from":"/frʌm/|prep. 来自","about":"/əˈbaʊt/|prep. 关于","into":"/ˈɪntuː/|prep. 进入","over":"/ˈoʊvər/|prep./adv. 在……上方","under":"/ˈʌndər/|prep./adv. 在……下面","after":"/ˈæftər/|prep. 在……之后","before":"/bɪˈfɔːr/|prep. 在……之前","between":"/bɪˈtwiːn/|prep. 在……之间","among":"/əˈmʌŋ/|prep. 在……之中","within":"/wɪˈðɪn/|prep. 在……之内","without":"/wɪˈðaʊt/|prep. 没有","during":"/ˈdʊrɪŋ/|prep. 在……期间","until":"/ʌnˈtɪl/|prep./conj. 直到","since":"/sɪns/|prep./conj. 自从","like":"/laɪk/|prep. 像 v. 喜欢","despite":"/dɪˈspaɪt/|prep. 尽管","including":"/ɪnˈkluːdɪŋ/|prep. 包括","per":"/pɜːr/|prep. 每",
+"and":"/ænd/|conj. 和；并且","or":"/ɔːr/|conj. 或","but":"/bʌt/|conj. 但是","so":"/soʊ/|conj. 所以","if":"/ɪf/|conj. 如果","whether":"/ˈweðər/|conj. 是否","because":"/bɪˈkɔːz/|conj. 因为","although":"/ɔːlˈðoʊ/|conj. 虽然","though":"/ðoʊ/|conj./adv. 虽然","when":"/wen/|conj./adv. 当……时","while":"/waɪl/|conj. 当……时；然而","than":"/ðæn/|conj. 比","unless":"/ʌnˈles/|conj. 除非","however":"/haʊˈevər/|adv. 然而","therefore":"/ˈðerfɔːr/|adv. 因此",
+"not":"/nɑːt/|adv. 不","no":"/noʊ/|adv. 不 adj. 没有","now":"/naʊ/|adv. 现在","then":"/ðen/|adv. 然后","here":"/hɪr/|adv. 在这里","there":"/ðer/|adv. 在那里","just":"/dʒʌst/|adv. 只是","only":"/ˈoʊnli/|adv. 只","also":"/ˈɔːlsoʊ/|adv. 也","too":"/tuː/|adv. 太；也","very":"/ˈveri/|adv. 非常","even":"/ˈiːvn/|adv. 甚至","still":"/stɪl/|adv. 仍然","already":"/ɔːlˈredi/|adv. 已经","always":"/ˈɔːlweɪz/|adv. 总是","never":"/ˈnevər/|adv. 从不","often":"/ˈɔːfn/|adv. 经常","sometimes":"/ˈsʌmtaɪmz/|adv. 有时","usually":"/ˈjuːʒuəli/|adv. 通常","well":"/wel/|adv. 好地","really":"/ˈriːəli/|adv. 真正地","quite":"/kwaɪt/|adv. 相当","actually":"/ˈæktʃuəli/|adv. 实际上","simply":"/ˈsɪmpli/|adv. 仅仅","largely":"/ˈlɑːrdʒli/|adv. 很大程度上","particularly":"/pərˈtɪkjələrli/|adv. 尤其",
+"be":"/biː/|v. 是；在","am":"/æm/|v. 是","is":"/ɪz/|v. 是","are":"/ɑːr/|v. 是","was":"/wʌz/|v. 是（过去式单数）","were":"/wɜːr/|v. 是（过去式复数）","been":"/bɪn/|v. 是（过去分词）","being":"/ˈbiːɪŋ/|v. 是（现在分词） n. 存在","do":"/duː/|v. 做","does":"/dʌz/|v. 做（第三人称）","did":"/dɪd/|v. 做（过去式）","done":"/dʌn/|adj. 完成的","have":"/hæv/|v. 有 aux. 已经","has":"/hæz/|v. 有（第三人称）","had":"/hæd/|v. 有（过去式）","can":"/kæn/|aux. 能","could":"/kʊd/|aux. 能（过去式）","will":"/wɪl/|aux. 将","would":"/wʊd/|aux. 会","should":"/ʃʊd/|aux. 应该","may":"/meɪ/|aux. 可能","might":"/maɪt/|aux. 也许","must":"/mʌst/|aux. 必须","need":"/niːd/|v./aux. 需要","say":"/seɪ/|v. 说","said":"/sed/|v. 说（过去式）","get":"/ɡet/|v. 得到；变得","go":"/ɡoʊ/|v. 去","going":"/ˈɡoʊɪŋ/|v. 去（现在分词）","come":"/kʌm/|v. 来","make":"/meɪk/|v. 做；使","made":"/meɪd/|v. 做（过去式）","take":"/teɪk/|v. 拿；花费","took":"/tʊk/|v. 拿（过去式）","see":"/siː/|v. 看见","know":"/noʊ/|v. 知道","think":"/θɪŋk/|v. 认为","want":"/wɑːnt/|v. 想要","give":"/ɡɪv/|v. 给","find":"/faɪnd/|v. 找到","found":"/faʊnd/|v. 找到（过去式）；建立","tell":"/tel/|v. 告诉","ask":"/æsk/|v. 问","help":"/help/|v. 帮助","try":"/traɪ/|v. 尝试","keep":"/kiːp/|v. 保持","let":"/let/|v. 让","put":"/pʊt/|v. 放","show":"/ʃoʊ/|v. 显示","seem":"/siːm/|v. 似乎","feel":"/fiːl/|v. 感觉","work":"/wɜːrk/|v./n. 工作","look":"/lʊk/|v. 看","use":"/juːz/|v. 使用","used":"/juːzd/|v. 使用（过去式）；习惯于","mean":"/miːn/|v. 意味着","means":"/miːnz/|n. 方法；手段","call":"/kɔːl/|v. 称呼","change":"/tʃeɪndʒ/|v./n. 改变","lead":"/liːd/|v. 导致；带领","happen":"/ˈhæpən/|v. 发生","believe":"/bɪˈliːv/|v. 相信","result":"/rɪˈzʌlt/|n. 结果 v. 导致","continue":"/kənˈtɪnjuː/|v. 继续","determine":"/dɪˈtɜːrmɪn/|v. 确定；查明","encourage":"/ɪnˈkɜːrɪdʒ/|v. 鼓励","ensure":"/ɪnˈʃʊr/|v. 确保",
+"good":"/ɡʊd/|adj. 好的","bad":"/bæd/|adj. 坏的","new":"/nuː/|adj. 新的","old":"/oʊld/|adj. 旧的","big":"/bɪɡ/|adj. 大的","small":"/smɔːl/|adj. 小的","great":"/ɡreɪt/|adj. 伟大的","high":"/haɪ/|adj. 高的","low":"/loʊ/|adj. 低的","long":"/lɔːŋ/|adj. 长的","right":"/raɪt/|adj. 正确的 n. 权利","wrong":"/rɔːŋ/|adj. 错误的","important":"/ɪmˈpɔːrtnt/|adj. 重要的","different":"/ˈdɪfrənt/|adj. 不同的","same":"/seɪm/|adj. 相同的","other":"/ˈʌðər/|adj. 其他的","own":"/oʊn/|adj. 自己的","real":"/ˈriːəl/|adj. 真正的","hard":"/hɑːrd/|adj. 困难的；努力的","easy":"/ˈiːzi/|adj. 容易的","possible":"/ˈpɑːsəbl/|adj. 可能的","likely":"/ˈlaɪkli/|adj. 可能的","clear":"/klɪr/|adj. 清楚的","common":"/ˈkɑːmən/|adj. 普通的；共同的","first":"/fɜːrst/|adj./adv. 第一","second":"/ˈsekənd/|adj. 第二 n. 秒","last":"/læst/|adj. 最后的","next":"/nekst/|adj. 下一个","early":"/ˈɜːrli/|adj./adv. 早","late":"/leɪt/|adj./adv. 晚","recent":"/ˈriːsnt/|adj. 最近的","public":"/ˈpʌblɪk/|adj. 公共的 n. 公众","free":"/friː/|adj. 自由的；免费的","able":"/ˈeɪbl/|adj. 能够的","available":"/əˈveɪləbl/|adj. 可用的","similar":"/ˈsɪmələr/|adj. 相似的",
+"time":"/taɪm/|n. 时间","year":"/jɪr/|n. 年","day":"/deɪ/|n. 天","days":"/deɪz/|n. 天（复数）","week":"/wiːk/|n. 周","minutes":"/ˈmɪnɪts/|n. 分钟","people":"/ˈpiːpl/|n. 人们","person":"/ˈpɜːrsn/|n. 人","man":"/mæn/|n. 男人","men":"/men/|n. 男人们","woman":"/ˈwʊmən/|n. 女人","women":"/ˈwɪmɪn/|n. 女人们","life":"/laɪf/|n. 生命；生活","world":"/wɜːrld/|n. 世界","way":"/weɪ/|n. 方式；道路","thing":"/θɪŋ/|n. 东西；事物","things":"/θɪŋz/|n. 事物","something":"/ˈsʌmθɪŋ/|pron. 某事","money":"/ˈmʌni/|n. 钱","company":"/ˈkʌmpəni/|n. 公司","companies":"/ˈkʌmpəniz/|n. 公司（复）","job":"/dʒɑːb/|n. 工作","research":"/rɪˈsɜːrtʃ/|n./v. 研究","study":"/ˈstʌdi/|n./v. 研究；学习","question":"/ˈkwestʃən/|n. 问题","answer":"/ˈænsər/|n. 答案","fact":"/fækt/|n. 事实","success":"/səkˈses/|n. 成功","opportunity":"/ˌɑːpərˈtuːnəti/|n. 机会","risk":"/rɪsk/|n. 风险","number":"/ˈnʌmbər/|n. 数字","attention":"/əˈtenʃn/|n. 注意力","effect":"/ɪˈfekt/|n. 效果；影响","impact":"/ˈɪmpækt/|n./v. 影响","difference":"/ˈdɪfrəns/|n. 差异","behavior":"/bɪˈheɪvjər/|n. 行为","ability":"/əˈbɪləti/|n. 能力","evidence":"/ˈevɪdəns/|n. 证据","performance":"/pərˈfɔːrməns/|n. 表现","balance":"/ˈbæləns/|n./v. 平衡","culture":"/ˈkʌltʃər/|n. 文化","stress":"/stres/|n. 压力 v. 强调","email":"/ˈiːmeɪl/|n. 电子邮件","emails":"/ˈiːmeɪlz/|n. 电子邮件（复）","leaders":"/ˈliːdərz/|n. 领导者","managers":"/ˈmænɪdʒərz/|n. 管理者","employees":"/ɪmˈplɔɪiːz/|n. 员工","employers":"/ɪmˈplɔɪərz/|n. 雇主","teams":"/tiːmz/|n. 团队","workers":"/ˈwɜːrkərz/|n. 工作者","health":"/helθ/|n. 健康","government":"/ˈɡʌvərnmənt/|n. 政府","data":"/ˈdeɪtə/|n. 数据","survey":"/ˈsɜːrveɪ/|n./v. 调查","science":"/ˈsaɪəns/|n. 科学","group":"/ɡruːp/|n. 群；组","type":"/taɪp/|n. 类型","example":"/ɪɡˈzæmpl/|n. 例子","case":"/keɪs/|n. 情况；案例","point":"/pɔɪnt/|n. 点；观点","end":"/end/|n./v. 结束","status":"/ˈsteɪtəs/|n. 地位","power":"/ˈpaʊər/|n. 权力；力量；电力","tendency":"/ˈtendənsi/|n. 倾向；趋势","context":"/ˈkɑːntekst/|n. 上下文；背景；环境","role":"/roʊl/|n. 角色；作用","process":"/ˈprɑːses/|n. 过程 v. 处理","society":"/səˈsaɪəti/|n. 社会","individuals":"/ˌɪndɪˈvɪdʒuəlz/|n. 个人；个体","habit":"/ˈhæbɪt/|n. 习惯","habits":"/ˈhæbɪts/|n. 习惯（复）","belief":"/bɪˈliːf/|n. 信念","business":"/ˈbɪznəs/|n. 生意；企业","industry":"/ˈɪndəstri/|n. 行业；工业","product":"/ˈprɑːdʌkt/|n. 产品","products":"/ˈprɑːdʌkts/|n. 产品","scientists":"/ˈsaɪəntɪsts/|n. 科学家","results":"/rɪˈzʌlts/|n. 结果","outcomes":"/ˈaʊtkʌmz/|n. 结果；成果",
+
+// Section A - Exercise & Mental Health
+"physical":"/ˈfɪzɪkl/|adj. 身体的；物理的","exercise":"/ˈeksərsaɪz/|n./v. 锻炼；运动","exercising":"/ˈeksərsaɪzɪŋ/|v. 锻炼；运动","beneficial":"/ˌbenɪˈfɪʃl/|adj. 有益的；有利的","mental":"/ˈmentl/|adj. 精神的；心理的","guidelines":"/ˈɡaɪdlaɪnz/|n. 指导方针；指南","intensity":"/ɪnˈtensəti/|n. 强度；强烈","mood":"/muːd/|n. 情绪；心情","systematic":"/ˌsɪstəˈmætɪk/|adj. 系统的；有系统的","review":"/rɪˈvjuː/|n./v. 审查；回顾；综述","findings":"/ˈfaɪndɪŋz/|n. 调查结果；发现","aerobic":"/eˈroʊbɪk/|adj. 有氧的","anaerobic":"/ˌænəˈroʊbɪk/|adj. 无氧的；厌氧的","constitutes":"/ˈkɑːnstɪtuːts/|v. 构成；组成","involves":"/ɪnˈvɑːlvz/|v. 涉及；包含","distinction":"/dɪˈstɪŋkʃn/|n. 区别；区分","dipping":"/ˈdɪpɪŋ/|v. 浸入；蘸；下沉","moderate":"/ˈmɑːdərət/|adj. 适度的；中等的","vigorous":"/ˈvɪɡərəs/|adj. 充满活力的；剧烈的","contradictory":"/ˌkɑːntrəˈdɪktəri/|adj. 矛盾的；相反的","detailed":"/dɪˈteɪld/|adj. 详细的；细致的","partly":"/ˈpɑːrtli/|adv. 部分地；在一定程度上","difference":"/ˈdɪfrəns/|n. 差异；不同","notified":"/ˈnoʊtɪfaɪd/|v. 通知；报告","oxygen":"/ˈɑːksɪdʒən/|n. 氧气","glucose":"/ˈɡluːkoʊs/|n. 葡萄糖","optimum":"/ˈɑːptɪməm/|adj. 最佳的；最适宜的 n. 最佳条件","jogging":"/ˈdʒɑːɡɪŋ/|n./v. 慢跑","cycling":"/ˈsaɪklɪŋ/|n./v. 骑自行车","weights":"/weɪts/|n. 重量；杠铃","dull":"/dʌl/|adj. 枯燥的；乏味的","unpleasant":"/ʌnˈpleznt/|adj. 令人不快的","intensities":"/ɪnˈtensətiz/|n. 强度（复数）","take-aways":"/ˈteɪkəˌweɪz/|n. 要点；关键收获","lacked":"/lækt/|v. 缺乏；缺少","existing":"/ɪɡˈzɪstɪŋ/|adj. 现有的；现存的","favoured":"/ˈfeɪvərd/|v. 偏爱；支持（英式）","countries":"/ˈkʌntriz/|n. 国家","burn":"/bɜːrn/|v. 燃烧",
+
+// Passage One - People-pleasing
+"approval":"/əˈpruːvl/|n. 认可；赞同","self-worth":"/ˌself ˈwɜːrθ/|n. 自我价值","unproductive":"/ˌʌnprəˈdʌktɪv/|adj. 没有效果的；徒劳的","exhausting":"/ɪɡˈzɔːstɪŋ/|adj. 令人筋疲力尽的","validity":"/vəˈlɪdəti/|n. 有效性；正确性","desire":"/dɪˈzaɪər/|v./n. 渴望；欲望","belonging":"/bɪˈlɔːŋɪŋ/|n. 归属感","connections":"/kəˈnekʃnz/|n. 人脉；联系","dependent":"/dɪˈpendənt/|adj. 依赖的；取决于","abandon":"/əˈbændən/|v. 抛弃；遗弃","abandonment":"/əˈbændənmənt/|n. 抛弃；遗弃","desperately":"/ˈdespərətli/|adv. 拼命地；绝望地","approve":"/əˈpruːv/|v. 认可；批准","terrified":"/ˈterɪfaɪd/|adj. 极度恐惧的","capable":"/ˈkeɪpəbl/|adj. 有能力的","external":"/ɪkˈstɜːrnl/|adj. 外部的；外在的","validation":"/ˌvælɪˈdeɪʃn/|n. 验证；认可","vanish":"/ˈvænɪʃ/|v. 消失；消散","confident":"/ˈkɑːnfɪdənt/|adj. 自信的","restrain":"/rɪˈstreɪn/|v. 克制；约束","authentic":"/ɔːˈθentɪk/|adj. 真实的；真正的","embrace":"/ɪmˈbreɪs/|v. 拥抱；欣然接受","ultimately":"/ˈʌltɪmətli/|adv. 最终；根本上","prisoner":"/ˈprɪznər/|n. 囚犯","please":"/pliːz/|v. 使满意；取悦","pleasing":"/ˈpliːzɪŋ/|adj. 令人愉快的","seeking":"/ˈsiːkɪŋ/|v. 寻求；追求","interactions":"/ˌɪntərˈækʃnz/|n. 互动；交往","mommy":"/ˈmɑːmi/|n. 妈妈","daddy":"/ˈdædi/|n. 爸爸","cheat":"/tʃiːt/|v. 欺骗；作弊","cheated":"/ˈtʃiːtɪd/|v. 欺骗（过去式）","regret":"/rɪˈɡret/|v./n. 后悔；遗憾","happier":"/ˈhæpiər/|adj. 更快乐的",
+
+// Passage Two - Aging & Brain
+"aging":"/ˈeɪdʒɪŋ/|n./adj. 衰老；老化","forgetfulness":"/fərˈɡetflnəs/|n. 健忘","wisdom":"/ˈwɪzdəm/|n. 智慧；明智","renovate":"/ˈrenəveɪt/|v. 翻新；修复","electron":"/ɪˈlektrɑːn/|n. 电子","microscope":"/ˈmaɪkrəskoʊp/|n. 显微镜","forging":"/ˈfɔːrdʒɪŋ/|v. 锻造；建立（关系）","volume":"/ˈvɑːljuːm/|n. 体积；容量；卷","reduction":"/rɪˈdʌkʃn/|n. 减少；缩小","accumulating":"/əˈkjuːmjəleɪtɪŋ/|v. 积累；积聚","novel":"/ˈnɑːvl/|adj. 新颖的 n. 小说","flexible":"/ˈfleksəbl/|adj. 灵活的；柔韧的","pathways":"/ˈpæθweɪz/|n. 路径；通路","structure":"/ˈstrʌktʃər/|n. 结构；构造","shrinks":"/ʃrɪŋks/|v. 缩小；收缩","conventional":"/kənˈvenʃənl/|adj. 传统的；常规的","puzzles":"/ˈpʌzlz/|n. 谜题；智力游戏","durability":"/ˌdʊrəˈbɪləti/|n. 持久性；耐用性","brain-training":"/breɪn ˈtreɪnɪŋ/|n. 大脑训练","challenges":"/ˈtʃælɪndʒɪz/|n. 挑战","boost":"/buːst/|v./n. 增强；提高","brainpower":"/ˈbreɪnˌpaʊər/|n. 智力；脑力","enterprises":"/ˈentərpraɪzɪz/|n. 事业；企业","curiosity":"/ˌkjʊriˈɑːsəti/|n. 好奇心","characteristic":"/ˌkærəktəˈrɪstɪk/|n. 特征；特点 adj. 典型的","genetically":"/dʒəˈnetɪkli/|adv. 遗传上；基因上","reasoning":"/ˈriːzənɪŋ/|n. 推理；论证","rats":"/ræts/|n. 老鼠（复数）","alive":"/əˈlaɪv/|adj. 活着的；有活力的","functioning":"/ˈfʌŋkʃənɪŋ/|adj./v. 运作；起作用","height":"/haɪt/|n. 身高；高度","declines":"/dɪˈklaɪnz/|v./n. 下降；衰退","grocery":"/ˈɡroʊsəri/|n. 杂货店","vacation":"/veɪˈkeɪʃn/|n. 假期","attitude":"/ˈætɪtuːd/|n. 态度；看法","tricks":"/trɪks/|n. 技巧；把戏；窍门","decade":"/ˈdekeɪd/|n. 十年","starting":"/ˈstɑːrtɪŋ/|v. 开始","brain":"/breɪn/|n. 大脑；头脑","brains":"/breɪnz/|n. 大脑（复数）；智力","regions":"/ˈriːdʒənz/|n. 区域；地区","damaged":"/ˈdæmɪdʒd/|adj. 受损的","routes":"/ruːts/|n. 路线；路径","disease":"/dɪˈziːz/|n. 疾病","decline":"/dɪˈklaɪn/|v. 下降；衰退"
+};
+
+var D2={};
+for(var k in D){var v=D[k].split('|');D2[k]={p:v[0],d:v[1]||''}}
+
+function lw(raw){
+  var c=raw.replace(/[.,;:!?—\-–—'"()\\[\\]{}«»\/\\\\]+$/g,'').replace(/^[.,;:!?—\-–—'"()\\[\\]{}«»\/\\\\]+/g,'');
+  if(!c||c.length<1)return null;
+  var k=c.toLowerCase();
+  if(D2[k])return D2[k];
+  if(k.endsWith('s')&&k.length>3){var s=k.slice(0,-1);if(D2[s])return D2[s]}
+  if(k.endsWith('ing')&&k.length>5){var b=k.slice(0,-3);if(D2[b])return D2[b];var b2=b+'e';if(D2[b2])return D2[b2]}
+  if(k.endsWith('ed')&&k.length>4){var b=k.slice(0,-2);if(D2[b])return D2[b];if(k.endsWith('ied')&&k.length>5){var ib=k.slice(0,-3)+'y';if(D2[ib])return D2[ib]}}
+  if(k.endsWith('ly')&&k.length>4){var b=k.slice(0,-2);if(D2[b])return D2[b]}
+  if(k.endsWith('er')&&k.length>4){var b=k.slice(0,-2);if(D2[b])return D2[b]}
+  return null;
+}
+
+function wx(text){
+  var tokens=text.split(/(\s+)/g);
+  var h='';
+  for(var ti=0;ti<tokens.length;ti++){
+    var tok=tokens[ti];
+    if(/^\s+$/.test(tok)){h+=tok;continue}
+    var m=tok.match(/^([^a-zA-Z0-9]*)([a-zA-Z0-9'-]+?)([^a-zA-Z0-9]*)$/);
+    if(m){
+      h+=esh(m[1]);var w=m[2],pc=m[3];
+      if(/[a-zA-Z]/.test(w)&&w.length>=1){
+        var e=lw(w);
+        h+='<span class="w" data-w="'+esh(w)+'" data-p="'+esh(e?e.p:'')+'" data-d="'+esh(e?e.d:'(基础词汇)')+'">'+esh(w)+'</span>';
+      }else{h+=esh(w)}
+      h+=esh(pc);
+    }else{h+=esh(tok)}
+  }
+  return h;
+}
+function esh(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+var ce=null;
+function op(el){
+  if(ce)ce.classList.remove('hl');
+  el.classList.add('hl');ce=el;
+  var w=el.dataset.w,p=el.dataset.p,d=el.dataset.d;
+  document.getElementById('pW').textContent=w;
+  document.getElementById('pP').textContent=p||'';
+  document.getElementById('pB').innerHTML=p?'<div class="d"><strong>音标：</strong>'+p+'</div><div class="d" style="margin-top:.3rem"><strong>考研释义：</strong>'+(d||'')+'</div>':'<div class="d"><strong>考研释义：</strong>'+(d||'')+'</div>';
+  document.getElementById('pD').textContent='Debug | '+w+' | '+(p||'无音标')+' | Made for 中浩';
+  document.getElementById('wp').classList.add('open');
+  document.getElementById('ov').classList.add('show');
+}
+function cp(){
+  document.getElementById('wp').classList.remove('open');
+  document.getElementById('ov').classList.remove('show');
+  if(ce){ce.classList.remove('hl');ce=null}
+}
+document.addEventListener('click',function(e){var w=e.target.closest('.w');if(!w)return;e.stopPropagation();op(w)});
+
+function ttg(id,btn){
+  var el=document.getElementById(id);if(!el)return;
+  if(el.classList.contains('show')){el.classList.remove('show');btn.classList.remove('open');btn.querySelector('.ar').textContent='▶';btn.innerHTML=btn.innerHTML.replace('收起翻译','查看翻译')}
+  else{el.classList.add('show');btn.classList.add('open');btn.querySelector('.ar').textContent='▼';btn.innerHTML=btn.innerHTML.replace('查看翻译','收起翻译')}
+}
+
+function sw(name){
+  var bs=document.querySelectorAll('.tb');for(var i=0;i<bs.length;i++)bs[i].classList.remove('on');
+  var ps=document.querySelectorAll('.tab-panel');for(var i=0;i<ps.length;i++)ps[i].classList.remove('on');
+  document.getElementById('tp-'+name).classList.add('on');
+  event.target.closest('.tb').classList.add('on');
+}
+
+// SECTION A - Exercise and Mental Health
+var saPars=[
+"It's well known that physical exercise is beneficial not just to physical health but also to mental health. Yet whereas most countries have __26__ evidence-backed guidelines on the type and intensity of exercise __27__ for various physical health benefits, such guidelines do not yet exist for exercise and mood. This is __28__ due to a lack of necessary evidence. However, a new systematic review brings us usefully up-to-date on the current findings in this area.",
+"Before __29__ into some of the key take-aways, an important __30__ made in the review is between aerobic exercise and anaerobic. The former __31__ such things as walking, jogging and cycling and means exercising in such a way that your body is able to use oxygen to burn fat for energy. In contrast, anaerobic exercise—such as lifting heavy weights—is of such __32__ intensity that your body does not have time to use oxygen to create energy and so instead it breaks down glucose in your blood or muscles.",
+"Beginning first with the influence of exercise intensity on the mood benefits of aerobic exercise, the researchers, led by John Chan at Shenzhen University, found __33__ results from 19 relevant studies. Some favoured higher intensity, others low, while seven studies found that intensity made no __34__ to mood benefits.",
+"In relation to the intensity of anaerobic exercise, however, the results were far clearer—the optimum for improving mood is __35__ intensity, perhaps because low intensity is too dull while high intensity is too unpleasant."
+];
+var saTr=[
+"众所周知，体育锻炼不仅对身体健康有益，对心理健康也有好处。然而，尽管大多数国家都有详细的、以证据为基础的指南，说明了为获得各种身体健康益处所需的运动类型和强度，但针对运动与情绪的这类指南尚不存在。这在一定程度上是由于缺乏必要的证据。不过，一项新的系统性综述为我们提供了该领域当前发现的有益最新信息。",
+"在深入探讨一些关键要点之前，该综述对有氧运动和无氧运动做了一个重要区分。前者包括步行、慢跑和骑自行车等活动，意味着以身体能够利用氧气燃烧脂肪获取能量的方式运动。相比之下，无氧运动——例如举重——强度如此之大，以至于身体来不及利用氧气产生能量，转而分解血液或肌肉中的葡萄糖。",
+"首先从运动强度对有氧运动情绪益处的影响开始，深圳大学的John Chan领导的研究人员在19项相关研究中发现了矛盾的结果。一些研究支持更高强度，另一些则支持低强度，而七项研究发现强度对情绪益处没有影响。",
+"然而，关于无氧运动的强度，结果要清晰得多——改善情绪的最佳强度是中等强度，也许是因为低强度太单调，而高强度太令人不快。"
+];
+var saH='';
+for(var pi=0;pi<saPars.length;pi++){
+var ph=wx(saPars[pi]);
+for(var i=26;i<=35;i++){ph=ph.replace('__'+i+'__','<span style="display:inline-block;min-width:1.8em;border-bottom:2px solid #b8753e;text-align:center;margin:0 2px;font-weight:700;color:#b8753e">'+i+'</span>')}
+saH+='<div class="p">'+ph+'</div><button class="tt" onclick="ttg(\'tr-sa-'+pi+'\',this)"><span class="ar">&#9654;</span> 查看翻译</button><div class="tx" id="tr-sa-'+pi+'">'+saTr[pi]+'</div>';
+}
+document.getElementById('sap').innerHTML=saH;
+document.getElementById('sab').innerHTML='A) constitutes B) contradictory C) decision D) detailed E) difference F) dipping G) distinction H) falling I) involves J) moderate K) notified L) partly M) required N) traditionally O) vigorous'.split(' ').filter(function(x){return x.trim()}).map(function(x){return '<span>'+wx(x)+'</span>'}).join(' ');
+
+// PASSAGE ONE - People-pleasing
+var P1=[
+"Lao Zi once said, \"Care about what other people think and you will always be their prisoner.\"",
+"People-pleasing, or seeking self-worth through others' approval, is unproductive and an exhausting way to go through life. Why do we allow what others think of us to have so much power over how we feel about ourselves? If it's true that you can't please all people all of the time, wouldn't it make sense to stop trying?",
+"Unfortunately, sense often isn't driving our behavior. For social beings who desire love and belonging, wanting to be liked, and caring about the effect we have on others, is healthy and allows us to make connections. However, where we get into trouble is when our self-worth is dependent upon whether we win someone's approval or not.",
+"This need to be liked can be traced back to when we were children and were completely dependent on others to take care of us: Small children are not just learning how to walk and communicate, they are also trying to learn how the world works. We learn about who we are and what is expected of us based on interactions with others so, to a four-year-old, if Mommy or Daddy doesn't like him or her, there is the danger that they will abandon them. We need to understand that when we desperately want someone to approve of us, it's being driven by that little kid part of us that is still terrified of abandonment.",
+"As you become more capable of providing yourself with the approval you seek, your need for external validation will start to vanish, leaving you stronger, more confident, and yes, happier in your life. Imagine how much time we lose each moment we restrain our authentic selves in an effort to be liked.",
+"If we base our worth on the opinions of others, we cheat ourselves of the power to shape our experiences and embrace life not only for others but also for ourselves, because ultimately, there is no difference. So embrace the cliché and love yourself as it's highly doubtful that you'll regret it."
+];
+var PT1=[
+"老子曾说过：「在乎别人怎么看你，你就永远是他们的囚徒。」",
+"讨好他人，或者说通过他人的认可来寻求自我价值，是一种徒劳且让人筋疲力尽的生活方式。为什么我们允许别人对我们的看法对我们自己的感受有如此大的影响？如果你不可能在任何时候取悦所有人，那停下来不去尝试不是更有道理吗？",
+"不幸的是，道理往往并不驱动我们的行为。对于渴望爱与归属感的社会性生物来说，想要被喜欢、关心自己对他人的影响是健康的，这让我们能够建立联系。然而，当我们的自我价值取决于是否获得他人认可时，我们就陷入了麻烦。",
+"这种被喜欢的需要可以追溯到我们小时候，那时我们完全依赖他人来照顾我们：小孩子不仅在学习走路和交流，也在试图了解世界是如何运作的。我们通过与他人的互动来了解自己是谁、别人期望我们做什么。所以，对于一个四岁的孩子来说，如果爸爸妈妈不喜欢他/她，就存在着被抛弃的危险。我们需要明白，当我们拼命想要某人认可我们时，驱使我们的是那个仍然害怕被抛弃的小孩的内心。",
+"当你越来越有能力给予自己渴望的认可时，你对外部认可的渴求就会开始消失，让你变得更强大、更自信，是的，也更快乐。想象一下，每次我们为了被人喜欢而压抑真实的自我时，我们浪费了多少时间。",
+"如果我们把自身价值建立在他人的意见上，我们就剥夺了自己塑造经历的力量，也剥夺了不仅为他人也为自己拥抱生活的能力，因为最终这两者并无区别。所以，拥抱这个老生常谈的说法吧——爱自己，因为你基本上不会为此后悔。"
+];
+var h1='';
+for(var i=0;i<P1.length;i++){h1+='<div class="p">'+wx(P1[i])+'</div><button class="tt" onclick="ttg(\'tr-p1-'+i+'\',this)"><span class="ar">&#9654;</span> 查看翻译</button><div class="tx" id="tr-p1-'+i+'">'+PT1[i]+'</div>'}
+document.getElementById('p1c').innerHTML=h1;
+
+// PASSAGE TWO - Aging and the Brain
+var P2=[
+"Some people have said aging is more a slide into forgetfulness than a journey towards wisdom. However, a growing body of research suggests that late-in-life learning is possible. In reality, education does an aging brain good.",
+"Throughout life, people's brains constantly renovate themselves. In the late 1960s, British brain scientist Geoffrey Raisman spied growth in damaged brain regions of rats through an electron microscope; their brains were forging new connections. This meant brains may change every time a person learns something new.",
+"Of course, that doesn't mean the brain isn't affected by the effects of time. Just as height usually declines over the years, so does brain volume: Humans lose about 4 percent every decade starting in their 40s. But that reduction doesn't necessarily make people think slower; as long as we are alive and functioning, we can alter our brains with new information and experiences.",
+"In fact, scientists now suspect accumulating novel experiences, facts, and skills can keep people's minds more flexible. New pathways can strengthen our ever-changing mental structure, even as the brain shrinks.",
+"Conventional fixes like word puzzles and brain-training apps can contribute to mental durability. Even something as simple as taking a different route to the grocery store or going somewhere new on vacation can keep the brain healthy.",
+"A desire for new life challenges can further boost brainpower. Research about aging adults who take on new enterprises shows improved function and memory as well as a reduced risk of mental disease. Openness—a characteristic defined by curiosity and a desire for knowledge—may also help folks pass brain tests. Some folks are born with this take-in-the-world attitude, but those who aren't as genetically gifted aren't necessarily out of luck. While genes can encourage an interest in doing new things, a 2012 study in the journal Psychology and Aging found completing reasoning tasks like puzzles and number games can enhance that desire for novel experiences, which can, in turn, refresh the brain. That's why brain scientist Richard Kennedy says \"It's not that old dogs can't learn new tricks. It's that maybe old dogs don't realize why they should.\""
+];
+var PT2=[
+"有人说，衰老更多是滑向健忘，而非通向智慧的旅程。然而，越来越多的研究表明，晚年学习是可能的。事实上，教育对衰老的大脑有益。",
+"在人的一生中，大脑不断地自我修复。20世纪60年代末，英国脑科学家Geoffrey Raisman通过电子显微镜观察到老鼠受损脑区中出现了生长；它们的大脑正在建立新的连接。这意味着每次人们学习新东西时，大脑都可能发生变化。",
+"当然，这并不意味着大脑不受时间的影响。正如身高通常会随年月下降一样，大脑体积也会下降：从40多岁开始，人类每十年损失约4%。但这种减少并不一定让人思维变慢；只要我们活着且大脑在运转，我们就可以通过新的信息和经历来改变我们的大脑。",
+"事实上，科学家现在推测，积累新奇的经历、事实和技能可以让人的思维更加灵活。新的通路可以强化我们不断变化的心理结构，即使大脑在缩小。",
+"常规的解决方案如填字游戏和大脑训练应用有助于保持心理韧性。即使是做一些简单的事情，比如去杂货店走不同的路线，或者度假时去一个新的地方，都可以保持大脑健康。",
+"对新生活挑战的渴望可以进一步增强脑力。关于晚年开始新事业的老年人的研究表明，其功能和记忆力得到改善，且患精神疾病的风险降低。开放性——一种由好奇心和求知欲定义的特征——也可能帮助人们通过大脑测试。有些人天生就有这种接纳世界的态度，但那些基因上没有如此天赋的人也不一定没有机会。虽然基因可以激发人们对尝试新事物的兴趣，但2012年发表在《心理学与衰老》期刊上的一项研究发现，完成诸如拼图和数字游戏等推理任务可以增强对新奇体验的渴望，这反过来又可以更新大脑。这就是为什么脑科学家Richard Kennedy说：「不是老狗学不了新把戏，而是老狗也许没意识到它们为什么要学。」"
+];
+var h2='';
+for(var i=0;i<P2.length;i++){h2+='<div class="p">'+wx(P2[i])+'</div><button class="tt" onclick="ttg(\'tr-p2-'+i+'\',this)"><span class="ar">&#9654;</span> 查看翻译</button><div class="tx" id="tr-p2-'+i+'">'+PT2[i]+'</div>'}
+document.getElementById('p2c').innerHTML=h2;
+
+// QUESTIONS
+function mq(q){
+  var h='<div class="qb"><div class="qt">'+wx(q.text)+'</div>';
+  h+='<button class="tt" onclick="ttg(\'tr-q'+q.id+'\',this)"><span class="ar">&#9654;</span> 查看题目翻译</button>';
+  h+='<div class="tx" id="tr-q'+q.id+'">'+q.qtr+'</div>';
+  h+='<div class="og">';
+  for(var oi=0;oi<q.opts.length;oi++){
+    h+='<div class="op">'+wx(q.opts[oi].t)+' <button class="tt" style="font-size:.7rem;padding:.15em .45em;margin:0" onclick="event.stopPropagation();ttg(\'tr-q'+q.id+'-o'+oi+'\',this)"><span class="ar">&#9654;</span> 译</button><div class="tx" id="tr-q'+q.id+'-o'+oi+'">'+q.opts[oi].tr+'</div></div>';
+  }
+  h+='</div></div>';
+  return h;
+}
+
+var Q1=[
+{id:46,text:'46. What can we conclude from Lao Zi\'s quotation?',qtr:'从老子的名言中我们可以得出什么结论？',opts:[
+{t:"A) We should see through other people's attempt to make a prisoner of us.",tr:"我们应看穿他人试图囚禁我们的企图。"},
+{t:"B) We can never really please other people even if we try as hard as we can.",tr:"即使我们竭尽全力，也永远无法真正取悦他人。"},
+{t:"C) We can never be truly free if taking to heart others' opinion of us.",tr:"如果把别人的看法放在心里，我们就永远无法真正自由。"},
+{t:"D) We should care about other people's view as much as they care about our own.",tr:"我们应该像别人关心我们的看法一样关心别人的看法。"}
+]},
+{id:47,text:'47. What will happen if we base our self-worth on other people\'s approval?',qtr:'如果我们将自我价值建立在他人认可之上会发生什么？',opts:[
+{t:"A) Our desire to be loved will be fulfilled.",tr:"我们对被爱的渴望将得到满足。"},
+{t:"B) Our life will be unfruitful and exhausting.",tr:"我们的生活将徒劳无功且筋疲力尽。"},
+{t:"C) Our identity as social beings will be affected.",tr:"我们作为社会性生物的身份将受影响。"},
+{t:"D) Our sense of self will be sharpened and enhanced.",tr:"我们的自我意识将得到增强和提升。"}
+]},
+{id:48,text:'48. What may account for our need to be liked or approved of?',qtr:'什么可能解释我们想要被喜欢或认可的需要？',opts:[
+{t:"A) Our desperate longing for interactions with others.",tr:"我们对与他人互动的极度渴望。"},
+{t:"B) Our understanding of the workings of the world.",tr:"我们对世界运行方式的理解。"},
+{t:"C) Our knowledge about the pain of abandonment.",tr:"我们对被抛弃之痛的认识。"},
+{t:"D) Our early childhood fear of being deserted.",tr:"我们童年早期对被遗弃的恐惧。"}
+]},
+{id:49,text:'49. What can we do when we become better able to provide ourselves with the desired approval?',qtr:'当我们能够更好地给予自己渴望的认可时，我们可以做什么？',opts:[
+{t:"A) Enjoy a happier life.",tr:"享受更幸福的生活。"},
+{t:"B) Exercise self-restraint.",tr:"进行自我约束。"},
+{t:"C) Receive more external validation.",tr:"获得更多外部认可。"},
+{t:"D) Strengthen our power of imagination.",tr:"增强我们的想象力。"}
+]},
+{id:50,text:'50. What does the author advise us to do in the last paragraph?',qtr:'作者在最后一段建议我们做什么？',opts:[
+{t:"A) Embrace life for ourselves and for others.",tr:"为自己也为他人拥抱生活。"},
+{t:"B) Base our worth on others' opinions.",tr:"把价值建立在他人看法上。"},
+{t:"C) See our experiences as assets.",tr:"把我们的经历视为资产。"},
+{t:"D) Love ourselves as we are.",tr:"爱我们自己本来的样子。"}
+]}
+];
+document.getElementById('p1q').innerHTML=Q1.map(mq).join('');
+
+var Q2=[
+{id:51,text:'51. What do some people think of aging adults?',qtr:'有些人是怎么看待老年人的？',opts:[
+{t:"A) Their wisdom grows as time goes by.",tr:"随着时间推移，他们的智慧增长。"},
+{t:"B) Their memory gradually deteriorates.",tr:"他们的记忆力逐渐衰退。"},
+{t:"C) They can benefit from late-in-life learning.",tr:"他们可以从晚年学习中受益。"},
+{t:"D) They are likely to have mental health issues.",tr:"他们可能有心理健康问题。"}
+]},
+{id:52,text:'52. What can we conclude from Geoffrey Raisman\'s finding?',qtr:'从Geoffrey Raisman的发现中我们可以得出什么结论？',opts:[
+{t:"A) Brain damage seriously hinders one's learning.",tr:"脑损伤严重阻碍人的学习。"},
+{t:"B) Brain power weakens slower than we imagine.",tr:"脑力衰退比我们想象的慢。"},
+{t:"C) Brains can refresh and improve with learning.",tr:"大脑可以通过学习更新和改善。"},
+{t:"D) Brains forge connections under new conditions.",tr:"大脑在新条件下建立连接。"}
+]},
+{id:53,text:'53. What is one thing that helps maintain the health of our brain even as it shrinks?',qtr:'在大脑萎缩时，什么有助于保持大脑健康？',opts:[
+{t:"A) Doing daily routines by conventional means.",tr:"按常规方式做日常事务。"},
+{t:"B) Avoiding worrying about our mental durability.",tr:"避免担心心理耐久性。"},
+{t:"C) Imitating old dogs' way of learning new tricks.",tr:"模仿老狗学新把戏的方式。"},
+{t:"D) Approaching everyday tasks in novel ways.",tr:"以新颖的方式处理日常任务。"}
+]},
+{id:54,text:'54. What does the author say can contribute to the improvement of brain function?',qtr:'作者说什么有助于改善大脑功能？',opts:[
+{t:"A) Being curious and desiring knowledge.",tr:"保持好奇心并渴望知识。"},
+{t:"B) Being eager to pass brain tests at an old age.",tr:"渴望在老年时通过大脑测试。"},
+{t:"C) Rising to life's challenges and avoiding risks.",tr:"迎接生活挑战并规避风险。"},
+{t:"D) Boosting immunity to serious mental diseases.",tr:"增强对严重精神疾病的免疫力。"}
+]},
+{id:55,text:'55. What is the finding of the 2012 study in the journal Psychology and Aging?',qtr:'2012年《心理学与衰老》期刊的研究发现了什么？',opts:[
+{t:"A) Wishing to solve puzzles enhances one's reasoning power.",tr:"想要解谜能增强人的推理能力。"},
+{t:"B) Playing number games unexpectedly stimulates one's memory.",tr:"玩数字游戏意外地刺激了记忆力。"},
+{t:"C) Desiring new experiences can help to renovate the brain.",tr:"渴望新体验有助于更新大脑。"},
+{t:"D) Learning new tricks should not be confined to old dogs only.",tr:"学新把戏不应仅限于老狗。"}
+]}
+];
+document.getElementById('p2q').innerHTML=Q2.map(mq).join('');
+
+console.log('%c✓ 2024.06 CET-4 Set1 脚本加载完成 | Made for 中浩 | '+new Date().toISOString(),'color:#b8753e;font-size:1.1em;');
+</script>
+</body>
+</html>
