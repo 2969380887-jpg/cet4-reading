@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025年6月 · 四级真题（第2套） | 中浩</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f8f5f0;--card:#fff;--text:#2c2416;--text-light:#5c5344;--accent:#b8753e;--accent-light:#f0e6d8;--border:#e0d5c4;--shadow:0 2px 12px rgba(0,0,0,.06);--radius:12px;--f:'Georgia','Noto Serif SC','Songti SC',serif;--u:'PingFang SC','Microsoft YaHei',sans-serif;--pb:#1e1b18;--pt:#f0e8dc}
+body{background:var(--bg);color:var(--text);font-family:var(--f);line-height:1.85;min-height:100vh;padding-bottom:5rem}
+.c{max-width:860px;margin:0 auto;padding:0 18px}
+.h{text-align:center;padding:2.4rem 0 1.6rem;border-bottom:2px solid var(--border);margin-bottom:1.5rem}
+.h h1{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700}
+.h .sub{font-size:.95rem;color:var(--text-light);margin-top:.35rem;font-family:var(--u)}
+.h .badge{display:inline-block;margin-top:.6rem;padding:.2em .9em;background:var(--accent-light);color:var(--accent);border-radius:99px;font-size:.8rem;font-weight:600;font-family:var(--u)}
+.tab-bar{display:flex;gap:0;margin-bottom:1.5rem;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.tb{flex:1;padding:.65rem .5rem;border:none;background:var(--card);color:var(--text-light);font-size:.82rem;font-weight:600;font-family:var(--u);cursor:pointer;transition:all .2s;border-bottom:3px solid transparent;-webkit-tap-highlight-color:transparent;text-align:center;line-height:1.3}
+.tb:hover{color:var(--accent);background:#fdfaf6}
+.tb.on{color:var(--accent);border-bottom-color:var(--accent);background:#fdfaf6}
+.tab-panel{display:none}
+.tab-panel.on{display:block}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(1.2rem,3vw,2rem);margin-bottom:1.5rem}
+.card h2{font-size:1.15rem;color:var(--accent);margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);font-family:var(--u);letter-spacing:.04em}
+.w{display:inline;cursor:pointer;padding:1px 1px;border-radius:3px;transition:background .15s,color .15s;position:relative;border-bottom:1px dotted #d5c8b0}
+.w:hover{background:#fce8c8;color:#8b5e2a}
+.w:active{background:#f5d090}
+.w.hl{background:#f5d090;color:#7a4e1c;outline:2px solid var(--accent);outline-offset:1px;z-index:2}
+.p{margin-bottom:1.15rem;text-align:justify;font-size:clamp(.95rem,2vw,1.05rem);word-break:break-word}
+.tt{display:inline-flex;align-items:center;gap:.35em;background:none;border:1.5px solid var(--border);color:var(--text-light);padding:.35em .85em;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:var(--u);margin-top:.3rem;margin-bottom:.6rem;transition:all .2s;user-select:none;-webkit-tap-highlight-color:transparent}
+.tt:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+.tt .ar{display:inline-block;transition:transform .25s;font-size:.7rem}
+.tt.open .ar{transform:rotate(90deg)}
+.tx{display:none;color:#6b5e4a;font-size:.9rem;line-height:1.75;padding:.7rem 1rem;margin:.3rem 0 .8rem;background:#fdfaf4;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;animation:fi .3s ease}
+.tx.show{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.qb{margin-bottom:1.4rem;padding-bottom:1rem;border-bottom:1px dashed var(--border)}
+.qb:last-child{border-bottom:none;margin-bottom:0}
+.qt{font-weight:600;margin-bottom:.5rem;font-size:clamp(.9rem,2vw,1rem)}
+.og{display:grid;grid-template-columns:1fr;gap:.35rem;margin-bottom:.3rem}
+@media(min-width:640px){.og{grid-template-columns:1fr 1fr}}
+.op{padding:.45em .75em;border-radius:6px;background:#fafaf7;border:1px solid transparent;font-size:.92rem;line-height:1.65}
+.op:hover{border-color:var(--border)}
+.wb{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.wb span{background:var(--accent-light);color:var(--accent);padding:.2em .65em;border-radius:5px;font-weight:600;font-size:.9rem;font-family:var(--u)}
+.wp{position:fixed;bottom:0;left:0;right:0;background:var(--pb);color:var(--pt);padding:1rem 1.2rem;z-index:999;border-radius:16px 16px 0 0;box-shadow:0 -4px 24px rgba(0,0,0,.3);transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);font-family:var(--u);max-height:42vh;overflow-y:auto}
+.wp.open{transform:translateY(0)}
+.wp-h{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem}
+.wp-w{font-size:1.3rem;font-weight:700;color:#fff}
+.wp-p{font-size:.85rem;color:#b0a592;margin-left:.5em}
+.wp-x{background:none;border:none;color:#8a8070;font-size:1.3rem;cursor:pointer;padding:.2em .4em;border-radius:4px;line-height:1;-webkit-tap-highlight-color:transparent}
+.wp-x:hover{color:#fff}
+.wp-b{font-size:.9rem;line-height:1.65}
+.wp-b .d strong{color:#d4a96a}
+.wp-db{margin-top:.5rem;padding-top:.45rem;border-top:1px solid #3a3530;font-size:.75rem;color:#6a6258}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:998;display:none}
+.ov.show{display:block}
+.ft{text-align:center;font-size:.78rem;color:#b0a590;margin-top:2rem;padding:1rem;font-family:var(--u);line-height:1.7}
+@media(max-width:480px){.c{padding:0 10px}.card{padding:1rem .85rem;border-radius:10px}.w{padding:2px 1px}.wp{padding:.85rem 1rem;max-height:45vh}.tb{font-size:.7rem;padding:.5rem .25rem}}
+</style>
+</head>
+<body>
+
+<div class="c">
+<div class="h">
+  <h1>2025年6月 · 四级真题（第2套）</h1>
+  <div class="sub">Reading Comprehension</div>
+  <div class="badge">Section A 选词填空 · Passage One · Passage Two</div>
+</div>
+
+<div class="tab-bar">
+  <button class="tb on" onclick="sw('sa')">Section A<br><small>选词填空 Q26-35</small></button>
+  <button class="tb" onclick="sw('p1')">Passage One<br><small>穿着如何影响行为 Q46-50</small></button>
+  <button class="tb" onclick="sw('p2')">Passage Two<br><small>古典音乐今何在 Q51-55</small></button>
+</div>
+
+<div class="tab-panel on" id="tp-sa">
+<div class="card"><h2>Section A — 选词填空</h2>
+<div id="sap"></div><div class="wb" id="sab"></div></div></div>
+
+<div class="tab-panel" id="tp-p1">
+<div class="card"><h2>Passage One — How Clothes Affect Our Behavior</h2><div id="p1c"></div></div>
+<div class="card"><h2>Questions 46–50</h2><div id="p1q"></div></div></div>
+
+<div class="tab-panel" id="tp-p2">
+<div class="card"><h2>Passage Two — Classical Music and Opera Today</h2><div id="p2c"></div></div>
+<div class="card"><h2>Questions 51–55</h2><div id="p2q"></div></div></div>
+
+<div class="ft">点击任意英文单词查看音标与考研释义 · 中浩 · 2025.06 CET-4 第2套</div>
+</div>
+
+<div class="ov" id="ov" onclick="cp()"></div>
+<div class="wp" id="wp">
+  <div class="wp-h"><div><span class="wp-w" id="pW">—</span><span class="wp-p" id="pP"></span></div><button class="wp-x" onclick="cp()">&times;</button></div>
+  <div class="wp-b" id="pB"></div>
+  <div class="wp-db" id="pD"></div>
+</div>
+
+<script>
+var D={
+"I":"/aɪ/|pron. 我",
+"a":"/ə/|art. 一个",
+"able":"/ˈeɪbl/|adj. 能够的",
+"about":"/əˈbaʊt/|prep. 关于",
+"abstract":"/ˈæbstrækt/|adj. 抽象的",
+"after":"/ˈæftər/|prep. 在……之后",
+"alive":"/əˈlaɪv/|adj. 活跃的",
+"all":"/ɔːl/|adj. 所有的",
+"also":"/ˈɔːlsoʊ/|adv. 也",
+"always":"/ˈɔːlweɪz/|adv. 总是",
+"among":"/əˈmʌŋ/|prep. 在……之中",
+"an":"/æn/|art. 一个",
+"and":"/ænd/|conj. 和",
+"any":"/ˈeni/|adj. 任何",
+"are":"/ɑːr/|v. 是",
+"as":"/æz/|prep./conj. 作为",
+"ask":"/æsk/|v. 问",
+"assign":"/əˈsaɪn/|v. 赋予",
+"at":"/æt/|prep. 在",
+"attitudes":"/ˈætɪtuːdz/|n. 态度",
+"background":"/ˈbækɡraʊnd/|n. 背景",
+"bad":"/bæd/|adj. 坏的",
+"be":"/biː/|v. 是",
+"beats":"/biːts/|n. 节拍",
+"because":"/bɪˈkɔːz/|conj. 因为",
+"been":"/bɪn/|v. 是（过去分词）",
+"before":"/bɪˈfɔːr/|prep. 在……之前",
+"between":"/bɪˈtwiːn/|prep. 在……之间",
+"big":"/bɪɡ/|adj. 大的",
+"boardroom":"/ˈbɔːrdruːm/|n. 会议室",
+"but":"/bʌt/|conj. 但是",
+"by":"/baɪ/|prep. 通过",
+"can":"/kæn/|aux. 能",
+"case":"/keɪs/|n. 情况",
+"casual":"/ˈkæʒuəl/|adj. 休闲的",
+"caught":"/kɔːt/|v. 抓住",
+"centuries":"/ˈsentʃəriz/|n. 世纪",
+"classical":"/ˈklæsɪkl/|adj. 古典的",
+"clothing":"/ˈkloʊðɪŋ/|n. 服装",
+"colleagues":"/ˈkɑːliːɡz/|n. 同事",
+"come":"/kʌm/|v. 来",
+"compositions":"/ˌkɑːmpəˈzɪʃnz/|n. 作品",
+"conduct":"/kənˈdʌkt/|v. 进行",
+"confident":"/ˈkɑːnfɪdənt/|adj. 自信的",
+"conflicting":"/kənˈflɪktɪŋ/|adj. 矛盾的",
+"corruption":"/kəˈrʌpʃn/|n. 腐败",
+"could":"/kʊd/|aux. 能（过去式）",
+"creative":"/kriˈeɪtɪv/|adj. 有创造力的",
+"crime":"/kraɪm/|n. 犯罪",
+"critics":"/ˈkrɪtɪks/|n. 评论家",
+"data":"/ˈdeɪtə/|n. 数据",
+"day":"/deɪ/|n. 天",
+"deceit":"/dɪˈsiːt/|n. 欺骗",
+"definition":"/ˌdefɪˈnɪʃn/|n. 定义",
+"did":"/dɪd/|v. 做（过去式）",
+"different":"/ˈdɪfrənt/|adj. 不同的",
+"do":"/duː/|v. 做",
+"does":"/dʌz/|v. 做（三单）",
+"dominance":"/ˈdɑːmɪnəns/|n. 主导地位",
+"doubt":"/daʊt/|n./v. 怀疑",
+"each":"/iːtʃ/|pron. 每个",
+"edge":"/edʒ/|n. 优势",
+"end":"/end/|n./v. 结束",
+"evaluate":"/ɪˈvæljueɪt/|v. 评价",
+"even":"/ˈiːvn/|adv. 甚至",
+"every":"/ˈevri/|adj. 每个的",
+"example":"/ɪɡˈzæmpl/|n. 例子",
+"expressive":"/ɪkˈspresɪv/|adj. 富有表现力的",
+"fact":"/fækt/|n. 事实",
+"fade":"/feɪd/|v. 消退",
+"fascinating":"/ˈfæsɪneɪtɪŋ/|adj. 引人入胜的",
+"fascination":"/ˌfæsɪˈneɪʃn/|n. 迷恋",
+"feel":"/fiːl/|v. 感觉",
+"few":"/fjuː/|adj. 很少",
+"filmmakers":"/ˈfɪlmˌmeɪkərz/|n. 电影制作人",
+"find":"/faɪnd/|v. 找到",
+"for":"/fɔːr/|prep. 为了",
+"formal":"/ˈfɔːrml/|adj. 正式的",
+"foundation":"/faʊnˈdeɪʃn/|n. 基础",
+"from":"/frʌm/|prep. 来自",
+"get":"/ɡet/|v. 得到",
+"give":"/ɡɪv/|v. 给",
+"go":"/ɡoʊ/|v. 去",
+"good":"/ɡʊd/|adj. 好的",
+"great":"/ɡreɪt/|adj. 伟大的",
+"group":"/ɡruːp/|n. 群；组",
+"guilt":"/ɡɪlt/|n. 罪恶",
+"guilty":"/ˈɡɪlti/|adj. 内疚的",
+"had":"/hæd/|v. 有（过去式）",
+"harmonies":"/ˈhɑːrməniz/|n. 和声",
+"has":"/hæz/|v. 有（三单）",
+"have":"/hæv/|v. 有",
+"he":"/hiː/|pron. 他",
+"health":"/helθ/|n. 健康",
+"help":"/help/|v. 帮助",
+"her":"/hɜːr/|pron. 她的",
+"high":"/haɪ/|adj. 高的",
+"highly":"/ˈhaɪli/|adv. 极为",
+"his":"/hɪz/|pron. 他的",
+"hormones":"/ˈhɔːrmoʊnz/|n. 荷尔蒙",
+"however":"/haʊˈevər/|adv. 然而",
+"huge":"/hjuːdʒ/|adj. 巨大的",
+"if":"/ɪf/|conj. 如果",
+"important":"/ɪmˈpɔːrtnt/|adj. 重要的",
+"in":"/ɪn/|prep. 在……里面",
+"incredible":"/ɪnˈkredəbl/|adj. 难以置信的",
+"indicators":"/ˈɪndɪkeɪtərz/|n. 指标",
+"innocence":"/ˈɪnəsns/|n. 无辜",
+"inspire":"/ɪnˈspaɪər/|v. 激励",
+"interact":"/ˌɪntərˈækt/|v. 互动",
+"into":"/ˈɪntuː/|prep. 进入",
+"is":"/ɪz/|v. 是",
+"it":"/ɪt/|pron. 它",
+"its":"/ɪts/|pron. 它的",
+"jackets":"/ˈdʒækɪts/|n. 夹克",
+"job":"/dʒɑːb/|n. 工作",
+"just":"/dʒʌst/|adv. 只是",
+"keep":"/kiːp/|v. 保持",
+"know":"/noʊ/|v. 知道",
+"life":"/laɪf/|n. 生命；生活",
+"likely":"/ˈlaɪkli/|adj. 可能的",
+"long":"/lɔːŋ/|adj. 长的",
+"look":"/lʊk/|v. 看",
+"low":"/loʊ/|adj. 低的",
+"mainstream":"/ˈmeɪnstriːm/|n./adj. 主流",
+"make":"/meɪk/|v. 做；使",
+"man":"/mæn/|n. 男人",
+"many":"/ˈmeni/|adj. 许多",
+"masterpieces":"/ˈmæstərpiːsɪz/|n. 杰作",
+"may":"/meɪ/|aux. 可能",
+"mean":"/miːn/|v. 意味着",
+"melodies":"/ˈmelədiz/|n. 旋律",
+"men":"/men/|n. 男人们",
+"might":"/maɪt/|aux. 也许",
+"misconduct":"/ˌmɪsˈkɑːndʌkt/|n. 不当行为",
+"money":"/ˈmʌni/|n. 钱",
+"mood":"/muːd/|n. 情绪",
+"more":"/mɔːr/|adj. 更多的",
+"most":"/moʊst/|adj. 最多的",
+"motion":"/ˈmoʊʃn/|n. 电影",
+"much":"/mʌtʃ/|adj. 许多的",
+"murder":"/ˈmɜːrdər/|n. 谋杀",
+"my":"/maɪ/|pron. 我的",
+"negotiators":"/nɪˈɡoʊʃieɪtərz/|n. 谈判者",
+"never":"/ˈnevər/|adv. 从不",
+"new":"/nuː/|adj. 新的",
+"not":"/nɑːt/|adv. 不",
+"now":"/naʊ/|adv. 现在",
+"occasions":"/əˈkeɪʒnz/|n. 场合",
+"of":"/ʌv/|prep. ……的",
+"offences":"/əˈfensɪz/|n. 罪行",
+"often":"/ˈɔːfn/|adv. 经常",
+"old":"/oʊld/|adj. 旧的",
+"on":"/ɑːn/|prep. 在……上面",
+"only":"/ˈoʊnli/|adv. 只",
+"opera":"/ˈɑːprə/|n. 歌剧",
+"or":"/ɔːr/|conj. 或",
+"orchestras":"/ˈɔːrkɪstrəz/|n. 管弦乐队",
+"ordinary":"/ˈɔːrdneri/|adj. 普通的",
+"other":"/ˈʌðər/|adj. 其他的",
+"our":"/aʊr/|pron. 我们的",
+"over":"/ˈoʊvər/|prep./adv. 在……上方",
+"own":"/oʊn/|adj. 自己的",
+"people":"/ˈpiːpl/|n. 人们",
+"person":"/ˈpɜːrsn/|n. 人",
+"personal":"/ˈpɜːrsənl/|adj. 个人的",
+"plot":"/plɑːt/|n. 情节",
+"possible":"/ˈpɑːsəbl/|adj. 可能的",
+"powerful":"/ˈpaʊərfl/|adj. 有力量的",
+"principal":"/ˈprɪnsəpl/|adj. 主要的",
+"productive":"/prəˈdʌktɪv/|adj. 多产的",
+"professional":"/prəˈfeʃənl/|adj. 职业的",
+"question":"/ˈkwestʃən/|n. 问题",
+"relax":"/rɪˈlæks/|v. 放松",
+"relevant":"/ˈreləvənt/|adj. 相关的",
+"research":"/rɪˈsɜːrtʃ/|n./v. 研究",
+"right":"/raɪt/|adj. 正确的",
+"robbery":"/ˈrɑːbəri/|n. 抢劫",
+"same":"/seɪm/|adj. 相同的",
+"say":"/seɪ/|v. 说",
+"science":"/ˈsaɪəns/|n. 科学",
+"see":"/siː/|v. 看见",
+"seem":"/siːm/|v. 似乎",
+"she":"/ʃiː/|pron. 她",
+"should":"/ʃʊd/|aux. 应该",
+"show":"/ʃoʊ/|v. 显示",
+"small":"/smɔːl/|adj. 小的",
+"so":"/soʊ/|conj. 所以",
+"socialize":"/ˈsoʊʃəlaɪz/|v. 社交",
+"solely":"/ˈsoʊlli/|adv. 仅仅",
+"some":"/sʌm/|adj. 一些",
+"still":"/stɪl/|adv. 仍然",
+"stood":"/stʊd/|v. 经受",
+"storyline":"/ˈstɔːrilaɪn/|n. 故事情节",
+"study":"/ˈstʌdi/|n./v. 研究",
+"subtle":"/ˈsʌtl/|adj. 微妙的",
+"success":"/səkˈses/|n. 成功",
+"symbolic":"/sɪmˈbɑːlɪk/|adj. 象征性的",
+"symphonic":"/sɪmˈfɑːnɪk/|adj. 交响乐的",
+"tailored":"/ˈteɪlərd/|adj. 定制的",
+"take":"/teɪk/|v. 拿；花费",
+"taste":"/teɪst/|n. 品味",
+"teenagers":"/ˈtiːneɪdʒərz/|n. 青少年",
+"tell":"/tel/|v. 告诉",
+"than":"/ðæn/|conj. 比",
+"that":"/ðæt/|pron./adj. 那个",
+"the":"/ðə/|art. 这；那",
+"their":"/ðer/|pron. 他们的",
+"then":"/ðen/|adv. 然后",
+"theory":"/ˈθiːəri/|n. 理论",
+"these":"/ðiːz/|pron./adj. 这些",
+"they":"/ðeɪ/|pron. 他们",
+"thing":"/θɪŋ/|n. 事物",
+"things":"/θɪŋz/|n. 事物（复）",
+"think":"/θɪŋk/|v. 认为",
+"this":"/ðɪs/|pron./adj. 这个",
+"those":"/ðoʊz/|pron./adj. 那些",
+"time":"/taɪm/|n. 时间",
+"to":"/tuː/|prep. 向；到",
+"try":"/traɪ/|v. 尝试",
+"twists":"/twɪsts/|n. 转折",
+"under":"/ˈʌndər/|prep. 在……下面",
+"use":"/juːz/|v. 使用",
+"very":"/ˈveri/|adv. 非常",
+"victim":"/ˈvɪktɪm/|n. 受害者",
+"want":"/wɑːnt/|v. 想要",
+"was":"/wʌz/|v. 是（过去式）",
+"way":"/weɪ/|n. 方式",
+"we":"/wiː/|pron. 我们",
+"were":"/wɜːr/|v. 是（过去式复）",
+"when":"/wen/|conj./adv. 当……时",
+"while":"/waɪl/|conj. 当……时；然而",
+"will":"/wɪl/|aux. 将",
+"with":"/wɪð/|prep. 和……一起",
+"within":"/wɪˈðɪn/|prep. 在……之内",
+"without":"/wɪˈðaʊt/|prep. 没有",
+"woman":"/ˈwʊmən/|n. 女人",
+"women":"/ˈwɪmɪn/|n. 女人们",
+"work":"/wɜːrk/|v./n. 工作",
+"world":"/wɜːrld/|n. 世界",
+"worshipped":"/ˈwɜːrʃɪpt/|v. 崇敬",
+"would":"/wʊd/|aux. 会",
+"wrongdoer":"/ˈrɔːŋduːər/|n. 作恶者",
+"year":"/jɪr/|n. 年",
+"you":"/juː/|pron. 你",
+"your":"/jʊr/|pron. 你的"
+};
+var D2={};
+for(var k in D){var v=D[k].split('|');D2[k]={p:v[0],d:v[1]||''}}
+
+function lw(raw){
+  var c=raw.replace(/[.,;:!?—\-–—'"()\[\]{}«»\/\\\\]+$/g,'').replace(/^[.,;:!?—\-–—'"()\[\]{}«»\/\\\\]+/g,'');
+  if(!c||c.length<1)return null;
+  var k=c.toLowerCase();
+  if(D2[k])return D2[k];
+  if(k.endsWith('s')&&k.length>3){var s=k.slice(0,-1);if(D2[s])return D2[s]}
+  if(k.endsWith('ing')&&k.length>5){var b=k.slice(0,-3);if(D2[b])return D2[b];var b2=b+'e';if(D2[b2])return D2[b2]}
+  if(k.endsWith('ed')&&k.length>4){var b=k.slice(0,-2);if(D2[b])return D2[b];if(k.endsWith('ied')&&k.length>5){var ib=k.slice(0,-3)+'y';if(D2[ib])return D2[ib]}}
+  if(k.endsWith('ly')&&k.length>4){var b=k.slice(0,-2);if(D2[b])return D2[b]}
+  if(k.endsWith('er')&&k.length>4){var b=k.slice(0,-2);if(D2[b])return D2[b]}
+  return null;
+}
+
+function wx(text){
+  var tokens=text.split(/(\s+)/g);
+  var h='';
+  for(var ti=0;ti<tokens.length;ti++){
+    var tok=tokens[ti];
+    if(/^\s+$/.test(tok)){h+=tok;continue}
+    var m=tok.match(/^([^a-zA-Z0-9]*)([a-zA-Z0-9'-]+?)([^a-zA-Z0-9]*)$/);
+    if(m){
+      h+=esh(m[1]);var w=m[2],pc=m[3];
+      if(/[a-zA-Z]/.test(w)&&w.length>=1){
+        var e=lw(w);
+        h+='<span class="w" data-w="'+esh(w)+'" data-p="'+esh(e?e.p:'')+'" data-d="'+esh(e?e.d:'(基础词汇)')+'">'+esh(w)+'</span>';
+      }else{h+=esh(w)}
+      h+=esh(pc);
+    }else{h+=esh(tok)}
+  }
+  return h;
+}
+function esh(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+var ce=null;
+function op(el){
+  if(ce)ce.classList.remove('hl');
+  el.classList.add('hl');ce=el;
+  var w=el.dataset.w,p=el.dataset.p,d=el.dataset.d;
+  document.getElementById('pW').textContent=w;
+  document.getElementById('pP').textContent=p||'';
+  document.getElementById('pB').innerHTML=p?'<div class="d"><strong>音标：</strong>'+p+'</div><div class="d" style="margin-top:.3rem"><strong>考研释义：</strong>'+(d||'')+'</div>':'<div class="d"><strong>考研释义：</strong>'+(d||'')+'</div>';
+  document.getElementById('pD').textContent='Debug | '+w+' | '+(p||'无音标')+' | Made for 中浩';
+  document.getElementById('wp').classList.add('open');
+  document.getElementById('ov').classList.add('show');
+}
+function cp(){
+  document.getElementById('wp').classList.remove('open');
+  document.getElementById('ov').classList.remove('show');
+  if(ce){ce.classList.remove('hl');ce=null}
+}
+document.addEventListener('click',function(e){var w=e.target.closest('.w');if(!w)return;e.stopPropagation();op(w)});
+
+function ttg(id,btn){
+  var el=document.getElementById(id);if(!el)return;
+  if(el.classList.contains('show')){el.classList.remove('show');btn.classList.remove('open');btn.querySelector('.ar').textContent='\u25b6';btn.innerHTML=btn.innerHTML.replace('收起翻译','查看翻译')}
+  else{el.classList.add('show');btn.classList.add('open');btn.querySelector('.ar').textContent='\u25bc';btn.innerHTML=btn.innerHTML.replace('查看翻译','收起翻译')}
+}
+
+function sw(name){
+  var bs=document.querySelectorAll('.tb');for(var i=0;i<bs.length;i++)bs[i].classList.remove('on');
+  var ps=document.querySelectorAll('.tab-panel');for(var i=0;i<ps.length;i++)ps[i].classList.remove('on');
+  document.getElementById('tp-'+name).classList.add('on');
+  event.target.closest('.tb').classList.add('on');
+}
+
+// SECTION A
+var saPars=["His fascination with crime began at an early age when he was __29__ by his father who made him spend a few minutes inside a prison for his misconduct. Hence, his movies are __30__ of the guilt and innocence of the wrongdoer and the victim. He had a gift for creating stories that consisted of deceit, robbery, murder, corruption, and other criminal __31__ with incredible plot twists in the storyline. The principal characters in his movies were often ordinary people __32__ in unwanted and unavoidable situations.", "He was __33__ productive and his amazing body of work is considered fascinating by the critics. Most of his movies have __34__ the test of time and are considered to be masterpieces. He is also remembered by other filmmakers, for he continues to inspire them to be passionate about their work. He is also __35__ by people around the world for his entertaining and exciting stories."];
+var saTr=["他对犯罪的迷恋始于童年——他因行为不当被父亲关进监狱体验了几分钟，这使他被犯罪所吸引。因此，他的电影象征着罪犯与受害者的罪恶与无辜。他有着非凡的天赋，创作的故事包含欺骗、抢劫、谋杀、腐败和其他犯罪行为，情节反转令人难以置信。他电影中的主角往往是陷入不情愿且无法避免情境中的普通人。", "他极为高产，其令人惊叹的作品集被评论家们视为引人入胜。他的大多数电影经受了时间的考验，被认为是杰作。他也被其他电影制作人铭记，因为他持续激励着他们对工作充满热情。他还因其引人入胜、令人兴奋的故事而受到全世界人民的崇敬。"];
+var saH='';
+for(var pi=0;pi<saPars.length;pi++){
+var ph=wx(saPars[pi]);
+for(var i=26;i<=35;i++){ph=ph.replace('__'+i+'__','<span style="display:inline-block;min-width:1.8em;border-bottom:2px solid #b8753e;text-align:center;margin:0 2px;font-weight:700;color:#b8753e">'+i+'</span>')}
+saH+='<div class="p">'+ph+'</div><button class="tt" onclick="ttg(\'tr-sa-'+pi+'\',this)"><span class="ar">&#9654;</span> 查看翻译</button><div class="tx" id="tr-sa-'+pi+'">'+saTr[pi]+'</div>';
+}
+document.getElementById('sap').innerHTML=saH;
+document.getElementById('sab').innerHTML='A) caught B) cinema C) engaging D) graphically E) highly F) incentive G) instincts H) offences I) punished J) referred K) stood L) symbolic M) tuned N) visually O) worshipped'.split(' ').filter(function(x){return x.trim()}).map(function(x){return '<span>'+wx(x)+'</span>'}).join(' ');
+
+// PASSAGE ONE
+var P=["We all take a little extra effort to look nice for special occasions. But most of us have conflicting feelings about dressing up and feel guilty about taking the time to focus on clothes. Science now suggests the right dress may give ourselves the extra edge in our professional and personal lives.", "We hear sayings like 'dress for the job you want, not the job you have'. Most people don't really believe in them, but research into the impact of clothes on behavior now suggests that there may actually be a grain of truth in these sayings. Science says that the clothes we wear affect our behavior, our mood and even the way we interact with others because of the symbolic meaning that we assign to different types of clothing.", "We consider some clothes to be powerful, some to be fun, and so on. We even evaluate people whom we have just met based on their clothes. We also evaluate ourselves based on what we are wearing because of the way they make us feel. This means that the experience of wearing something affects our attitudes and our choice of behavior.", "There's a reason tailored jackets are associated with being 'dressed for success'. It seems that wearing formal office wear puts us in the right frame of mind to conduct business. Wearing power clothing makes us feel more confident and even increases hormones needed for displaying dominance. This in turn helps us become better negotiators and abstract thinkers.", "While a good suit works wonders for our performance in the boardroom, wearing formal wear isn't a great idea when we want to socialize. Studies have found that people tend to be less open and less able to relax when they wear formal clothes.", "On the other hand, a casual dress helps us become more friendly and creative. These findings support the idea of wearing business casuals on a Friday; since colleagues are most likely to take out time to socialize on the last work day of the week. I mean, who wants to hang out with people in their suits?"];
+var PT=["我们都会在特殊场合多花些心思打扮得漂亮些。但我们大多数人对精心打扮有着矛盾心理，并因花时间关注衣着而感到内疚。科学研究现在表明，正确的着装可能为我们在职业和个人生活中带来额外的优势。", "我们常听到这样的说法：「为你想要的工作穿衣，而不是为你现有的工作穿衣。」大多数人并不真正相信这些说法，但对服装如何影响行为的研究现在表明，这些说法可能确有几分道理。科学认为，我们穿的衣服会影响行为、情绪，甚至与他人互动的方式，这是因为我们赋予了不同类型服装象征性的意义。", "我们认为某些衣服是有力量的，某些是好玩的，等等。我们甚至根据刚遇见的人的穿着来评价他们。我们也会根据穿着来评价自己，因为衣服会影响我们的自我感受。这意味着，穿着某件衣服的体验会影响我们的态度和行为选择。", "定制夹克与「为成功而着装」关联在一起是有原因的。穿着正式的办公服装似乎能让我们进入正确的思维状态来开展业务。穿权力服装让我们感到更自信，甚至增加显示主导地位所需的荷尔蒙。这反过来帮助我们成为更好的谈判者和抽象思考者。", "虽然一套好西装在会议室里能为我们的表现创造奇迹，但当想要社交时，穿正式服装并不是好主意。研究发现，当人们穿着正式服装时，往往更不开放，更难放松。", "另一方面，休闲着装帮助我们变得更友好、更有创造力。这些发现支持了在周五穿商务休闲装的想法；因为同事最有可能在一周最后一个工作日抽出时间社交。毕竟，谁想和穿着西装的人一起玩呢？"];
+var h1='';for(var i=0;i<P.length;i++){h1+='<div class="p">'+wx(P[i])+'</div><button class="tt" onclick="ttg(\'tr-p1-'+i+'\',this)"><span class="ar">&#9654;</span> 查看翻译</button><div class="tx" id="tr-p1-'+i+'">'+PT[i]+'</div>'}
+document.getElementById('p1c').innerHTML=h1;
+
+// PASSAGE TWO
+var P2=["With the rise of pop music, jazz, and electronic music, both opera and classical music started to fade away from the public eye. Some people are beginning to wonder whether opera and classical music are still relevant to the modern world of music. Granted, you will not typically see today's teenagers lending their ears to Bach anytime soon, but there are some major indicators that both opera and classical music are now still quite alive.", "The most major indicator of classical music's importance in society today is the fact that much of the popular music that is currently being produced uses similar beats, harmonies, and melodies as those that were used in some of classical music's best works. Even so, it can be difficult for those who do not study music theory to see this as an indicator, since it is subtle and just shows the impact symphonic orchestras have had on society's taste in music.", "A better example for the relevance of opera and classical music can be seen in the invention of the rock opera. Opera, in its simplest definition, is telling a story using music as its form. The art of telling a story using music has not faded in the least bit. In fact, sometimes actual orchestras are used for major parts of the opera itself. Some of the world's greatest hits have been parts of rock operas.", "Fans of classical music can also tell you that there are few types of music that are more expressive. So, it should come as no surprise to anyone that classical music pieces are still used as background music in modern movies. Symphonic orchestra compositions have also been created solely for the purpose of being included in major motion pictures. These are often very well received amongst mainstream music fans.", "Classical music and opera are the very foundation of what our modern music is based upon. Considering the huge impact they have had on our current society, it is without doubt that we can expect them to continue to remain important for centuries to come."];
+var PT2=["随着流行音乐、爵士乐和电子音乐的兴起，歌剧和古典音乐都开始从公众视野中淡出。一些人开始怀疑歌剧和古典音乐是否仍与现代音乐世界有关。诚然，你不会很快看到今天的青少年去欣赏巴赫，但有一些重要迹象表明，歌剧和古典音乐现在仍然相当活跃。", "古典音乐在当今社会中重要性最主要的指标是：目前制作的大多数流行音乐使用了与古典音乐最佳作品中相似的节拍、和声和旋律。即便如此，不学习音乐理论的人很难看出这一点，因为它很微妙，只是显示了交响乐团对社会音乐品味的影响。", "体现歌剧和古典音乐相关性的更好例子是摇滚歌剧的发明。歌剧，用最简单的定义来说，就是用音乐作为形式来讲述故事。用音乐讲述故事的艺术丝毫没有衰退。事实上，有时真正的管弦乐队会被用于歌剧的主要部分。有些世界热门歌曲就曾是摇滚歌剧的组成部分。", "古典音乐爱好者也会告诉你，很少有音乐类型比古典音乐更富有表现力。因此，古典音乐作品仍被用作现代电影的背景音乐，这对任何人来说都不应该感到惊讶。交响乐作品也专门为了被纳入大型电影而创作。这些作品通常在主流音乐爱好者中很受欢迎。", "古典音乐和歌剧是我们现代音乐建立的基础。考虑到它们对当今社会产生的巨大影响，毫无疑问，我们可以预见它们在未来的几个世纪里将继续保持其重要性。"];
+var h2='';for(var i=0;i<P2.length;i++){h2+='<div class="p">'+wx(P2[i])+'</div><button class="tt" onclick="ttg(\'tr-p2-'+i+'\',this)"><span class="ar">&#9654;</span> 查看翻译</button><div class="tx" id="tr-p2-'+i+'">'+PT2[i]+'</div>'}
+document.getElementById('p2c').innerHTML=h2;
+
+// QUESTIONS
+function mq(q){
+  var h='<div class="qb"><div class="qt">'+wx(q.text)+'</div>';
+  h+='<button class="tt" onclick="ttg(\'tr-q'+q.id+'\',this)"><span class="ar">&#9654;</span> 查看题目翻译</button>';
+  h+='<div class="tx" id="tr-q'+q.id+'">'+q.qtr+'</div>';
+  h+='<div class="og">';
+  for(var oi=0;oi<q.opts.length;oi++){
+    h+='<div class="op">'+wx(q.opts[oi].t)+' <button class="tt" style="font-size:.7rem;padding:.15em .45em;margin:0" onclick="event.stopPropagation();ttg(\'tr-q'+q.id+'-o'+oi+'\',this)"><span class="ar">&#9654;</span> 译</button><div class="tx" id="tr-q'+q.id+'-o'+oi+'">'+q.opts[oi].tr+'</div></div>';
+  }
+  h+='</div></div>';
+  return h;
+}
+
+var Q1=[
+{id:46,text:'46. What does science suggest the right dress may do?',qtr:'科学表明正确的着装可能做什么？',opts:[
+{t:"A) Add to our advantage in work and life.",tr:"在工作和生活中增加我们的优势。"},
+{t:"B) Enable us to look a lot more attractive.",tr:"让我们看起来更有吸引力。"},
+{t:"C) Help us to enjoy a fuller personal life.",tr:"帮助我们享受更充实的个人生活。"},
+{t:"D) Provide extra energy for what we do.",tr:"为我们所做的事提供额外精力。"},
+]},
+{id:47,text:'47. Why does science say the clothes one wears may affect their interaction with others?',qtr:'为什么科学认为穿着会影响与他人的互动？',opts:[
+{t:"A) Clothes usually represent one's social and economic status.",tr:"服装通常代表一个人的社会和经济地位。"},
+{t:"B) Clothes largely determine one's likability by people around.",tr:"服装很大程度上决定周围人对自己的喜爱程度。"},
+{t:"C) Different types of clothing markedly reflect different personalities.",tr:"不同类型服装显著反映不同个性。"},
+{t:"D) Different types of clothing convey different messages symbolically.",tr:"不同类型服装在象征层面传递不同信息。"},
+]},
+{id:48,text:'48. How do the clothes we wear sway our evaluation of ourselves?',qtr:'我们穿的衣服如何影响我们对自己的评价？',opts:[
+{t:"A) By exerting an effect on our power of judgment.",tr:"通过对判断力施加影响。"},
+{t:"B) By impacting how we feel about ourselves.",tr:"通过影响对自身的感受。"},
+{t:"C) By affecting what we take as the basis for assessment.",tr:"通过影响我们作为评估依据的东西。"},
+{t:"D) By influencing our interpretation of symbolic messages.",tr:"通过影响对象征性信息的解读。"},
+]},
+{id:49,text:'49. Why does the author say tailored jackets are associated with being \'dressed for success\'?',qtr:'为什么作者说定制夹克与「为成功而着装」关联在一起？',opts:[
+{t:"A) They are necessary for formal business dealings.",tr:"它们对于正式商业交易是必要的。"},
+{t:"B) They may help people concentrate on their business.",tr:"它们可能帮助人们专注于业务。"},
+{t:"C) They are vital to keeping a dominant position in business transactions.",tr:"对在商业交易中保持主导地位至关重要。"},
+{t:"D) They may enable people to have the right mentality for doing business.",tr:"它们可能让人们在开展业务时拥有正确心态。"},
+]},
+{id:50,text:'50. What are people advised to do when they want to socialize?',qtr:'当想要社交时，人们被建议怎么做？',opts:[
+{t:"A) Focus on clothing.",tr:"关注着装。"},
+{t:"B) Wear a good suit.",tr:"穿一套好西装。"},
+{t:"C) Dress casually.",tr:"穿得休闲。"},
+{t:"D) Look unusual.",tr:"看起来与众不同。"},
+]},
+];
+document.getElementById('p1q').innerHTML=Q1.map(mq).join('');
+var Q2=[
+{id:51,text:'51. What does the author think of classical music and opera in today\'s world?',qtr:'作者如何看待古典音乐和歌剧在当今世界？',opts:[
+{t:"A) They still make their presence felt.",tr:"它们依然让人感受到其存在。"},
+{t:"B) They have given way to electronic music.",tr:"它们已经让位于电子音乐。"},
+{t:"C) They will not fade away from the public eye.",tr:"它们不会从公众视野中消失。"},
+{t:"D) They are no longer relevant to teenagers' lives.",tr:"它们不再与青少年生活相关。"},
+]},
+{id:52,text:'52. What do we learn about much of the popular music currently produced?',qtr:'关于目前制作的大多数流行音乐，我们了解到什么？',opts:[
+{t:"A) It can be difficult for many classical music fans to appreciate.",tr:"许多古典乐爱好者可能难以欣赏。"},
+{t:"B) It can be seen as an indicator of refinement on classical music.",tr:"可被看作对古典音乐精炼化的标志。"},
+{t:"C) It caters to society's taste in music in a more subtle way.",tr:"以更微妙的方式迎合社会音乐品味。"},
+{t:"D) It contains elements similar to those in some masterpieces of classical music.",tr:"包含与古典音乐杰作相似的元素。"},
+]},
+{id:53,text:'53. Why does the author mention the invention of the rock opera?',qtr:'为什么作者提到摇滚歌剧的发明？',opts:[
+{t:"A) To illustrate how to tell a story using music.",tr:"说明如何用音乐讲述故事。"},
+{t:"B) To present the simplest definition of opera.",tr:"呈现歌剧最简单的定义。"},
+{t:"C) To show the relevance of opera and classical music.",tr:"展示歌剧和古典音乐的相关性。"},
+{t:"D) To justify the necessity of using orchestras in opera.",tr:"证明歌剧中运用管弦乐队的必要性。"},
+]},
+{id:54,text:'54. Why are classical music pieces still used as background music in modern movies?',qtr:'为什么古典音乐仍被用作现代电影背景音乐？',opts:[
+{t:"A) There are few types of music for movie producers to choose from.",tr:"电影制片人可选择的音乐类型很少。"},
+{t:"B) They are considered to be the most expressive type of music.",tr:"被认为是最富表现力的音乐类型。"},
+{t:"C) They are well received by movie fans from all over the world.",tr:"受到世界各地影迷的欢迎。"},
+{t:"D) They are essential for movies to become the world's greatest hits.",tr:"对电影成为世界热门作品至关重要。"},
+]},
+{id:55,text:'55. What do we learn about our modern music?',qtr:'关于现代音乐，我们了解到什么？',opts:[
+{t:"A) It could not have come into being without classical music and opera as its foundation.",tr:"没有古典音乐和歌剧作为基础，它不可能产生。"},
+{t:"B) It cannot outcompete classical music and opera in its impact on our current society.",tr:"在对当今社会的影响上无法超越古典音乐和歌剧。"},
+{t:"C) It will not enjoy as much popularity as classical music and opera among music fans.",tr:"在乐迷中不会享有与古典音乐和歌剧同样的人气。"},
+{t:"D) It might not be able to rival classical music and opera in importance for centuries to come.",tr:"在未来几个世纪，其重要性可能无法与古典音乐和歌剧匹敌。"},
+]},
+];
+document.getElementById('p2q').innerHTML=Q2.map(mq).join('');
+
+console.log('%c\u2713 2025.06 CET-4 Set2 脚本加载完成 | Made for 中浩 | '+new Date().toISOString(),'color:#b8753e;font-size:1.1em;');
+</script>
+</body>
+</html>

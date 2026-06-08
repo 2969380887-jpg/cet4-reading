@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025年6月 · 四级真题（第1套） | 中浩</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f8f5f0;--card:#fff;--text:#2c2416;--text-light:#5c5344;--accent:#b8753e;--accent-light:#f0e6d8;--border:#e0d5c4;--shadow:0 2px 12px rgba(0,0,0,.06);--radius:12px;--f:'Georgia','Noto Serif SC','Songti SC',serif;--u:'PingFang SC','Microsoft YaHei',sans-serif;--pb:#1e1b18;--pt:#f0e8dc}
+body{background:var(--bg);color:var(--text);font-family:var(--f);line-height:1.85;min-height:100vh;padding-bottom:5rem}
+.c{max-width:860px;margin:0 auto;padding:0 18px}
+.h{text-align:center;padding:2.4rem 0 1.6rem;border-bottom:2px solid var(--border);margin-bottom:1.5rem}
+.h h1{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700}
+.h .sub{font-size:.95rem;color:var(--text-light);margin-top:.35rem;font-family:var(--u)}
+.h .badge{display:inline-block;margin-top:.6rem;padding:.2em .9em;background:var(--accent-light);color:var(--accent);border-radius:99px;font-size:.8rem;font-weight:600;font-family:var(--u)}
+.tab-bar{display:flex;gap:0;margin-bottom:1.5rem;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.tb{flex:1;padding:.65rem .5rem;border:none;background:var(--card);color:var(--text-light);font-size:.82rem;font-weight:600;font-family:var(--u);cursor:pointer;transition:all .2s;border-bottom:3px solid transparent;-webkit-tap-highlight-color:transparent;text-align:center;line-height:1.3}
+.tb:hover{color:var(--accent);background:#fdfaf6}
+.tb.on{color:var(--accent);border-bottom-color:var(--accent);background:#fdfaf6}
+.tab-panel{display:none}
+.tab-panel.on{display:block}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(1.2rem,3vw,2rem);margin-bottom:1.5rem}
+.card h2{font-size:1.15rem;color:var(--accent);margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);font-family:var(--u);letter-spacing:.04em}
+.w{display:inline;cursor:pointer;padding:1px 1px;border-radius:3px;transition:background .15s,color .15s;position:relative;border-bottom:1px dotted #d5c8b0}
+.w:hover{background:#fce8c8;color:#8b5e2a}
+.w:active{background:#f5d090}
+.w.hl{background:#f5d090;color:#7a4e1c;outline:2px solid var(--accent);outline-offset:1px;z-index:2}
+.p{margin-bottom:1.15rem;text-align:justify;font-size:clamp(.95rem,2vw,1.05rem);word-break:break-word}
+.tt{display:inline-flex;align-items:center;gap:.35em;background:none;border:1.5px solid var(--border);color:var(--text-light);padding:.35em .85em;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:var(--u);margin-top:.3rem;margin-bottom:.6rem;transition:all .2s;user-select:none;-webkit-tap-highlight-color:transparent}
+.tt:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+.tt .ar{display:inline-block;transition:transform .25s;font-size:.7rem}
+.tt.open .ar{transform:rotate(90deg)}
+.tx{display:none;color:#6b5e4a;font-size:.9rem;line-height:1.75;padding:.7rem 1rem;margin:.3rem 0 .8rem;background:#fdfaf4;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;animation:fi .3s ease}
+.tx.show{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.qb{margin-bottom:1.4rem;padding-bottom:1rem;border-bottom:1px dashed var(--border)}
+.qb:last-child{border-bottom:none;margin-bottom:0}
+.qt{font-weight:600;margin-bottom:.5rem;font-size:clamp(.9rem,2vw,1rem)}
+.og{display:grid;grid-template-columns:1fr;gap:.35rem;margin-bottom:.3rem}
+@media(min-width:640px){.og{grid-template-columns:1fr 1fr}}
+.op{padding:.45em .75em;border-radius:6px;background:#fafaf7;border:1px solid transparent;font-size:.92rem;line-height:1.65}
+.op:hover{border-color:var(--border)}
+.wb{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.wb span{background:var(--accent-light);color:var(--accent);padding:.2em .65em;border-radius:5px;font-weight:600;font-size:.9rem;font-family:var(--u)}
+.wp{position:fixed;bottom:0;left:0;right:0;background:var(--pb);color:var(--pt);padding:1rem 1.2rem;z-index:999;border-radius:16px 16px 0 0;box-shadow:0 -4px 24px rgba(0,0,0,.3);transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);font-family:var(--u);max-height:42vh;overflow-y:auto}
+.wp.open{transform:translateY(0)}
+.wp-h{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem}
+.wp-w{font-size:1.3rem;font-weight:700;color:#fff}
+.wp-p{font-size:.85rem;color:#b0a592;margin-left:.5em}
+.wp-x{background:none;border:none;color:#8a8070;font-size:1.3rem;cursor:pointer;padding:.2em .4em;border-radius:4px;line-height:1;-webkit-tap-highlight-color:transparent}
+.wp-x:hover{color:#fff}
+.wp-b{font-size:.9rem;line-height:1.65}
+.wp-b .d strong{color:#d4a96a}
+.wp-db{margin-top:.5rem;padding-top:.45rem;border-top:1px solid #3a3530;font-size:.75rem;color:#6a6258}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:998;display:none}
+.ov.show{display:block}
+.ft{text-align:center;font-size:.78rem;color:#b0a590;margin-top:2rem;padding:1rem;font-family:var(--u);line-height:1.7}
+@media(max-width:480px){.c{padding:0 10px}.card{padding:1rem .85rem;border-radius:10px}.w{padding:2px 1px}.wp{padding:.85rem 1rem;max-height:45vh}.tb{font-size:.7rem;padding:.5rem .25rem}}
+</style>
+</head>
+<body>
+
+<div class="c">
+<div class="h">
+  <h1>2025年6月 · 四级真题（第1套）</h1>
+  <div class="sub">Reading Comprehension</div>
+  <div class="badge">Section A 选词填空 · Passage One · Passage Two</div>
+</div>
+
+<div class="tab-bar">
+  <button class="tb on" onclick="sw('sa')">Section A<br><small>选词填空 Q26-35</small></button>
+  <button class="tb" onclick="sw('p1')">Passage One<br><small>大熊猫 vs 舒适区 Q46-50</small></button>
+  <button class="tb" onclick="sw('p2')">Passage Two<br><small>Grit 毅力与成功 Q51-55</small></button>
+</div>
+
+<div class="tab-panel on" id="tp-sa">
+<div class="card"><h2>Section A — 选词填空</h2>
+<div id="sap"></div><div class="wb" id="sab"></div></div></div>
+
+<div class="tab-panel" id="tp-p1">
+<div class="card"><h2>Passage One — Pandas and the Goldilocks Principle</h2><div id="p1c"></div></div>
+<div class="card"><h2>Questions 46–50</h2><div id="p1q"></div></div></div>
+
+<div class="tab-panel" id="tp-p2">
+<div class="card"><h2>Passage Two — Grit — The Key to Success</h2><div id="p2c"></div></div>
+<div class="card"><h2>Questions 51–55</h2><div id="p2q"></div></div></div>
+
+<div class="ft">点击任意英文单词查看音标与考研释义 · 中浩 · 2025.06 CET-4 第1套</div>
+</div>
+
+<div class="ov" id="ov" onclick="cp()"></div>
+<div class="wp" id="wp">
+  <div class="wp-h"><div><span class="wp-w" id="pW">—</span><span class="wp-p" id="pP"></span></div><button class="wp-x" onclick="cp()">&times;</button></div>
+  <div class="wp-b" id="pB"></div>
+  <div class="wp-db" id="pD"></div>
+</div>
+
+<script>
+var D={
+"I":"/aɪ/|pron. 我",
+"a":"/ə/|art. 一个",
+"able":"/ˈeɪbl/|adj. 能够的",
+"about":"/əˈbaʊt/|prep. 关于",
+"accepted":"/əkˈseptɪd/|adj./v. 被接受的",
+"accomplish":"/əˈkɑːmplɪʃ/|v. 实现",
+"admire":"/ədˈmaɪər/|v. 钦佩",
+"after":"/ˈæftər/|prep. 在……之后",
+"all":"/ɔːl/|adj. 所有的",
+"also":"/ˈɔːlsoʊ/|adv. 也",
+"alter":"/ˈɔːltər/|v. 改变",
+"always":"/ˈɔːlweɪz/|adv. 总是",
+"among":"/əˈmʌŋ/|prep. 在……之中",
+"an":"/æn/|art. 一个",
+"and":"/ænd/|conj. 和",
+"any":"/ˈeni/|adj. 任何",
+"are":"/ɑːr/|v. 是",
+"as":"/æz/|prep./conj. 作为",
+"ask":"/æsk/|v. 问",
+"at":"/æt/|prep. 在",
+"attaining":"/əˈteɪnɪŋ/|v. 获得",
+"attributes":"/ˈætrɪbjuːts/|n. 属性；特质",
+"audiences":"/ˈɔːdiənsɪz/|n. 受众",
+"awareness":"/əˈwernəs/|n. 意识；认知",
+"bad":"/bæd/|adj. 坏的",
+"be":"/biː/|v. 是",
+"bears":"/berz/|n. 熊",
+"because":"/bɪˈkɔːz/|conj. 因为",
+"been":"/bɪn/|v. 是（过去分词）",
+"before":"/bɪˈfɔːr/|prep. 在……之前",
+"behaviour":"/bɪˈheɪvjər/|n. 行为",
+"between":"/bɪˈtwiːn/|prep. 在……之间",
+"big":"/bɪɡ/|adj. 大的",
+"biology":"/baɪˈɑːlədʒi/|n. 生物学",
+"building":"/ˈbɪldɪŋ/|v. 建立 n. 建筑",
+"burdened":"/ˈbɜːrdnd/|adj. 负担沉重的",
+"but":"/bʌt/|conj. 但是",
+"by":"/baɪ/|prep. 通过",
+"can":"/kæn/|aux. 能",
+"case":"/keɪs/|n. 情况",
+"come":"/kʌm/|v. 来",
+"comfortable":"/ˈkʌmftəbl/|adj. 舒适的",
+"complex":"/kɑːmˈpleks/|adj. 复杂的",
+"conducted":"/kənˈdʌktɪd/|v. 实施",
+"connectivity":"/ˌkɑːnekˈtɪvəti/|n. 连通性",
+"conservation":"/ˌkɑːnsərˈveɪʃn/|n. 保护",
+"constitutes":"/ˈkɑːnstɪtuːts/|v. 构成",
+"could":"/kʊd/|aux. 能（过去式）",
+"counts":"/kaʊnts/|v. 重要；计数",
+"data":"/ˈdeɪtə/|n. 数据",
+"day":"/deɪ/|n. 天",
+"desirable":"/dɪˈzaɪərəbl/|adj. 令人向往的",
+"developmental":"/dɪˌveləpˈmentl/|adj. 发展的",
+"did":"/dɪd/|v. 做（过去式）",
+"different":"/ˈdɪfrənt/|adj. 不同的",
+"disciplines":"/ˈdɪsəplɪnz/|n. 学科",
+"discomfort":"/dɪsˈkʌmfərt/|n. 不适",
+"diversity":"/daɪˈvɜːrsəti/|n. 多样性",
+"do":"/duː/|v. 做",
+"does":"/dʌz/|v. 做（三单）",
+"each":"/iːtʃ/|pron. 每个",
+"effort":"/ˈefərt/|n. 努力",
+"end":"/end/|n./v. 结束",
+"endangered":"/ɪnˈdeɪndʒərd/|adj. 濒危的",
+"enhanced":"/ɪnˈhænst/|adj. 增强的",
+"environmentalists":"/ɪnˌvaɪrənˈmentəlɪsts/|n. 环保主义者",
+"even":"/ˈiːvn/|adv. 甚至",
+"every":"/ˈevri/|adj. 每个的",
+"example":"/ɪɡˈzæmpl/|n. 例子",
+"excel":"/ɪkˈsel/|v. 出类拔萃",
+"expectations":"/ˌekspekˈteɪʃnz/|n. 期望",
+"fact":"/fækt/|n. 事实",
+"fail":"/feɪl/|v. 失败",
+"failure":"/ˈfeɪljər/|n. 失败",
+"feel":"/fiːl/|v. 感觉",
+"few":"/fjuː/|adj. 很少",
+"find":"/faɪnd/|v. 找到",
+"for":"/fɔːr/|prep. 为了",
+"fragmentation":"/ˌfræɡmenˈteɪʃn/|n. 碎片化",
+"fragmented":"/fræɡˈmentɪd/|adj. 支离破碎的",
+"fragmenting":"/fræɡˈmentɪŋ/|v. 割裂",
+"from":"/frʌm/|prep. 来自",
+"genetic":"/dʒəˈnetɪk/|adj. 遗传的",
+"get":"/ɡet/|v. 得到",
+"give":"/ɡɪv/|v. 给",
+"go":"/ɡoʊ/|v. 去",
+"good":"/ɡʊd/|adj. 好的",
+"great":"/ɡreɪt/|adj. 伟大的",
+"grit":"/ɡrɪt/|n. 毅力；勇气",
+"group":"/ɡruːp/|n. 群；组",
+"habitats":"/ˈhæbɪtæts/|n. 栖息地",
+"had":"/hæd/|v. 有（过去式）",
+"harsh":"/hɑːrʃ/|adj. 严酷的",
+"has":"/hæz/|v. 有（三单）",
+"have":"/hæv/|v. 有",
+"he":"/hiː/|pron. 他",
+"health":"/helθ/|n. 健康",
+"help":"/help/|v. 帮助",
+"her":"/hɜːr/|pron. 她的",
+"high":"/haɪ/|adj. 高的",
+"his":"/hɪz/|pron. 他的",
+"however":"/haʊˈevər/|adv. 然而",
+"ideal":"/aɪˈdiːəl/|adj. 理想的",
+"identities":"/aɪˈdentətiz/|n. 身份；自我认同",
+"if":"/ɪf/|conj. 如果",
+"implications":"/ˌɪmplɪˈkeɪʃnz/|n. 含义",
+"important":"/ɪmˈpɔːrtnt/|adj. 重要的",
+"impressions":"/ɪmˈpreʃnz/|n. 印象",
+"in":"/ɪn/|prep. 在……里面",
+"induces":"/ɪnˈduːsɪz/|v. 引起",
+"into":"/ˈɪntuː/|prep. 进入",
+"is":"/ɪz/|v. 是",
+"it":"/ɪt/|pron. 它",
+"its":"/ɪts/|pron. 它的",
+"job":"/dʒɑːb/|n. 工作",
+"just":"/dʒʌst/|adv. 只是",
+"keep":"/kiːp/|v. 保持",
+"kindergarten":"/ˈkɪndərɡɑːrtn/|n. 幼儿园",
+"know":"/noʊ/|v. 知道",
+"life":"/laɪf/|n. 生命；生活",
+"likely":"/ˈlaɪkli/|adj. 可能的",
+"logical":"/ˈlɑːdʒɪkl/|adj. 合乎逻辑的",
+"long":"/lɔːŋ/|adj. 长的",
+"look":"/lʊk/|v. 看",
+"low":"/loʊ/|adj. 低的",
+"make":"/meɪk/|v. 做；使",
+"man":"/mæn/|n. 男人",
+"many":"/ˈmeni/|adj. 许多",
+"mastered":"/ˈmæstərd/|v. 掌握",
+"mates":"/meɪts/|n. 配偶",
+"may":"/meɪ/|aux. 可能",
+"mean":"/miːn/|v. 意味着",
+"men":"/men/|n. 男人们",
+"messy":"/ˈmesi/|adj. 混乱的",
+"might":"/maɪt/|aux. 也许",
+"modest":"/ˈmɑːdɪst/|adj. 适度的",
+"money":"/ˈmʌni/|n. 钱",
+"moral":"/ˈmɔːrəl/|adj. 道德的",
+"more":"/mɔːr/|adj. 更多的",
+"most":"/moʊst/|adj. 最多的",
+"much":"/mʌtʃ/|adj. 许多的",
+"my":"/maɪ/|pron. 我的",
+"never":"/ˈnevər/|adv. 从不",
+"new":"/nuː/|adj. 新的",
+"not":"/nɑːt/|adv. 不",
+"now":"/naʊ/|adv. 现在",
+"observers":"/əbˈzɜːrvərz/|n. 观察者",
+"of":"/ʌv/|prep. ……的",
+"often":"/ˈɔːfn/|adv. 经常",
+"old":"/oʊld/|adj. 旧的",
+"on":"/ɑːn/|prep. 在……上面",
+"only":"/ˈoʊnli/|adv. 只",
+"or":"/ɔːr/|conj. 或",
+"other":"/ˈʌðər/|adj. 其他的",
+"our":"/aʊr/|pron. 我们的",
+"outward":"/ˈaʊtwərd/|adj. 外在的",
+"over":"/ˈoʊvər/|prep./adv. 在……上方",
+"overrated":"/ˌoʊvərˈreɪtɪd/|adj. 被高估的",
+"own":"/oʊn/|adj. 自己的",
+"pandas":"/ˈpændəz/|n. 熊猫",
+"passion":"/ˈpæʃn/|n. 激情",
+"people":"/ˈpiːpl/|n. 人们",
+"perfection":"/pərˈfekʃn/|n. 完美",
+"persistence":"/pərˈsɪstəns/|n. 持久性",
+"person":"/ˈpɜːrsn/|n. 人",
+"possible":"/ˈpɑːsəbl/|adj. 可能的",
+"preserve":"/prɪˈzɜːrv/|v. 保护",
+"previously":"/ˈpriːviəsli/|adv. 以前",
+"principle":"/ˈprɪnsəpl/|n. 原则",
+"psychologists":"/saɪˈkɑːlədʒɪsts/|n. 心理学家",
+"psychology":"/saɪˈkɑːlədʒi/|n. 心理学",
+"question":"/ˈkwestʃən/|n. 问题",
+"redefine":"/ˌriːdɪˈfaɪn/|v. 重新定义",
+"release":"/rɪˈliːs/|n./v. 发布",
+"reputation":"/ˌrepjuˈteɪʃn/|n. 声誉",
+"reputations":"/ˌrepjuˈteɪʃnz/|n. 声誉（复）",
+"research":"/rɪˈsɜːrtʃ/|n./v. 研究",
+"right":"/raɪt/|adj. 正确的",
+"same":"/seɪm/|adj. 相同的",
+"say":"/seɪ/|v. 说",
+"scatter":"/ˈskætər/|v. 分散",
+"science":"/ˈsaɪəns/|n. 科学",
+"see":"/siː/|v. 看见",
+"seem":"/siːm/|v. 似乎",
+"self-presentation":"/self ˌpriːzenˈteɪʃn/|n. 自我展示",
+"she":"/ʃiː/|pron. 她",
+"should":"/ʃʊd/|aux. 应该",
+"show":"/ʃoʊ/|v. 显示",
+"small":"/smɔːl/|adj. 小的",
+"so":"/soʊ/|conj. 所以",
+"some":"/sʌm/|adj. 一些",
+"species":"/ˈspiːʃiːz/|n. 物种",
+"still":"/stɪl/|adv. 仍然",
+"strategic":"/strəˈtiːdʒɪk/|adj. 策略性的",
+"strategies":"/ˈstrætədʒiz/|n. 策略",
+"struggle":"/ˈstrʌɡl/|v./n. 挣扎",
+"study":"/ˈstʌdi/|n./v. 研究",
+"success":"/səkˈses/|n. 成功",
+"suddenly":"/ˈsʌdənli/|adv. 突然",
+"survival":"/sərˈvaɪvl/|n. 生存",
+"sustainable":"/səˈsteɪnəbl/|adj. 可持续的",
+"take":"/teɪk/|v. 拿；花费",
+"talents":"/ˈtælənts/|n. 天赋",
+"tell":"/tel/|v. 告诉",
+"than":"/ðæn/|conj. 比",
+"that":"/ðæt/|pron./adj. 那个",
+"the":"/ðə/|art. 这；那",
+"their":"/ðer/|pron. 他们的",
+"then":"/ðen/|adv. 然后",
+"these":"/ðiːz/|pron./adj. 这些",
+"they":"/ðeɪ/|pron. 他们",
+"thing":"/θɪŋ/|n. 事物",
+"things":"/θɪŋz/|n. 事物（复）",
+"think":"/θɪŋk/|v. 认为",
+"this":"/ðɪs/|pron./adj. 这个",
+"those":"/ðoʊz/|pron./adj. 那些",
+"threaten":"/ˈθretn/|v. 威胁",
+"thrive":"/θraɪv/|v. 繁荣",
+"time":"/taɪm/|n. 时间",
+"to":"/tuː/|prep. 向；到",
+"transform":"/trænsˈfɔːrm/|v. 转变",
+"try":"/traɪ/|v. 尝试",
+"under":"/ˈʌndər/|prep. 在……下面",
+"understand":"/ˌʌndərˈstænd/|v. 理解",
+"unreasonable":"/ʌnˈriːznəbl/|adj. 不合理的",
+"use":"/juːz/|v. 使用",
+"vary":"/ˈveri/|v. 变化",
+"very":"/ˈveri/|adv. 非常",
+"vital":"/ˈvaɪtl/|adj. 至关重要的",
+"vulnerable":"/ˈvʌlnərəbl/|adj. 易危的",
+"wander":"/ˈwɑːndər/|v. 漫步",
+"want":"/wɑːnt/|v. 想要",
+"was":"/wʌz/|v. 是（过去式）",
+"way":"/weɪ/|n. 方式",
+"we":"/wiː/|pron. 我们",
+"were":"/wɜːr/|v. 是（过去式复）",
+"when":"/wen/|conj./adv. 当……时",
+"while":"/waɪl/|conj. 当……时；然而",
+"will":"/wɪl/|aux. 将",
+"with":"/wɪð/|prep. 和……一起",
+"within":"/wɪˈðɪn/|prep. 在……之内",
+"without":"/wɪˈðaʊt/|prep. 没有",
+"woman":"/ˈwʊmən/|n. 女人",
+"women":"/ˈwɪmɪn/|n. 女人们",
+"work":"/wɜːrk/|v./n. 工作",
+"world":"/wɜːrld/|n. 世界",
+"would":"/wʊd/|aux. 会",
+"year":"/jɪr/|n. 年",
+"you":"/juː/|pron. 你",
+"your":"/jʊr/|pron. 你的"
+};
+var D2={};
+for(var k in D){var v=D[k].split('|');D2[k]={p:v[0],d:v[1]||''}}
+
+function lw(raw){
+  var c=raw.replace(/[.,;:!?—\-–—'"()\[\]{}«»\/\\\\]+$/g,'').replace(/^[.,;:!?—\-–—'"()\[\]{}«»\/\\\\]+/g,'');
+  if(!c||c.length<1)return null;
+  var k=c.toLowerCase();
+  if(D2[k])return D2[k];
+  if(k.endsWith('s')&&k.length>3){var s=k.slice(0,-1);if(D2[s])return D2[s]}
+  if(k.endsWith('ing')&&k.length>5){var b=k.slice(0,-3);if(D2[b])return D2[b];var b2=b+'e';if(D2[b2])return D2[b2]}
+  if(k.endsWith('ed')&&k.length>4){var b=k.slice(0,-2);if(D2[b])return D2[b];if(k.endsWith('ied')&&k.length>5){var ib=k.slice(0,-3)+'y';if(D2[ib])return D2[ib]}}
+  if(k.endsWith('ly')&&k.length>4){var b=k.slice(0,-2);if(D2[b])return D2[b]}
+  if(k.endsWith('er')&&k.length>4){var b=k.slice(0,-2);if(D2[b])return D2[b]}
+  return null;
+}
+
+function wx(text){
+  var tokens=text.split(/(\s+)/g);
+  var h='';
+  for(var ti=0;ti<tokens.length;ti++){
+    var tok=tokens[ti];
+    if(/^\s+$/.test(tok)){h+=tok;continue}
+    var m=tok.match(/^([^a-zA-Z0-9]*)([a-zA-Z0-9'-]+?)([^a-zA-Z0-9]*)$/);
+    if(m){
+      h+=esh(m[1]);var w=m[2],pc=m[3];
+      if(/[a-zA-Z]/.test(w)&&w.length>=1){
+        var e=lw(w);
+        h+='<span class="w" data-w="'+esh(w)+'" data-p="'+esh(e?e.p:'')+'" data-d="'+esh(e?e.d:'(基础词汇)')+'">'+esh(w)+'</span>';
+      }else{h+=esh(w)}
+      h+=esh(pc);
+    }else{h+=esh(tok)}
+  }
+  return h;
+}
+function esh(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+var ce=null;
+function op(el){
+  if(ce)ce.classList.remove('hl');
+  el.classList.add('hl');ce=el;
+  var w=el.dataset.w,p=el.dataset.p,d=el.dataset.d;
+  document.getElementById('pW').textContent=w;
+  document.getElementById('pP').textContent=p||'';
+  document.getElementById('pB').innerHTML=p?'<div class="d"><strong>音标：</strong>'+p+'</div><div class="d" style="margin-top:.3rem"><strong>考研释义：</strong>'+(d||'')+'</div>':'<div class="d"><strong>考研释义：</strong>'+(d||'')+'</div>';
+  document.getElementById('pD').textContent='Debug | '+w+' | '+(p||'无音标')+' | Made for 中浩';
+  document.getElementById('wp').classList.add('open');
+  document.getElementById('ov').classList.add('show');
+}
+function cp(){
+  document.getElementById('wp').classList.remove('open');
+  document.getElementById('ov').classList.remove('show');
+  if(ce){ce.classList.remove('hl');ce=null}
+}
+document.addEventListener('click',function(e){var w=e.target.closest('.w');if(!w)return;e.stopPropagation();op(w)});
+
+function ttg(id,btn){
+  var el=document.getElementById(id);if(!el)return;
+  if(el.classList.contains('show')){el.classList.remove('show');btn.classList.remove('open');btn.querySelector('.ar').textContent='\u25b6';btn.innerHTML=btn.innerHTML.replace('收起翻译','查看翻译')}
+  else{el.classList.add('show');btn.classList.add('open');btn.querySelector('.ar').textContent='\u25bc';btn.innerHTML=btn.innerHTML.replace('查看翻译','收起翻译')}
+}
+
+function sw(name){
+  var bs=document.querySelectorAll('.tb');for(var i=0;i<bs.length;i++)bs[i].classList.remove('on');
+  var ps=document.querySelectorAll('.tab-panel');for(var i=0;i<ps.length;i++)ps[i].classList.remove('on');
+  document.getElementById('tp-'+name).classList.add('on');
+  event.target.closest('.tb').classList.add('on');
+}
+
+// SECTION A
+var saPars=["Psychologists have long been interested in how we construct our identities and the sorts of strategies that we use to present ourselves in society. New findings suggest that the kinds of __26__ and strategic self-presentation behaviour we see in adults appear at a much younger age than __27__ known.", "Research shows that a child's awareness of social standing comes from adults. Like grown-ups, kids want to be __28__ by those they admire. Interactive experiences may provide opportunities for children to learn about what __29__ a desirable reputation and the kinds of strategies that are effective for __30__ a good reputation in their social environment.", "Five-year-olds aren't just aware of their reputations, they also behave strategically to alter their outward image. They will __31__ their behaviour in order to appear moral or socially good in the eyes of key observers. While we know that adults use a large variety of attributes to manage and create impressions, we don't yet know whether children __32__ and use the fact that different attributes are valuable at different times to different __33__. It's important for us to further consider where in this process children succeed in controlling their reputation and where they __34__.", "A question to think about is, 'What happens even earlier than age five?' Children don't just show up to the first day of kindergarten and have the idea of reputation pop __35__ into existence. The logical question to ask is, 'What happens even earlier?'"];
+var saTr=["心理学家长期以来一直对人们如何建构自我身份以及在社会中展示自我的策略感兴趣。新发现表明，我们在成年人身上看到的那种复杂的、策略性的自我展示行为，出现的年龄比之前已知的要早得多。", "研究表明，儿童对社会地位的认知来自成年人。像成年人一样，孩子们希望被他们钦佩的人所接纳。互动体验可能为儿童提供机会，让他们了解什么构成了令人向往的声誉，以及哪些策略对于在社会环境中建立良好声誉是有效的。", "五岁的孩子不仅意识到自己的声誉，还会有策略地改变外在形象。他们会根据关键观察者的判断来调整行为，以显得有道德或在社交上是好的。虽然我们知道成年人使用各种各样的特质来管理和创造印象，但我们还不知道儿童是否理解并利用这一事实：不同的特质在不同时间对不同的人群有不同的价值。重要的是我们进一步思考，在这个过程中儿童在哪些方面成功地控制了声誉，又在哪些方面遇到了困难。", "一个值得思考的问题是：「五岁之前发生了什么？」儿童并非第一天到幼儿园时声誉的概念就突然凭空出现了。合乎逻辑的追问是：「更早的时候发生了什么？」"];
+var saH='';
+for(var pi=0;pi<saPars.length;pi++){
+var ph=wx(saPars[pi]);
+for(var i=26;i<=35;i++){ph=ph.replace('__'+i+'__','<span style="display:inline-block;min-width:1.8em;border-bottom:2px solid #b8753e;text-align:center;margin:0 2px;font-weight:700;color:#b8753e">'+i+'</span>')}
+saH+='<div class="p">'+ph+'</div><button class="tt" onclick="ttg(\'tr-sa-'+pi+'\',this)"><span class="ar">&#9654;</span> 查看翻译</button><div class="tx" id="tr-sa-'+pi+'">'+saTr[pi]+'</div>';
+}
+document.getElementById('sap').innerHTML=saH;
+document.getElementById('sab').innerHTML='A) accepted B) audiences C) building D) complex E) constitutes F) deputies G) previously H) revolving I) samples J) selected K) solemn L) struggle M) suddenly N) understand O) vary'.split(' ').filter(function(x){return x.trim()}).map(function(x){return '<span>'+wx(x)+'</span>'}).join(' ');
+
+// PASSAGE ONE
+var P=["New research suggests that pandas may be at risk of dying out because they are too comfortable. Experts say too much happiness can stop the bears from searching for new mates.", "Environmentalists have long believed that building roads or homes near the bears may threaten their survival by reducing or fragmenting their natural habitats, The Times reported. But the new research suggests that a 'modest degree of discomfort and fragmentation' may actually help preserve panda populations.", "The research was conducted by scientists from Michigan State University. It concluded that pandas fail to wander off in search of new mates if they find their habitat too comfortable, resulting in a lack of vital genetic diversity.", "For their study — outlined in a paper in the journal Conservation Biology — the team looked at genetic diversity and spread among a Chinese panda population. The ideal level of perfectly livable habitat was found to be only 80% of an area, with the remainder either too harsh or too affected by human activity.", "The experts concluded that pandas should ideally 'be happy enough to thrive, but not so content that they don't want to move around and find new mates'.", "Their conclusions about what The Guardian described as this 'sweet spot' are in line with the so-called Goldilocks principle: that there can be just the right amount of something. The concept has been applied to a wide range of disciplines, from developmental psychology to economics and engineering.", "Claudio Sillero, a professor of conservation biology at Oxford University, told the newspaper that the new findings could have implications beyond panda conservation.", "'Most large animals that eat meat live in increasingly fragmented landscapes,' said Sillero, who was not involved in the research. 'It may well be that the messy nature of their relationship with human efforts induces more animals to scatter or travel further, and might result in greater genetic connectivity and enhanced population persistence.'", "The most recent count of pandas found that there were more than 1,800 left in the wild, putting them on the list of vulnerable, but not endangered, species."];
+var PT=["新的研究表明，大熊猫可能因为太过舒适而面临灭绝的风险。专家表示，过多的幸福感会让这些熊不再去寻找新的配偶。", "据《泰晤士报》报道，环保主义者长期以来一直认为，在熊猫栖息地附近修建道路或房屋可能通过减少或割裂其自然栖息地而威胁它们的生存。但新研究表明，「适度的不适和栖息地割裂」实际上可能有助于保护熊猫种群。", "该研究由密歇根州立大学的科学家进行。研究得出结论：如果熊猫发现栖息地过于舒适，就不会外出寻找新配偶，从而导致关键的遗传多样性缺失。", "在这项发表于《保护生物学》期刊的研究中，团队考察了一个中国熊猫种群的遗传多样性和分布情况。研究发现，理想的可生存栖息地仅占一个区域的80%，其余部分要么环境过于恶劣，要么受人类活动影响过大。", "专家总结道，熊猫的理想状态应该是「足够快乐以繁衍生息，但又不能太满足于现状以至于不想四处走动寻找新配偶」。", "他们对这一被《卫报》称为「最佳平衡点」的结论与所谓的金凤花原则一致：即存在恰到好处的量。这一概念已被应用于从发展心理学到经济学和工程学的广泛学科。", "牛津大学保护生物学教授Claudio Sillero告诉该报，这些新发现的意义可能超出熊猫保护的范围。", "Sillero并未参与该研究，他说：「大多数大型食肉动物生活在日益碎片化的环境中。很可能正是它们与人类活动之间那种混乱的关系，促使更多动物分散开来或走得更远，并可能导致更大的遗传连通性和更强的种群持久性。」", "最新一次熊猫数量统计发现，野外尚存超过1,800只大熊猫，这使它们被列入易危而非濒危物种名单。"];
+var h1='';for(var i=0;i<P.length;i++){h1+='<div class="p">'+wx(P[i])+'</div><button class="tt" onclick="ttg(\'tr-p1-'+i+'\',this)"><span class="ar">&#9654;</span> 查看翻译</button><div class="tx" id="tr-p1-'+i+'">'+PT[i]+'</div>'}
+document.getElementById('p1c').innerHTML=h1;
+
+// PASSAGE TWO
+var P2=["With those born with natural talents, it feels as if they excel without really trying. But what about those of us who don't have a natural talent? We've been told all our lives that if you work hard, you too can succeed. But with the release of Angela Duckworth's Grit, we are given a new key to success.", "'As much as talent counts, effort counts twice,' says Duckworth in Grit. She introduces a new concept that talent may be overrated, and if you want real success, what you need is grit, the perfect combination of passion and persistence. Even if you have natural talent, it's nothing without grit.", "Duckworth says grit is the difference between success and failure. A person who has grit is more likely to succeed than a person who does not. When we think about attaining success — whether it's landing that job or learning that new skill — our thoughts are immediately burdened by all the things we must first learn. If you want that new job, you have to learn the job skills, then the interview skills, then the dress part — and you must be perfect at all of them. Grit is different because it tells us that perfection isn't the goal.", "Grit lifts the unreasonable expectations off our shoulders. Grit tells us that the door is open wider than we first thought possible. Grit allows us to redefine our goals. Think about it: what's something you've always wanted to do, but gave up because you 'don't have the skills for it'? What's something you love but aren't good at?", "The real workings of grit are to have sustainable passion and continue to try. Effort means more than your natural ability. Even if you haven't mastered a skill, grit tells you that you can still succeed if you can transform your passion into action. In a way, Duckworth is giving new hope to people who have shut the doors on their dreams. She is saying it is possible that you can accomplish anything. If at first you fail, then try one more time with grit."];
+var PT2=["对于天生有才华的人来说，他们似乎不费吹灰之力就能出类拔萃。但那些没有天赋的人呢？我们一生都被教导：如果你努力工作，你也能成功。但随着Angela Duckworth《Grit》一书的出版，我们获得了通往成功的一把新钥匙。", "Duckworth在书中说：「天赋固然重要，但努力的重要性是天赋的两倍。」她提出了一个新概念：天赋可能被高估了，如果你想要真正的成功，你需要的是grit——即激情与坚持的完美结合。即使你有天赋，没有grit也毫无意义。", "Duckworth说，grit是成功与失败的分水岭。有grit的人比没有的人更可能成功。当我们思考如何获得成功——无论是找到那份工作还是学会那项新技能——我们的思绪立刻被所有必须学的东西压得喘不过气来。想要那份新工作，你得学会工作技能，然后学会面试技巧，然后学会着装——你必须在所有这些方面做到完美。而Grit不同，它告诉我们完美不是目标。", "Grit将不合理的期望从我们肩上卸下。Grit告诉我们，大门比我们最初想象的敞得更开。Grit让我们重新定义目标。想一想：有什么事是你一直想做、却因为「没有相应技能」而放弃的？什么事是你喜欢却不太擅长的？", "Grit的真正运作方式是拥有可持续的热情并持续尝试。努力比天赋更有意义。即使你还没有掌握一项技能，grit告诉你，如果你能把热情转化为行动，你仍然可以成功。在某种程度上，Duckworth在给那些已经关上梦想之门的人带来新的希望。她在说，你完全可以成就任何事情。如果你一开始失败了，那就带着grit再试一次。"];
+var h2='';for(var i=0;i<P2.length;i++){h2+='<div class="p">'+wx(P2[i])+'</div><button class="tt" onclick="ttg(\'tr-p2-'+i+'\',this)"><span class="ar">&#9654;</span> 查看翻译</button><div class="tx" id="tr-p2-'+i+'">'+PT2[i]+'</div>'}
+document.getElementById('p2c').innerHTML=h2;
+
+// QUESTIONS
+function mq(q){
+  var h='<div class="qb"><div class="qt">'+wx(q.text)+'</div>';
+  h+='<button class="tt" onclick="ttg(\'tr-q'+q.id+'\',this)"><span class="ar">&#9654;</span> 查看题目翻译</button>';
+  h+='<div class="tx" id="tr-q'+q.id+'">'+q.qtr+'</div>';
+  h+='<div class="og">';
+  for(var oi=0;oi<q.opts.length;oi++){
+    h+='<div class="op">'+wx(q.opts[oi].t)+' <button class="tt" style="font-size:.7rem;padding:.15em .45em;margin:0" onclick="event.stopPropagation();ttg(\'tr-q'+q.id+'-o'+oi+'\',this)"><span class="ar">&#9654;</span> 译</button><div class="tx" id="tr-q'+q.id+'-o'+oi+'">'+q.opts[oi].tr+'</div></div>';
+  }
+  h+='</div></div>';
+  return h;
+}
+
+var Q1=[
+{id:46,text:'46. What do we learn from new research about pandas?',qtr:'关于大熊猫，我们从新研究中了解到什么？',opts:[
+{t:"A) They are losing habitat due to the building of roads and houses.",tr:"由于道路和房屋建设，它们正在失去栖息地。"},
+{t:"B) They have stopped seeking new mates for reproduction.",tr:"它们已停止寻找新配偶进行繁殖。"},
+{t:"C) They may not adapt to the fragmentation of their habitat.",tr:"它们可能无法适应栖息地的碎片化。"},
+{t:"D) They may cease to exist as a result of enjoying too good a life.",tr:"它们可能因生活太好而灭绝。"},
+]},
+{id:47,text:'47. What can we conclude from the new research by scientists at Michigan State University?',qtr:'从密歇根州立大学科学家的新研究中可得出什么结论？',opts:[
+{t:"A) Environmentalists' long-time belief regarding panda conservation may be misleading.",tr:"环保主义者关于熊猫保护的长期信念可能有误导性。"},
+{t:"B) Housing development near pandas' homes may threaten their survival.",tr:"熊猫栖息地附近的住房开发可能威胁其生存。"},
+{t:"C) Pandas' natural habitats are becoming less suitable for reproduction.",tr:"熊猫的自然栖息地正变得不太适合繁殖。"},
+{t:"D) The increased panda population is attributed to the fragmentation of their habitat.",tr:"熊猫数量的增加归因于栖息地的碎片化。"},
+]},
+{id:48,text:'48. What is the experts\' conclusion regarding pandas?',qtr:'专家们关于大熊猫的结论是什么？',opts:[
+{t:"A) It is urgent to provide an ideal habitat for them to thrive.",tr:"迫切需要为它们提供理想栖息地以繁衍生息。"},
+{t:"B) It is very important to preserve their genetic diversity.",tr:"保护其遗传多样性非常重要。"},
+{t:"C) Their chances of finding new mates have a lot to do with their habitat.",tr:"它们找到新配偶的机会与栖息地有很大关系。"},
+{t:"D) Their environment for survival has been continuously worsening.",tr:"它们的生存环境持续恶化。"},
+]},
+{id:49,text:'49. What can we infer from the passage about the Goldilocks principle?',qtr:'关于金凤花原则，从文章中可以推断出什么？',opts:[
+{t:"A) It needs to be confirmed by more studies on pandas.",tr:"需通过更多熊猫研究来证实。"},
+{t:"B) It applies to the preservation of pandas too.",tr:"它也适用于熊猫保护。"},
+{t:"C) It has implications for future panda research.",tr:"对未来的熊猫研究有启示。"},
+{t:"D) It can be used to locate the right spot for pandas.",tr:"可用于为熊猫确定最佳地点。"},
+]},
+{id:50,text:'50. What can the new findings do according to Professor Sillero?',qtr:'根据Sillero教授的说法，新发现能做什么？',opts:[
+{t:"A) Help discover new ways for the conservation of pandas.",tr:"帮助发现熊猫保护的新方法。"},
+{t:"B) Help remove pandas from the list of endangered species.",tr:"帮助将熊猫从濒危物种名单中移除。"},
+{t:"C) Shed light on the conservation of most large meat-eating animals.",tr:"为大多数大型食肉动物的保护提供启示。"},
+{t:"D) Show the complexity of interactions between humans and animals.",tr:"展示人与动物之间互动的复杂性。"},
+]},
+];
+document.getElementById('p1q').innerHTML=Q1.map(mq).join('');
+var Q2=[
+{id:51,text:'51. What does the passage say about people born with natural talents?',qtr:'关于天生有才华的人，文章怎么说？',opts:[
+{t:"A) They seem to outdo others without hard work.",tr:"他们似乎不用努力就能超越他人。"},
+{t:"B) They appear to know all the secrets to success.",tr:"他们似乎知道成功的所有秘密。"},
+{t:"C) They feel it only too logical to succeed.",tr:"他们觉得成功理所当然。"},
+{t:"D) They are bound to excel effortlessly.",tr:"他们注定不费吹灰之力就能出类拔萃。"},
+]},
+{id:52,text:'52. What does Duckworth say about talent?',qtr:'Duckworth关于天赋是怎么说的？',opts:[
+{t:"A) It is a new concept much too overrated.",tr:"它是一个被大大高估的新概念。"},
+{t:"B) It proves necessary for big achievements.",tr:"它对于重大成就来说是必要的。"},
+{t:"C) It plays a lesser role in one's success.",tr:"它在成功中起较小的作用。"},
+{t:"D) It is a guarantee for real success in life.",tr:"它是人生真正成功的保障。"},
+]},
+{id:53,text:'53. What does the passage say about people thinking of attaining success?',qtr:'关于思考如何成功的人，文章说了什么？',opts:[
+{t:"A) They are puzzled how to present their best to the employer.",tr:"他们对如何向雇主展示最好一面感到困惑。"},
+{t:"B) They are burdened by their expectation of perfection.",tr:"他们被追求完美的期望所累。"},
+{t:"C) They will try hard to land a job that fits their skills best.",tr:"他们会努力找到最适合自己技能的工作。"},
+{t:"D) They will find themselves lacking in all the skills they need.",tr:"他们会发现自己缺乏所有需要的技能。"},
+]},
+{id:54,text:'54. How does the author think grit can be helpful to us?',qtr:'作者认为grit如何帮助我们？',opts:[
+{t:"A) It allows us to know what we are good at.",tr:"让我们知道自己的优势所在。"},
+{t:"B) It opens our eyes to new opportunities.",tr:"让我们看到新的机会。"},
+{t:"C) It focuses our attention on what we do.",tr:"将注意力集中在我们所做的事上。"},
+{t:"D) It lets us reconsider the goals to achieve.",tr:"让我们重新考虑要达成的目标。"},
+]},
+{id:55,text:'55. What message does Duckworth try to convey in her book Grit?',qtr:'Duckworth在《Grit》中试图传达什么信息？',opts:[
+{t:"A) We should perfect ourselves to ensure success.",tr:"我们应完善自己以确保成功。"},
+{t:"B) We should stay persistent even in face of failures.",tr:"即使面对失败我们也应坚持不懈。"},
+{t:"C) We can never master a skill without constant practice.",tr:"没有持续练习永远无法掌握一项技能。"},
+{t:"D) We can never expect to reach our goals without passion.",tr:"没有激情永远别指望实现目标。"},
+]},
+];
+document.getElementById('p2q').innerHTML=Q2.map(mq).join('');
+
+console.log('%c\u2713 2025.06 CET-4 Set1 脚本加载完成 | Made for 中浩 | '+new Date().toISOString(),'color:#b8753e;font-size:1.1em;');
+</script>
+</body>
+</html>
